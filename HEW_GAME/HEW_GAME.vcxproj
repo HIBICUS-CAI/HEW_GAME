@@ -143,7 +143,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AppDeclared.cpp" />
+    <ClCompile Include="ButtonEvents.cpp" />
+    <ClCompile Include="ConsolePrint.cpp" />
+    <ClCompile Include="CustomizedApp.cpp" />
+    <ClCompile Include="DeclaredValuesGetter.cpp" />
+    <ClCompile Include="GameApp.cpp" />
+    <ClCompile Include="InputDispose.cpp" />
+    <ClCompile Include="LogsOutput.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="UIObject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppDeclared.h" />
+    <ClInclude Include="ButtonEvents.h" />
+    <ClInclude Include="ConsolePrint.h" />
+    <ClInclude Include="CustomizedApp.h" />
+    <ClInclude Include="DeclaredValues.h" />
+    <ClInclude Include="DefinedValues.h" />
+    <ClInclude Include="GameApp.h" />
+    <ClInclude Include="GameAppStructs.h" />
+    <ClInclude Include="InputDispose.h" />
+    <ClInclude Include="LogsOutput.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneNode.h" />
+    <ClInclude Include="Structs.h" />
+    <ClInclude Include="Tools.h" />
+    <ClInclude Include="UIObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

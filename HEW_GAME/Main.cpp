@@ -1,9 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "GameApp.h"
 
 int main()
 {
-    printf("åg––•∆•π•»\n");
+    if (Init())
+    {
+        RunGame();
+    }
+
+    TurnOff();
 
     return 0;
 }
