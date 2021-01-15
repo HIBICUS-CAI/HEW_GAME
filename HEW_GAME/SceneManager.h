@@ -1,35 +1,35 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: SceneManager.h
-// 婡擻: 慡偰偺僔乕儞傪娗棟偡傞婡擻
+// ファイル名: SceneManager.h
+// 機能: 全てのシーンを管理する機能
 //------------------------------------------------------------------------
 
 #pragma once
 #include "GameAppStructs.h"
 
 /// <summary>
-/// 崱巊偭偰偄傞僔乕儞傪愝掕
+/// 今使っているシーンを設定
 /// </summary>
-/// <param name="sceneNode">僔乕儞巜岦偺億僀儞僞</param>
+/// <param name="sceneNode">シーン指向のポインタ</param>
 void SetManagedCurrScene(SCENENODE* sceneNode);
 
 /// <summary>
-/// 崱巊偭偰偄傞僔乕儞傪庢摼
+/// 今使っているシーンを取得
 /// </summary>
-/// <returns>僔乕儞巜岦偺億僀儞僞</returns>
+/// <returns>シーン指向のポインタ</returns>
 SCENENODE* GetManagedCurrScene();
 
 /// <summary>
-/// 巊偭偰偄傞僔乕儞傪弶婜壔偡傞
+/// 使っているシーンを初期化する
 /// </summary>
 void InitCurrScene();
 
 /// <summary>
-/// 巊偭偰偄傞僔乕儞傪峏怴偡傞
+/// 使っているシーンを更新する
 /// </summary>
 void UpdateCurrScene();
 
 /// <summary>
-/// 偁傞僔乕儞偵曄姺偡傞
+/// あるシーンに変換する
 /// </summary>
-/// <param name="sceneName">僔乕儞偺柤慜</param>
+/// <param name="sceneName">シーンの名前</param>
 void SwitchSceneToName(const char* sceneName);

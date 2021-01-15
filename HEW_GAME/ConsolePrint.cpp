@@ -48,12 +48,12 @@ void InitOutputBuffer()
     //----------------------------------------------------
     /*CreateUIO("parent", POSITION_2D(3, 20), 60, 15, UIO_DESIGN::STRAIGHT);
     GetUIObjByID(10000)->AddText(UI_TEXT(POSITION_2D(1, 1),
-        (char*)"傾儂儅儞"));
+        (char*)"アホマン"));
     GetUIObjByName("parent")->TurnOn();
     GetUIObjByName("parent")->AddBtn(UI_BUTTON(TEST_OPENSUB, POSITION_2D(3, 3),
-        (char*)"奐偔", BTN_DESIGN::LINE));
+        (char*)"開く", BTN_DESIGN::LINE));
     GetUIObjByName("parent")->AddBtn(UI_BUTTON(0, POSITION_2D(10, 7),
-        (char*)"暵偠傞", BTN_DESIGN::STRAIGHT));
+        (char*)"閉じる", BTN_DESIGN::STRAIGHT));
     SetSelectedBtn(GetUIObjByName("parent")->Buttons + 0);*/
 }
 
@@ -169,12 +169,12 @@ void UpdateOutputBuffer()
     if (fps<=100)
     {
         WriteStrInt1IntoOutputBufferByPos(POSITION_2D(0, 0),
-            "峏怴梡FPS", fps);
+            "更新用FPS", fps);
     }
     else
     {
         WriteStrIntoOutputBufferByPos(POSITION_2D(0, 0),
-            "峏怴梡FPS: 100+");
+            "更新用FPS: 100+");
     }
 }
 

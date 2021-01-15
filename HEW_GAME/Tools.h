@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: Tools.h
-// 婡擻: 嶨側婡擻傪採嫙偡傞
+// ファイル名: Tools.h
+// 機能: 雑な機能を提供する
 //------------------------------------------------------------------------
 
 #pragma once
@@ -11,87 +11,87 @@
 #include "DeclaredValues.h"
 
 /// <summary>
-/// 擖弌椡傪彍偄偰偺張棟堦夞弞娐偝偣偰偐偐偭偨偺帪娫傪愝掕
+/// 入出力を除いての処理一回循環させてかかったの時間を設定
 /// </summary>
-/// <param name="time">堦夞偺弞娐偑偐偐偭偨帪娫</param>
+/// <param name="time">一回の循環がかかった時間</param>
 void SetDeltaTime(int time);
 
 /// <summary>
-/// 慜夞偺弞娐偐偐偭偨偺帪娫傪庢摼
+/// 前回の循環かかったの時間を取得
 /// </summary>
-/// <returns>慜夞偺弞娐偐偐偭偨偺帪娫</returns>
+/// <returns>前回の循環かかったの時間</returns>
 int GetDeltaTime();
 
 /// <summary>
-/// 慜夞偺弞娐帪娫偵傛偭偰俥俹俽傪寁嶼丄弌椡偡傞
+/// 前回の循環時間によってＦＰＳを計算、出力する
 /// </summary>
 void ShowFPSMT();
 
 /// <summary>
-/// 幚峴壜擻僾儘僌儔儉偺僞僀僩儖傪愝掕
+/// 実行可能プログラムのタイトルを設定
 /// </summary>
 void InitTitle();
 
 /// <summary>
-/// 僞僀僩儖傪暵偠傞
+/// タイトルを閉じる
 /// </summary>
 void CloseTitle();
 
 /// <summary>
-/// 偁傞俬俶俿宆悢抣偺寘悢傪寁嶼偡傞
+/// あるＩＮＴ型数値の桁数を計算する
 /// </summary>
-/// <param name="value">寁嶼偝偣偨偄悢抣</param>
-/// <returns>悢抣偺寘悢</returns>
+/// <param name="value">計算させたい数値</param>
+/// <returns>数値の桁数</returns>
 int GetIntValueBit(int value);
 
 /// <summary>
-/// 俬俶俿宆偺儕僗僩傪嶌傝弌偡
+/// ＩＮＴ型のリストを作り出す
 /// </summary>
-/// <returns>偙偺儕僗僩偺僿僢僪億僀儞僞</returns>
+/// <returns>このリストのヘッドポインタ</returns>
 QSINGLENODE* CreateQueue();
 
 /// <summary>
-/// 偁傞儕僗僩偵悢抣傪擖傟傞
+/// あるリストに数値を入れる
 /// </summary>
-/// <param name="end">儕僗僩偺僄儞僪億僀儞僞</param>
-/// <param name="data">擖傟偨偄悢抣</param>
-/// <returns>怴偟偄僄儞僪億僀儞僞</returns>
+/// <param name="end">リストのエンドポインタ</param>
+/// <param name="data">入れたい数値</param>
+/// <returns>新しいエンドポインタ</returns>
 QSINGLENODE* EnQueue(QSINGLENODE* end, int data);
 
 /// <summary>
-/// 偁傞儕僗僩偐傜悢抣傪庢傝弌偡
+/// あるリストから数値を取り出す
 /// </summary>
-/// <param name="top">儕僗僩偺僿僢僪億僀儞僞</param>
-/// <param name="end">儕僗僩偺僄儞僪億僀儞僞</param>
-/// <returns>庢傝弌偝傟偨悢抣</returns>
+/// <param name="top">リストのヘッドポインタ</param>
+/// <param name="end">リストのエンドポインタ</param>
+/// <returns>取り出された数値</returns>
 int DeQueue(QSINGLENODE* top, QSINGLENODE* end);
 
 /// <summary>
-/// 摿掕側庬偱棎悢庬傪愝掕
+/// 特定な種で乱数種を設定
 /// </summary>
-/// <param name="seedNum">庬偺撪梕</param>
+/// <param name="seedNum">種の内容</param>
 void SetRandomBySeed(int seedNum);
 
 /// <summary>
-/// 帪娫偱棎悢庬傪愝掕
+/// 時間で乱数種を設定
 /// </summary>
 void SetRandom();
 
 /// <summary>
-/// 偁傞斖埻偺拞偵惍悢宆偺棎悢傪惗惉偡傞
+/// ある範囲の中に整数型の乱数を生成する
 /// </summary>
-/// <param name="minNum">斖埻偺拞偵堦斣彫偝偄抣</param>
-/// <param name="maxNum">斖埻偺拞偵堦斣戝偒偄抣</param>
-/// <returns>惗惉偝傟偨棎悢</returns>
+/// <param name="minNum">範囲の中に一番小さい値</param>
+/// <param name="maxNum">範囲の中に一番大きい値</param>
+/// <returns>生成された乱数</returns>
 int CreateRandomNumIn(int minNum, int maxNum);
 
 /// <summary>
-/// 僐儞僜乕儖偺怓傪曄壔偝偣傞
+/// コンソールの色を変化させる
 /// </summary>
-/// <param name="color">惡柧偝傟偨怓偺抣偺堦偮</param>
+/// <param name="color">声明された色の値の一つ</param>
 void ChangeColorInConsole(int color);
 
 /// <summary>
-/// 僐儞僜乕儖偺怓傪儕僙僢僩
+/// コンソールの色をリセット
 /// </summary>
 void ResetColorInConsole();

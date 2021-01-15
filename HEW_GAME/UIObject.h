@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: UIObject.h
-// 婡擻: 倀俬傾僀僥儉偵娭偟偰偺張棟
+// ファイル名: UIObject.h
+// 機能: ＵＩアイテムに関しての処理
 //------------------------------------------------------------------------
 
 #pragma once
@@ -10,54 +10,54 @@
 #include "Structs.h"
 
 /// <summary>
-/// 倀俬傾僀僥儉攝楍傪弶婜壔偡傞
+/// ＵＩアイテム配列を初期化する
 /// </summary>
 void InitUIObj();
 
 /// <summary>
-/// 傾僀僥儉偺斣崋偱偁傞倀俬傾僀僥儉傪庢傝弌偡
+/// アイテムの番号であるＵＩアイテムを取り出す
 /// </summary>
-/// <param name="id">梸偟偄倀俬傾僀僥儉偺斣崋</param>
-/// <returns>斣崋偵墳偠偰偄傞倀俬傾僀僥儉</returns>
+/// <param name="id">欲しいＵＩアイテムの番号</param>
+/// <returns>番号に応じているＵＩアイテム</returns>
 UIOBJECT* GetUIObjByID(int id);
 
 /// <summary>
-/// 傾僀僥儉偺柤慜偱偁傞倀俬傾僀僥儉傪庢傝弌偡
+/// アイテムの名前であるＵＩアイテムを取り出す
 /// </summary>
-/// <param name="name">梸偟偄倀俬傾僀僥儉偺柤慜</param>
-/// <returns>柤慜偵墳偠偰偄傞倀俬傾僀僥儉</returns>
+/// <param name="name">欲しいＵＩアイテムの名前</param>
+/// <returns>名前に応じているＵＩアイテム</returns>
 UIOBJECT* GetUIObjByName(const char* name);
 
 /// <summary>
-/// 倀俬傾僀僥儉傪嶌傝弌偡
+/// ＵＩアイテムを作り出す
 /// </summary>
-/// <param name="name">傾僀僥儉偺柤慜</param>
-/// <param name="startPoint">傾僀僥儉偺巒揰嵗昗</param>
-/// <param name="width">傾僀僥儉偺挿偝</param>
-/// <param name="height">傾僀僥儉偺崅偝</param>
-/// <param name="design">傾僀僥儉榞偺僨僓僀儞</param>
-/// <param name="parent">偙偺傾僀僥儉偺恊傾僀僥儉</param>
-/// <param name="child">偙偺傾僀僥儉偺巕傾僀僥儉</param>
-/// <param name="visiblity">傾僀僥儉偺壜帇惈</param>
-/// <returns>嶌傟偨傾僀僥儉偺億僀儞僞</returns>
+/// <param name="name">アイテムの名前</param>
+/// <param name="startPoint">アイテムの始点座標</param>
+/// <param name="width">アイテムの長さ</param>
+/// <param name="height">アイテムの高さ</param>
+/// <param name="design">アイテム枠のデザイン</param>
+/// <param name="parent">このアイテムの親アイテム</param>
+/// <param name="child">このアイテムの子アイテム</param>
+/// <param name="visiblity">アイテムの可視性</param>
+/// <returns>作れたアイテムのポインタ</returns>
 UIOBJECT* CreateUIO(const char* name, POSITION_2D startPoint, int width, int height,
     UIO_DESIGN design, UIOBJECT* parent = NULL, UIOBJECT* child = NULL,
     int visiblity = 0);
 
 /// <summary>
-/// 倀俬傾僀僥儉傪峏怴梡僶僢僼傽偵彂偒崬傓
+/// ＵＩアイテムを更新用バッファに書き込む
 /// </summary>
-/// <param name="uiObject">彂偒崬傒偨偄傾僀僥儉偵巜岦偺億僀儞僞</param>
+/// <param name="uiObject">書き込みたいアイテムに指向のポインタ</param>
 void DrawUIO(UIOBJECT* uiObject);
 
 /// <summary>
-/// 傾僀僥儉拞偺暥帤撪梕傪峏怴梡僶僢僼傽偵彂偒崬傓
+/// アイテム中の文字内容を更新用バッファに書き込む
 /// </summary>
-/// <param name="uiObject">彂偒崬傒偨偄傾僀僥儉偵巜岦偺億僀儞僞</param>
+/// <param name="uiObject">書き込みたいアイテムに指向のポインタ</param>
 void DrawTextInUIO(UIOBJECT* uiObject);
 
 /// <summary>
-/// 傾僀僥儉拞偺儃僞儞撪梕傪峏怴梡僶僢僼傽偵彂偒崬傓
+/// アイテム中のボタン内容を更新用バッファに書き込む
 /// </summary>
-/// <param name="uiObject">彂偒崬傒偨偄傾僀僥儉偵巜岦偺億僀儞僞</param>
+/// <param name="uiObject">書き込みたいアイテムに指向のポインタ</param>
 void DrawBtnInUIO(UIOBJECT* uiObject);

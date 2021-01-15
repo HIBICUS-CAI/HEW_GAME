@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: ConsolePrint.h
-// 婡擻: 弌椡梡僶僢僼傽偺撪梕傪僐儞僜乕儖偵弌椡偡傞
+// ファイル名: ConsolePrint.h
+// 機能: 出力用バッファの内容をコンソールに出力する
 //------------------------------------------------------------------------
 
 #pragma once
@@ -10,48 +10,48 @@
 #include "Structs.h"
 
 /// <summary>
-/// 僐儞僜乕儖偺戝偒偝偲僶僢僼傽傪弶婜壔偡傞
+/// コンソールの大きさとバッファを初期化する
 /// </summary>
 void InitOutputBuffer();
 
 /// <summary>
-/// 慜夞弌椡梡僶僢僼傽偵彂偒崬傫偩撪梕傪攑婞
+/// 前回出力用バッファに書き込んだ内容を廃棄
 /// </summary>
 void ClearOutputBuffer();
 
 /// <summary>
-/// 弌椡梡僶僢僼傽偺撪梕傪暥帤攝楍偺宍偱弌椡偡傞
+/// 出力用バッファの内容を文字配列の形で出力する
 /// </summary>
 void PrintOutputBuffer();
 
 /// <summary>
-/// 弌椡梡僶僢僼傽偵昁梫側峏怴帠崁傪峴偆
+/// 出力用バッファに必要な更新事項を行う
 /// </summary>
 void UpdateOutputBuffer();
 
 /// <summary>
-/// 偁傞埵抲偵撪梕傪捈愙偵彂偒崬傓
+/// ある位置に内容を直接に書き込む
 /// </summary>
-/// <param name="position">彂偒崬傓嵗昗</param>
-/// <param name="text">彂偒崬傒偨偄撪梕</param>
+/// <param name="position">書き込む座標</param>
+/// <param name="text">書き込みたい内容</param>
 void WriteCharIntoOutputBuffer(POSITION_2D position, const char text);
 
 /// <summary>
-/// 偁傞埵抲偵暥帤攝楍撪梕傪彂偒崬傓
+/// ある位置に文字配列内容を書き込む
 /// </summary>
-/// <param name="startPos">彂偒崬傓嵗昗</param>
-/// <param name="text">彂偒崬傒偨偄暥帤攝楍</param>
+/// <param name="startPos">書き込む座標</param>
+/// <param name="text">書き込みたい文字配列</param>
 void WriteStrIntoOutputBufferByPos(POSITION_2D startPos, const char* text);
 
 /// <summary>
-/// 偁傞埵抲偵暥帤攝楍偲悢抣傪彂偒崬傓
+/// ある位置に文字配列と数値を書き込む
 /// </summary>
-/// <param name="startPos">彂偒崬傓嵗昗</param>
-/// <param name="text">彂偒崬傒偨偄暥帤攝楍</param>
-/// <param name="value">彂偒崬傒偨偄抣</param>
+/// <param name="startPos">書き込む座標</param>
+/// <param name="text">書き込みたい文字配列</param>
+/// <param name="value">書き込みたい値</param>
 void WriteStrInt1IntoOutputBufferByPos(POSITION_2D startPos, const char* text, int value);
 
 /// <summary>
-/// 弌椡惂屼僴儞僪儖傪暵偠傞
+/// 出力制御ハンドルを閉じる
 /// </summary>
 void CloseMTPrint();

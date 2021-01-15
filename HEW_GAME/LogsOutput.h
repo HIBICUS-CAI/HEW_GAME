@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: LogsOutput.h
-// 婡擻: 怓傫側儘僌傪傾僂僩僾僢僩棑偵弌椡偡傞
+// ファイル名: LogsOutput.h
+// 機能: 色んなログをアウトプット欄に出力する
 //------------------------------------------------------------------------
 
 #pragma once
@@ -10,49 +10,49 @@
 #include <tchar.h>
 
 /// <summary>
-/// 扨弮側暥帤儘僌傪棑偵弌椡偡傞
+/// 単純な文字ログを欄に出力する
 /// </summary>
-/// <param name="text">儘僌偺撪梕</param>
+/// <param name="text">ログの内容</param>
 void DebugLog(const char* text);
 
 /// <summary>
-/// 俬俶俿宆撪梕偑晅偄偰偄傞儘僌傪棑偵弌椡偡傞
+/// ＩＮＴ型内容が付いているログを欄に出力する
 /// </summary>
-/// <param name="text">儘僌偺暥帤撪梕</param>
-/// <param name="value">俬俶俿宆偺撪梕</param>
+/// <param name="text">ログの文字内容</param>
+/// <param name="value">ＩＮＴ型の内容</param>
 void DebugLogI1(const char* text, const int value);
 
 /// <summary>
-/// 俬俶俿宆撪梕偑晅偄偰偄傞儘僌傪棑偵弌椡偡傞
+/// ＩＮＴ型内容が付いているログを欄に出力する
 /// </summary>
-/// <param name="text">儘僌偺暥帤撪梕</param>
-/// <param name="value1">俬俶俿宆偺撪梕</param>
-/// <param name="value2">俬俶俿宆偺撪梕</param>
+/// <param name="text">ログの文字内容</param>
+/// <param name="value1">ＩＮＴ型の内容</param>
+/// <param name="value2">ＩＮＴ型の内容</param>
 void DebugLogI2(const char* text, const int value1, const int value2);
 
 /// <summary>
-/// 儘僌傪僼傽僀儖偵彂偒崬傓
+/// ログをファイルに書き込む
 /// </summary>
-/// <param name="text">儘僌偺撪梕</param>
+/// <param name="text">ログの内容</param>
 void DebugLogToFile(const char* text);
 
 /// <summary>
-/// 扨弮側僄儔乕儘僌傪棑偵弌椡偡傞
+/// 単純なエラーログを欄に出力する
 /// </summary>
-/// <param name="text">儘僌偺暥帤撪梕</param>
+/// <param name="text">ログの文字内容</param>
 void ErrorLog(const char* text);
 
 /// <summary>
-/// 俬俶俿宆撪梕偑晅偄偰偄傞僄儔乕儘僌傪棑偵弌椡偡傞
+/// ＩＮＴ型内容が付いているエラーログを欄に出力する
 /// </summary>
-/// <param name="text">儘僌偺暥帤撪梕</param>
-/// <param name="value">俬俶俿宆偺撪梕</param>
+/// <param name="text">ログの文字内容</param>
+/// <param name="value">ＩＮＴ型の内容</param>
 void ErrorLogI1(const char* text, const int value);
 
 /// <summary>
-/// 俬俶俿宆撪梕偑晅偄偰偄傞僄儔乕儘僌傪棑偵弌椡偡傞
+/// ＩＮＴ型内容が付いているエラーログを欄に出力する
 /// </summary>
-/// <param name="text">儘僌偺暥帤撪梕</param>
-/// <param name="value1">俬俶俿宆偺撪梕</param>
-/// <param name="value2">俬俶俿宆偺撪梕</param>
+/// <param name="text">ログの文字内容</param>
+/// <param name="value1">ＩＮＴ型の内容</param>
+/// <param name="value2">ＩＮＴ型の内容</param>
 void ErrorLogI2(const char* text, const int value1, const int value2);

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: SceneNode.h
-// 婡擻: 僔乕儞偵娭偟偰偺婡擻
+// ファイル名: SceneNode.h
+// 機能: シーンに関しての機能
 //------------------------------------------------------------------------
 
 #pragma once
@@ -10,38 +10,38 @@
 #include "DeclaredValues.h"
 
 /// <summary>
-/// 斣崋偱偁傞僔乕儞傪庢傝弌偡
+/// 番号であるシーンを取り出す
 /// </summary>
-/// <param name="id">僔乕儞斣崋</param>
-/// <returns>庢傝弌偟偨偄僔乕儞偵巜岦偺億僀儞僞</returns>
+/// <param name="id">シーン番号</param>
+/// <returns>取り出したいシーンに指向のポインタ</returns>
 SCENENODE* GetSceneNodeByID(int id);
 
 /// <summary>
-/// 柤慜偱偁傞僔乕儞傪庢傝弌偡
+/// 名前であるシーンを取り出す
 /// </summary>
-/// <param name="name">僔乕儞偺柤慜</param>
-/// <returns>庢傝弌偟偨偄僔乕儞偵巜岦偺億僀儞僞</returns>
+/// <param name="name">シーンの名前</param>
+/// <returns>取り出したいシーンに指向のポインタ</returns>
 SCENENODE* GetSceneNodeByName(const char* name);
 
 /// <summary>
-/// 僔乕儞攝楍傪弶婜壔偡傞
+/// シーン配列を初期化する
 /// </summary>
 void InitSceneNodes();
 
 /// <summary>
-/// 偁傞僔乕儞偺僇儊儔僶僢僼傽傪惍棟偡傞
+/// あるシーンのカメラバッファを整理する
 /// </summary>
-/// <param name="sceneNode">僔乕儞巜岦偺億僀儞僞</param>
+/// <param name="sceneNode">シーン指向のポインタ</param>
 void ClearSceneCamBuffer(SCENENODE* sceneNode);
 
 /// <summary>
-/// 僔乕儞攝楍偵怴偨側僔乕儞傪捛壛
+/// シーン配列に新たなシーンを追加
 /// </summary>
-/// <param name="sceneNode">怴偨側僔乕儞偺撪梕</param>
+/// <param name="sceneNode">新たなシーンの内容</param>
 void CreateSceneNode(SCENENODE sceneNode);
 
 /// <summary>
-/// 偁傞僔乕儞偺撪梕傪峏怴梡僶僢僼傽偵彂偒崬傓
+/// あるシーンの内容を更新用バッファに書き込む
 /// </summary>
-/// <param name="sceneNode">僔乕儞巜岦偺億僀儞僞</param>
+/// <param name="sceneNode">シーン指向のポインタ</param>
 void DrawScene(SCENENODE* sceneNode);

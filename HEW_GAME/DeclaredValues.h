@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: DeclaredValues.h
-// 婡擻: 摿庩側僌儘乕僶儖曄悢傪惡柧偡傞
+// ファイル名: DeclaredValues.h
+// 機能: 特殊なグローバル変数を声明する
 //------------------------------------------------------------------------
 
 #pragma once
@@ -9,123 +9,123 @@
 #include "Structs.h"
 
 /// <summary>
-/// 僎乕儉偑懕偗傞偐偳偆偐傪愝掕
+/// ゲームが続けるかどうかを設定
 /// </summary>
-/// <param name="value">侽側傜僎乕儉偑懕偗側偄</param>
+/// <param name="value">０ならゲームが続けない</param>
 void SetGameRunFlag(int value);
 
 /// <summary>
-/// 僎乕儉偑懕偗傞偐偳偆偐傪庢摼
+/// ゲームが続けるかどうかを取得
 /// </summary>
-/// <returns>懕偗傞偺偟傞偟</returns>
+/// <returns>続けるのしるし</returns>
 int GetGameRunFlag();
 
 #define DELTATIME 16
 
 /// <summary>
-/// 愝掕偝傟偨僼儗乕儉帪娫傪庢摼
+/// 設定されたフレーム時間を取得
 /// </summary>
-/// <returns>愝掕偝傟偨僼儗乕儉帪娫</returns>
+/// <returns>設定されたフレーム時間</returns>
 int GetDeclaredDeltaTime();
 
 /// <summary>
-/// 僼儗乕儉帪娫傪愝掕偡傞
+/// フレーム時間を設定する
 /// </summary>
-/// <param name="value">僼儗乕儉帪娫</param>
+/// <param name="value">フレーム時間</param>
 void SetDeclaredDeltaTime(int value);
 
 /// <summary>
-/// 弌椡僴儞僪儖傪庢摼
+/// 出力ハンドルを取得
 /// </summary>
-/// <returns>弌椡惂屼僴儞僪儖</returns>
+/// <returns>出力制御ハンドル</returns>
 HANDLE GetPrintHandle();
 
 /// <summary>
-/// 弌椡僴儞僪儖傪愝掕
+/// 出力ハンドルを設定
 /// </summary>
-/// <param name="handle">弌椡惂屼僴儞僪儖</param>
+/// <param name="handle">出力制御ハンドル</param>
 void SetPrintHandle(HANDLE handle);
 
 /// <summary>
-/// 峏怴梡僶僢僼傽偲弌椡梡僶僢僼傽傪岎姺
+/// 更新用バッファと出力用バッファを交換
 /// </summary>
 void SwapPrintChain();
 
 /// <summary>
-/// 峏怴梡僶僢僼傽傪庢摼
+/// 更新用バッファを取得
 /// </summary>
-/// <returns>峏怴梡僶僢僼傽偵巜岦偺億僀儞僞</returns>
+/// <returns>更新用バッファに指向のポインタ</returns>
 char* GetOutputBufferToUpdate();
 
 /// <summary>
-/// 弌椡梡僶僢僼傽傪庢摼
+/// 出力用バッファを取得
 /// </summary>
-/// <returns>弌椡梡僶僢僼傽偵巜岦偺億僀儞僞</returns>
+/// <returns>出力用バッファに指向のポインタ</returns>
 char* GetOutputBufferToPrint();
 
 #define UIOBJSIZE 10000
 
 /// <summary>
-/// 倀俬傾僀僥儉攝楍傪庢摼
+/// ＵＩアイテム配列を取得
 /// </summary>
-/// <returns>倀俬傾僀僥儉攝楍偺僿僢僪億僀儞僞</returns>
+/// <returns>ＵＩアイテム配列のヘッドポインタ</returns>
 UIOBJECT* GetUIObj();
 
 /// <summary>
-/// 倀俬傾僀僥儉攝楍偺尰嵼斣崋
+/// ＵＩアイテム配列の現在番号
 /// </summary>
-/// <returns>尰嵼偺斣崋</returns>
+/// <returns>現在の番号</returns>
 int* GetUIOIndex();
 
 /// <summary>
-/// 倀俬傾僀僥儉攝楍偺尰嵼斣崋傪愝掕
+/// ＵＩアイテム配列の現在番号を設定
 /// </summary>
-/// <param name="value">斣崋偺抣</param>
+/// <param name="value">番号の値</param>
 void SetUIOIndex(int value);
 
 /// <summary>
-/// 倀俬傾僀僥儉攝楍偺尰嵼斣崋傪侾傪懌偡
+/// ＵＩアイテム配列の現在番号を１を足す
 /// </summary>
 void AddUIOIndex();
 
 /// <summary>
-/// 尰嵼嵟傕忋奒側倀俬傾僀僥儉傪庢摼
+/// 現在最も上階なＵＩアイテムを取得
 /// </summary>
-/// <returns>嵟忋奒偺倀俬傾僀僥儉偵巜岦偺億僀儞僞</returns>
+/// <returns>最上階のＵＩアイテムに指向のポインタ</returns>
 UIOBJECT* GetTopUIO();
 
 /// <summary>
-/// 嵟忋奒偺倀俬傾僀僥儉傪愝掕
+/// 最上階のＵＩアイテムを設定
 /// </summary>
-/// <param name="uiObj">倀俬傾僀僥儉巜岦偺億僀儞僞</param>
+/// <param name="uiObj">ＵＩアイテム指向のポインタ</param>
 void SetTopUIO(UIOBJECT* uiObj);
 
 /// <summary>
-/// 僶僢僼傽岎姺梡惂屼惡柧傪庢摼
+/// バッファ交換用制御声明を取得
 /// </summary>
-/// <returns>惂屼梡傾僀僥儉</returns>
+/// <returns>制御用アイテム</returns>
 CRITICAL_SECTION* GetSwapChainCS();
 
 /// <summary>
-/// 崱慖戰偝傟偨儃僞儞傪庢摼
+/// 今選択されたボタンを取得
 /// </summary>
-/// <returns>慖戰偝傟偨儃僞儞偵巜岦偺億僀儞僞</returns>
+/// <returns>選択されたボタンに指向のポインタ</returns>
 UI_BUTTON* GetSelectedBtn();
 
 /// <summary>
-/// 慖戰偝傟傞儃僞儞傪愝掕
+/// 選択されるボタンを設定
 /// </summary>
-/// <param name="btn">儃僞儞偵巜岦偺億僀儞僞</param>
+/// <param name="btn">ボタンに指向のポインタ</param>
 void SetSelectedBtn(UI_BUTTON* btn);
 
 /// <summary>
-/// 帺摦揑偵儃僞儞傪愝掕偡傞婰崋傪庢摼
+/// 自動的にボタンを設定する記号を取得
 /// </summary>
-/// <returns>婰崋偵巜岦偺億僀儞僞</returns>
+/// <returns>記号に指向のポインタ</returns>
 int* GetAutoSelectBtnFlag();
 
 /// <summary>
-/// 帺摦揑儃僞儞傪愝掕偡傞偺婰崋傪愝掕
+/// 自動的ボタンを設定するの記号を設定
 /// </summary>
-/// <param name="value">婰崋偺抣</param>
+/// <param name="value">記号の値</param>
 void SetAutoSelectBtnFlag(int value);

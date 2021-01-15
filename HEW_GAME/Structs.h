@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// 僼傽僀儖柤: Structs.h
-// 婡擻: 婎杮側峔憿懱傪惡柧偡傞
+// ファイル名: Structs.h
+// 機能: 基本な構造体を声明する
 //------------------------------------------------------------------------
 
 #pragma once
@@ -11,7 +11,7 @@
 #include "LogsOutput.h"
 
 /// <summary>
-/// 嵗昗偺峔憿懱
+/// 座標の構造体
 /// </summary>
 struct POSITION_2D
 {
@@ -74,7 +74,7 @@ struct POSITION_2D
 };
 
 /// <summary>
-/// 儕僗僩梫慺偺峔憿懱
+/// リスト要素の構造体
 /// </summary>
 struct QSINGLENODE
 {
@@ -83,7 +83,7 @@ struct QSINGLENODE
 };
 
 /// <summary>
-/// 俬俶俿宆儕僗僩偺峔憿懱
+/// ＩＮＴ型リストの構造体
 /// </summary>
 struct QUEUE_INT
 {
@@ -92,7 +92,7 @@ struct QUEUE_INT
 };
 
 /// <summary>
-/// 倀俬傾僀僥儉拞偺暥帤晹暘
+/// ＵＩアイテム中の文字部分
 /// </summary>
 struct UI_TEXT
 {
@@ -136,7 +136,7 @@ enum class BTN_DESIGN
 };
 
 /// <summary>
-/// 倀俬傾僀僥儉拞偺儃僞儞晹暘
+/// ＵＩアイテム中のボタン部分
 /// </summary>
 struct UI_BUTTON
 {
@@ -177,7 +177,7 @@ enum class UIO_DESIGN
 };
 
 /// <summary>
-/// 倀俬傾僀僥儉偺峔憿懱
+/// ＵＩアイテムの構造体
 /// </summary>
 struct UIOBJECT
 {
@@ -238,9 +238,9 @@ struct UIOBJECT
     }
 
     /// <summary>
-    /// 偙偺傾僀僥儉偵暥帤撪梕傪揧晅偡傞
+    /// このアイテムに文字内容を添付する
     /// </summary>
-    /// <param name="text">暥帤撪梕</param>
+    /// <param name="text">文字内容</param>
     void AddText(UI_TEXT text)
     {
         int index = 0;
@@ -273,9 +273,9 @@ struct UIOBJECT
     }
 
     /// <summary>
-    /// 偙偺傾僀僥儉偵儃僞儞撪梕傪揧晅偡傞
+    /// このアイテムにボタン内容を添付する
     /// </summary>
-    /// <param name="btn">儃僞儞撪梕</param>
+    /// <param name="btn">ボタン内容</param>
     void AddBtn(UI_BUTTON btn)
     {
         int index = 0;
@@ -315,13 +315,13 @@ struct UIOBJECT
                 break;
             }
 
-            // 儃僞儞偺娫偱埵抲娭學傪帺摦揑偵妋掕偡傞
+            // ボタンの間で位置関係を自動的に確定する
             int deltaX = (btn.Position.posX - Buttons[index].Position.posX) / 2;
             int deltaY = btn.Position.posY - Buttons[index].Position.posY;
             int deltaXY = deltaX * deltaX - deltaY * deltaY;
             if (deltaXY >= 0)
             {
-                // 嵍塃
+                // 左右
                 if (deltaX >= 0 && deltaX <= leastXPlus)
                 {
                     btn.LeftBtn = &Buttons[index];
@@ -335,7 +335,7 @@ struct UIOBJECT
             }
             else
             {
-                // 忋壓
+                // 上下
                 if (deltaY >= 0 && deltaY <= leastYPlus)
                 {
                     btn.UpBtn = &Buttons[index];
@@ -382,7 +382,7 @@ struct UIOBJECT
 };
 
 /// <summary>
-/// 埵抲傪帵偡峔憿懱
+/// 位置を示す構造体
 /// </summary>
 struct Object
 {
