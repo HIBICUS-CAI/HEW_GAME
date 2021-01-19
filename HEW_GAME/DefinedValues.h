@@ -5,8 +5,8 @@
 
 #pragma once
 
-#define CONSOLE_WIDTH 120
-#define CONSOLE_HEIGHT 40
+#define CONSOLE_WIDTH 180
+#define CONSOLE_HEIGHT 60
 
 #define ESC_VALUE 27
 #define SPACE_VALUE 32

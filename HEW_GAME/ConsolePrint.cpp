@@ -63,7 +63,7 @@ void ClearOutputBuffer()
     {
         for (int j = 0; j < CONSOLE_WIDTH - 1; j++)
         {
-            *(GetOutputBufferToUpdate() + i * CONSOLE_WIDTH + j) = ' ';
+            *(GetOutputBufferToUpdate() + i * CONSOLE_WIDTH + j) = '-';
         }
         *(GetOutputBufferToUpdate() + i * CONSOLE_WIDTH + CONSOLE_WIDTH - 1) = '\0';
     }
@@ -134,7 +134,7 @@ void PrintOutputBuffer()
 
         LeaveCriticalSection(GetPrintCS());
 
-        Sleep(DELTATIME);
+        Sleep(DELTATIME * 3 / 2);
         SuspendThread(GetPrintHandle());
     }
 #else
@@ -166,7 +166,7 @@ void UpdateOutputBuffer()
     }
 
     int fps = 1000 / deltaTime;
-    if (fps<=100)
+    if (fps <= 100)
     {
         WriteStrInt1IntoOutputBufferByPos(POSITION_2D(0, 0),
             "¸üÐÂÓÃFPS", fps);

@@ -393,3 +393,106 @@ struct Object
         return Position;
     }
 };
+
+#define SPRITE_MAX_WIDTH 80
+#define SPRITE_MAX_HEIGHT 40
+/// <summary>
+/// スプライト構造体
+/// </summary>
+struct SPRITE
+{
+    POSITION_2D Position;
+    int Width;
+    int Height;
+    int SpriteBuffer[SPRITE_MAX_HEIGHT * SPRITE_MAX_WIDTH];
+    int Color;
+    int Visible;
+
+    SPRITE()
+    {
+        Position = POSITION_2D(0, 0);
+        Width = 0;
+        Height = 0;
+        for (int i = 0; i < SPRITE_MAX_HEIGHT * SPRITE_MAX_WIDTH; i++)
+        {
+            SpriteBuffer[i] = 0;
+        }
+        Color = BLACK_WHITE;
+        Visible = 0;
+    }
+
+    SPRITE(POSITION_2D _startPos, int _width, int _height, int _color, int _visible)
+    {
+        Position = _startPos;
+        Width = _width;
+        Height = _height;
+        for (int i = 0; i < SPRITE_MAX_WIDTH * SPRITE_MAX_HEIGHT; i++)
+        {
+            SpriteBuffer[i] = 0;
+        }
+        Color = _color;
+        if (_visible)
+        {
+            Visible = 1;
+        }
+        else
+        {
+            Visible = 0;
+        }
+    }
+
+    int* GetSpriteBuffer()
+    {
+        return SpriteBuffer;
+    }
+
+    void TurnOn()
+    {
+        Visible = 1;
+    }
+
+    void TurnOff()
+    {
+        Visible = 0;
+    }
+
+    void SetColor(int color)
+    {
+        Color = color;
+    }
+
+    POSITION_2D GetPixelPositionInSprite(int index)
+    {
+        int posX = index % Width;
+        int posY = index / Width;
+
+        return POSITION_2D(posX, posY);
+    }
+};
+
+#define SIZE_PER_OBJSPRITE 5
+/// <summary>
+/// 複数ありスプライトの集合体
+/// </summary>
+struct OBJECTSPRITE
+{
+    SPRITE SubSprites[SIZE_PER_OBJSPRITE];
+
+    OBJECTSPRITE()
+    {
+        for (int i = 0; i < SIZE_PER_OBJSPRITE; i++)
+        {
+            SubSprites[i] = SPRITE();
+        }
+    }
+
+    void SetSubSpriteByOffset(SPRITE subSprite, int offset)
+    {
+        SubSprites[offset] = subSprite;
+    }
+
+    SPRITE* GetSubSpriteByOffset(int offset)
+    {
+        return SubSprites + offset;
+    }
+};
