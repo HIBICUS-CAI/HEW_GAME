@@ -63,7 +63,7 @@ void ClearOutputBuffer()
     {
         for (int j = 0; j < CONSOLE_WIDTH - 1; j++)
         {
-            *(GetOutputBufferToUpdate() + i * CONSOLE_WIDTH + j) = '-';
+            *(GetOutputBufferToUpdate() + i * CONSOLE_WIDTH + j) = ' ';
         }
         *(GetOutputBufferToUpdate() + i * CONSOLE_WIDTH + CONSOLE_WIDTH - 1) = '\0';
     }
