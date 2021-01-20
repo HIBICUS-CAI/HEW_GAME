@@ -105,3 +105,30 @@ struct OBJECT
         return distY;
     }
 };
+
+#define SIZE_PER_OBJSPRITE 60
+/// <summary>
+/// 複数ありスプライトの集合体
+/// </summary>
+struct SPRITE_ANIME
+{
+    SPRITE SubSprites[SIZE_PER_OBJSPRITE];
+
+    SPRITE_ANIME()
+    {
+        for (int i = 0; i < SIZE_PER_OBJSPRITE; i++)
+        {
+            SubSprites[i] = SPRITE();
+        }
+    }
+
+    void SetSubSpriteByOffset(SPRITE subSprite, int offset)
+    {
+        SubSprites[offset] = subSprite;
+    }
+
+    SPRITE* GetSubSpriteByOffset(int offset)
+    {
+        return SubSprites + offset;
+    }
+};

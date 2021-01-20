@@ -57,6 +57,9 @@
     <ClCompile Include="SceneNode.cpp">
       <Filter>GameApp</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteAnimator.cpp">
+      <Filter>GameApp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -102,6 +105,9 @@
       <Filter>GameApp</Filter>
     </ClInclude>
     <ClInclude Include="SceneNode.h">
+      <Filter>GameApp</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteAnimator.h">
       <Filter>GameApp</Filter>
     </ClInclude>
   </ItemGroup>

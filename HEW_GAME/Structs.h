@@ -394,8 +394,8 @@ struct Object
     }
 };
 
-#define SPRITE_MAX_WIDTH 80
-#define SPRITE_MAX_HEIGHT 40
+#define SPRITE_MAX_WIDTH 180
+#define SPRITE_MAX_HEIGHT 60
 /// <summary>
 /// スプライト構造体
 /// </summary>
@@ -405,7 +405,6 @@ struct SPRITE
     int Width;
     int Height;
     char SpriteBuffer[SPRITE_MAX_HEIGHT * SPRITE_MAX_WIDTH];
-    int Color;
     int Visible;
 
     SPRITE()
@@ -417,11 +416,10 @@ struct SPRITE
         {
             SpriteBuffer[i] = 0;
         }
-        Color = BLACK_WHITE;
         Visible = 0;
     }
 
-    SPRITE(POSITION_2D _startPos, int _width, int _height, int _color, int _visible)
+    SPRITE(POSITION_2D _startPos, int _width, int _height, int _visible)
     {
         Position = _startPos;
         Width = _width;
@@ -430,7 +428,6 @@ struct SPRITE
         {
             SpriteBuffer[i] = 0;
         }
-        Color = _color;
         if (_visible)
         {
             Visible = 1;
@@ -456,43 +453,11 @@ struct SPRITE
         Visible = 0;
     }
 
-    void SetColor(int color)
-    {
-        Color = color;
-    }
-
     POSITION_2D GetPixelPositionInSprite(int index)
     {
         int posX = index % Width;
         int posY = index / Width;
 
         return POSITION_2D(posX, posY);
-    }
-};
-
-#define SIZE_PER_OBJSPRITE 60
-/// <summary>
-/// 複数ありスプライトの集合体
-/// </summary>
-struct SPRITE_ANIME
-{
-    SPRITE SubSprites[SIZE_PER_OBJSPRITE];
-
-    SPRITE_ANIME()
-    {
-        for (int i = 0; i < SIZE_PER_OBJSPRITE; i++)
-        {
-            SubSprites[i] = SPRITE();
-        }
-    }
-
-    void SetSubSpriteByOffset(SPRITE subSprite, int offset)
-    {
-        SubSprites[offset] = subSprite;
-    }
-
-    SPRITE* GetSubSpriteByOffset(int offset)
-    {
-        return SubSprites + offset;
     }
 };
