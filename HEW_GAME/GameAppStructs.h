@@ -93,15 +93,15 @@ struct OBJECT
 
     int GetDeltaXWith(OBJECT obj)
     {
-        int distX = (Width / 2.f + Position.posX) -
-            (obj.Width / 2.f + obj.Position.posX);
+        int distX = (int)(((float)Width / 2.f + (float)Position.posX) -
+            ((float)obj.Width / 2.f + (float)obj.Position.posX));
         return distX;
     }
 
     int GetDeltaYWith(OBJECT obj)
     {
-        int distY = (Height / 2.f + Position.posY) -
-            (obj.Height / 2.f + obj.Position.posY);
+        int distY = (int)(((float)Height / 2.f + (float)Position.posY) -
+            ((float)obj.Height / 2.f + (float)obj.Position.posY));
         return distY;
     }
 };

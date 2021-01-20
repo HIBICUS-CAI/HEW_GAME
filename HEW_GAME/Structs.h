@@ -404,7 +404,7 @@ struct SPRITE
     POSITION_2D Position;
     int Width;
     int Height;
-    int SpriteBuffer[SPRITE_MAX_HEIGHT * SPRITE_MAX_WIDTH];
+    char SpriteBuffer[SPRITE_MAX_HEIGHT * SPRITE_MAX_WIDTH];
     int Color;
     int Visible;
 
@@ -441,7 +441,7 @@ struct SPRITE
         }
     }
 
-    int* GetSpriteBuffer()
+    char* GetSpriteBuffer()
     {
         return SpriteBuffer;
     }
@@ -470,15 +470,15 @@ struct SPRITE
     }
 };
 
-#define SIZE_PER_OBJSPRITE 5
+#define SIZE_PER_OBJSPRITE 60
 /// <summary>
 /// 複数ありスプライトの集合体
 /// </summary>
-struct OBJECTSPRITE
+struct SPRITE_ANIME
 {
     SPRITE SubSprites[SIZE_PER_OBJSPRITE];
 
-    OBJECTSPRITE()
+    SPRITE_ANIME()
     {
         for (int i = 0; i < SIZE_PER_OBJSPRITE; i++)
         {
