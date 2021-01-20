@@ -41,6 +41,10 @@ void DrawSingleSpriteToUpdateBuffer(SPRITE* sprite)
     {
         for (int j = 0; j < sprite->Width; j++)
         {
+            if (*(sprite->GetSpriteBuffer() + i * sprite->Width + j) == ' ')
+            {
+                continue;
+            }
             *(GetOutputBufferToUpdate() + startIndex + i * CONSOLE_WIDTH + j) =
                 *(sprite->GetSpriteBuffer() + i * sprite->Width + j);
         }
@@ -49,5 +53,37 @@ void DrawSingleSpriteToUpdateBuffer(SPRITE* sprite)
 
 SPRITE_ANIME CreateSpriteAnimator(int frameCount, const char* fileName, POSITION_2D position, int width, int height)
 {
+    if (frameCount > MAXSIZE_PER_SPRITE_FRAME)
+    {
+        ErrorLogI1("this animator frame count has overflowed as", frameCount);
+        return SPRITE_ANIME();
+    }
 
+    char fileNameWithID[128];
+    FILE* pKeyFrameFile = NULL;
+    SPRITE_ANIME tempSpriteAnimator = SPRITE_ANIME();
+    for (int i = 0; i < frameCount; i++)
+    {
+        sprintf_s(fileNameWithID, sizeof(fileNameWithID), "%s%d.txt", fileName, i + 1);
+        tempSpriteAnimator.SetSubSpriteByOffset(CreateSingleSprite(fileNameWithID, position, width, height),
+            i * (MAXSIZE_PER_SPRITE_FRAME / frameCount));
+    }
+
+    return tempSpriteAnimator;
+}
+
+void DrawSpriteAnimatorToUpdateBuffer(SPRITE_ANIME* spriteAnimator, int offset)
+{
+    if (!spriteAnimator->GetSubSpriteByOffset(offset)->Visible)
+    {
+        if (!offset)
+        {
+            return;
+        }
+        DrawSpriteAnimatorToUpdateBuffer(spriteAnimator, --offset);
+        return;
+    }
+
+    DrawSingleSpriteToUpdateBuffer(spriteAnimator->GetSubSpriteByOffset(offset));
+    DebugLogI1("offset: ", offset);
 }

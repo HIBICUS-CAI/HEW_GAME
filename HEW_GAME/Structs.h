@@ -394,8 +394,8 @@ struct Object
     }
 };
 
-#define SPRITE_MAX_WIDTH 180
-#define SPRITE_MAX_HEIGHT 60
+#define SPRITE_MAX_WIDTH 80
+#define SPRITE_MAX_HEIGHT 40
 /// <summary>
 /// е╣е╫ещеде╚ШЛ╘ь╠х
 /// </summary>

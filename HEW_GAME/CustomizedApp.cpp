@@ -5,14 +5,15 @@
 
 
 //---------------------
-SPRITE g_TestSprite;
+SPRITE_ANIME g_TestSprite;
+int g_TestOffset = 0;
 
 void AppInit()
 {
     InitSceneNodes();
 
 
-    g_TestSprite = CreateSingleSprite("AsciiDraw.txt", POSITION_2D(5, 5), 30, 13);
+    g_TestSprite = CreateSpriteAnimator(3, "AsciiDraw", POSITION_2D(5, 5), 15, 13);
 }
 
 void AppUpdate()
@@ -21,7 +22,7 @@ void AppUpdate()
 
     //DrawScene(GetManagedCurrScene());
 
-    DrawSingleSpriteToUpdateBuffer(&g_TestSprite);
+    DrawSpriteAnimatorToUpdateBuffer(&g_TestSprite, (g_TestOffset++) % 60);
 }
 
 void AppTurnOff()

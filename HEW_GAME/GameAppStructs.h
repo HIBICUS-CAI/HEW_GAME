@@ -106,17 +106,17 @@ struct OBJECT
     }
 };
 
-#define SIZE_PER_OBJSPRITE 60
+#define MAXSIZE_PER_SPRITE_FRAME 60
 /// <summary>
 /// 複数ありスプライトの集合体
 /// </summary>
 struct SPRITE_ANIME
 {
-    SPRITE SubSprites[SIZE_PER_OBJSPRITE];
+    SPRITE SubSprites[MAXSIZE_PER_SPRITE_FRAME];
 
     SPRITE_ANIME()
     {
-        for (int i = 0; i < SIZE_PER_OBJSPRITE; i++)
+        for (int i = 0; i < MAXSIZE_PER_SPRITE_FRAME; i++)
         {
             SubSprites[i] = SPRITE();
         }

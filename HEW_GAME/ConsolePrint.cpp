@@ -134,7 +134,7 @@ void PrintOutputBuffer()
 
         LeaveCriticalSection(GetPrintCS());
 
-        Sleep(DELTATIME * 3 / 2);
+        Sleep(DELTATIME);
         SuspendThread(GetPrintHandle());
     }
 #else
