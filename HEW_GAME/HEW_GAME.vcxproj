@@ -154,6 +154,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SpriteAnimator.cpp" />
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="UIObject.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="LogsOutput.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneNode.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SpriteAnimator.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="Tools.h" />

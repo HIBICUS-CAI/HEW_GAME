@@ -60,6 +60,9 @@
     <ClCompile Include="SpriteAnimator.cpp">
       <Filter>GameApp</Filter>
     </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="SpriteAnimator.h">
       <Filter>GameApp</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

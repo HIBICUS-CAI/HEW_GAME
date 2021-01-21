@@ -464,7 +464,18 @@ struct SPRITE
 
 struct SOUNDFILE_IN_MEMBITE
 {
+    int IsUsing;
     char SoundName[64];
     BYTE* SoundFileInBites;
+    BYTE* SoundFileInBitesWithVolume;
     DWORD SoundFileSize;
+
+    SOUNDFILE_IN_MEMBITE()
+    {
+        IsUsing = 0;
+        strcpy_s(SoundName, sizeof(SoundName), "");
+        SoundFileInBites = NULL;
+        SoundFileInBitesWithVolume = NULL;
+        SoundFileSize = 0;
+    }
 };

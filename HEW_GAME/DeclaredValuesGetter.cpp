@@ -141,3 +141,24 @@ void SetAutoSelectBtnFlag(int value)
 {
     g_AutoSelectBtnFlag = value;
 }
+
+SOUNDFILE_IN_MEMBITE g_LoadedSoundInBites[SOUNDFILE_SIZE];
+
+SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBitesArray()
+{
+    return g_LoadedSoundInBites;
+}
+
+SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* fileName)
+{
+    for (int i = 0; i < SOUNDFILE_SIZE; i++)
+    {
+        if (!(strcmp(g_LoadedSoundInBites[i].SoundName, fileName)) && g_LoadedSoundInBites[i].IsUsing)
+        {
+            return g_LoadedSoundInBites + i;
+        }
+    }
+
+    ErrorLog("cannot find this sound bites, plz try angin");
+    return NULL;
+}

@@ -6,6 +6,7 @@
 #include "UIObject.h"
 #include "Tools.h"
 #include "CustomizedApp.h"
+#include "SoundManager.h"
 
 int Init()
 {
@@ -19,6 +20,7 @@ int Init()
     InitInputQueue();
     InitOutputBuffer();
     InitTitle();
+    InitSoundInBitesArray();
 
     AppInit();
 

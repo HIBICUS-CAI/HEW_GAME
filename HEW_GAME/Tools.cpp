@@ -150,7 +150,7 @@ int RoundFloatToInt(float value)
     }
 }
 
-void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, DWORD* fileSize)
+void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, BYTE** pMemBitesWithVol, DWORD* fileSize)
 {
     std::ifstream file(fname, std::ios::binary);
 
@@ -159,9 +159,33 @@ void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, DWORD* fileSize)
     *fileSize = lim;
 
     *pMemBites = new BYTE[lim];
+    *pMemBitesWithVol = new BYTE[lim];
     file.seekg(0, std::ios::beg);
 
     file.read((char*)*pMemBites, lim);
 
     file.close();
+}
+
+//----------------
+void TestBGM()
+{
+    // ファイル書き込み
+    DWORD dwFileSize;
+    BYTE* pFileBytes;
+    ReadWavFileIntoMemory("C:\\dev\\loop100404.wav", &pFileBytes, &pFileBytes, &dwFileSize);
+
+    // 音量変更
+    BYTE* pDataOffset = (pFileBytes + 40);
+
+    float fVolume = 0.2f;
+
+    __int16* p = (__int16*)(pDataOffset + 8);
+    for (unsigned int i = 80 / sizeof(*p); i < dwFileSize / sizeof(*p); i++)
+    {
+        p[i] = (float)p[i] * fVolume;
+    }
+
+    // 音楽再生
+    PlaySound((LPCSTR)pFileBytes, NULL, SND_MEMORY | SND_ASYNC);
 }

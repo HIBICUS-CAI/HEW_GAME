@@ -129,3 +129,18 @@ int* GetAutoSelectBtnFlag();
 /// </summary>
 /// <param name="value">記号の値</param>
 void SetAutoSelectBtnFlag(int value);
+
+#define SOUNDFILE_SIZE 64
+
+/// <summary>
+/// 格納されたの音声ファイル配列を取得
+/// </summary>
+/// <returns>格納されたの音声ファイル配列指向のポインタ</returns>
+SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBitesArray();
+
+/// <summary>
+/// 名前によって格納されたの音声ファイルを取得
+/// </summary>
+/// <param name="fileName">格納された音声ファイルの名前</param>
+/// <returns>格納された音声ファイル指向のポインタ</returns>
+SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* fileName);

@@ -114,5 +114,8 @@ int RoundFloatToInt(float value);
 /// </summary>
 /// <param name="fname">音声ファイル名</param>
 /// <param name="pMemBites">書き込められたメモリ指向のポインタ</param>
+/// <param name="pMemBitesWithVol">音量付き書き込められたメモリ指向のポインタ</param>
 /// <param name="fileSize">音声ファイルのサイズ</param>
-void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, DWORD* fileSize);
+void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, BYTE** pMemBitesWithVol, DWORD* fileSize);
+
+void TestBGM();
