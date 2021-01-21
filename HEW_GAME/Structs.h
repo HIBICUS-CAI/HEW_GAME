@@ -461,3 +461,10 @@ struct SPRITE
         return POSITION_2D(posX, posY);
     }
 };
+
+struct SOUNDFILE_IN_MEMBITE
+{
+    char SoundName[64];
+    BYTE* SoundFileInBites;
+    DWORD SoundFileSize;
+};

@@ -12,6 +12,18 @@ int GetDeltaTime()
     return GetDeclaredDeltaTime();
 }
 
+int GetRealDeltaTime()
+{
+    if (GetDeltaTime() < 16)
+    {
+        return DELTATIME;
+    }
+    else
+    {
+        return GetDeltaTime();
+    }
+}
+
 void ShowFPSMT()
 {
     while (1)
@@ -128,7 +140,7 @@ void ResetColorInConsole()
 int RoundFloatToInt(float value)
 {
     float decimal = value - (float)((int)value);
-    if (decimal<0.5f)
+    if (decimal < 0.5f)
     {
         return (int)value;
     }

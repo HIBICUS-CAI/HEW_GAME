@@ -23,6 +23,12 @@ void SetDeltaTime(int time);
 int GetDeltaTime();
 
 /// <summary>
+/// 現実に前回の循環かかったの時間を取得
+/// </summary>
+/// <returns>現実に前回の循環かかったの時間</returns>
+int GetRealDeltaTime();
+
+/// <summary>
 /// 前回の循環時間によってＦＰＳを計算、出力する
 /// </summary>
 void ShowFPSMT();
@@ -96,6 +102,17 @@ void ChangeColorInConsole(int color);
 /// </summary>
 void ResetColorInConsole();
 
+/// <summary>
+/// フロート型の値を大きさによってイント型に変更する
+/// </summary>
+/// <param name="value">変更させたい値</param>
+/// <returns>変更されたの値</returns>
 int RoundFloatToInt(float value);
 
-void ReadWavFileIntoMemory(const char* fname, BYTE** pb, DWORD* fsize);
+/// <summary>
+/// ＷＡＶファイルをメモリの中に書き込む
+/// </summary>
+/// <param name="fname">音声ファイル名</param>
+/// <param name="pMemBites">書き込められたメモリ指向のポインタ</param>
+/// <param name="fileSize">音声ファイルのサイズ</param>
+void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, DWORD* fileSize);
