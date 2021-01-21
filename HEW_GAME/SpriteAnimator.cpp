@@ -85,5 +85,4 @@ void DrawSpriteAnimatorToUpdateBuffer(SPRITE_ANIME* spriteAnimator, int offset)
     }
 
     DrawSingleSpriteToUpdateBuffer(spriteAnimator->GetSubSpriteByOffset(offset));
-    DebugLogI1("offset: ", offset);
 }
