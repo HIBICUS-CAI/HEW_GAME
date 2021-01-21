@@ -95,3 +95,7 @@ void ChangeColorInConsole(int color);
 /// ¥³¥ó¥½©`¥ë¤ÎÉ«¤ò¥ê¥»¥Ã¥È
 /// </summary>
 void ResetColorInConsole();
+
+int RoundFloatToInt(float value);
+
+void ReadWavFileIntoMemory(const char* fname, BYTE** pb, DWORD* fsize);

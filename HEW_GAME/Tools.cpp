@@ -1,3 +1,4 @@
+#include <fstream>
 #include "Tools.h"
 #include "DeclaredValues.h"
 
@@ -122,4 +123,33 @@ void ChangeColorInConsole(int color)
 void ResetColorInConsole()
 {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), BLACK_WHITE);
+}
+
+int RoundFloatToInt(float value)
+{
+    float decimal = value - (float)((int)value);
+    if (decimal<0.5f)
+    {
+        return (int)value;
+    }
+    else
+    {
+        return (int)value + 1;
+    }
+}
+
+void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, DWORD* fileSize)
+{
+    std::ifstream file(fname, std::ios::binary);
+
+    file.seekg(0, std::ios::end);
+    int lim = file.tellg();
+    *fileSize = lim;
+
+    *pMemBites = new BYTE[lim];
+    file.seekg(0, std::ios::beg);
+
+    file.read((char*)*pMemBites, lim);
+
+    file.close();
 }
