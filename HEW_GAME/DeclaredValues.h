@@ -144,3 +144,17 @@ SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBitesArray();
 /// <param name="fileName">格納された音声ファイルの名前</param>
 /// <returns>格納された音声ファイル指向のポインタ</returns>
 SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* fileName);
+
+#define SOUNDHANDLE_SIZE 8
+
+/// <summary>
+/// 音声ハンドル配列を取得
+/// </summary>
+/// <returns>音声ハンドル配列に指向のポインタ</returns>
+SOUND_THREAD_HANDLE* GetSoundHandleArray();
+
+/// <summary>
+/// 使っていない音声ハンドルを取得
+/// </summary>
+/// <returns>使っていない音声ハンドル構造体指向のポインタ</returns>
+SOUND_THREAD_HANDLE* GetSoundHandleThatNotUsing();

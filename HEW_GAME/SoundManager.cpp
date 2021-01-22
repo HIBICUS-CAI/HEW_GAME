@@ -6,6 +6,11 @@
 
 void InitSoundInBitesArray()
 {
+    for (int i = 0; i < SOUNDHANDLE_SIZE; i++)
+    {
+        *(GetSoundHandleArray() + i) = SOUND_THREAD_HANDLE();
+    }
+
     for (int i = 0; i < SOUNDFILE_SIZE; i++)
     {
         *(GetSoundFilesInMemBitesArray() + i) = SOUNDFILE_IN_MEMBITE();
@@ -68,6 +73,7 @@ void ChangeSoundFileVolume(SOUNDFILE_IN_MEMBITE* sound, float vol)
 
 void PlayBackgroundMusic(SOUNDFILE_IN_MEMBITE* sound)
 {
+    // TODO also fixed this by running a new process
     if (sound == NULL)
     {
         DebugLog("this sound doesn't exist, ready to stop what is playing now");
@@ -81,5 +87,25 @@ void PlayBackgroundMusic(SOUNDFILE_IN_MEMBITE* sound)
 
 void PlayEffectSound(SOUNDFILE_IN_MEMBITE* sound)
 {
+    // TODO fixed this by running a new process
+    SOUND_THREAD_HANDLE* temp = NULL;
+    temp = GetSoundHandleThatNotUsing();
 
+    temp->IsUsing = 1;
+    temp->SoundHandle = CreateThread(NULL, 0,
+        (LPTHREAD_START_ROUTINE)PlaySingleSoundOnce, sound, 0, NULL);
+}
+
+void PlaySingleSoundOnce(SOUNDFILE_IN_MEMBITE* sound)
+{
+    // TODO fixed this by running a new process
+    if (sound == NULL)
+    {
+        DebugLog("this sound doesn't exist");
+        PlaySound(NULL, NULL, SND_MEMORY);
+    }
+    else
+    {
+        PlaySound((LPCSTR)sound->SoundFileInBitesWithVolume, NULL, SND_MEMORY);
+    }
 }

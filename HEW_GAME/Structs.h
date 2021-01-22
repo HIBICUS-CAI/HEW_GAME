@@ -479,3 +479,15 @@ struct SOUNDFILE_IN_MEMBITE
         SoundFileSize = 0;
     }
 };
+
+struct SOUND_THREAD_HANDLE
+{
+    int IsUsing;
+    HANDLE SoundHandle;
+
+    SOUND_THREAD_HANDLE()
+    {
+        IsUsing = 0;
+        SoundHandle = NULL;
+    }
+};

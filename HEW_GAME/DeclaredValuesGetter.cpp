@@ -162,3 +162,24 @@ SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* fileName)
     ErrorLog("cannot find this sound bites, plz try angin");
     return NULL;
 }
+
+SOUND_THREAD_HANDLE g_SoundHandles[SOUNDHANDLE_SIZE];
+
+SOUND_THREAD_HANDLE* GetSoundHandleArray()
+{
+    return g_SoundHandles;
+}
+
+SOUND_THREAD_HANDLE* GetSoundHandleThatNotUsing()
+{
+    for (int i = 0; i < SOUNDHANDLE_SIZE; i++)
+    {
+        if (!g_SoundHandles[i].IsUsing)
+        {
+            return g_SoundHandles + i;
+        }
+    }
+
+    ErrorLog("all sound handle have been used");
+    return NULL;
+}
