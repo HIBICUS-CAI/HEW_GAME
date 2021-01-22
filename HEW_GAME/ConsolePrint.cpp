@@ -140,14 +140,14 @@ void PrintOutputBuffer()
         LeaveCriticalSection(GetPrintCS());
 
         int end = clock();
-        DebugLogI1("time:", end - start);
+        //DebugLogI1("time:", end - start);
 
         if (end - start < DELTATIME)
         {
             Sleep(DELTATIME - end + start);
-    }
+        }
         SuspendThread(GetPrintHandle());
-}
+    }
 #else
     system("cls");
 
