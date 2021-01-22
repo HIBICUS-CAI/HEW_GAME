@@ -76,7 +76,12 @@ void PrintOutputBuffer()
 
     while (1)
     {
-        system("cls");
+        int start = clock();
+        //system("cls");
+        COORD ppp;
+        ppp.X = 0;
+        ppp.Y = 0;
+        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), ppp);
         if (GetSelectedBtn() != NULL)
         {
             UI_BUTTON temp = *(GetSelectedBtn());
@@ -134,9 +139,15 @@ void PrintOutputBuffer()
 
         LeaveCriticalSection(GetPrintCS());
 
-        Sleep(DELTATIME * 3 / 2);
-        SuspendThread(GetPrintHandle());
+        int end = clock();
+        DebugLogI1("time:", end - start);
+
+        if (end - start < DELTATIME)
+        {
+            Sleep(DELTATIME - end + start);
     }
+        SuspendThread(GetPrintHandle());
+}
 #else
     system("cls");
 
