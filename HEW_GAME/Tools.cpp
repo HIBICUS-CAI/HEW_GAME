@@ -166,26 +166,3 @@ void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, BYTE** pMemBites
 
     file.close();
 }
-
-//----------------
-void TestBGM()
-{
-    // ファイル書き込み
-    DWORD dwFileSize;
-    BYTE* pFileBytes;
-    ReadWavFileIntoMemory("C:\\dev\\loop100404.wav", &pFileBytes, &pFileBytes, &dwFileSize);
-
-    // 音量変更
-    BYTE* pDataOffset = (pFileBytes + 40);
-
-    float fVolume = 0.2f;
-
-    __int16* p = (__int16*)(pDataOffset + 8);
-    for (unsigned int i = 80 / sizeof(*p); i < dwFileSize / sizeof(*p); i++)
-    {
-        p[i] = (float)p[i] * fVolume;
-    }
-
-    // 音楽再生
-    PlaySound((LPCSTR)pFileBytes, NULL, SND_MEMORY | SND_ASYNC);
-}

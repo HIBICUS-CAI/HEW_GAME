@@ -117,5 +117,3 @@ int RoundFloatToInt(float value);
 /// <param name="pMemBitesWithVol">╥Ї┴┐╕╢днХ°дн▐zдсдщдьд┐есетеъ╓╕╧Єд╬е▌едеєе┐</param>
 /// <param name="fileSize">╥Ї╔∙е╒ебедеыд╬е╡еде║</param>
 void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, BYTE** pMemBitesWithVol, DWORD* fileSize);
-
-void TestBGM();
