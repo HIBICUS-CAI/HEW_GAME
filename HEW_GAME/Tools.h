@@ -109,6 +109,7 @@ void ResetColorInConsole();
 /// <returns>変更されたの値</returns>
 int RoundFloatToInt(float value);
 
+#ifndef SOUNDBYHAL
 /// <summary>
 /// ＷＡＶファイルをメモリの中に書き込む
 /// </summary>
@@ -116,4 +117,6 @@ int RoundFloatToInt(float value);
 /// <param name="pMemBites">書き込められたメモリ指向のポインタ</param>
 /// <param name="pMemBitesWithVol">音量付き書き込められたメモリ指向のポインタ</param>
 /// <param name="fileSize">音声ファイルのサイズ</param>
-void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, BYTE** pMemBitesWithVol, DWORD* fileSize);
+void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites,
+    BYTE** pMemBitesWithVol, DWORD* fileSize);
+#endif // SOUNDBYHAL

@@ -142,18 +142,35 @@ void SetAutoSelectBtnFlag(int value)
     g_AutoSelectBtnFlag = value;
 }
 
+#ifdef SOUNDBYHAL
+SOUNDFILE_LOADED g_LoadedSoundInBites[SOUNDFILE_SIZE];
+#else
 SOUNDFILE_IN_MEMBITE g_LoadedSoundInBites[SOUNDFILE_SIZE];
+#endif // SOUNDBYHAL
 
+#ifdef SOUNDBYHAL
+SOUNDFILE_LOADED* GetSoundFilesInMemBitesArray()
+#else
 SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBitesArray()
+#endif // SOUNDBYHAL
 {
+#ifdef SOUNDBYHAL
     return g_LoadedSoundInBites;
+#else
+    return g_LoadedSoundInBites;
+#endif // SOUNDBYHAL
 }
 
-SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* fileName)
+#ifdef SOUNDBYHAL
+SOUNDFILE_LOADED* GetSoundFilesInMemBites(const char* soundName)
+#else
+SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* soundName)
+#endif // SOUNDBYHAL
 {
+#ifdef SOUNDBYHAL
     for (int i = 0; i < SOUNDFILE_SIZE; i++)
     {
-        if (!(strcmp(g_LoadedSoundInBites[i].SoundName, fileName)) && g_LoadedSoundInBites[i].IsUsing)
+        if (!(strcmp(g_LoadedSoundInBites[i].SoundName, soundName)) && g_LoadedSoundInBites[i].IsUsing)
         {
             return g_LoadedSoundInBites + i;
         }
@@ -161,8 +178,21 @@ SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* fileName)
 
     ErrorLog("cannot find this sound bites, plz try angin");
     return NULL;
+#else
+    for (int i = 0; i < SOUNDFILE_SIZE; i++)
+    {
+        if (!(strcmp(g_LoadedSoundInBites[i].SoundName, soundName)) && g_LoadedSoundInBites[i].IsUsing)
+        {
+            return g_LoadedSoundInBites + i;
+        }
+    }
+
+    ErrorLog("cannot find this sound bites, plz try angin");
+    return NULL;
+#endif // SOUNDBYHAL
 }
 
+#ifndef SOUNDBYHAL
 SOUND_THREAD_HANDLE g_SoundHandles[SOUNDHANDLE_SIZE];
 
 SOUND_THREAD_HANDLE* GetSoundHandleArray()
@@ -183,3 +213,4 @@ SOUND_THREAD_HANDLE* GetSoundHandleThatNotUsing()
     ErrorLog("all sound handle have been used");
     return NULL;
 }
+#endif // !SOUNDBYHAL

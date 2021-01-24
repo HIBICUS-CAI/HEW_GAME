@@ -132,18 +132,37 @@ void SetAutoSelectBtnFlag(int value);
 
 #define SOUNDFILE_SIZE 64
 
+#ifdef SOUNDBYHAL
+/// <summary>
+/// 格納されたの音声ファイル配列を取得
+/// </summary>
+/// <returns>格納されたの音声ファイル配列指向のポインタ</returns>
+SOUNDFILE_LOADED* GetSoundFilesInMemBitesArray();
+#else
 /// <summary>
 /// 格納されたの音声ファイル配列を取得
 /// </summary>
 /// <returns>格納されたの音声ファイル配列指向のポインタ</returns>
 SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBitesArray();
+#endif // SOUNDBYHAL
 
+#ifdef SOUNDBYHAL
+/// <summary>
+/// 名前によって格納されたの音声ファイルを取得
+/// </summary>
+/// <param name="fileName">格納された音声ファイルの名前</param>
+/// <returns>格納された音声ファイル指向のポインタ</returns>
+SOUNDFILE_LOADED* GetSoundFilesInMemBites(const char* soundName);
+#else
 /// <summary>
 /// 名前によって格納されたの音声ファイルを取得
 /// </summary>
 /// <param name="fileName">格納された音声ファイルの名前</param>
 /// <returns>格納された音声ファイル指向のポインタ</returns>
 SOUNDFILE_IN_MEMBITE* GetSoundFilesInMemBites(const char* fileName);
+#endif // SOUNDBYHAL
+
+#ifndef SOUNDBYHAL
 
 #define SOUNDHANDLE_SIZE 8
 
@@ -158,3 +177,5 @@ SOUND_THREAD_HANDLE* GetSoundHandleArray();
 /// </summary>
 /// <returns>使っていない音声ハンドル構造体指向のポインタ</returns>
 SOUND_THREAD_HANDLE* GetSoundHandleThatNotUsing();
+
+#endif // !SOUNDBYHAL

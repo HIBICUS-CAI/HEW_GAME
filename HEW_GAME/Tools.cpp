@@ -150,6 +150,7 @@ int RoundFloatToInt(float value)
     }
 }
 
+#ifndef SOUNDBYHAL
 void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, BYTE** pMemBitesWithVol, DWORD* fileSize)
 {
     std::ifstream file(fname, std::ios::binary);
@@ -166,3 +167,4 @@ void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites, BYTE** pMemBites
 
     file.close();
 }
+#endif // !SOUNDBYHAL

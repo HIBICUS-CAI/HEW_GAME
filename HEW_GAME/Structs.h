@@ -462,6 +462,23 @@ struct SPRITE
     }
 };
 
+#ifdef SOUNDBYHAL
+struct SOUNDFILE_LOADED
+{
+    int IsUsing;
+    int AlwaysNeed;
+    int Handle;
+    char SoundName[64];
+
+    SOUNDFILE_LOADED()
+    {
+        IsUsing = 0;
+        AlwaysNeed = 0;
+        Handle = 0;
+        strcpy_s(SoundName, sizeof(SoundName), "");
+    }
+};
+#else
 struct SOUNDFILE_IN_MEMBITE
 {
     int IsUsing;
@@ -491,3 +508,4 @@ struct SOUND_THREAD_HANDLE
         SoundHandle = NULL;
     }
 };
+#endif // SOUNDBYHAL

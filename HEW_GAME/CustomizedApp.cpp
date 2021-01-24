@@ -7,6 +7,12 @@
 void AppInit()
 {
     InitSceneNodes();
+
+    //--------------------------------
+    LoadSound("grass.mp3", "testbgm");
+    ChangeSoundFileVolume("testbgm", 80);
+    LoadSound("111222.mp3", "key", 1);
+    PlayBackgroundMusic(GetSoundFile("testbgm"));
 }
 
 void AppUpdate()
@@ -28,7 +34,10 @@ void AppPostPrint()
 
 void AppKeyboardEvent(int keyCode)
 {
-
+    if (keyCode == O_VALUE)
+    {
+        PlayEffectSound(GetSoundFile("key"));
+    }
 }
 
 void AppButtonEvent(int value)

@@ -1,11 +1,21 @@
 #include "SoundManager.h"
 #include "DeclaredValues.h"
+
+#ifdef SOUNDBYHAL
+#include "conioex.h"
+#else
 #include "Tools.h"
-
 #pragma comment(lib, "Winmm.lib")
+#endif // SOUNDBYHAL
 
-void InitSoundInBitesArray()
+void InitSoundSys()
 {
+#ifdef SOUNDBYHAL
+    for (int i = 0; i < SOUNDFILE_SIZE; i++)
+    {
+        *(GetSoundFilesInMemBitesArray() + i) = SOUNDFILE_LOADED();
+    }
+#else
     for (int i = 0; i < SOUNDHANDLE_SIZE; i++)
     {
         *(GetSoundHandleArray() + i) = SOUND_THREAD_HANDLE();
@@ -15,10 +25,43 @@ void InitSoundInBitesArray()
     {
         *(GetSoundFilesInMemBitesArray() + i) = SOUNDFILE_IN_MEMBITE();
     }
+#endif // SOUNDBYHAL
 }
 
-void LoadWavSoundToSoundInBitesArray(const char* fileName, const char* soundName)
+void LoadSound(const char* fileName, const char* soundName,
+    int isAlwaysNeed)
 {
+#ifdef SOUNDBYHAL
+    SOUNDFILE_LOADED* soundNotLoaded = NULL;
+    for (int i = 0; i < SOUNDFILE_SIZE; i++)
+    {
+        if (!(GetSoundFilesInMemBitesArray() + i)->IsUsing)
+        {
+            soundNotLoaded = GetSoundFilesInMemBitesArray() + i;
+            soundNotLoaded->Handle = opensound((char*)fileName);
+            if (soundNotLoaded->Handle != 0)
+            {
+                strcpy_s(soundNotLoaded->SoundName,
+                    sizeof(soundNotLoaded->SoundName), soundName);
+                soundNotLoaded->IsUsing = 1;
+                soundNotLoaded->AlwaysNeed = isAlwaysNeed;
+                break;
+            }
+            else
+            {
+                ErrorLog("cannot load this sound");
+                return;
+            }
+        }
+    }
+    if (soundNotLoaded == NULL)
+    {
+        ErrorLog("all items in sound array have been used");
+        return;
+    }
+
+    ChangeSoundFileVolume(soundNotLoaded, 20);
+#else
     SOUNDFILE_IN_MEMBITE* soundNotLoaded = NULL;
     for (int i = 0; i < SOUNDFILE_SIZE; i++)
     {
@@ -39,15 +82,28 @@ void LoadWavSoundToSoundInBitesArray(const char* fileName, const char* soundName
     ReadWavFileIntoMemory(fileName, &(soundNotLoaded->SoundFileInBites), &(soundNotLoaded->SoundFileInBitesWithVolume),
         &(soundNotLoaded->SoundFileSize));
     ChangeSoundFileVolume(soundNotLoaded, 0.2);
+#endif // SOUNDBYHAL
 }
 
+#ifdef SOUNDBYHAL
+SOUNDFILE_LOADED* GetSoundFile(const char* soundName)
+#else
 SOUNDFILE_IN_MEMBITE* GetSoundFile(const char* soundName)
+#endif // SOUNDBYHAL
 {
     return GetSoundFilesInMemBites(soundName);
 }
 
+#ifdef SOUNDBYHAL
+void ChangeSoundFileVolume(const char* soundName, int vol)
+#else
 void ChangeSoundFileVolume(const char* soundName, float vol)
+#endif // SOUNDBYHAL
 {
+#ifdef SOUNDBYHAL
+    SOUNDFILE_LOADED* sound = GetSoundFile(soundName);
+    setvolume(sound->Handle, vol);
+#else
     SOUNDFILE_IN_MEMBITE* sound = GetSoundFile(soundName);
     *(sound->SoundFileInBitesWithVolume) = *(sound->SoundFileInBites);
     BYTE* pDataOffset = (sound->SoundFileInBitesWithVolume + 40);
@@ -57,10 +113,18 @@ void ChangeSoundFileVolume(const char* soundName, float vol)
     {
         p[i] = (float)p[i] * vol;
     }
+#endif // SOUNDBYHAL
 }
 
+#ifdef SOUNDBYHAL
+void ChangeSoundFileVolume(SOUNDFILE_LOADED* sound, int vol)
+#else
 void ChangeSoundFileVolume(SOUNDFILE_IN_MEMBITE* sound, float vol)
+#endif // SOUNDBYHAL
 {
+#ifdef SOUNDBYHAL
+    setvolume(sound->Handle, vol);
+#else
     (sound->SoundFileInBitesWithVolume) = (sound->SoundFileInBites);
     BYTE* pDataOffset = (sound->SoundFileInBitesWithVolume + 40);
 
@@ -69,10 +133,25 @@ void ChangeSoundFileVolume(SOUNDFILE_IN_MEMBITE* sound, float vol)
     {
         p[i] = (float)p[i] * vol;
     }
+#endif // SOUNDBYHAL
 }
 
+#ifdef SOUNDBYHAL
+void PlayBackgroundMusic(SOUNDFILE_LOADED* sound)
+#else
 void PlayBackgroundMusic(SOUNDFILE_IN_MEMBITE* sound)
+#endif // SOUNDBYHAL
 {
+#ifdef SOUNDBYHAL
+    if (sound == NULL)
+    {
+        ErrorLog("this sound doesn't exist");
+    }
+    else
+    {
+        playsound(sound->Handle, 1);
+    }
+#else
     // TODO also fixed this by running a new process
     if (sound == NULL)
     {
@@ -83,10 +162,25 @@ void PlayBackgroundMusic(SOUNDFILE_IN_MEMBITE* sound)
     {
         PlaySound((LPCSTR)sound->SoundFileInBitesWithVolume, NULL, SND_MEMORY | SND_ASYNC | SND_LOOP);
     }
+#endif // SOUNDBYHAL
 }
 
+#ifdef SOUNDBYHAL
+void PlayEffectSound(SOUNDFILE_LOADED* sound)
+#else
 void PlayEffectSound(SOUNDFILE_IN_MEMBITE* sound)
+#endif // SOUNDBYHAL
 {
+#ifdef SOUNDBYHAL
+    if (sound == NULL)
+    {
+        ErrorLog("this sound doesn't exist");
+    }
+    else
+    {
+        playsound(sound->Handle, 0);
+    }
+#else
     // TODO fixed this by running a new process
     SOUND_THREAD_HANDLE* temp = NULL;
     temp = GetSoundHandleThatNotUsing();
@@ -94,8 +188,10 @@ void PlayEffectSound(SOUNDFILE_IN_MEMBITE* sound)
     temp->IsUsing = 1;
     temp->SoundHandle = CreateThread(NULL, 0,
         (LPTHREAD_START_ROUTINE)PlaySingleSoundOnce, sound, 0, NULL);
+#endif // SOUNDBYHAL
 }
 
+#ifndef SOUNDBYHAL
 void PlaySingleSoundOnce(SOUNDFILE_IN_MEMBITE* sound)
 {
     // TODO fixed this by running a new process
@@ -109,9 +205,50 @@ void PlaySingleSoundOnce(SOUNDFILE_IN_MEMBITE* sound)
         PlaySound((LPCSTR)sound->SoundFileInBitesWithVolume, NULL, SND_MEMORY);
     }
 }
+#endif // !SOUNDBYHAL
 
-void TurnOffSoundInBites()
+void CheckAllSoundHasEnded()
 {
+#ifdef SOUNDBYHAL
+    for (int i = 0; i < SOUNDFILE_SIZE; i++)
+    {
+        if ((GetSoundFilesInMemBitesArray() + i)->IsUsing &&
+            !(GetSoundFilesInMemBitesArray() + i)->AlwaysNeed &&
+            !checksound(
+                (GetSoundFilesInMemBitesArray() + i)->Handle))
+        {
+            UninstallSound(GetSoundFilesInMemBitesArray() + i);
+        }
+    }
+#endif // SOUNDBYHAL
+}
+
+#ifdef SOUNDBYHAL
+void UninstallSound(SOUNDFILE_LOADED* sound)
+#else
+void UninstallSound(SOUNDFILE_IN_MEMBITE* sound)
+#endif // SOUNDBYHAL
+{
+#ifdef SOUNDBYHAL
+    closesound(sound->Handle);
+    *sound = SOUNDFILE_LOADED();
+#else
+
+#endif // SOUNDBYHAL
+}
+
+void TurnOffSoundSys()
+{
+#ifdef SOUNDBYHAL
+    for (int i = 0; i < SOUNDFILE_SIZE; i++)
+    {
+        if ((GetSoundFilesInMemBitesArray() + i)->IsUsing)
+        {
+            stopsound((GetSoundFilesInMemBitesArray() + i)->Handle);
+            UninstallSound(GetSoundFilesInMemBitesArray() + i);
+        }
+    }
+#else
     PlayBackgroundMusic(NULL);
     for (int i = 0; i < SOUNDFILE_SIZE; i++)
     {
@@ -119,4 +256,5 @@ void TurnOffSoundInBites()
         delete[](GetSoundFilesInMemBitesArray() + i)->SoundFileInBitesWithVolume;
         *(GetSoundFilesInMemBitesArray() + i) = SOUNDFILE_IN_MEMBITE();
     }
+#endif // SOUNDBYHAL
 }

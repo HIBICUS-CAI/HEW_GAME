@@ -20,7 +20,7 @@ int Init()
     InitInputQueue();
     InitOutputBuffer();
     InitTitle();
-    //InitSoundInBitesArray();
+    InitSoundSys();
 
     AppInit();
 
@@ -80,6 +80,7 @@ void TurnOff()
 {
     TurnOffMTInput();
     CloseTitle();
+    TurnOffSoundSys();
 #ifdef MUTIPRINT
     CloseMTPrint();
     DeleteCriticalSection(GetSwapChainCS());
@@ -97,7 +98,7 @@ void Update()
 #endif // MUTIPRINT
 
     UpdateOutputBuffer();
-
+    CheckAllSoundHasEnded();
     AppUpdate();
 
     //----------------------------------------------------

@@ -39,6 +39,8 @@
 #define MUTIPRINT
 #endif // RUNCONTINUOUS
 
+#define SOUNDBYHAL
+
 enum class TYPEID
 {
     UIObj,
