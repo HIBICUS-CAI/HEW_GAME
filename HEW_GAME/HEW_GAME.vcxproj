@@ -162,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="AppDeclared.h" />
     <ClInclude Include="ButtonEvents.h" />
+    <ClInclude Include="conioex.h" />
     <ClInclude Include="ConsolePrint.h" />
     <ClInclude Include="CustomizedApp.h" />
     <ClInclude Include="DeclaredValues.h" />
