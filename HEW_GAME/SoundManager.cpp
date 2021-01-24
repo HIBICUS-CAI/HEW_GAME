@@ -109,3 +109,14 @@ void PlaySingleSoundOnce(SOUNDFILE_IN_MEMBITE* sound)
         PlaySound((LPCSTR)sound->SoundFileInBitesWithVolume, NULL, SND_MEMORY);
     }
 }
+
+void TurnOffSoundInBites()
+{
+    PlayBackgroundMusic(NULL);
+    for (int i = 0; i < SOUNDFILE_SIZE; i++)
+    {
+        delete[](GetSoundFilesInMemBitesArray() + i)->SoundFileInBites;
+        delete[](GetSoundFilesInMemBitesArray() + i)->SoundFileInBitesWithVolume;
+        *(GetSoundFilesInMemBitesArray() + i) = SOUNDFILE_IN_MEMBITE();
+    }
+}

@@ -20,7 +20,7 @@ int Init()
     InitInputQueue();
     InitOutputBuffer();
     InitTitle();
-    InitSoundInBitesArray();
+    //InitSoundInBitesArray();
 
     AppInit();
 

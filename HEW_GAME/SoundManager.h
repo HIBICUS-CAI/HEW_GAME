@@ -57,3 +57,5 @@ void PlayEffectSound(SOUNDFILE_IN_MEMBITE* sound);
 /// </summary>
 /// <param name="sound">咄蕗に峺�鬚離櫂ぅ鵐�</param>
 void PlaySingleSoundOnce(SOUNDFILE_IN_MEMBITE* sound);
+
+void TurnOffSoundInBites();
