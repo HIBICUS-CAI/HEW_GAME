@@ -37,6 +37,7 @@
 #ifdef RUNCONTINUOUS
 #define LOCKFPS
 #define MUTIPRINT
+#define SHOWFPS
 #endif // RUNCONTINUOUS
 
 #define SOUNDBYHAL

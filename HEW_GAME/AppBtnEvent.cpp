@@ -1,0 +1,105 @@
+#include "AppBtnEvent.h"
+#include "GameAppStructs.h"
+#include "AppDeclared.h"
+#include "UIObject.h"
+#include "DeclaredValues.h"
+
+void TitleSceneBtnEvent(int value)
+{
+    UIOBJECT* tempUIO = NULL;
+
+    if (value == START_NEW_GAME)
+    {
+        DebugLog("ready to start game");
+    }
+    else if (value == LOAD_GAME_DATA)
+    {
+        DebugLog("ready to load data");
+        tempUIO = GetUIObjByName("load-data");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("title")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("title"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == GAME_SIMPLY_MANUAL)
+    {
+        DebugLog("ready to show manual");
+        tempUIO = GetUIObjByName("manual");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("title")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("title"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == THIS_GAME_LINK)
+    {
+        DebugLog("ready to show link");
+        tempUIO = GetUIObjByName("link");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("title")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("title"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == CLOSE_SAVE_DATA)
+    {
+        DebugLog("ready to close save-data");
+        tempUIO = GetUIObjByName("load-data");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == CLOSE_MANUAL)
+    {
+        DebugLog("ready to close manual");
+        tempUIO = GetUIObjByName("manual");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 2);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == CLOSE_LINK)
+    {
+        DebugLog("ready to close link");
+        tempUIO = GetUIObjByName("link");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 3);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+}

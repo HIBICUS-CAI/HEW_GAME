@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AppBtnEvent.cpp" />
     <ClCompile Include="AppDeclared.cpp" />
     <ClCompile Include="ButtonEvents.cpp" />
     <ClCompile Include="ConsolePrint.cpp" />
@@ -157,10 +158,13 @@
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SpriteAnimator.cpp" />
     <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="UIObjDeclarer.cpp" />
     <ClCompile Include="UIObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AppBtnEvent.h" />
     <ClInclude Include="AppDeclared.h" />
+    <ClInclude Include="AppTestScene.h" />
     <ClInclude Include="ButtonEvents.h" />
     <ClInclude Include="conioex.h" />
     <ClInclude Include="ConsolePrint.h" />

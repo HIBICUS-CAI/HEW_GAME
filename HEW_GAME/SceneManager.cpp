@@ -1,11 +1,11 @@
 #include "SceneManager.h"
+#include "SceneNode.h"
+#include "DeclaredValues.h"
 #include "AppDeclared.h"
+#include "AppTestScene.h"
 
-#define TITLESCENEFLAG 1
-#define SELECTIONSCENEFLAG 2
-#define MAZESCENEFLAG 3
-#define BATTLESCENEFLAG 4
-#define INPUTSCENEFLAG 5
+#define TESTSCENEFLAG 1
+
 int g_SceneFlag;
 
 void SetSceneFlag(int flag)
@@ -30,15 +30,40 @@ SCENENODE* GetManagedCurrScene()
 
 void InitCurrScene()
 {
-    
+    if (!strcmp(GetManagedCurrScene()->SceneName, "test"))
+    {
+        SetSceneFlag(TESTSCENEFLAG);
+        SetSelectedBtn(GetSceneNodeByName("test")->
+            BaseUIObj->Buttons);
+    }
 }
 
 void UpdateCurrScene()
 {
-    
+    switch (GetSceneFlag())
+    {
+    case TESTSCENEFLAG:
+        UpdateTestScene();
+        break;
+
+    default:
+        ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
+        break;
+    }
 }
 
 void SwitchSceneToName(const char* sceneName)
 {
-    
+    SCENENODE* scene = GetSceneNodeByName(sceneName);
+    if (scene == NULL)
+    {
+        if (!strcmp(sceneName, "test"))
+        {
+            InitTestScene();
+        }
+
+        scene = GetSceneNodeByName(sceneName);
+    }
+    SetManagedCurrScene(scene);
+    InitCurrScene();
 }

@@ -4,18 +4,21 @@
 #include "SpriteAnimator.h"
 #include "SoundManager.h"
 #include "UIObjDeclarer.h"
+#include "AppBtnEvent.h"
 
 void AppInit()
 {
     CreateAllUIObjs();
     InitSceneNodes();
+
+    SwitchSceneToName("test");
 }
 
 void AppUpdate()
 {
-    //UpdateCurrScene();
+    UpdateCurrScene();
 
-    //DrawScene(GetManagedCurrScene());
+    DrawScene(GetManagedCurrScene());
 }
 
 void AppTurnOff()
@@ -35,5 +38,5 @@ void AppKeyboardEvent(int keyCode)
 
 void AppButtonEvent(int value)
 {
-
+    TitleSceneBtnEvent(value);
 }

@@ -103,7 +103,7 @@ void PrintOutputBuffer()
             else
             {
                 COORD position;
-                position.X = temp.Position.posX;
+                /*position.X = temp.Position.posX;
                 position.Y = temp.Position.posY - 1;
                 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
                 ChangeColorInConsole(WHITE_BLACK);
@@ -111,19 +111,19 @@ void PrintOutputBuffer()
                 {
                     printf("-");
                 }
-                printf("\n");
-                position.X = temp.Position.posX;
+                printf("\n");*/
+                position.X = temp.Position.posX-2;
                 position.Y = temp.Position.posY;
                 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
-                printf("%s\n", temp.Text);
-                position.X = temp.Position.posX;
+                printf("¡¾%s¡¿", temp.Text);
+                /*position.X = temp.Position.posX;
                 position.Y = temp.Position.posY + 1;
                 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
                 for (int i = 0; i < temp.TextLength; i++)
                 {
                     printf("-");
                 }
-                ResetColorInConsole();
+                ResetColorInConsole();*/
             }
         }
         else
@@ -170,6 +170,7 @@ void UpdateOutputBuffer()
 {
     ClearOutputBuffer();
 
+#ifdef SHOWFPS
     int deltaTime = GetDeltaTime();
     if (!deltaTime)
     {
@@ -187,6 +188,7 @@ void UpdateOutputBuffer()
         WriteStrIntoOutputBufferByPos(POSITION_2D(0, 0),
             "¸üÐÂÓÃFPS: 100+");
     }
+#endif // SHOWFPS
 }
 
 void WriteCharIntoOutputBuffer(POSITION_2D position, const char text)

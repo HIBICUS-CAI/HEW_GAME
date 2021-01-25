@@ -8,6 +8,17 @@
 
 #define SCENENODESIZE 20
 
+#define START_NEW_GAME 0x0003
+#define LOAD_GAME_DATA 0x0004
+#define LOAD_DATA_1 0x0005
+#define LOAD_DATA_2 0x0006
+#define LOAD_DATA_3 0x0007
+#define GAME_SIMPLY_MANUAL 0x0008
+#define THIS_GAME_LINK 0x0009
+#define CLOSE_SAVE_DATA 0x000a
+#define CLOSE_MANUAL 0x000b
+#define CLOSE_LINK 0x000c
+
 /// <summary>
 /// •∑©`•Û≈‰¡–§Ú»°µ√
 /// </summary>

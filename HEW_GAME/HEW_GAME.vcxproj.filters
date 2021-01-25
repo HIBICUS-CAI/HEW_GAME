@@ -16,6 +16,9 @@
     <Filter Include="GameApp">
       <UniqueIdentifier>{398ba7bb-77f5-4795-ab5a-ebe983988fec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameScene">
+      <UniqueIdentifier>{807205f3-3362-4497-9748-c37cf3077745}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -62,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="SoundManager.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIObjDeclarer.cpp">
+      <Filter>GameApp</Filter>
+    </ClCompile>
+    <ClCompile Include="AppBtnEvent.cpp">
+      <Filter>GameApp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +129,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UIObjDeclarer.h">
+      <Filter>GameApp</Filter>
+    </ClInclude>
+    <ClInclude Include="AppTestScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="AppBtnEvent.h">
       <Filter>GameApp</Filter>
     </ClInclude>
   </ItemGroup>

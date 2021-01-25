@@ -10,7 +10,9 @@
 /// <summary>
 /// 全てのＵＩアイテムの基本を作成する
 /// </summary>
-void CreateAllUIObjs()
-{
+void CreateAllUIObjs();
 
-}
+/// <summary>
+/// タイトル画面に関してのアイテムを作成
+/// </summary>
+void CreateTitleUIObjs();
