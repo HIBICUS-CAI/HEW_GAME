@@ -21,3 +21,8 @@ void CreateTitleUIObjs();
 /// 話し合い画面に関してのアイテムを作成
 /// </summary>
 void CreateDialogUIObjs();
+
+/// <summary>
+/// リゾート名前画面に関してのアイテムを作成
+/// </summary>
+void CreateNameSetUIObjs();

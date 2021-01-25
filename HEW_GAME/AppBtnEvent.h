@@ -16,3 +16,9 @@ void TitleSceneBtnEvent(int value);
 /// </summary>
 /// <param name="value"></param>
 void DialogSceneBtnEvent(int value);
+
+/// <summary>
+/// 名前付き画面に対してのボタン処理
+/// </summary>
+/// <param name="value"></param>
+void NamingSceneBtnEvent(int value);

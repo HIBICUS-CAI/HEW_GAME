@@ -5,6 +5,7 @@ void CreateAllUIObjs()
 {
     CreateTitleUIObjs();
     CreateDialogUIObjs();
+    CreateNameSetUIObjs();
 }
 
 void CreateTitleUIObjs()
@@ -105,4 +106,141 @@ void CreateDialogUIObjs()
     GetUIObjByName("dialog")->
         AddBtn(UI_BUTTON(DIALOG_NEXT, POSITION_2D(175, 17),
             (char*)"", BTN_DESIGN::NONE));
+}
+
+void CreateNameSetUIObjs()
+{
+    CreateUIO("naming", POSITION_2D(1, 30), 178, 28,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 1);
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(23, 5),
+        (char*)"お客様の情報まとめ："));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(23, 7),
+        (char*)"サラリーマン：10人"));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(62, 7),
+        (char*)"サラリーマン：10人"));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(101, 7),
+        (char*)"サラリーマン：10人"));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(140, 7),
+        (char*)"サラリーマン：10人"));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(23, 15),
+        (char*)"リゾートに名前を付けましょう！"));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(72, 18),
+        (char*)"  ＸＸＸＸＸＸ  "));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(92, 18),
+        (char*)"  ＸＸＸＸＸＸ  "));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(72, 19),
+        (char*)"----------------"));
+    GetUIObjByName("naming")->AddText(UI_TEXT(POSITION_2D(92, 19),
+        (char*)"----------------"));
+    GetUIObjByName("naming")->
+        AddBtn(UI_BUTTON(NAMING_SUB_1, POSITION_2D(78, 21),
+            (char*)"編集", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("naming")->
+        AddBtn(UI_BUTTON(NAMING_SUB_2, POSITION_2D(98, 21),
+            (char*)"編集", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("naming")->
+        AddBtn(UI_BUTTON(CONFIRM_NAME, POSITION_2D(120, 21),
+            (char*)"これでオッケー", BTN_DESIGN::LINE));
+
+    CreateUIO("subname1", POSITION_2D(38, 15), 104, 30,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(4, 7),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(24, 7),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(44, 7),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(64, 7),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(84, 7),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(4, 14),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(24, 14),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(44, 14),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(64, 14),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(84, 14),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(4, 21),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(24, 21),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(44, 21),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(64, 21),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(84, 21),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname1")->
+        AddBtn(UI_BUTTON(BACK_TO_NAME_1, POSITION_2D(49, 27),
+            (char*)"閉じる", BTN_DESIGN::LINE));
+
+    CreateUIO("subname2", POSITION_2D(38, 15), 104, 30,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(4, 7),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(24, 7),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(44, 7),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(64, 7),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(84, 7),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(4, 14),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(24, 14),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(44, 14),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(64, 14),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(84, 14),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(4, 21),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(24, 21),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(44, 21),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(64, 21),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(84, 21),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("subname2")->
+        AddBtn(UI_BUTTON(BACK_TO_NAME_2, POSITION_2D(49, 27),
+            (char*)"閉じる", BTN_DESIGN::LINE));
 }

@@ -123,3 +123,73 @@ void DialogSceneBtnEvent(int value)
         DebugLog("ready to load next dialog or set all texts");
     }
 }
+
+void NamingSceneBtnEvent(int value)
+{
+    UIOBJECT* tempUIO = NULL;
+
+    if (value==NAMING_SUB_1)
+    {
+        DebugLog("ready to open naming sub 1");
+        tempUIO = GetUIObjByName("subname1");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("naming")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("naming"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value==NAMING_SUB_2)
+    {
+        DebugLog("ready to open naming sub 2");
+        tempUIO = GetUIObjByName("subname2");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("naming")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("naming"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == CONFIRM_NAME)
+    {
+        DebugLog("ready to confirm this name");
+    }
+    else if (value == BACK_TO_NAME_1)
+    {
+        DebugLog("ready to back to main naming from sub 1");
+        tempUIO = GetUIObjByName("subname1");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == BACK_TO_NAME_2)
+    {
+        DebugLog("ready to back to main naming from sub 2");
+        tempUIO = GetUIObjByName("subname2");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+}

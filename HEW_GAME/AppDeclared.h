@@ -19,6 +19,11 @@
 #define CLOSE_MANUAL 0x000b
 #define CLOSE_LINK 0x000c
 #define DIALOG_NEXT 0x000d
+#define NAMING_SUB_1 0x000e
+#define NAMING_SUB_2 0x000f
+#define CONFIRM_NAME 0x0010
+#define BACK_TO_NAME_1 0x0011
+#define BACK_TO_NAME_2 0x0012
 
 /// <summary>
 /// •∑©`•Û≈‰¡–§Ú»°µ√
