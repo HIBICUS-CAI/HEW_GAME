@@ -28,6 +28,18 @@ void TitleSceneBtnEvent(int value)
             ErrorLog("cannot find this UI object");
         }
     }
+    else if (value == LOAD_DATA_1)
+    {
+        DebugLog("ready to load data1");
+    }
+    else if (value == LOAD_DATA_2)
+    {
+        DebugLog("ready to load data2");
+    }
+    else if (value == LOAD_DATA_3)
+    {
+        DebugLog("ready to load data3");
+    }
     else if (value == GAME_SIMPLY_MANUAL)
     {
         DebugLog("ready to show manual");

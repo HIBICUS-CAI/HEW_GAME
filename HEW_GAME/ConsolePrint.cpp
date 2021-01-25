@@ -103,27 +103,10 @@ void PrintOutputBuffer()
             else
             {
                 COORD position;
-                /*position.X = temp.Position.posX;
-                position.Y = temp.Position.posY - 1;
-                SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
-                ChangeColorInConsole(WHITE_BLACK);
-                for (int i = 0; i < temp.TextLength; i++)
-                {
-                    printf("-");
-                }
-                printf("\n");*/
                 position.X = temp.Position.posX-2;
                 position.Y = temp.Position.posY;
                 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
                 printf("¡¾%s¡¿", temp.Text);
-                /*position.X = temp.Position.posX;
-                position.Y = temp.Position.posY + 1;
-                SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
-                for (int i = 0; i < temp.TextLength; i++)
-                {
-                    printf("-");
-                }
-                ResetColorInConsole();*/
             }
         }
         else
