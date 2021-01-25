@@ -28,3 +28,9 @@ void NamingSceneBtnEvent(int value);
 /// </summary>
 /// <param name="value"></param>
 void BuildingSceneBtnEvent(int value);
+
+/// <summary>
+/// 最終結果画面に対してのボタン処理
+/// </summary>
+/// <param name="value"></param>
+void FinalResultSceneBtnEvent(int value);

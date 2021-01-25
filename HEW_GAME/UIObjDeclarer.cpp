@@ -7,6 +7,7 @@ void CreateAllUIObjs()
     CreateDialogUIObjs();
     CreateNameSetUIObjs();
     CreateBuildingUIObjs();
+    CreateFinalResultUIObjs();
 }
 
 void CreateTitleUIObjs()
@@ -361,4 +362,16 @@ void CreateBuildingUIObjs()
     GetUIObjByName("build-event")->
         AddBtn(UI_BUTTON(BACK_TO_BUILD_EVENT, POSITION_2D(38, 50),
             (char*)"é]¤¸¤ë", BTN_DESIGN::LINE));
+}
+
+void CreateFinalResultUIObjs()
+{
+    CreateUIO("final-result", POSITION_2D(1, 40), 178, 19,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 1);
+    GetUIObjByName("final-result")->
+        AddBtn(UI_BUTTON(SAVE_GAME_DATA, POSITION_2D(51, 9),
+            (char*)"¥»©`¥Ö", BTN_DESIGN::LINE));
+    GetUIObjByName("final-result")->
+        AddBtn(UI_BUTTON(BACK_TO_TITLE, POSITION_2D(111, 9),
+            (char*)"¥¿¥¤¥È¥ë¤Ë‘ø¤ë", BTN_DESIGN::LINE));
 }

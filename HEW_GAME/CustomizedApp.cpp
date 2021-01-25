@@ -44,7 +44,8 @@ void AppButtonEvent(int value)
         //TitleSceneBtnEvent(value);
         //DialogSceneBtnEvent(value);
         //NamingSceneBtnEvent(value);
-        BuildingSceneBtnEvent(value);
+        //BuildingSceneBtnEvent(value);
+        FinalResultSceneBtnEvent(value);
         break;
 
     default:

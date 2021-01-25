@@ -263,3 +263,15 @@ void BuildingSceneBtnEvent(int value)
         }
     }
 }
+
+void FinalResultSceneBtnEvent(int value)
+{
+    if (value == SAVE_GAME_DATA)
+    {
+        DebugLog("ready to save clear stage");
+    }
+    else if (value == BACK_TO_TITLE)
+    {
+        DebugLog("ready to back to title scene");
+    }
+}

@@ -31,3 +31,8 @@ void CreateNameSetUIObjs();
 /// 施設作成画面に関してのアイテムを作成
 /// </summary>
 void CreateBuildingUIObjs();
+
+/// <summary>
+/// 最終結果画面に関してのアイテムを作成
+/// </summary>
+void CreateFinalResultUIObjs();
