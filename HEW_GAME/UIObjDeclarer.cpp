@@ -6,6 +6,7 @@ void CreateAllUIObjs()
     CreateTitleUIObjs();
     CreateDialogUIObjs();
     CreateNameSetUIObjs();
+    CreateBuildingUIObjs();
 }
 
 void CreateTitleUIObjs()
@@ -242,5 +243,122 @@ void CreateNameSetUIObjs()
             (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("subname2")->
         AddBtn(UI_BUTTON(BACK_TO_NAME_2, POSITION_2D(49, 27),
+            (char*)"閉じる", BTN_DESIGN::LINE));
+}
+
+void CreateBuildingUIObjs()
+{
+    CreateUIO("build", POSITION_2D(121, 1), 58, 59,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 1);
+    GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(5, 3),
+        (char*)"残りの資金：999999999カラアゲ"));
+    GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(5, 7),
+        (char*)"当／予定施設の情報："));
+    GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(5, 9),
+        (char*)"施設の種類：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"));
+    GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(5, 11),
+        (char*)"施設の内容：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"));
+    GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(4, 14),
+        (char*)"--------------------------------------------------"));
+    GetUIObjByName("build")->
+        AddBtn(UI_BUTTON(SET_BUILDING_TYPE, POSITION_2D(24, 21),
+            (char*)"施設の種類", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(4, 28),
+        (char*)"--------------------------------------------------"));
+    GetUIObjByName("build")->
+        AddBtn(UI_BUTTON(SET_BUILDING_EVENT, POSITION_2D(24, 36),
+            (char*)"施設の内容", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(4, 43),
+        (char*)"--------------------------------------------------"));
+    GetUIObjByName("build")->
+        AddBtn(UI_BUTTON(CONFIRM_BUILDING, POSITION_2D(27, 51),
+            (char*)"確定", BTN_DESIGN::LINE));
+
+    CreateUIO("build-type", POSITION_2D(121, 1), 58, 59,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
+    GetUIObjByName("build-type")->AddText(UI_TEXT(POSITION_2D(25, 1),
+        (char*)"施設種類"));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 8),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 8),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 15),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 15),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 22),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 22),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 29),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 29),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 36),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 36),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 43),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 43),
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(BACK_TO_BUILD_TYPE, POSITION_2D(38, 50),
+            (char*)"閉じる", BTN_DESIGN::LINE));
+
+    CreateUIO("build-event", POSITION_2D(121, 1), 58, 59,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
+    GetUIObjByName("build-event")->AddText(UI_TEXT(POSITION_2D(25, 1),
+        (char*)"施設内容"));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 8),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 8),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 15),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 15),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 22),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 22),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 29),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 29),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 36),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 36),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(9, 43),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(33, 43),
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("build-event")->
+        AddBtn(UI_BUTTON(BACK_TO_BUILD_EVENT, POSITION_2D(38, 50),
             (char*)"閉じる", BTN_DESIGN::LINE));
 }

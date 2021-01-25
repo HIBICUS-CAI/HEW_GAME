@@ -75,7 +75,10 @@ void DisposeInput()
 
 void DispatchInput(int keyCode)
 {
+#ifdef MY_DEBUG_INFO
     DebugLogI1("input", keyCode);
+#endif // MY_DEBUG_INFO
+
     if (keyCode == -1)
     {
         return;

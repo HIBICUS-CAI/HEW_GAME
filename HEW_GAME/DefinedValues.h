@@ -32,12 +32,13 @@
 #define TEST_OPENSUB 0x0001
 #define TEST_CLOSETHIS 0x0002
 
+#define MY_DEBUG_INFO
+
 #define RUNCONTINUOUS
 
 #ifdef RUNCONTINUOUS
 #define LOCKFPS
 #define MUTIPRINT
-#define SHOWFPS
 #endif // RUNCONTINUOUS
 
 #define SOUNDBYHAL

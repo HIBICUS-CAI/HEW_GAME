@@ -22,3 +22,9 @@ void DialogSceneBtnEvent(int value);
 /// </summary>
 /// <param name="value"></param>
 void NamingSceneBtnEvent(int value);
+
+/// <summary>
+/// 施設作成画面に対してのボタン処理
+/// </summary>
+/// <param name="value"></param>
+void BuildingSceneBtnEvent(int value);

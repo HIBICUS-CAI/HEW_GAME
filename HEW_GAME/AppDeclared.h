@@ -24,6 +24,11 @@
 #define CONFIRM_NAME 0x0010
 #define BACK_TO_NAME_1 0x0011
 #define BACK_TO_NAME_2 0x0012
+#define SET_BUILDING_TYPE 0x0013
+#define SET_BUILDING_EVENT 0x0014
+#define CONFIRM_BUILDING 0x0015
+#define BACK_TO_BUILD_TYPE 0x0016
+#define BACK_TO_BUILD_EVENT 0x0017
 
 /// <summary>
 /// •∑©`•Û≈‰¡–§Ú»°µ√

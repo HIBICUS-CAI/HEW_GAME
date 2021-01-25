@@ -26,3 +26,8 @@ void CreateDialogUIObjs();
 /// リゾート名前画面に関してのアイテムを作成
 /// </summary>
 void CreateNameSetUIObjs();
+
+/// <summary>
+/// 施設作成画面に関してのアイテムを作成
+/// </summary>
+void CreateBuildingUIObjs();

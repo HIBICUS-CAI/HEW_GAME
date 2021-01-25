@@ -154,7 +154,7 @@ void UpdateOutputBuffer()
 {
     ClearOutputBuffer();
 
-#ifdef SHOWFPS
+#ifdef MY_DEBUG_INFO
     int deltaTime = GetDeltaTime();
     if (!deltaTime)
     {

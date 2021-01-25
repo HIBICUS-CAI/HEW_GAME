@@ -128,7 +128,7 @@ void NamingSceneBtnEvent(int value)
 {
     UIOBJECT* tempUIO = NULL;
 
-    if (value==NAMING_SUB_1)
+    if (value == NAMING_SUB_1)
     {
         DebugLog("ready to open naming sub 1");
         tempUIO = GetUIObjByName("subname1");
@@ -144,7 +144,7 @@ void NamingSceneBtnEvent(int value)
             ErrorLog("cannot find this UI object");
         }
     }
-    else if (value==NAMING_SUB_2)
+    else if (value == NAMING_SUB_2)
     {
         DebugLog("ready to open naming sub 2");
         tempUIO = GetUIObjByName("subname2");
@@ -182,6 +182,76 @@ void NamingSceneBtnEvent(int value)
     {
         DebugLog("ready to back to main naming from sub 2");
         tempUIO = GetUIObjByName("subname2");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+}
+
+void BuildingSceneBtnEvent(int value)
+{
+    UIOBJECT* tempUIO = NULL;
+
+    if (value == SET_BUILDING_TYPE)
+    {
+        DebugLog("ready to open sub tpye ui");
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("build")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("build"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == SET_BUILDING_EVENT)
+    {
+        DebugLog("ready to open sub event ui");
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("build")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("build"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == CONFIRM_BUILDING)
+    {
+        DebugLog("ready to confirm this building");
+    }
+    else if (value == BACK_TO_BUILD_TYPE)
+    {
+        DebugLog("ready to back to build ui from building type");
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == BACK_TO_BUILD_EVENT)
+    {
+        DebugLog("ready to back to build ui from building event");
+        tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
