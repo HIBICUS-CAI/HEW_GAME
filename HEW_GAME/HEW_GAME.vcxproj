@@ -177,6 +177,7 @@
     <ClInclude Include="SpriteAnimator.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="Tools.h" />
+    <ClInclude Include="UIObjDeclarer.h" />
     <ClInclude Include="UIObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

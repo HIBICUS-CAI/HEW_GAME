@@ -3,9 +3,11 @@
 #include "SceneManager.h"
 #include "SpriteAnimator.h"
 #include "SoundManager.h"
+#include "UIObjDeclarer.h"
 
 void AppInit()
 {
+    CreateAllUIObjs();
     InitSceneNodes();
 }
 
