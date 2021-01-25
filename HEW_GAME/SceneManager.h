@@ -6,6 +6,14 @@
 #pragma once
 #include "GameAppStructs.h"
 
+#define TESTSCENEFLAG 1
+
+/// <summary>
+/// シーンのしるし取得
+/// </summary>
+/// <returns>シーンの記号</returns>
+int GetSceneFlag();
+
 /// <summary>
 /// 今使っているシーンを設定
 /// </summary>

@@ -38,5 +38,14 @@ void AppKeyboardEvent(int keyCode)
 
 void AppButtonEvent(int value)
 {
-    TitleSceneBtnEvent(value);
+    switch (GetSceneFlag())
+    {
+    case TESTSCENEFLAG:
+        //TitleSceneBtnEvent(value);
+        DialogSceneBtnEvent(value);
+        break;
+
+    default:
+        break;
+    }
 }

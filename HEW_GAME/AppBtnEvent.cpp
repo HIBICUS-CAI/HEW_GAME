@@ -115,3 +115,11 @@ void TitleSceneBtnEvent(int value)
         }
     }
 }
+
+void DialogSceneBtnEvent(int value)
+{
+    if (value == DIALOG_NEXT)
+    {
+        DebugLog("ready to load next dialog or set all texts");
+    }
+}

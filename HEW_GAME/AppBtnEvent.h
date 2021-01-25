@@ -10,3 +10,9 @@
 /// </summary>
 /// <param name="value"></param>
 void TitleSceneBtnEvent(int value);
+
+/// <summary>
+/// ‘í§∑∫œ§§ª≠√Ê§Àåù§∑§∆§Œ•‹•ø•ÛÑI¿Ì
+/// </summary>
+/// <param name="value"></param>
+void DialogSceneBtnEvent(int value);

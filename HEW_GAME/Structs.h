@@ -132,7 +132,8 @@ struct UI_TEXT
 enum class BTN_DESIGN
 {
     LINE,
-    STRAIGHT
+    STRAIGHT,
+    NONE
 };
 
 /// <summary>

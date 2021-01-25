@@ -11,6 +11,7 @@ void InitUIObj()
     {
         (GetUIObj() + i)->ID = -1;
     }
+    SetSelectedBtn(NULL);
 }
 
 UIOBJECT* GetUIObjByID(int id)

@@ -4,6 +4,7 @@
 void CreateAllUIObjs()
 {
     CreateTitleUIObjs();
+    CreateDialogUIObjs();
 }
 
 void CreateTitleUIObjs()
@@ -81,4 +82,27 @@ void CreateTitleUIObjs()
     GetUIObjByName("link")->
         AddBtn(UI_BUTTON(CLOSE_LINK, POSITION_2D(37, 18),
             (char*)"閉じる", BTN_DESIGN::LINE));
+}
+
+void CreateDialogUIObjs()
+{
+    CreateUIO("dialog", POSITION_2D(1, 40), 178, 19,
+        UIO_DESIGN::STAR, NULL, NULL, 1);
+    GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(2, 2),
+        (char*)"喋っている人"));
+    GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(2, 3),
+        (char*)"------------"));
+    GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(6, 6),
+        (char*)"言葉その一。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。"));
+    GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(6, 8),
+        (char*)"言葉その二。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。"));
+    GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(6, 10),
+        (char*)"言葉その三。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。"));
+    GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(6, 12),
+        (char*)"言葉その四。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。"));
+    GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(6, 14),
+        (char*)"言葉その五。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。"));
+    GetUIObjByName("dialog")->
+        AddBtn(UI_BUTTON(DIALOG_NEXT, POSITION_2D(175, 17),
+            (char*)"", BTN_DESIGN::NONE));
 }

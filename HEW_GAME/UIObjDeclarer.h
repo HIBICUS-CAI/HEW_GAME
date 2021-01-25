@@ -16,3 +16,8 @@ void CreateAllUIObjs();
 /// タイトル画面に関してのアイテムを作成
 /// </summary>
 void CreateTitleUIObjs();
+
+/// <summary>
+/// 話し合い画面に関してのアイテムを作成
+/// </summary>
+void CreateDialogUIObjs();

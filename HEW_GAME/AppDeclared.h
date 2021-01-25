@@ -18,6 +18,7 @@
 #define CLOSE_SAVE_DATA 0x000a
 #define CLOSE_MANUAL 0x000b
 #define CLOSE_LINK 0x000c
+#define DIALOG_NEXT 0x000d
 
 /// <summary>
 /// •∑©`•Û≈‰¡–§Ú»°µ√

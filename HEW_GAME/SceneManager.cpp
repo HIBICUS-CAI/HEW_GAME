@@ -4,8 +4,6 @@
 #include "AppDeclared.h"
 #include "AppTestScene.h"
 
-#define TESTSCENEFLAG 1
-
 int g_SceneFlag;
 
 void SetSceneFlag(int flag)

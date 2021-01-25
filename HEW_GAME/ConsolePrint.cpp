@@ -82,7 +82,8 @@ void PrintOutputBuffer()
         ppp.X = 0;
         ppp.Y = 0;
         SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), ppp);
-        if (GetSelectedBtn() != NULL)
+        if (GetSelectedBtn() != NULL &&
+            GetSelectedBtn()->ID != -1)
         {
             UI_BUTTON temp = *(GetSelectedBtn());
             for (int i = 0; i < CONSOLE_HEIGHT; i++)
@@ -100,10 +101,10 @@ void PrintOutputBuffer()
                 printf("--%s--", temp.Text);
                 ResetColorInConsole();
             }
-            else
+            else if (temp.BorderDesign == BTN_DESIGN::STRAIGHT)
             {
                 COORD position;
-                position.X = temp.Position.posX-2;
+                position.X = temp.Position.posX - 2;
                 position.Y = temp.Position.posY;
                 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
                 printf("¡¾%s¡¿", temp.Text);
