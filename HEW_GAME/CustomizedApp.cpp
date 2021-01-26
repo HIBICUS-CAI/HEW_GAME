@@ -10,6 +10,8 @@ void AppInit()
 {
     CreateAllUIObjs();
     InitSceneNodes();
+    SetIsDialogFinish(1);
+    SetDialogEvent(DIALOG_NOTHING);
 
     SwitchSceneToName("title");
 }
@@ -51,6 +53,10 @@ void AppButtonEvent(int value)
 
     case TITLESCENEFLAG:
         TitleSceneBtnEvent(value);
+        break;
+
+    case DIALOGSCENEFLAG:
+        DialogSceneBtnEvent(value);
         break;
 
     default:

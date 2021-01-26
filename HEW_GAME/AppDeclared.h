@@ -35,6 +35,9 @@
 #define BEGIN_STAGE_2 0x001b
 #define BEGIN_STAGE_3 0x001c
 
+#define DIALOG_NOTHING 0x01
+#define DIALOG_NEW_GAME 0x02
+
 /// <summary>
 /// シーン配列を取得
 /// </summary>
@@ -59,3 +62,27 @@ void SetCurrScene(SCENENODE* sceneNode);
 /// </summary>
 /// <returns>シーン指向のポインタ</returns>
 SCENENODE* GetCurrScene();
+
+/// <summary>
+/// 対話事件の番号を取得
+/// </summary>
+/// <returns>対話事件の番号</returns>
+int GetDialogEvent();
+
+/// <summary>
+/// 対話事件の番号を設定
+/// </summary>
+/// <param name="id">対話事件の番号</param>
+void SetDialogEvent(int id);
+
+/// <summary>
+/// 当対話は終わったか
+/// </summary>
+/// <returns>終わったかどうかの標識</returns>
+int IsDialogFinish();
+
+/// <summary>
+/// 当対話事件は終わったかを設定
+/// </summary>
+/// <param name="id">標識</param>
+void SetIsDialogFinish(int value);

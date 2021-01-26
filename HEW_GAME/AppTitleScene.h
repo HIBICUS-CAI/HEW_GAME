@@ -10,7 +10,7 @@
 void InitTitleScene()
 {
     CreateSceneNode(SCENENODE("title", NULL,
-        SCENECAMERA(POSITION_2D(0, 0), 179, 60)));
+        SCENECAMERA(POSITION_2D(1, 0), 178, 60)));
     GetSceneNodeByName("title")->SetBaseUIO(GetUIObjByName("title"));
 }
 

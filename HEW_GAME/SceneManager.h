@@ -8,6 +8,7 @@
 
 #define TESTSCENEFLAG 1
 #define TITLESCENEFLAG 2
+#define DIALOGSCENEFLAG 3
 
 /// <summary>
 /// ¥·©`¥ó¤Î¤·¤ë¤·È¡µÃ

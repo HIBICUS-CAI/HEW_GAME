@@ -23,3 +23,27 @@ SCENENODE* GetCurrScene()
 {
     return gp_CurrScene;
 }
+
+int g_DiaglogEventID = 0;
+
+int GetDialogEvent()
+{
+    return g_DiaglogEventID;
+}
+
+void SetDialogEvent(int id)
+{
+    g_DiaglogEventID = id;
+}
+
+int g_IsDialogFinish = 0;
+
+int IsDialogFinish()
+{
+    return g_IsDialogFinish;
+}
+
+void SetIsDialogFinish(int value)
+{
+    g_IsDialogFinish = value;
+}

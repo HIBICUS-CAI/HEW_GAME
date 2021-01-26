@@ -4,6 +4,7 @@
 #include "AppDeclared.h"
 #include "AppTestScene.h"
 #include "AppTitleScene.h"
+#include "AppDialogScene.h"
 
 int g_SceneFlag;
 
@@ -41,6 +42,12 @@ void InitCurrScene()
         SetSelectedBtn(GetSceneNodeByName("title")->
             BaseUIObj->Buttons);
     }
+    else if (!strcmp(GetManagedCurrScene()->SceneName, "dialog"))
+    {
+        SetSceneFlag(DIALOGSCENEFLAG);
+        SetSelectedBtn(GetSceneNodeByName("dialog")->
+            BaseUIObj->Buttons);
+    }
 }
 
 void UpdateCurrScene()
@@ -53,6 +60,10 @@ void UpdateCurrScene()
 
     case TITLESCENEFLAG:
         UpdateTitleScene();
+        break;
+
+    case DIALOGSCENEFLAG:
+        UpdateDialogScene();
         break;
 
     default:
@@ -73,6 +84,10 @@ void SwitchSceneToName(const char* sceneName)
         else if (!strcmp(sceneName, "title"))
         {
             InitTitleScene();
+        }
+        else if (!strcmp(sceneName, "dialog"))
+        {
+            InitDialogScene();
         }
 
         scene = GetSceneNodeByName(sceneName);

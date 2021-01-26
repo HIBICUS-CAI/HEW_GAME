@@ -3,6 +3,7 @@
 #include "AppDeclared.h"
 #include "UIObject.h"
 #include "DeclaredValues.h"
+#include "SceneManager.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -11,6 +12,8 @@ void TitleSceneBtnEvent(int value)
     if (value == START_NEW_GAME)
     {
         DebugLog("ready to start game");
+        SetDialogEvent(DIALOG_NEW_GAME);
+        SwitchSceneToName("dialog");
     }
     else if (value == LOAD_GAME_DATA)
     {
