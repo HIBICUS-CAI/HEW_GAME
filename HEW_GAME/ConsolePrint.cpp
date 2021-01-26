@@ -153,8 +153,11 @@ void CloseMTPrint()
 void UpdateOutputBuffer()
 {
     ClearOutputBuffer();
+}
 
 #ifdef MY_DEBUG_INFO
+void ShowFPSAtScreen()
+{
     int deltaTime = GetDeltaTime();
     if (!deltaTime)
     {
@@ -172,8 +175,8 @@ void UpdateOutputBuffer()
         WriteStrIntoOutputBufferByPos(POSITION_2D(0, 0),
             "¸üÐÂÓÃFPS: 100+");
     }
-#endif // SHOWFPS
 }
+#endif // SHOWFPS
 
 void WriteCharIntoOutputBuffer(POSITION_2D position, const char text)
 {

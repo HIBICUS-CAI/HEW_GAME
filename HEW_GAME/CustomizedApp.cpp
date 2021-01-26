@@ -11,7 +11,7 @@ void AppInit()
     CreateAllUIObjs();
     InitSceneNodes();
 
-    SwitchSceneToName("test");
+    SwitchSceneToName("title");
 }
 
 void AppUpdate()
@@ -43,10 +43,14 @@ void AppButtonEvent(int value)
     case TESTSCENEFLAG:
         //TitleSceneBtnEvent(value);
         //DialogSceneBtnEvent(value);
-        StageSelectSceneBtnEvent(value);
+        //StageSelectSceneBtnEvent(value);
         //NamingSceneBtnEvent(value);
         //BuildingSceneBtnEvent(value);
         //FinalResultSceneBtnEvent(value);
+        break;
+
+    case TITLESCENEFLAG:
+        TitleSceneBtnEvent(value);
         break;
 
     default:

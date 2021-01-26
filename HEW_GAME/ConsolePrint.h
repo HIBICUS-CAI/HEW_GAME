@@ -29,6 +29,13 @@ void PrintOutputBuffer();
 /// </summary>
 void UpdateOutputBuffer();
 
+#ifdef MY_DEBUG_INFO
+/// <summary>
+/// フレームレートを表示させる
+/// </summary>
+void ShowFPSAtScreen();
+#endif // SHOWFPS
+
 /// <summary>
 /// ある位置に内容を直接に書き込む
 /// </summary>

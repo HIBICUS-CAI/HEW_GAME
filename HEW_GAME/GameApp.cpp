@@ -54,13 +54,14 @@ void RunGame()
 #ifdef MUTIPRINT
             ResumeThread(GetPrintHandle());
             Update();
-
-            SwapPrintChain();
 #else
             Update();
             Draw();
-            SwapPrintChain();
 #endif // MUTIPRINT
+#ifdef MY_DEBUG_INFO
+            ShowFPSAtScreen();
+#endif // SHOWFPS
+            SwapPrintChain();
         }
         int endTime = clock();
 

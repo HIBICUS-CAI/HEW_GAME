@@ -137,5 +137,8 @@
     <ClInclude Include="AppBtnEvent.h">
       <Filter>GameApp</Filter>
     </ClInclude>
+    <ClInclude Include="AppTitleScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

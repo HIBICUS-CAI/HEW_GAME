@@ -3,6 +3,7 @@
 #include "DeclaredValues.h"
 #include "AppDeclared.h"
 #include "AppTestScene.h"
+#include "AppTitleScene.h"
 
 int g_SceneFlag;
 
@@ -34,6 +35,12 @@ void InitCurrScene()
         SetSelectedBtn(GetSceneNodeByName("test")->
             BaseUIObj->Buttons);
     }
+    else if (!strcmp(GetManagedCurrScene()->SceneName, "title"))
+    {
+        SetSceneFlag(TITLESCENEFLAG);
+        SetSelectedBtn(GetSceneNodeByName("title")->
+            BaseUIObj->Buttons);
+    }
 }
 
 void UpdateCurrScene()
@@ -42,6 +49,10 @@ void UpdateCurrScene()
     {
     case TESTSCENEFLAG:
         UpdateTestScene();
+        break;
+
+    case TITLESCENEFLAG:
+        UpdateTitleScene();
         break;
 
     default:
@@ -58,6 +69,10 @@ void SwitchSceneToName(const char* sceneName)
         if (!strcmp(sceneName, "test"))
         {
             InitTestScene();
+        }
+        else if (!strcmp(sceneName, "title"))
+        {
+            InitTitleScene();
         }
 
         scene = GetSceneNodeByName(sceneName);

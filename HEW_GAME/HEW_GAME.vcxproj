@@ -165,6 +165,7 @@
     <ClInclude Include="AppBtnEvent.h" />
     <ClInclude Include="AppDeclared.h" />
     <ClInclude Include="AppTestScene.h" />
+    <ClInclude Include="AppTitleScene.h" />
     <ClInclude Include="ButtonEvents.h" />
     <ClInclude Include="conioex.h" />
     <ClInclude Include="ConsolePrint.h" />
