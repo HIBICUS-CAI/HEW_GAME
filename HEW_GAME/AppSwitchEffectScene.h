@@ -20,6 +20,7 @@ void InitSwitchEffectScene()
     GetUIObjByName("switch")->AddBtn(
         UI_BUTTON(0, POSITION_2D(0, 0),
             (char*)"", BTN_DESIGN::NONE));
+    ClearSceneCamBuffer(GetSceneNodeByName("switch-effect"));
 }
 
 void UpdateSwitchEffectScene()
@@ -33,83 +34,212 @@ void UpdateSwitchEffectScene()
         int height = GetSceneNodeByName("switch-effect")->GetCamAddr()->CameraHeight;
 
         ++g_test;
-        // TODO make switch effect here
-        char temp[3] = "¡ö";
-        int i = g_test;
-        int lineCount = 0;
-        while (i > 0)
+
+        int halfOfDistance = 0;
+
+        if (GetSwitchEffectStyle() == UP2DOWN ||
+            GetSwitchEffectStyle() == DOWN2UP)
         {
-            // TODO fix here
-            if (i <= height)
+            halfOfDistance = height / 2;
+        }
+        else
+        {
+            halfOfDistance = width / 6;
+        }
+
+        if (g_test <= halfOfDistance)
+        {
+            if (GetSwitchEffectStyle() == UP2DOWN)
             {
-                for (int j = 0; j < i; j++)
+                int i = g_test;
+                while (i > 0)
                 {
-                    for (int k = 0; k < width; k++)
+                    for (int j = 0; j < i; j++)
                     {
-                        *(cam + j * width + k) = '|';
+                        for (int k = 0; k < width; k++)
+                        {
+                            *(cam + 2 * j *
+                                width + k) = '|';
+                            *(cam + (2 * j + 1) *
+                                width + k) = '|';
+                        }
                     }
+                    --i;
+                }
+            }
+            else if (GetSwitchEffectStyle() == DOWN2UP)
+            {
+                int i = g_test;
+                while (i > 0)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        for (int k = 0; k < width; k++)
+                        {
+                            *(cam + (height - 2 * j - 1) *
+                                width + k) = '|';
+                            *(cam + (height - 2 * j - 2) *
+                                width + k) = '|';
+                        }
+                    }
+                    --i;
+                }
+            }
+            else if (GetSwitchEffectStyle() == LEFT2RIGHT)
+            {
+                int i = g_test;
+                while (i > 0)
+                {
+                    for (int j = 0; j < height; j++)
+                    {
+                        for (int k = 0; k < i; k++)
+                        {
+                            *(cam + j * width + 6 * k) = '-';
+                            *(cam + j * width + 6 * k + 1) = '-';
+                            *(cam + j * width + 6 * k + 2) = '-';
+                            *(cam + j * width + 6 * k + 3) = '-';
+                            *(cam + j * width + 6 * k + 4) = '-';
+                            *(cam + j * width + 6 * k + 5) = '-';
+                        }
+                    }
+                    --i;
+                }
+            }
+            else if (GetSwitchEffectStyle() == RIGHT2LEFT)
+            {
+                int i = g_test;
+                while (i > 0)
+                {
+                    for (int j = 0; j < height; j++)
+                    {
+                        for (int k = 0; k < i; k++)
+                        {
+                            *(cam + j * width +
+                                width - 6 * k - 1) = '-';
+                            *(cam + j * width +
+                                width - 6 * k - 2) = '-';
+                            *(cam + j * width +
+                                width - 6 * k - 3) = '-';
+                            *(cam + j * width +
+                                width - 6 * k - 4) = '-';
+                            *(cam + j * width +
+                                width - 6 * k - 5) = '-';
+                            *(cam + j * width +
+                                width - 6 * k - 6) = '-';
+                        }
+                    }
+                    --i;
                 }
             }
             else
             {
-                for (int j = 0; j < i - height; j++)
-                {
-                    for (int k = 0; k < width; k++)
-                    {
-                        *(cam + (height - j) * width + k) = '|';
-                    }
-                }
-            }
-
-            --i;
-        }
-
-        /*if (g_test <= height)
-        {
-            char temp[3] = "¡ö";
-            int i = g_test;
-            int lineCount = 0;
-            while (i > 0)
-            {
-                int length = 1 + (i - 1) * 3;
-                int startX = (178 - length) / 2;
-
-                for (int j = 0; j < length / 2; j++)
-                {
-                    *(cam + lineCount * width + startX + 2 * j) = *(temp);
-                    *(cam + lineCount * width + startX + 2 * j + 1) = *(temp + 1);
-                }
-                ++lineCount;
-                --i;
+                ErrorLogI1("cannot find this style",
+                    GetSwitchEffectStyle());
             }
         }
         else
         {
-            char temp[3] = "¡ö";
-            int i = g_test - height;
-            int lineCount = 0;
-            while (i > 0)
+            if (GetSwitchEffectStyle() == UP2DOWN)
             {
-                int length = (178 - (1 + (i - 1) * 3)) / 2;
-                int startX1 = 0;
-                int startX2 = (178 - length) / 2;
-
-                for (int j = 0; j < length / 2; j++)
+                int i = 2 * halfOfDistance - g_test;
+                while (i > 0)
                 {
-                    *(cam + lineCount * width + startX1 + 2 * j) = *(temp);
-                    *(cam + lineCount * width + startX1 + 2 * j + 1) = *(temp + 1);
-                    *(cam + lineCount * width + startX2 + 2 * j) = *(temp);
-                    *(cam + lineCount * width + startX2 + 2 * j + 1) = *(temp + 1);
+                    for (int j = 0; j < i; j++)
+                    {
+                        for (int k = 0; k < width; k++)
+                        {
+                            *(cam + (height - 2 * j - 1) *
+                                width + k) = '|';
+                            *(cam + (height - 2 * j - 2) *
+                                width + k) = '|';
+                        }
+                    }
+                    --i;
                 }
-                ++lineCount;
-                --i;
             }
-        }*/
+            else if (GetSwitchEffectStyle() == DOWN2UP)
+            {
+                int i = 2 * halfOfDistance - g_test;
+                while (i > 0)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        for (int k = 0; k < width; k++)
+                        {
+                            *(cam + (2 * j) *
+                                width + k) = '|';
+                            *(cam + (2 * j + 1) *
+                                width + k) = '|';
+                        }
+                    }
+                    --i;
+                }
+            }
+            else if (GetSwitchEffectStyle() == LEFT2RIGHT)
+            {
+                int i = 2 * halfOfDistance - g_test;
+                while (i > 0)
+                {
+                    for (int j = 0; j < height; j++)
+                    {
+                        for (int k = 0; k < i; k++)
+                        {
+                            *(cam + j * width +
+                                (width - 6 * k) - 1) = '-';
+                            *(cam + j * width +
+                                (width - 6 * k) - 2) = '-';
+                            *(cam + j * width +
+                                (width - 6 * k) - 3) = '-';
+                            *(cam + j * width +
+                                (width - 6 * k) - 4) = '-';
+                            *(cam + j * width +
+                                (width - 6 * k) - 5) = '-';
+                            *(cam + j * width +
+                                (width - 6 * k) - 6) = '-';
+                        }
+                    }
+                    --i;
+                }
+            }
+            else if (GetSwitchEffectStyle() == RIGHT2LEFT)
+            {
+                int i = 2 * halfOfDistance - g_test;
+                while (i > 0)
+                {
+                    for (int j = 0; j < height; j++)
+                    {
+                        for (int k = 0; k < i; k++)
+                        {
+                            *(cam + j * width +
+                                6 * k) = '-';
+                            *(cam + j * width +
+                                6 * k + 1) = '-';
+                            *(cam + j * width +
+                                6 * k + 2) = '-';
+                            *(cam + j * width +
+                                6 * k + 3) = '-';
+                            *(cam + j * width +
+                                6 * k + 4) = '-';
+                            *(cam + j * width +
+                                6 * k + 5) = '-';
+                        }
+                    }
+                    --i;
+                }
+            }
+            else
+            {
+                ErrorLogI1("cannot find this style",
+                    GetSwitchEffectStyle());
+            }
+        }
 
         DebugLogI1("now", g_test);
-        if (g_test > 120)
+        if (g_test > height)
         {
             g_test = 0;
+            SetRandom();
+            SetSwitchEffectStyle(CreateRandomNumIn(1, 4));
             SetSwitchEffectFlag(0);
             InitCurrScene();
         }

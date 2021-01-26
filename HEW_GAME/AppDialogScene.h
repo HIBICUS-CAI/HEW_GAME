@@ -12,6 +12,7 @@ void InitDialogScene()
     CreateSceneNode(SCENENODE("dialog", NULL,
         SCENECAMERA(POSITION_2D(1, 0), 178, 40)));
     GetSceneNodeByName("dialog")->SetBaseUIO(GetUIObjByName("dialog"));
+    ClearSceneCamBuffer(GetSceneNodeByName("dialog"));
 }
 
 void UpdateDialogScene()

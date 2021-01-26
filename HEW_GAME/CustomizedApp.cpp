@@ -5,12 +5,15 @@
 #include "SoundManager.h"
 #include "UIObjDeclarer.h"
 #include "AppBtnEvent.h"
+#include "Tools.h"
 
 void AppInit()
 {
     CreateAllUIObjs();
     InitSceneNodes();
     SetSwitchEffectFlag(0);
+    SetRandom();
+    SetSwitchEffectStyle(CreateRandomNumIn(1, 4));
     SetIsDialogFinish(1);
     SetDialogEvent(DIALOG_NOTHING);
 

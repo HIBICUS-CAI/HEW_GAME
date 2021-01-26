@@ -98,3 +98,20 @@ int GetSwitchEffectFlag();
 /// </summary>
 /// <param name="id">˜Ë×R</param>
 void SetSwitchEffectFlag(int value);
+
+#define UP2DOWN 1
+#define DOWN2UP 2
+#define LEFT2RIGHT 3
+#define RIGHT2LEFT 4
+
+/// <summary>
+/// ‰ä“Q¥¨¥Õ¥§¥¯¥È¤Î¥¹¥¿¥¤¥ë¤òÈ¡µÃ
+/// </summary>
+/// <returns>‰ä“Q¥¨¥Õ¥§¥¯¥È¤Î¥¹¥¿¥¤¥ë</returns>
+int GetSwitchEffectStyle();
+
+/// <summary>
+/// ‰ä“Q¥¨¥Õ¥§¥¯¥È¤Î¥¹¥¿¥¤¥ë¤òÔO¶¨
+/// </summary>
+/// <param name="id">¥¹¥¿¥¤¥ë</param>
+void SetSwitchEffectStyle(int value);

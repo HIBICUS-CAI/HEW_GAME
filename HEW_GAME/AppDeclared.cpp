@@ -59,3 +59,15 @@ void SetSwitchEffectFlag(int value)
 {
     g_SwitchEffectFlag = value;
 }
+
+int g_SwitchEffectStyle = 0;
+
+int GetSwitchEffectStyle()
+{
+    return g_SwitchEffectStyle;
+}
+
+void SetSwitchEffectStyle(int value)
+{
+    g_SwitchEffectStyle = value;
+}
