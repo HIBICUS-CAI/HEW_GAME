@@ -5,6 +5,7 @@
 #include "AppTestScene.h"
 #include "AppTitleScene.h"
 #include "AppDialogScene.h"
+#include "AppSwitchEffectScene.h"
 
 int g_SceneFlag;
 
@@ -30,45 +31,82 @@ SCENENODE* GetManagedCurrScene()
 
 void InitCurrScene()
 {
-    if (!strcmp(GetManagedCurrScene()->SceneName, "test"))
+    if (GetSwitchEffectFlag())
     {
-        SetSceneFlag(TESTSCENEFLAG);
-        SetSelectedBtn(GetSceneNodeByName("test")->
-            BaseUIObj->Buttons);
+        if (!strcmp(GetManagedCurrScene()->SceneName, "test"))
+        {
+            SetSceneFlag(TESTSCENEFLAG);
+        }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "title"))
+        {
+            SetSceneFlag(TITLESCENEFLAG);
+        }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "dialog"))
+        {
+            SetSceneFlag(DIALOGSCENEFLAG);
+        }
+
+        if (GetSceneNodeByName("switch-effect") == NULL)
+        {
+            InitSwitchEffectScene();
+        }
+        SetManagedCurrScene(GetSceneNodeByName("switch-effect"));
+        SetSelectedBtn(GetSceneNodeByName("switch-effect")->BaseUIObj->Buttons);
     }
-    else if (!strcmp(GetManagedCurrScene()->SceneName, "title"))
+    else
     {
-        SetSceneFlag(TITLESCENEFLAG);
-        SetSelectedBtn(GetSceneNodeByName("title")->
-            BaseUIObj->Buttons);
-    }
-    else if (!strcmp(GetManagedCurrScene()->SceneName, "dialog"))
-    {
-        SetSceneFlag(DIALOGSCENEFLAG);
-        SetSelectedBtn(GetSceneNodeByName("dialog")->
-            BaseUIObj->Buttons);
+        switch (GetSceneFlag())
+        {
+        case TESTSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("test"));
+            SetSelectedBtn(GetSceneNodeByName("test")->
+                BaseUIObj->Buttons);
+            break;
+
+        case TITLESCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("title"));
+            SetSelectedBtn(GetSceneNodeByName("title")->
+                BaseUIObj->Buttons);
+            break;
+
+        case DIALOGSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("dialog"));
+            SetSelectedBtn(GetSceneNodeByName("dialog")->
+                BaseUIObj->Buttons);
+            break;
+
+        default:
+            break;
+        }
     }
 }
 
 void UpdateCurrScene()
 {
-    switch (GetSceneFlag())
+    if (GetSwitchEffectFlag())
     {
-    case TESTSCENEFLAG:
-        UpdateTestScene();
-        break;
+        UpdateSwitchEffectScene();
+    }
+    else
+    {
+        switch (GetSceneFlag())
+        {
+        case TESTSCENEFLAG:
+            UpdateTestScene();
+            break;
 
-    case TITLESCENEFLAG:
-        UpdateTitleScene();
-        break;
+        case TITLESCENEFLAG:
+            UpdateTitleScene();
+            break;
 
-    case DIALOGSCENEFLAG:
-        UpdateDialogScene();
-        break;
+        case DIALOGSCENEFLAG:
+            UpdateDialogScene();
+            break;
 
-    default:
-        ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
-        break;
+        default:
+            ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
+            break;
+        }
     }
 }
 
@@ -93,5 +131,6 @@ void SwitchSceneToName(const char* sceneName)
         scene = GetSceneNodeByName(sceneName);
     }
     SetManagedCurrScene(scene);
+    SetSwitchEffectFlag(1);
     InitCurrScene();
 }

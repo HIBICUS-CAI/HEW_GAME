@@ -47,3 +47,15 @@ void SetIsDialogFinish(int value)
 {
     g_IsDialogFinish = value;
 }
+
+int g_SwitchEffectFlag = 0;
+
+int GetSwitchEffectFlag()
+{
+    return g_SwitchEffectFlag;
+}
+
+void SetSwitchEffectFlag(int value)
+{
+    g_SwitchEffectFlag = value;
+}

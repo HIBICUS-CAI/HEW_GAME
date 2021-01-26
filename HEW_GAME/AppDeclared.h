@@ -86,3 +86,15 @@ int IsDialogFinish();
 /// </summary>
 /// <param name="id">˜Ë×R</param>
 void SetIsDialogFinish(int value);
+
+/// <summary>
+/// ‰ä“Q¥¨¥Õ¥§¥¯¥È¤Î˜Ë×R¤òÈ¡µÃ
+/// </summary>
+/// <returns>‰ä“Q¥¨¥Õ¥§¥¯¥È¤Î˜Ë×R</returns>
+int GetSwitchEffectFlag();
+
+/// <summary>
+/// ‰ä“Q¥¨¥Õ¥§¥¯¥È¤Î˜Ë×R¤òÔO¶¨
+/// </summary>
+/// <param name="id">˜Ë×R</param>
+void SetSwitchEffectFlag(int value);

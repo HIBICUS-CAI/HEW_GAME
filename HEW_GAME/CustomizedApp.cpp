@@ -10,6 +10,7 @@ void AppInit()
 {
     CreateAllUIObjs();
     InitSceneNodes();
+    SetSwitchEffectFlag(0);
     SetIsDialogFinish(1);
     SetDialogEvent(DIALOG_NOTHING);
 
