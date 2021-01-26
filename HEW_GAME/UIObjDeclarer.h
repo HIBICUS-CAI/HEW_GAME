@@ -23,6 +23,11 @@ void CreateTitleUIObjs();
 void CreateDialogUIObjs();
 
 /// <summary>
+/// ステージ選択画面に関してのアイテムを作成
+/// </summary>
+void CreateStageSelectUIObjs();
+
+/// <summary>
 /// リゾート名前画面に関してのアイテムを作成
 /// </summary>
 void CreateNameSetUIObjs();

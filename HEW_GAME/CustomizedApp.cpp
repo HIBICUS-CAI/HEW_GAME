@@ -43,9 +43,10 @@ void AppButtonEvent(int value)
     case TESTSCENEFLAG:
         //TitleSceneBtnEvent(value);
         //DialogSceneBtnEvent(value);
+        StageSelectSceneBtnEvent(value);
         //NamingSceneBtnEvent(value);
         //BuildingSceneBtnEvent(value);
-        FinalResultSceneBtnEvent(value);
+        //FinalResultSceneBtnEvent(value);
         break;
 
     default:

@@ -5,6 +5,7 @@ void CreateAllUIObjs()
 {
     CreateTitleUIObjs();
     CreateDialogUIObjs();
+    CreateStageSelectUIObjs();
     CreateNameSetUIObjs();
     CreateBuildingUIObjs();
     CreateFinalResultUIObjs();
@@ -108,6 +109,23 @@ void CreateDialogUIObjs()
     GetUIObjByName("dialog")->
         AddBtn(UI_BUTTON(DIALOG_NEXT, POSITION_2D(175, 17),
             (char*)"", BTN_DESIGN::NONE));
+}
+
+void CreateStageSelectUIObjs()
+{
+    CreateUIO("stage-select", POSITION_2D(1, 1), 178, 9,
+        UIO_DESIGN::NOTHING, NULL, NULL, 1);
+    GetUIObjByName("stage-select")->AddText(UI_TEXT(POSITION_2D(78, 3),
+        (char*)"¥¹¥Æ©`¥¸ßx’k¤·¤Þ¤·¤ç¤¦£¡"));
+    GetUIObjByName("stage-select")->
+        AddBtn(UI_BUTTON(BEGIN_STAGE_1, POSITION_2D(41, 7),
+            (char*)"¥Ç¥Õ¥©¥ë¥È", BTN_DESIGN::LINE));
+    GetUIObjByName("stage-select")->
+        AddBtn(UI_BUTTON(BEGIN_STAGE_2, POSITION_2D(91, 7),
+            (char*)"º£äº", BTN_DESIGN::LINE));
+    GetUIObjByName("stage-select")->
+        AddBtn(UI_BUTTON(BEGIN_STAGE_3, POSITION_2D(135, 7),
+            (char*)"É°Ä®", BTN_DESIGN::LINE));
 }
 
 void CreateNameSetUIObjs()

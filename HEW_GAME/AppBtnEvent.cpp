@@ -124,6 +124,22 @@ void DialogSceneBtnEvent(int value)
     }
 }
 
+void StageSelectSceneBtnEvent(int value)
+{
+    if (value == BEGIN_STAGE_1)
+    {
+        DebugLog("ready to load stage 1");
+    }
+    else if (value == BEGIN_STAGE_2)
+    {
+        DebugLog("ready to load stage 2");
+    }
+    else if (value == BEGIN_STAGE_3)
+    {
+        DebugLog("ready to load stage 3");
+    }
+}
+
 void NamingSceneBtnEvent(int value)
 {
     UIOBJECT* tempUIO = NULL;

@@ -31,6 +31,9 @@
 #define BACK_TO_BUILD_EVENT 0x0017
 #define SAVE_GAME_DATA 0x0018
 #define BACK_TO_TITLE 0x0019
+#define BEGIN_STAGE_1 0x001a
+#define BEGIN_STAGE_2 0x001b
+#define BEGIN_STAGE_3 0x001c
 
 /// <summary>
 /// •∑©`•Û≈‰¡–§Ú»°µ√
