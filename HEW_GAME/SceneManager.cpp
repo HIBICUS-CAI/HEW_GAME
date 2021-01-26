@@ -50,6 +50,7 @@ void InitCurrScene()
         {
             InitSwitchEffectScene();
         }
+        GetSceneNodeByName("switch-effect")->SetBaseUIO(GetUIObjByName("switch"));
         SetManagedCurrScene(GetSceneNodeByName("switch-effect"));
         SetSelectedBtn(GetSceneNodeByName("switch-effect")->BaseUIObj->Buttons);
     }
