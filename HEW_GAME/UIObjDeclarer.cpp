@@ -90,8 +90,8 @@ void CreateTitleUIObjs()
 
 void CreateDialogUIObjs()
 {
-    CreateUIO("dialog", POSITION_2D(1, 40), 178, 19,
-        UIO_DESIGN::STAR, NULL, NULL, 1);
+    CreateUIO("dialog", POSITION_2D(1, 40), 150, 19,
+        UIO_DESIGN::NOTHING, NULL, NULL, 1);
     GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(2, 2),
         (char*)"à©¤Ã¤Æ¤¤¤ëÈË"));
     GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(2, 3),
