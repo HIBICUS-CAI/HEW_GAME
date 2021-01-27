@@ -14,6 +14,8 @@
 #define BUILDINGSCENEFLAG 6
 #define RESORTSCENEFLAG 7
 #define EVENTSCENEFLAG 8
+#define FEELINGSCENEFLAG 9
+#define RESULTSCENEFLAG 10
 
 /// <summary>
 /// ¥·©`¥ó¤Î¤·¤ë¤·È¡µÃ

@@ -401,4 +401,19 @@ void CreateFinalResultUIObjs()
     GetUIObjByName("final-result")->
         AddBtn(UI_BUTTON(BACK_TO_TITLE, POSITION_2D(111, 9),
             (char*)"¥¿¥¤¥È¥ë¤Ë‘ø¤ë", BTN_DESIGN::LINE));
+
+    CreateUIO("save-data", POSITION_2D(60, 35), 60, 20,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
+    GetUIObjByName("save-data")->
+        AddBtn(UI_BUTTON(SAVE_AT_1, POSITION_2D(22, 3),
+            (char*)"¥Ç©`¥¿£±¤Ë¥»©`¥Ö", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("save-data")->
+        AddBtn(UI_BUTTON(SAVE_AT_2, POSITION_2D(22, 7),
+            (char*)"¥Ç©`¥¿£²¤Ë¥»©`¥Ö", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("save-data")->
+        AddBtn(UI_BUTTON(SAVE_AT_3, POSITION_2D(22, 11),
+            (char*)"¥Ç©`¥¿£³¤Ë¥»©`¥Ö", BTN_DESIGN::STRAIGHT));
+    GetUIObjByName("save-data")->
+        AddBtn(UI_BUTTON(BACK_TO_RESULT, POSITION_2D(27, 15),
+            (char*)"é]¤¸¤ë", BTN_DESIGN::LINE));
 }

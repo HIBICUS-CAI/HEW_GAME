@@ -11,6 +11,8 @@
 #include "AppBuildScene.h"
 #include "AppResortScene.h"
 #include "AppEventScene.h"
+#include "AppFeelingScene.h"
+#include "AppResultScene.h"
 
 int g_SceneFlag;
 
@@ -69,6 +71,14 @@ void InitCurrScene()
         else if (!strcmp(GetManagedCurrScene()->SceneName, "event"))
         {
             SetSceneFlag(EVENTSCENEFLAG);
+        }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "feeling"))
+        {
+            SetSceneFlag(FEELINGSCENEFLAG);
+        }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "result"))
+        {
+            SetSceneFlag(RESULTSCENEFLAG);
         }
 
         if (GetSceneNodeByName("switch-effect") == NULL)
@@ -131,6 +141,18 @@ void InitCurrScene()
                 BaseUIObj->Buttons);
             break;
 
+        case FEELINGSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("feeling"));
+            SetSelectedBtn(GetSceneNodeByName("feeling")->
+                BaseUIObj->Buttons);
+            break;
+
+        case RESULTSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("result"));
+            SetSelectedBtn(GetSceneNodeByName("result")->
+                BaseUIObj->Buttons);
+            break;
+
         default:
             break;
         }
@@ -179,6 +201,14 @@ void UpdateCurrScene()
             UpdateEventScene();
             break;
 
+        case FEELINGSCENEFLAG:
+            UpdateFeelingScene();
+            break;
+
+        case RESULTSCENEFLAG:
+            UpdateResultScene();
+            break;
+
         default:
             ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
             break;
@@ -222,6 +252,14 @@ void SwitchSceneToName(const char* sceneName)
         else if (!strcmp(sceneName, "event"))
         {
             InitEventScene();
+        }
+        else if (!strcmp(sceneName, "feeling"))
+        {
+            InitFeelingScene();
+        }
+        else if (!strcmp(sceneName, "result"))
+        {
+            InitResultScene();
         }
 
         scene = GetSceneNodeByName(sceneName);

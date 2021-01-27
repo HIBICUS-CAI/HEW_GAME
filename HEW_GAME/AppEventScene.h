@@ -37,7 +37,7 @@ void UpdateEventScene()
     {
         for (int j = 0; j < width; j++)
         {
-            *(cam + i * width + j) = '.';
+            *(cam + i * width + j) = '-';
         }
     }
 
@@ -45,6 +45,7 @@ void UpdateEventScene()
     if (g_EventTimeCount > 60)
     {
         g_EventTimeCount = 0;
+        SwitchSceneToName("feeling");
     }
 }
 

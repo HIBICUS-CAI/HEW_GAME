@@ -38,6 +38,10 @@
 #define BEGIN_STAGE_1 0x001a
 #define BEGIN_STAGE_2 0x001b
 #define BEGIN_STAGE_3 0x001c
+#define SAVE_AT_1 0x001d
+#define SAVE_AT_2 0x001e
+#define SAVE_AT_3 0x001f
+#define BACK_TO_RESULT 0x0020
 
 #define DIALOG_NOTHING 0x01
 #define DIALOG_NEW_GAME 0x02

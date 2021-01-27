@@ -75,6 +75,10 @@ void AppButtonEvent(int value)
         BuildingSceneBtnEvent(value);
         break;
 
+    case RESULTSCENEFLAG :
+        FinalResultSceneBtnEvent(value);
+        break;
+
     default:
         break;
     }

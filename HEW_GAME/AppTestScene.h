@@ -12,7 +12,7 @@ void InitTestScene()
     CreateSceneNode(SCENENODE("test", NULL,
         SCENECAMERA(POSITION_2D(1, 1), 160, 30)));
     GetSceneNodeByName("test")->SetBaseUIO(
-        GetUIObjByName("dialog"));
+        GetUIObjByName("final-result"));
 }
 
 void UpdateTestScene()

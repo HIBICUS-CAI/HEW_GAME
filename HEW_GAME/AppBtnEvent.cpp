@@ -302,12 +302,53 @@ void BuildingSceneBtnEvent(int value)
 
 void FinalResultSceneBtnEvent(int value)
 {
+    UIOBJECT* tempUIO = NULL;
+
     if (value == SAVE_GAME_DATA)
     {
         DebugLog("ready to save clear stage");
+        tempUIO = GetUIObjByName("save-data");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("final-result")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("final-result"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
     }
     else if (value == BACK_TO_TITLE)
     {
         DebugLog("ready to back to title scene");
+        SwitchSceneToName("title");
+    }
+    else if (value == SAVE_AT_1)
+    {
+        DebugLog("ready to save at 1");
+    }
+    else if (value == SAVE_AT_2)
+    {
+        DebugLog("ready to save at 2");
+    }
+    else if (value == SAVE_AT_3)
+    {
+        DebugLog("ready to save at 3");
+    }
+    else if (value == BACK_TO_RESULT)
+    {
+        DebugLog("ready to back to result");
+        tempUIO = GetUIObjByName("save-data");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
     }
 }
