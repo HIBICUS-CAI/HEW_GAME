@@ -9,6 +9,8 @@
 #include "AppSelectStageScene.h"
 #include "AppNamingScene.h"
 #include "AppBuildScene.h"
+#include "AppResortScene.h"
+#include "AppEventScene.h"
 
 int g_SceneFlag;
 
@@ -60,6 +62,14 @@ void InitCurrScene()
         {
             SetSceneFlag(BUILDINGSCENEFLAG);
         }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "resort"))
+        {
+            SetSceneFlag(RESORTSCENEFLAG);
+        }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "event"))
+        {
+            SetSceneFlag(EVENTSCENEFLAG);
+        }
 
         if (GetSceneNodeByName("switch-effect") == NULL)
         {
@@ -109,6 +119,18 @@ void InitCurrScene()
                 BaseUIObj->Buttons);
             break;
 
+        case RESORTSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("resort"));
+            SetSelectedBtn(GetSceneNodeByName("resort")->
+                BaseUIObj->Buttons);
+            break;
+
+        case EVENTSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("event"));
+            SetSelectedBtn(GetSceneNodeByName("event")->
+                BaseUIObj->Buttons);
+            break;
+
         default:
             break;
         }
@@ -149,6 +171,14 @@ void UpdateCurrScene()
             UpdateBuildScene();
             break;
 
+        case RESORTSCENEFLAG:
+            UpdateResortScene();
+            break;
+
+        case EVENTSCENEFLAG:
+            UpdateEventScene();
+            break;
+
         default:
             ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
             break;
@@ -184,6 +214,14 @@ void SwitchSceneToName(const char* sceneName)
         else if (!strcmp(sceneName, "build"))
         {
             InitBuildScene();
+        }
+        else if (!strcmp(sceneName, "resort"))
+        {
+            InitResortScene();
+        }
+        else if (!strcmp(sceneName, "event"))
+        {
+            InitEventScene();
         }
 
         scene = GetSceneNodeByName(sceneName);

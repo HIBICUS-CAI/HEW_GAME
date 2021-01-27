@@ -12,6 +12,8 @@
 #define SELECTSCENEFLAG 4
 #define NAMINGSCENEFLAG 5
 #define BUILDINGSCENEFLAG 6
+#define RESORTSCENEFLAG 7
+#define EVENTSCENEFLAG 8
 
 /// <summary>
 /// ¥·©`¥ó¤Î¤·¤ë¤·È¡µÃ

@@ -166,7 +166,9 @@
     <ClInclude Include="AppBuildScene.h" />
     <ClInclude Include="AppDeclared.h" />
     <ClInclude Include="AppDialogScene.h" />
+    <ClInclude Include="AppEventScene.h" />
     <ClInclude Include="AppNamingScene.h" />
+    <ClInclude Include="AppResortScene.h" />
     <ClInclude Include="AppSelectStageScene.h" />
     <ClInclude Include="AppSwitchEffectScene.h" />
     <ClInclude Include="AppTestScene.h" />

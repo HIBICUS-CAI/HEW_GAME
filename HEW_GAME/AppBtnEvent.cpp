@@ -265,6 +265,11 @@ void BuildingSceneBtnEvent(int value)
     {
         DebugLog("ready to confirm this building");
     }
+    else if (value == TEMP_BTN_BUILDING_1)
+    {
+        DebugLog("ready to go to resort scene");
+        SwitchSceneToName("resort");
+    }
     else if (value == BACK_TO_BUILD_TYPE)
     {
         DebugLog("ready to back to build ui from building type");

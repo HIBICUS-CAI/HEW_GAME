@@ -52,12 +52,12 @@ void UpdateSwitchEffectScene()
                 {
                     for (int j = 0; j < i; j++)
                     {
-                        for (int k = 0; k < width; k++)
+                        for (int k = 0; k < width / 2; k++)
                         {
                             *(cam + 2 * j *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                             *(cam + (2 * j + 1) *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                         }
                     }
                     --i;
@@ -70,12 +70,12 @@ void UpdateSwitchEffectScene()
                 {
                     for (int j = 0; j < i; j++)
                     {
-                        for (int k = 0; k < width; k++)
+                        for (int k = 0; k < width / 2; k++)
                         {
                             *(cam + (height - 2 * j - 1) *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                             *(cam + (height - 2 * j - 2) *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                         }
                     }
                     --i;
@@ -142,12 +142,12 @@ void UpdateSwitchEffectScene()
                 {
                     for (int j = 0; j < i; j++)
                     {
-                        for (int k = 0; k < width; k++)
+                        for (int k = 0; k < width / 2; k++)
                         {
                             *(cam + (height - 2 * j - 1) *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                             *(cam + (height - 2 * j - 2) *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                         }
                     }
                     --i;
@@ -160,12 +160,12 @@ void UpdateSwitchEffectScene()
                 {
                     for (int j = 0; j < i; j++)
                     {
-                        for (int k = 0; k < width; k++)
+                        for (int k = 0; k < width / 2; k++)
                         {
                             *(cam + (2 * j) *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                             *(cam + (2 * j + 1) *
-                                width + k) = '|';
+                                width + 2 * k) = '|';
                         }
                     }
                     --i;
