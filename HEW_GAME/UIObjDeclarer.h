@@ -13,6 +13,11 @@
 void CreateAllUIObjs();
 
 /// <summary>
+/// 何もないアイテムを作成
+/// </summary>
+void CreateEmptyUIObjs();
+
+/// <summary>
 /// タイトル画面に関してのアイテムを作成
 /// </summary>
 void CreateTitleUIObjs();

@@ -10,7 +10,7 @@
 #define TITLESCENEFLAG 2
 #define DIALOGSCENEFLAG 3
 #define SELECTSCENEFLAG 4
-#define NAMINGSCENEFLAG 4
+#define NAMINGSCENEFLAG 5
 
 /// <summary>
 /// ¥·©`¥ó¤Î¤·¤ë¤·È¡µÃ

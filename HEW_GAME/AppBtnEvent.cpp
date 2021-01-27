@@ -140,14 +140,17 @@ void StageSelectSceneBtnEvent(int value)
     if (value == BEGIN_STAGE_1)
     {
         DebugLog("ready to load stage 1");
+        SwitchSceneToName("naming");
     }
     else if (value == BEGIN_STAGE_2)
     {
         DebugLog("ready to load stage 2");
+        SwitchSceneToName("naming");
     }
     else if (value == BEGIN_STAGE_3)
     {
         DebugLog("ready to load stage 3");
+        SwitchSceneToName("naming");
     }
 }
 

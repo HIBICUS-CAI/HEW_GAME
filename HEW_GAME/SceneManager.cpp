@@ -7,6 +7,7 @@
 #include "AppDialogScene.h"
 #include "AppSwitchEffectScene.h"
 #include "AppSelectStageScene.h"
+#include "AppNamingScene.h"
 
 int g_SceneFlag;
 
@@ -50,12 +51,16 @@ void InitCurrScene()
         {
             SetSceneFlag(SELECTSCENEFLAG);
         }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "naming"))
+        {
+            SetSceneFlag(NAMINGSCENEFLAG);
+        }
 
         if (GetSceneNodeByName("switch-effect") == NULL)
         {
             InitSwitchEffectScene();
         }
-        GetSceneNodeByName("switch-effect")->SetBaseUIO(GetUIObjByName("switch"));
+        GetSceneNodeByName("switch-effect")->SetBaseUIO(GetUIObjByName("empty"));
         SetManagedCurrScene(GetSceneNodeByName("switch-effect"));
         SetSelectedBtn(GetSceneNodeByName("switch-effect")->BaseUIObj->Buttons);
     }
@@ -84,6 +89,12 @@ void InitCurrScene()
         case SELECTSCENEFLAG:
             SetManagedCurrScene(GetSceneNodeByName("select"));
             SetSelectedBtn(GetSceneNodeByName("select")->
+                BaseUIObj->Buttons);
+            break;
+
+        case NAMINGSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("naming"));
+            SetSelectedBtn(GetSceneNodeByName("naming")->
                 BaseUIObj->Buttons);
             break;
 
@@ -119,6 +130,10 @@ void UpdateCurrScene()
             UpdateSelectStageScene();
             break;
 
+        case NAMINGSCENEFLAG:
+            UpdateNamingScene();
+            break;
+
         default:
             ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
             break;
@@ -146,6 +161,10 @@ void SwitchSceneToName(const char* sceneName)
         else if (!strcmp(sceneName, "select"))
         {
             InitSelectStageScene();
+        }
+        else if (!strcmp(sceneName, "naming"))
+        {
+            InitNamingScene();
         }
 
         scene = GetSceneNodeByName(sceneName);

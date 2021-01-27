@@ -149,5 +149,8 @@
     <ClInclude Include="AppSelectStageScene.h">
       <Filter>GameScene</Filter>
     </ClInclude>
+    <ClInclude Include="AppNamingScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
