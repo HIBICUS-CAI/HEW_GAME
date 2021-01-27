@@ -8,6 +8,7 @@
 #include "AppSwitchEffectScene.h"
 #include "AppSelectStageScene.h"
 #include "AppNamingScene.h"
+#include "AppBuildScene.h"
 
 int g_SceneFlag;
 
@@ -55,6 +56,10 @@ void InitCurrScene()
         {
             SetSceneFlag(NAMINGSCENEFLAG);
         }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "build"))
+        {
+            SetSceneFlag(BUILDINGSCENEFLAG);
+        }
 
         if (GetSceneNodeByName("switch-effect") == NULL)
         {
@@ -98,6 +103,12 @@ void InitCurrScene()
                 BaseUIObj->Buttons);
             break;
 
+        case BUILDINGSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("build"));
+            SetSelectedBtn(GetSceneNodeByName("build")->
+                BaseUIObj->Buttons);
+            break;
+
         default:
             break;
         }
@@ -134,6 +145,10 @@ void UpdateCurrScene()
             UpdateNamingScene();
             break;
 
+        case BUILDINGSCENEFLAG:
+            UpdateBuildScene();
+            break;
+
         default:
             ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
             break;
@@ -165,6 +180,10 @@ void SwitchSceneToName(const char* sceneName)
         else if (!strcmp(sceneName, "naming"))
         {
             InitNamingScene();
+        }
+        else if (!strcmp(sceneName, "build"))
+        {
+            InitBuildScene();
         }
 
         scene = GetSceneNodeByName(sceneName);

@@ -71,6 +71,10 @@ void AppButtonEvent(int value)
         NamingSceneBtnEvent(value);
         break;
 
+    case BUILDINGSCENEFLAG:
+        BuildingSceneBtnEvent(value);
+        break;
+
     default:
         break;
     }

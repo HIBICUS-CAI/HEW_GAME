@@ -11,6 +11,7 @@
 #define DIALOGSCENEFLAG 3
 #define SELECTSCENEFLAG 4
 #define NAMINGSCENEFLAG 5
+#define BUILDINGSCENEFLAG 6
 
 /// <summary>
 /// ¥·©`¥ó¤Î¤·¤ë¤·È¡µÃ

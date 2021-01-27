@@ -193,6 +193,7 @@ void NamingSceneBtnEvent(int value)
     else if (value == CONFIRM_NAME)
     {
         DebugLog("ready to confirm this name");
+        SwitchSceneToName("build");
     }
     else if (value == BACK_TO_NAME_1)
     {

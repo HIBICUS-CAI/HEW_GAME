@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppBtnEvent.h" />
+    <ClInclude Include="AppBuildScene.h" />
     <ClInclude Include="AppDeclared.h" />
     <ClInclude Include="AppDialogScene.h" />
     <ClInclude Include="AppNamingScene.h" />

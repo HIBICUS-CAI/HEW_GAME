@@ -152,5 +152,8 @@
     <ClInclude Include="AppNamingScene.h">
       <Filter>GameScene</Filter>
     </ClInclude>
+    <ClInclude Include="AppBuildScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
