@@ -146,5 +146,8 @@
     <ClInclude Include="AppSwitchEffectScene.h">
       <Filter>GameScene</Filter>
     </ClInclude>
+    <ClInclude Include="AppSelectStageScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

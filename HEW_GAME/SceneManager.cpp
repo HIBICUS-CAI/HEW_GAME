@@ -6,6 +6,7 @@
 #include "AppTitleScene.h"
 #include "AppDialogScene.h"
 #include "AppSwitchEffectScene.h"
+#include "AppSelectStageScene.h"
 
 int g_SceneFlag;
 
@@ -45,6 +46,10 @@ void InitCurrScene()
         {
             SetSceneFlag(DIALOGSCENEFLAG);
         }
+        else if (!strcmp(GetManagedCurrScene()->SceneName, "select"))
+        {
+            SetSceneFlag(SELECTSCENEFLAG);
+        }
 
         if (GetSceneNodeByName("switch-effect") == NULL)
         {
@@ -76,6 +81,12 @@ void InitCurrScene()
                 BaseUIObj->Buttons);
             break;
 
+        case SELECTSCENEFLAG:
+            SetManagedCurrScene(GetSceneNodeByName("select"));
+            SetSelectedBtn(GetSceneNodeByName("select")->
+                BaseUIObj->Buttons);
+            break;
+
         default:
             break;
         }
@@ -104,6 +115,10 @@ void UpdateCurrScene()
             UpdateDialogScene();
             break;
 
+        case SELECTSCENEFLAG:
+            UpdateSelectStageScene();
+            break;
+
         default:
             ErrorLogI1("you don't have a scene flag witch is", GetSceneFlag());
             break;
@@ -127,6 +142,10 @@ void SwitchSceneToName(const char* sceneName)
         else if (!strcmp(sceneName, "dialog"))
         {
             InitDialogScene();
+        }
+        else if (!strcmp(sceneName, "select"))
+        {
+            InitSelectStageScene();
         }
 
         scene = GetSceneNodeByName(sceneName);

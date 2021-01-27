@@ -125,6 +125,14 @@ void DialogSceneBtnEvent(int value)
     {
         DebugLog("ready to load next dialog or set all texts");
     }
+    else if (value == TEMP_BTN_DIALOG_1)
+    {
+        DebugLog("ready to temp");
+        if (GetDialogEvent() == DIALOG_NEW_GAME)
+        {
+            SwitchSceneToName("select");
+        }
+    }
 }
 
 void StageSelectSceneBtnEvent(int value)

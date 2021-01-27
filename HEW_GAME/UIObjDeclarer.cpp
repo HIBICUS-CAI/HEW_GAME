@@ -107,7 +107,7 @@ void CreateDialogUIObjs()
     GetUIObjByName("dialog")->AddText(UI_TEXT(POSITION_2D(6, 14),
         (char*)"ÑÔÈ~¤½¤ÎÎå¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£"));
     GetUIObjByName("dialog")->
-        AddBtn(UI_BUTTON(DIALOG_NEXT, POSITION_2D(175, 17),
+        AddBtn(UI_BUTTON(DIALOG_NEXT, POSITION_2D(50, 17),
             (char*)"", BTN_DESIGN::NONE));
 }
 

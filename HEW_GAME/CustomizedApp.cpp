@@ -63,6 +63,10 @@ void AppButtonEvent(int value)
         DialogSceneBtnEvent(value);
         break;
 
+    case SELECTSCENEFLAG:
+        StageSelectSceneBtnEvent(value);
+        break;
+
     default:
         break;
     }

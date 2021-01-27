@@ -234,7 +234,6 @@ void UpdateSwitchEffectScene()
             }
         }
 
-        DebugLogI1("now", g_test);
         if (g_test > height)
         {
             g_test = 0;

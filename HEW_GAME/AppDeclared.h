@@ -8,6 +8,9 @@
 
 #define SCENENODESIZE 20
 
+//------------------------------
+#define TEMP_BTN_DIALOG_1 0x1000
+
 #define START_NEW_GAME 0x0003
 #define LOAD_GAME_DATA 0x0004
 #define LOAD_DATA_1 0x0005
