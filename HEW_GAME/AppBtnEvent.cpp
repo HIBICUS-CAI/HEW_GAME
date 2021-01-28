@@ -140,9 +140,7 @@ void DialogSceneBtnEvent(int value)
                 {
                     SwitchSceneToName("select");
                 }
-                SetDialogIndex(0);
-                SetIsDialogFinish(1);
-                SetDialogEvent(DIALOG_NOTHING);
+                ResetUsingPointerAndFlag();
             }
         }
         else
@@ -151,9 +149,7 @@ void DialogSceneBtnEvent(int value)
             {
                 SwitchSceneToName("select");
             }
-            SetDialogIndex(0);
-            SetIsDialogFinish(1);
-            SetDialogEvent(DIALOG_NOTHING);
+            ResetUsingPointerAndFlag();
         }
     }
     else if (value == TEMP_BTN_DIALOG_1)

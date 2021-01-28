@@ -33,3 +33,8 @@ int GetDialogIndex();
 /// </summary>
 /// <param name="value">‘O∂®§µ§ª§ø§§Çé</param>
 void SetDialogIndex(int value);
+
+/// <summary>
+/// åù‘í•§•Ÿ•Û•»§¨ΩK§Ô§Î÷±··ÈvﬂBâ‰ ˝§Ú•Í•ª•√•»
+/// </summary>
+void ResetUsingPointerAndFlag();
