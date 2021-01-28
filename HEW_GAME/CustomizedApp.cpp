@@ -7,6 +7,8 @@
 #include "AppBtnEvent.h"
 #include "Tools.h"
 
+#include "DialogShower.h"
+
 void AppInit()
 {
     CreateAllUIObjs();
@@ -15,8 +17,8 @@ void AppInit()
     SetSwitchEffectFlag(0);
     SetRandom();
     SetSwitchEffectStyle(CreateRandomNumIn(1, 4));
-    SetIsDialogFinish(1);
-    SetDialogEvent(DIALOG_NOTHING);
+
+    InitDialogShower();
 
     SwitchSceneToName("title");
 }
@@ -24,6 +26,16 @@ void AppInit()
 void AppUpdate()
 {
     UpdateCurrScene();
+
+    switch (GetSceneFlag())
+    {
+    case DIALOGSCENEFLAG:
+        UpdateDialogShower();
+        break;
+
+    default:
+        break;
+    }
 
     DrawScene(GetManagedCurrScene());
 }

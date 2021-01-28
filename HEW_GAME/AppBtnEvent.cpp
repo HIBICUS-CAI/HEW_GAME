@@ -4,6 +4,7 @@
 #include "UIObject.h"
 #include "DeclaredValues.h"
 #include "SceneManager.h"
+#include "DialogShower.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -124,6 +125,36 @@ void DialogSceneBtnEvent(int value)
     if (value == DIALOG_NEXT)
     {
         DebugLog("ready to load next dialog or set all texts");
+        int testIndex = GetDialogIndex() + 1;
+        if (testIndex < DIALOG_SIZE)
+        {
+            char* tester = GetDiaLogEventByEventID(GetDialogEvent())->
+                GetSningleDialogByOffset(testIndex)->Speaker;
+            if (tester != NULL && strcmp(tester, ""))
+            {
+                SetDialogIndex(GetDialogIndex() + 1);
+            }
+            else
+            {
+                if (GetDialogEvent() == DIALOG_NEW_GAME)
+                {
+                    SwitchSceneToName("select");
+                }
+                SetDialogIndex(0);
+                SetIsDialogFinish(1);
+                SetDialogEvent(DIALOG_NOTHING);
+            }
+        }
+        else
+        {
+            if (GetDialogEvent() == DIALOG_NEW_GAME)
+            {
+                SwitchSceneToName("select");
+            }
+            SetDialogIndex(0);
+            SetIsDialogFinish(1);
+            SetDialogEvent(DIALOG_NOTHING);
+        }
     }
     else if (value == TEMP_BTN_DIALOG_1)
     {

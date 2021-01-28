@@ -40,28 +40,6 @@ void UpdateDialogScene()
     int height = GetSceneNodeByName("dialog")->GetCamAddr()->
         CameraHeight;
 
-    if (IsDialogFinish())
-    {
-        int dialogEventID = GetDialogEvent();
-        if (dialogEventID == DIALOG_NOTHING)
-        {
-            ErrorLog("you should not load dialog scene without a meanful event");
-        }
-        else if (dialogEventID == DIALOG_NEW_GAME)
-        {
-            DebugLog("ready to go to new game dialog");
-            SetIsDialogFinish(0);
-        }
-        else
-        {
-            ErrorLogI1("cannot find this dialog ID", dialogEventID);
-        }
-    }
-    else
-    {
-
-    }
-
     for (int i = 0; i < width; i++)
     {
         *(cam + (height - 1) * width + i) = '_';

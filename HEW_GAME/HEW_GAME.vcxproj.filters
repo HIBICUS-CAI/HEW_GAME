@@ -19,6 +19,9 @@
     <Filter Include="GameScene">
       <UniqueIdentifier>{807205f3-3362-4497-9748-c37cf3077745}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{599fa5f2-0f01-4c76-b1c3-5b22ad21c564}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -71,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="AppBtnEvent.cpp">
       <Filter>GameApp</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogShower.cpp">
+      <Filter>GameObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="AppResultScene.h">
       <Filter>GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogShower.h">
+      <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
