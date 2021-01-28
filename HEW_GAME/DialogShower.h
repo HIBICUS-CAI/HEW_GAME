@@ -5,6 +5,8 @@
 
 #pragma once
 
+#define PEOPLE_SPRITE_SIZE 16
+
 /// <summary>
 /// 対話処理機能を初期化する
 /// </summary>

@@ -23,6 +23,14 @@ SPRITE CreateSingleSprite(const char* fileName, POSITION_2D position, int width,
 void DrawSingleSpriteToUpdateBuffer(SPRITE* sprite);
 
 /// <summary>
+/// 一個のスプライトをカメラバッファに書き込む
+/// </summary>
+/// <param name="camBuffer">カメラバッファに指向のポインタ</param>
+/// <param name="sprite">書き込みたいスプライトに指向のポインタ</param>
+/// <param name="posInCam">書き込みたい座標</param>
+void DrawSingleSpriteToCamBuffer(SCENECAMERA* camBuffer, SPRITE* sprite, POSITION_2D posInCam);
+
+/// <summary>
 /// スプライトアニメタルを作成
 /// </summary>
 /// <param name="frameCount">キーフレームの数</param>
@@ -39,3 +47,12 @@ SPRITE_ANIME CreateSpriteAnimator(int frameCount, const char* fileName, POSITION
 /// <param name="spriteAnimator">書き込みたいスプライトアニメタルに指向のポインタ</param>
 /// <param name="offset">偏移量</param>
 void DrawSpriteAnimatorToUpdateBuffer(SPRITE_ANIME* spriteAnimator, int offset);
+
+/// <summary>
+/// スプライトアニメタルをカメラバッファに書き込む
+/// </summary>
+/// <param name="camBuffer">カメラバッファに指向のポインタ</param>
+/// <param name="spriteAnimator">書き込みたいスプライトアニメタルに指向のポインタ</param>
+/// <param name="offset">偏移量</param>
+/// <param name="posInCam">書き込みたい座標</param>
+void DrawSpriteAnimatorToCamBuffer(SCENECAMERA* camBuffer, SPRITE_ANIME* spriteAnimator, int offset, POSITION_2D posInCam);
