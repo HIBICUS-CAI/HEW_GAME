@@ -11,6 +11,7 @@ void AppInit()
 {
     CreateAllUIObjs();
     InitSceneNodes();
+    InitAndLoadDialogEvents();
     SetSwitchEffectFlag(0);
     SetRandom();
     SetSwitchEffectStyle(CreateRandomNumIn(1, 4));

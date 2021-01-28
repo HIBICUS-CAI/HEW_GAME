@@ -71,3 +71,109 @@ void SetSwitchEffectStyle(int value)
 {
     g_SwitchEffectStyle = value;
 }
+
+DIALOG_EVENT g_DialogEvents[DIALOG_EVENT_SIZE];
+
+void InitAndLoadDialogEvents()
+{
+    DIALOG_EVENT temp = DIALOG_EVENT();
+    for (int i = 0; i < DIALOG_EVENT_SIZE; i++)
+    {
+        *(g_DialogEvents + i) = temp;
+    }
+
+    // ¤³¤³¤Ç¥Õ¥¡¥¤¥ë¥í©`¥É¤òÐÐ¤¦
+    LoadSingleDialogEvnetFromID(DIALOG_NEW_GAME, "Assets\\DialogTexts\\new_game.txt");
+}
+
+void LoadSingleDialogEvnetFromID(int id, const char* path)
+{
+    DIALOG_EVENT* readyToWrite = NULL;
+    for (int i = 0; i < DIALOG_EVENT_SIZE; i++)
+    {
+        if (g_DialogEvents[i].GetDialogEventID() == -1)
+        {
+            readyToWrite = g_DialogEvents + i;
+            break;
+        }
+    }
+
+    if (readyToWrite == NULL)
+    {
+        ErrorLog("you have used all of dialog event");
+        return;
+    }
+
+    FILE* pFile = NULL;
+    fopen_s(&pFile, path, "r");
+    if (pFile == NULL)
+    {
+        ErrorLogI1("cannot load this file witch id is", id);
+        return;
+    }
+
+    readyToWrite->DialogEventID = id;
+
+    char tempStr[128] = "";
+    int tempFlg = 0;
+    int firstIndex = 0;
+    int secondIndex = 0;
+    while (1)
+    {
+        fscanf_s(pFile, "%s", tempStr, sizeof(tempStr));
+        fscanf_s(pFile, "%d", &tempFlg);
+        if (tempFlg == 1)
+        {
+            DebugLog("speaker: ");
+            DebugLog(tempStr);
+            strcpy_s(readyToWrite->GetSningleDialogByOffset(firstIndex)->GetSpeaker(),
+                sizeof(tempStr), tempStr);
+        }
+        else if (tempFlg == 2)
+        {
+            DebugLog("sentence: ");
+            DebugLog(tempStr);
+            strcpy_s(readyToWrite->GetSningleDialogByOffset(firstIndex)->GetSingleSentenceByOffset(secondIndex),
+                sizeof(tempStr), tempStr);
+            ++secondIndex;
+        }
+        else if (tempFlg == 3)
+        {
+            DebugLog("final sentence but not end: ");
+            DebugLog(tempStr);
+            strcpy_s(readyToWrite->GetSningleDialogByOffset(firstIndex)->GetSingleSentenceByOffset(secondIndex),
+                sizeof(tempStr), tempStr);
+            secondIndex = 0;
+            ++firstIndex;
+        }
+        else if (tempFlg == 4)
+        {
+            DebugLog("final sentence and end: ");
+            DebugLog(tempStr);
+            strcpy_s(readyToWrite->GetSningleDialogByOffset(firstIndex)->GetSingleSentenceByOffset(secondIndex),
+                sizeof(tempStr), tempStr);
+            secondIndex = 0;
+            firstIndex = 0;
+            break;
+        }
+        else
+        {
+            ErrorLogI1("cannot use this flag", tempFlg);
+        }
+    }
+    fclose(pFile);
+}
+
+DIALOG_EVENT* GetDiaLogEventByEventID(int id)
+{
+    for (int i = 0; i < DIALOG_EVENT_SIZE; i++)
+    {
+        if (id == g_DialogEvents[i].GetDialogEventID())
+        {
+            return g_DialogEvents + i;
+        }
+    }
+
+    ErrorLogI1("cannot find this event id", id);
+    return NULL;
+}

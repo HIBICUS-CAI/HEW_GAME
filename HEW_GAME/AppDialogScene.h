@@ -25,7 +25,7 @@ void InitDialogScene()
             (char*)"TEST", BTN_DESIGN::LINE));
 
     g_NextBtnSpriteAnimator = CreateSpriteAnimator(8,
-        "Assets\\next-arrow\\arrow",
+        "Assets\\SpriteAnimators\\next-arrow\\arrow",
         POSITION_2D(156, 50), 16, 8);
 }
 
@@ -56,6 +56,10 @@ void UpdateDialogScene()
         {
             ErrorLogI1("cannot find this dialog ID", dialogEventID);
         }
+    }
+    else
+    {
+
     }
 
     for (int i = 0; i < width; i++)

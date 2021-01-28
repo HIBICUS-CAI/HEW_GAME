@@ -132,6 +132,8 @@ void DialogSceneBtnEvent(int value)
         {
             SwitchSceneToName("select");
         }
+        SetDialogEvent(DIALOG_NOTHING);
+        SetIsDialogFinish(1);
     }
 }
 

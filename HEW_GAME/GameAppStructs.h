@@ -132,3 +132,67 @@ struct SPRITE_ANIME
         return SubSprites + offset;
     }
 };
+
+#define SINGLE_SENTENCE_LEN 128
+#define SINGLE_TURN_COUNT 5
+/// <summary>
+/// 一回の対話内容
+/// </summary>
+struct SINGLE_DIALOG
+{
+    char Speaker[32];
+    char Texts[SINGLE_TURN_COUNT][SINGLE_SENTENCE_LEN];
+
+    SINGLE_DIALOG()
+    {
+        strcpy_s(Speaker, sizeof(Speaker), "");
+        for (int i = 0; i < SINGLE_TURN_COUNT; i++)
+        {
+            strcpy_s(Texts[i], sizeof(Texts[i]), "");
+        }
+    }
+
+    char* GetSingleSentenceByOffset(int offset)
+    {
+        if (offset >= SINGLE_TURN_COUNT)
+        {
+            ErrorLogI1("cannot read this address", offset);
+            return NULL;
+        }
+        return Texts[offset];
+    }
+
+    char* GetSpeaker()
+    {
+        return Speaker;
+    }
+};
+
+#define DIALOG_SIZE 64
+/// <summary>
+/// 一回の対話内容を全部保存する構造体
+/// </summary>
+struct DIALOG_EVENT
+{
+    int DialogEventID;
+    SINGLE_DIALOG Dialogs[DIALOG_SIZE];
+
+    DIALOG_EVENT()
+    {
+        DialogEventID = -1;
+        for (int i = 0; i < DIALOG_SIZE; i++)
+        {
+            Dialogs[i] = SINGLE_DIALOG();
+        }
+    }
+
+    int GetDialogEventID()
+    {
+        return DialogEventID;
+    }
+
+    SINGLE_DIALOG* GetSningleDialogByOffset(int offset)
+    {
+        return Dialogs + offset;
+    }
+};

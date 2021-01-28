@@ -123,3 +123,24 @@ int GetSwitchEffectStyle();
 /// </summary>
 /// <param name="id">スタイル</param>
 void SetSwitchEffectStyle(int value);
+
+#define DIALOG_EVENT_SIZE 32
+
+/// <summary>
+/// 対話データを初期化してロードする
+/// </summary>
+void InitAndLoadDialogEvents();
+
+/// <summary>
+/// ファイルからひとつの対話イベントを上書きする
+/// </summary>
+/// <param name="id">対話イベントの番号</param>
+/// <param name="path">ファイルのアドレス</param>
+void LoadSingleDialogEvnetFromID(int id, const char* path);
+
+/// <summary>
+/// 対話イベントデータを取得
+/// </summary>
+/// <param name="id">対話イベントの番号</param>
+/// <returns>対話イベント指向のポインタ</returns>
+DIALOG_EVENT* GetDiaLogEventByEventID(int id);
