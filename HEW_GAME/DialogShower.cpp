@@ -153,7 +153,6 @@ void UpdateDialogShower()
             }
         }
 
-        // バグがここにあるかも
         if (g_SAFlag)
         {
             if (g_UsingTalkPeopleSprites != NULL)
@@ -200,11 +199,12 @@ void SetDialogIndex(int value)
 
 void ResetUsingPointerAndFlag()
 {
-    // バグがここにあるかも
     g_UsingTalkPeopleSprites = NULL;
     g_UsingTalkPeopleSprAni = NULL;
     g_SAFlag = 0;
     SetDialogIndex(0);
     SetIsDialogFinish(1);
     SetDialogEvent(DIALOG_NOTHING);
+    GetSceneNodeByName("dialog")->GetBaseUIOAddr()->
+        Texts->ChangeTextTo("");
 }
