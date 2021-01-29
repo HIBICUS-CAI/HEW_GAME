@@ -72,7 +72,7 @@ void UpdateDialogShower()
     {
         UIOBJECT* dialog = GetSceneNodeByName("dialog")->GetBaseUIOAddr();
         char preName[16] = "";
-        strcpy_s(preName, sizeof(dialog->Texts->Text), dialog->Texts->Text);
+        strcpy_s(preName, sizeof(preName), dialog->Texts->Text);
         (dialog->Texts)->ChangeTextTo(
             gp_GoingDialogEvent->GetSningleDialogByOffset(
                 GetDialogIndex())->GetSpeaker());
@@ -83,102 +83,9 @@ void UpdateDialogShower()
                     GetDialogIndex())->GetSingleSentenceByOffset(i));
         }
 
-        if (!strcmp(dialog->Texts->Text, "あなた"))
-        {
-            if (strcmp(preName, dialog->Texts->Text))
-            {
-                if (g_SAFlag)
-                {
-                    g_SAFlag = 0;
-                }
-                else
-                {
-                    g_SAFlag = 1;
-                }
-                g_UsingTalkPeopleSprAni = g_TalkPeopleSprAni + CHARA_LUXUN;
-                if (!strcmp(preName, "担当者"))
-                {
-                    g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_YUKICHI;
-                }
-                else if (!strcmp(preName, "天使"))
-                {
-                    g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_EINSTEIN;
-                }
-            }
-        }
-        else if (!strcmp(dialog->Texts->Text, "担当者"))
-        {
-            if (strcmp(preName, dialog->Texts->Text))
-            {
-                if (g_SAFlag)
-                {
-                    g_SAFlag = 0;
-                }
-                else
-                {
-                    g_SAFlag = 1;
-                }
-                g_UsingTalkPeopleSprAni = g_TalkPeopleSprAni + CHARA_YUKICHI;
-                if (!strcmp(preName, "あなた"))
-                {
-                    g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_LUXUN;
-                }
-                else if (!strcmp(preName, "天使"))
-                {
-                    g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_EINSTEIN;
-                }
-            }
-        }
-        else if (!strcmp(dialog->Texts->Text, "天使"))
-        {
-            if (strcmp(preName, dialog->Texts->Text))
-            {
-                if (g_SAFlag)
-                {
-                    g_SAFlag = 0;
-                }
-                else
-                {
-                    g_SAFlag = 1;
-                }
-                g_UsingTalkPeopleSprAni = g_TalkPeopleSprAni + CHARA_EINSTEIN;
-                if (!strcmp(preName, "あなた"))
-                {
-                    g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_LUXUN;
-                }
-                else if (!strcmp(preName, "担当者"))
-                {
-                    g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_YUKICHI;
-                }
-            }
-        }
+        SwitchSprite(dialog->Texts->Text, preName);
 
-        if (g_SAFlag)
-        {
-            if (g_UsingTalkPeopleSprites != NULL)
-            {
-                DrawSingleSpriteToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
-                    g_UsingTalkPeopleSprites, POSITION_2D(105, 2));
-            }
-            if (g_UsingTalkPeopleSprAni != NULL)
-            {
-                DrawSpriteAnimatorToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
-                    g_UsingTalkPeopleSprAni, (g_TimeCount++) % 60, POSITION_2D(15, 1));
-            }
-        }
-        else
-        {
-            if (g_UsingTalkPeopleSprites != NULL)
-            {
-                DrawSingleSpriteToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
-                    g_UsingTalkPeopleSprites, POSITION_2D(15, 2));
-            }
-            if (g_UsingTalkPeopleSprAni != NULL)
-            {
-                DrawSpriteAnimatorToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
-                    g_UsingTalkPeopleSprAni, (g_TimeCount++) % 60, POSITION_2D(105, 1));
-            }
-        }
+        DrawTalkingSprite();
     }
 }
 
@@ -207,4 +114,100 @@ void ResetUsingPointerAndFlag()
     SetDialogEvent(DIALOG_NOTHING);
     GetSceneNodeByName("dialog")->GetBaseUIOAddr()->
         Texts->ChangeTextTo("");
+    ClearSceneCamBuffer(GetSceneNodeByName("dialog"));
+}
+
+void SwitchSAFlag()
+{
+    if (g_SAFlag)
+    {
+        g_SAFlag = 0;
+    }
+    else
+    {
+        g_SAFlag = 1;
+    }
+}
+
+void SetPreSprite(char* preName)
+{
+    if (!strcmp(preName, "あなた"))
+    {
+        g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_LUXUN;
+    }
+    else if (!strcmp(preName, "担当者"))
+    {
+        g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_YUKICHI;
+    }
+    else if (!strcmp(preName, "天使"))
+    {
+        g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_EINSTEIN;
+    }
+}
+
+void SwitchSprite(char* thisName, char* preName)
+{
+    if (!strcmp(thisName, "あなた"))
+    {
+        if (strcmp(preName, thisName))
+        {
+            SwitchSAFlag();
+
+            g_UsingTalkPeopleSprAni = g_TalkPeopleSprAni + CHARA_LUXUN;
+            
+            SetPreSprite(preName);
+        }
+    }
+    else if (!strcmp(thisName, "担当者"))
+    {
+        if (strcmp(preName, thisName))
+        {
+            SwitchSAFlag();
+
+            g_UsingTalkPeopleSprAni = g_TalkPeopleSprAni + CHARA_YUKICHI;
+
+            SetPreSprite(preName);
+        }
+    }
+    else if (!strcmp(thisName, "天使"))
+    {
+        if (strcmp(preName, thisName))
+        {
+            SwitchSAFlag();
+
+            g_UsingTalkPeopleSprAni = g_TalkPeopleSprAni + CHARA_EINSTEIN;
+
+            SetPreSprite(preName);
+        }
+    }
+}
+
+void DrawTalkingSprite()
+{
+    if (g_SAFlag)
+    {
+        if (g_UsingTalkPeopleSprites != NULL)
+        {
+            DrawSingleSpriteToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
+                g_UsingTalkPeopleSprites, POSITION_2D(105, 2));
+        }
+        if (g_UsingTalkPeopleSprAni != NULL)
+        {
+            DrawSpriteAnimatorToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
+                g_UsingTalkPeopleSprAni, (g_TimeCount++) % 60, POSITION_2D(15, 1));
+        }
+    }
+    else
+    {
+        if (g_UsingTalkPeopleSprites != NULL)
+        {
+            DrawSingleSpriteToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
+                g_UsingTalkPeopleSprites, POSITION_2D(15, 2));
+        }
+        if (g_UsingTalkPeopleSprAni != NULL)
+        {
+            DrawSpriteAnimatorToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
+                g_UsingTalkPeopleSprAni, (g_TimeCount++) % 60, POSITION_2D(105, 1));
+        }
+    }
 }

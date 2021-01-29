@@ -38,3 +38,15 @@ void SetDialogIndex(int value);
 /// 対話イベントが終わる直後関連変数をリセット
 /// </summary>
 void ResetUsingPointerAndFlag();
+
+/// <summary>
+/// もし喋っている人が変わったらスプライトも変わっていく
+/// </summary>
+/// <param name="thisName">今喋っている人</param>
+/// <param name="preName">前回喋った人</param>
+void SwitchSprite(char* thisName, char* preName);
+
+/// <summary>
+/// スプライトアニメタルフラグによってスプライトを更新
+/// </summary>
+void DrawTalkingSprite();
