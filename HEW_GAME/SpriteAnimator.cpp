@@ -60,7 +60,10 @@ void DrawSingleSpriteToCamBuffer(SCENECAMERA* camBuffer, SPRITE* sprite, POSITIO
     {
         for (int j = 0; j < sprite->Width; j++)
         {
-            if (*(sprite->GetSpriteBuffer() + i * sprite->Width + j) == ' ')
+            if (startPos.posX + j >= camBuffer->CameraWidth ||
+                startPos.posY + i >= camBuffer->CameraHeight ||
+                startPos.posX + j <= 0 || startPos.posY + i <= 0 ||
+                *(sprite->GetSpriteBuffer() + i * sprite->Width + j) == ' ')
             {
                 continue;
             }
