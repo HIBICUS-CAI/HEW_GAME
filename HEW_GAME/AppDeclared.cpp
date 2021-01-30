@@ -219,6 +219,7 @@ char* GetSubName1ArrayByOffset(int offset)
     else
     {
         ErrorLogI1("this offset overflow:", offset);
+        return NULL;
     }
 }
 
@@ -235,6 +236,7 @@ char* GetSubName2ArrayByOffset(int offset)
     else
     {
         ErrorLogI1("this offset overflow:", offset);
+        return NULL;
     }
 }
 
