@@ -5,6 +5,8 @@
 #include "DeclaredValues.h"
 #include "SceneManager.h"
 #include "DialogShower.h"
+#include "PlayingStageManager.h"
+#include "VisitorManager.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -159,8 +161,7 @@ void DialogSceneBtnEvent(int value)
         {
             SwitchSceneToName("select");
         }
-        SetDialogEvent(DIALOG_NOTHING);
-        SetIsDialogFinish(1);
+        ResetUsingPointerAndFlag();
     }
 }
 
@@ -169,16 +170,19 @@ void StageSelectSceneBtnEvent(int value)
     if (value == BEGIN_STAGE_1)
     {
         DebugLog("ready to load stage 1");
+        SetPlayingStageByManager(STAGE_DEFAULT);
         SwitchSceneToName("naming");
     }
     else if (value == BEGIN_STAGE_2)
     {
         DebugLog("ready to load stage 2");
+        SetPlayingStageByManager(STAGE_BEACH);
         SwitchSceneToName("naming");
     }
     else if (value == BEGIN_STAGE_3)
     {
         DebugLog("ready to load stage 3");
+        SetPlayingStageByManager(STAGE_DESERT);
         SwitchSceneToName("naming");
     }
 }
@@ -352,6 +356,8 @@ void FinalResultSceneBtnEvent(int value)
     else if (value == BACK_TO_TITLE)
     {
         DebugLog("ready to back to title scene");
+        ResetPlayingStageByManager();
+        ResetVisitorManager();
         SwitchSceneToName("title");
     }
     else if (value == SAVE_AT_1)

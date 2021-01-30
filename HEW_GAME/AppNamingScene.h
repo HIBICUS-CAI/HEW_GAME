@@ -6,6 +6,10 @@
 #pragma once
 
 #include "SceneNode.h"
+#include "AppDeclared.h"
+#include "VisitorManager.h"
+
+int g_StartCreateVisitorFlg = 0;
 
 void InitNamingScene()
 {
@@ -14,11 +18,47 @@ void InitNamingScene()
     GetSceneNodeByName("naming")->SetBaseUIO(
         GetUIObjByName("naming"));
     ClearSceneCamBuffer(GetSceneNodeByName("naming"));
+
+    g_StartCreateVisitorFlg = 0;
 }
 
 void UpdateNamingScene()
 {
     ClearSceneCamBuffer(GetSceneNodeByName("naming"));
+
+    if (!GetVisitorArray()->IsUsing)
+    {
+        ++g_StartCreateVisitorFlg;
+
+        UIOBJECT* tempUIO = GetUIObjByName("create-visitors");
+        if (tempUIO != NULL)
+        {
+            GetUIObjByName("naming")->AddChild(tempUIO);
+            tempUIO->AddParent(GetUIObjByName("naming"));
+            tempUIO->TurnOn();
+            SetSelectedBtn(tempUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    if (g_StartCreateVisitorFlg > 5)
+    {
+        g_StartCreateVisitorFlg = 0;
+        CreateVisitors();
+
+        UIOBJECT* tempUIO = GetUIObjByName("create-visitors");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
 }
 
 void TurnOffNamingScene()

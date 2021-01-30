@@ -154,6 +154,7 @@
     <ClCompile Include="InputDispose.cpp" />
     <ClCompile Include="LogsOutput.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PlayingStageManager.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="SoundManager.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="UIObjDeclarer.cpp" />
     <ClCompile Include="UIObject.cpp" />
+    <ClCompile Include="VisitorManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppBtnEvent.h" />
@@ -187,6 +189,7 @@
     <ClInclude Include="GameAppStructs.h" />
     <ClInclude Include="InputDispose.h" />
     <ClInclude Include="LogsOutput.h" />
+    <ClInclude Include="PlayingStageManager.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneNode.h" />
     <ClInclude Include="SoundManager.h" />
@@ -195,6 +198,7 @@
     <ClInclude Include="Tools.h" />
     <ClInclude Include="UIObjDeclarer.h" />
     <ClInclude Include="UIObject.h" />
+    <ClInclude Include="VisitorManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -177,3 +177,27 @@ DIALOG_EVENT* GetDiaLogEventByEventID(int id)
     ErrorLogI1("cannot find this event id", id);
     return NULL;
 }
+
+int g_PlayingStageID = 0;
+
+int GetPlayingStage()
+{
+    return g_PlayingStageID;
+}
+
+void SetPlayingStage(int stageID)
+{
+    g_PlayingStageID = stageID;
+}
+
+void ResetPlayingStage()
+{
+    g_PlayingStageID = 0;
+}
+
+VISITOR_NODE g_VisitorsArray[VISITOR_MAX_SIZE];
+
+VISITOR_NODE* GetVisitorArray()
+{
+    return g_VisitorsArray;
+}

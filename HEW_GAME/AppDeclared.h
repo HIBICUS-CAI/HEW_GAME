@@ -144,3 +144,32 @@ void LoadSingleDialogEvnetFromID(int id, const char* path);
 /// <param name="id">対話イベントの番号</param>
 /// <returns>対話イベント指向のポインタ</returns>
 DIALOG_EVENT* GetDiaLogEventByEventID(int id);
+
+#define STAGE_DEFAULT 1
+#define STAGE_BEACH 2
+#define STAGE_DESERT 3
+
+/// <summary>
+/// 今選択されているステージを取得
+/// </summary>
+/// <returns>ステージ番号</returns>
+int GetPlayingStage();
+
+/// <summary>
+/// 選択されたステージを保存
+/// </summary>
+/// <param name="stageID">選択されたステージの番号</param>
+void SetPlayingStage(int stageID);
+
+/// <summary>
+/// 保存されたステージをリセット
+/// </summary>
+void ResetPlayingStage();
+
+#define VISITOR_MAX_SIZE 16
+
+/// <summary>
+/// 観光客情報配列を取得
+/// </summary>
+/// <returns>観光客情報配列指向のポインタ</returns>
+VISITOR_NODE* GetVisitorArray();

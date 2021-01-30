@@ -196,3 +196,48 @@ struct DIALOG_EVENT
         return Dialogs + offset;
     }
 };
+
+enum class VISITOR_TYPE
+{
+    NONE,
+    STUDENTS,
+    COUPLE,
+    PROGRAMMER,
+    ARTIST,
+    OFFICER,
+    FAMILY,
+    RABBIT,
+    CAMEL,
+    WHALE
+};
+
+/// <summary>
+/// 観光客情報構造体
+/// </summary>
+struct VISITOR_NODE
+{
+    int IsUsing;
+    VISITOR_TYPE Type;
+
+    VISITOR_NODE()
+    {
+        IsUsing = 0;
+        Type = VISITOR_TYPE::NONE;
+    }
+
+    VISITOR_NODE(int _isusing, VISITOR_TYPE _type)
+    {
+        IsUsing = _isusing;
+        Type = _type;
+    }
+
+    void SetIsUsing()
+    {
+        IsUsing = 1;
+    }
+
+    void SetNotUsing()
+    {
+        IsUsing = 0;
+    }
+};

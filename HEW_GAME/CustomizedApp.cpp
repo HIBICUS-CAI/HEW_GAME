@@ -8,6 +8,8 @@
 #include "Tools.h"
 
 #include "DialogShower.h"
+#include "PlayingStageManager.h"
+#include "VisitorManager.h"
 
 void AppInit()
 {
@@ -19,6 +21,8 @@ void AppInit()
     SetSwitchEffectStyle(CreateRandomNumIn(1, 4));
 
     InitDialogShower();
+    InitPlayingStage();
+    InitVisitorManager();
 
     SwitchSceneToName("title");
 }
@@ -31,6 +35,10 @@ void AppUpdate()
     {
     case DIALOGSCENEFLAG:
         UpdateDialogShower();
+        break;
+
+    case SELECTSCENEFLAG:
+        UpdatePlayingStage();
         break;
 
     default:

@@ -171,6 +171,14 @@ void CreateNameSetUIObjs()
         AddBtn(UI_BUTTON(CONFIRM_NAME, POSITION_2D(120, 21),
             (char*)"¤³¤ì¤Ç¥ª¥Ã¥±©`", BTN_DESIGN::LINE));
 
+    CreateUIO("create-visitors", POSITION_2D(1, 13), 178, 5,
+        UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
+    GetUIObjByName("create-visitors")->AddText(
+        UI_TEXT(POSITION_2D(80, 2), (char*)"¤ª¿Í˜”³éßxÖÐ£®£®£®"));
+    GetUIObjByName("create-visitors")->
+        AddBtn(UI_BUTTON(0, POSITION_2D(0, 0),
+            (char*)"", BTN_DESIGN::NONE));
+
     CreateUIO("subname1", POSITION_2D(38, 15), 104, 30,
         UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
     GetUIObjByName("subname1")->

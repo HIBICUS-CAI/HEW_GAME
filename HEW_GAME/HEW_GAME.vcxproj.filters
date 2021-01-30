@@ -78,6 +78,12 @@
     <ClCompile Include="DialogShower.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="PlayingStageManager.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="VisitorManager.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -174,6 +180,12 @@
       <Filter>GameScene</Filter>
     </ClInclude>
     <ClInclude Include="DialogShower.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayingStageManager.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="VisitorManager.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
