@@ -42,6 +42,36 @@
 #define SAVE_AT_2 0x001e
 #define SAVE_AT_3 0x001f
 #define BACK_TO_RESULT 0x0020
+#define SUB1_1_1NAME 0x0021
+#define SUB1_1_2NAME 0x0022
+#define SUB1_1_3NAME 0x0023
+#define SUB1_1_4NAME 0x0024
+#define SUB1_1_5NAME 0x0025
+#define SUB1_2_1NAME 0x0026
+#define SUB1_2_2NAME 0x0027
+#define SUB1_2_3NAME 0x0028
+#define SUB1_2_4NAME 0x0029
+#define SUB1_2_5NAME 0x002a
+#define SUB1_3_1NAME 0x002b
+#define SUB1_3_2NAME 0x002c
+#define SUB1_3_3NAME 0x002d
+#define SUB1_3_4NAME 0x002e
+#define SUB1_3_5NAME 0x002f
+#define SUB2_1_1NAME 0x0030
+#define SUB2_1_2NAME 0x0031
+#define SUB2_1_3NAME 0x0032
+#define SUB2_1_4NAME 0x0033
+#define SUB2_1_5NAME 0x0034
+#define SUB2_2_1NAME 0x0035
+#define SUB2_2_2NAME 0x0036
+#define SUB2_2_3NAME 0x0037
+#define SUB2_2_4NAME 0x0038
+#define SUB2_2_5NAME 0x0039
+#define SUB2_3_1NAME 0x003a
+#define SUB2_3_2NAME 0x003b
+#define SUB2_3_3NAME 0x003c
+#define SUB2_3_4NAME 0x003d
+#define SUB2_3_5NAME 0x003e
 
 #define DIALOG_NOTHING 0x01
 #define DIALOG_NEW_GAME 0x02
@@ -173,3 +203,35 @@ void ResetPlayingStage();
 /// </summary>
 /// <returns>観光客情報配列指向のポインタ</returns>
 VISITOR_NODE* GetVisitorArray();
+
+/// <summary>
+/// プレフィックスを取得
+/// </summary>
+/// <param name="offset">偏移量</param>
+/// <returns>偏移量に応じる配列ポインタ</returns>
+char* GetSubName1ArrayByOffset(int offset);
+
+/// <summary>
+/// サフィックスを取得
+/// </summary>
+/// <param name="offset">偏移量</param>
+/// <returns>偏移量に応じる配列ポインタ</returns>
+char* GetSubName2ArrayByOffset(int offset);
+
+/// <summary>
+/// 確認された名前を取得
+/// </summary>
+/// <returns>名前配列に指向のポインタ</returns>
+int* GetConfirmedSubName1And2();
+
+/// <summary>
+/// 確認されたプレフィックスを設定
+/// </summary>
+/// <param name="value">応じている番号</param>
+void SetConfirmedSubName1(int value);
+
+/// <summary>
+/// 確認されたサフィックスを設定
+/// </summary>
+/// <param name="value">応じている番号</param>
+void SetConfirmedSubName2(int value);

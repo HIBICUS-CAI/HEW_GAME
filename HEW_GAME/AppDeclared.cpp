@@ -201,3 +201,56 @@ VISITOR_NODE* GetVisitorArray()
 {
     return g_VisitorsArray;
 }
+
+char g_SubName1[15][17];
+char g_SubName2[15][17];
+char g_Nothing[17]="�أأأأأ�";
+
+char* GetSubName1ArrayByOffset(int offset)
+{
+    if (offset < 15 && offset >= 0)
+    {
+        return g_SubName1[offset];
+    }
+    else if (offset == -1)
+    {
+        return g_Nothing;
+    }
+    else
+    {
+        ErrorLogI1("this offset overflow:", offset);
+    }
+}
+
+char* GetSubName2ArrayByOffset(int offset)
+{
+    if (offset < 15 && offset >= 0)
+    {
+        return g_SubName2[offset];
+    }
+    else if (offset == -1)
+    {
+        return g_Nothing;
+    }
+    else
+    {
+        ErrorLogI1("this offset overflow:", offset);
+    }
+}
+
+int g_ConfirmedName[2];
+
+int* GetConfirmedSubName1And2()
+{
+    return g_ConfirmedName;
+}
+
+void SetConfirmedSubName1(int value)
+{
+    g_ConfirmedName[0] = value;
+}
+
+void SetConfirmedSubName2(int value)
+{
+    g_ConfirmedName[1] = value;
+}

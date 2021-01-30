@@ -11,6 +11,7 @@
 #include "PlayingStageManager.h"
 #include "VisitorManager.h"
 #include "VisitorShower.h"
+#include "ResortNameManager.h"
 
 void AppInit()
 {
@@ -25,6 +26,7 @@ void AppInit()
     InitPlayingStage();
     InitVisitorManager();
     InitVisitorShower();
+    InitResortNameManager();
 
     SwitchSceneToName("title");
 }
@@ -45,6 +47,7 @@ void AppUpdate()
 
     case NAMINGSCENEFLAG:
         UpdateVisitorShower();
+        UpdateResortNameManager();
         break;
 
     default:

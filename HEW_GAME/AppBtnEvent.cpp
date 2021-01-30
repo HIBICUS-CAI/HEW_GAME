@@ -9,6 +9,7 @@
 #include "VisitorManager.h"
 #include "VisitorShower.h"
 #include "SceneNode.h"
+#include "ResortNameManager.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -228,13 +229,30 @@ void NamingSceneBtnEvent(int value)
     else if (value == CONFIRM_NAME)
     {
         DebugLog("ready to confirm this name");
+        SaveConfirmedName();
+
         ResetAllAboutShowVisitors();
         ClearSceneCamBuffer(GetSceneNodeByName("naming"));
+        char temp[17] = "  �أأأأأ�  ";
+        (GetUIObjByName("naming")->Texts + 6)->
+            ChangeTextTo(temp);
+        (GetUIObjByName("naming")->Texts + 7)->
+            ChangeTextTo(temp);
         SwitchSceneToName("build");
     }
-    else if (value == BACK_TO_NAME_1)
+    else if (
+        value == SUB1_1_1NAME || value == SUB1_1_2NAME ||
+        value == SUB1_1_3NAME || value == SUB1_1_4NAME ||
+        value == SUB1_1_5NAME || value == SUB1_2_1NAME ||
+        value == SUB1_2_2NAME || value == SUB1_2_3NAME ||
+        value == SUB1_2_4NAME || value == SUB1_2_5NAME ||
+        value == SUB1_3_1NAME || value == SUB1_3_2NAME ||
+        value == SUB1_3_3NAME || value == SUB1_3_4NAME ||
+        value == SUB1_3_5NAME || value == BACK_TO_NAME_1
+        )
     {
         DebugLog("ready to back to main naming from sub 1");
+        SetTempName1(value);
         tempUIO = GetUIObjByName("subname1");
         if (tempUIO != NULL)
         {
@@ -246,9 +264,19 @@ void NamingSceneBtnEvent(int value)
             ErrorLog("cannot find this UI object");
         }
     }
-    else if (value == BACK_TO_NAME_2)
+    else if (
+        value == SUB2_1_1NAME || value == SUB2_1_2NAME ||
+        value == SUB2_1_3NAME || value == SUB2_1_4NAME ||
+        value == SUB2_1_5NAME || value == SUB2_2_1NAME ||
+        value == SUB2_2_2NAME || value == SUB2_2_3NAME ||
+        value == SUB2_2_4NAME || value == SUB2_2_5NAME ||
+        value == SUB2_3_1NAME || value == SUB2_3_2NAME ||
+        value == SUB2_3_3NAME || value == SUB2_3_4NAME ||
+        value == SUB2_3_5NAME || value == BACK_TO_NAME_2
+        )
     {
         DebugLog("ready to back to main naming from sub 2");
+        SetTempName2(value);
         tempUIO = GetUIObjByName("subname2");
         if (tempUIO != NULL)
         {

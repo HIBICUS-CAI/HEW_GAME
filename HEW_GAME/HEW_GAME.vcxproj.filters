@@ -87,6 +87,9 @@
     <ClCompile Include="VisitorShower.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="ResortNameManager.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -192,6 +195,9 @@
       <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="VisitorShower.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ResortNameManager.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
