@@ -9,7 +9,7 @@ SPRITE g_TalkPeopleSprites[PEOPLE_SPRITE_SIZE];
 SPRITE_ANIME g_TalkPeopleSprAni[PEOPLE_SPRITE_SIZE];
 SPRITE* g_UsingTalkPeopleSprites = NULL;
 SPRITE_ANIME* g_UsingTalkPeopleSprAni = NULL;
-int g_TimeCount = 0;
+int g_TimeCountDS = 0;
 int g_LoadedIndex = 0;
 int g_SAFlag = 0;
 
@@ -194,7 +194,7 @@ void DrawTalkingSprite()
         if (g_UsingTalkPeopleSprAni != NULL)
         {
             DrawSpriteAnimatorToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
-                g_UsingTalkPeopleSprAni, (g_TimeCount++) % 60, POSITION_2D(15, 1));
+                g_UsingTalkPeopleSprAni, (g_TimeCountDS++) % 60, POSITION_2D(15, 1));
         }
     }
     else
@@ -207,7 +207,7 @@ void DrawTalkingSprite()
         if (g_UsingTalkPeopleSprAni != NULL)
         {
             DrawSpriteAnimatorToCamBuffer(GetSceneNodeByName("dialog")->GetCamAddr(),
-                g_UsingTalkPeopleSprAni, (g_TimeCount++) % 60, POSITION_2D(105, 1));
+                g_UsingTalkPeopleSprAni, (g_TimeCountDS++) % 60, POSITION_2D(105, 1));
         }
     }
 }

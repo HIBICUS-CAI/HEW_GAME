@@ -2,6 +2,9 @@
 #include "AppDeclared.h"
 #include "Tools.h"
 #include "PlayingStageManager.h"
+#include "UIObject.h"
+
+int g_TextOffset = 0;
 
 void InitVisitorManager()
 {
@@ -13,6 +16,12 @@ void ResetVisitorManager()
     for (int i = 0; i < VISITOR_MAX_SIZE; i++)
     {
         *(GetVisitorArray() + i) = VISITOR_NODE();
+    }
+    g_TextOffset = 1;
+    for (int i = 0; i < 4; i++)
+    {
+        (GetUIObjByName("naming")->Texts + (i + 1))->
+            ChangeTextTo("");
     }
 }
 
@@ -68,25 +77,50 @@ void CreateVisitors()
         SetRandom();
         int num = CreateRandomNumIn(1, 3);
         VISITOR_TYPE visitorType = VISITOR_TYPE::NONE;
+        char temp[512] = "";
         switch (type)
         {
         case 1:
             visitorType = VISITOR_TYPE::STUDENTS;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "学生：", num);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
         case 2:
             visitorType = VISITOR_TYPE::COUPLE;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "カップル：", num);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
         case 3:
             visitorType = VISITOR_TYPE::PROGRAMMER;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "プログラマー：", num);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
         case 4:
             visitorType = VISITOR_TYPE::ARTIST;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "アーティスト：", num);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
         case 5:
             visitorType = VISITOR_TYPE::OFFICER;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "事務員：", num);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
         case 6:
             visitorType = VISITOR_TYPE::FAMILY;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "家族：", num);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
 
         default:
@@ -100,7 +134,7 @@ void CreateVisitors()
         }
 
         //---------------------
-        DebugLogI2("[type, num]", type, num);
+        DebugLogI2("[type, num]", (const int)visitorType, num);
     }
 
     if (special)
@@ -109,16 +143,29 @@ void CreateVisitors()
         int spNum = CreateRandomNumIn(1, 3);
         VISITOR_TYPE spType = VISITOR_TYPE::NONE;
 
+        char temp[512] = "";
         switch (GetPlayingStageByManager())
         {
         case STAGE_DEFAULT:
             spType = VISITOR_TYPE::RABBIT;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "うさぎ：", spNum);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
         case STAGE_BEACH:
             spType = VISITOR_TYPE::WHALE;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "くじら：", spNum);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
         case STAGE_DESERT:
             spType = VISITOR_TYPE::CAMEL;
+            sprintf_s(temp, sizeof(temp), "%s%d",
+                "らくだ：", spNum);
+            (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
+                ChangeTextTo(temp);
             break;
 
         default:
@@ -132,7 +179,6 @@ void CreateVisitors()
             AddAVisitorToArray(VISITOR_NODE(1, spType));
         }
         //---------------------
-        DebugLogI2("SP[type, num]",
-            GetPlayingStageByManager(), spNum);
+        DebugLogI2("SP[type, num]", (const int)spType, spNum);
     }
 }

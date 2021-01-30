@@ -7,6 +7,8 @@
 #include "DialogShower.h"
 #include "PlayingStageManager.h"
 #include "VisitorManager.h"
+#include "VisitorShower.h"
+#include "SceneNode.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -226,6 +228,8 @@ void NamingSceneBtnEvent(int value)
     else if (value == CONFIRM_NAME)
     {
         DebugLog("ready to confirm this name");
+        ResetAllAboutShowVisitors();
+        ClearSceneCamBuffer(GetSceneNodeByName("naming"));
         SwitchSceneToName("build");
     }
     else if (value == BACK_TO_NAME_1)

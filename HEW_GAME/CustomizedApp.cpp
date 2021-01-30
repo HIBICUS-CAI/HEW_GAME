@@ -10,6 +10,7 @@
 #include "DialogShower.h"
 #include "PlayingStageManager.h"
 #include "VisitorManager.h"
+#include "VisitorShower.h"
 
 void AppInit()
 {
@@ -23,6 +24,7 @@ void AppInit()
     InitDialogShower();
     InitPlayingStage();
     InitVisitorManager();
+    InitVisitorShower();
 
     SwitchSceneToName("title");
 }
@@ -39,6 +41,10 @@ void AppUpdate()
 
     case SELECTSCENEFLAG:
         UpdatePlayingStage();
+        break;
+
+    case NAMINGSCENEFLAG:
+        UpdateVisitorShower();
         break;
 
     default:

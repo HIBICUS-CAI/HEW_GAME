@@ -163,6 +163,7 @@
     <ClCompile Include="UIObjDeclarer.cpp" />
     <ClCompile Include="UIObject.cpp" />
     <ClCompile Include="VisitorManager.cpp" />
+    <ClCompile Include="VisitorShower.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppBtnEvent.h" />
@@ -199,6 +200,7 @@
     <ClInclude Include="UIObjDeclarer.h" />
     <ClInclude Include="UIObject.h" />
     <ClInclude Include="VisitorManager.h" />
+    <ClInclude Include="VisitorShower.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

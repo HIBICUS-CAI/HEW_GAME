@@ -207,8 +207,8 @@ enum class VISITOR_TYPE
     OFFICER,
     FAMILY,
     RABBIT,
-    CAMEL,
-    WHALE
+    WHALE,
+    CAMEL
 };
 
 /// <summary>

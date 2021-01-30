@@ -8,6 +8,7 @@
 #include "SceneNode.h"
 #include "AppDeclared.h"
 #include "VisitorManager.h"
+#include "VisitorShower.h"
 
 int g_StartCreateVisitorFlg = 0;
 
@@ -47,6 +48,7 @@ void UpdateNamingScene()
     {
         g_StartCreateVisitorFlg = 0;
         CreateVisitors();
+        SetShowVisitorFlg(1);
 
         UIOBJECT* tempUIO = GetUIObjByName("create-visitors");
         if (tempUIO != NULL)
