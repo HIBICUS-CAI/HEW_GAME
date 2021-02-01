@@ -12,6 +12,7 @@
 #include "VisitorManager.h"
 #include "VisitorShower.h"
 #include "ResortNameManager.h"
+#include "BuilderManager.h"
 
 void AppInit()
 {
@@ -27,6 +28,7 @@ void AppInit()
     InitVisitorManager();
     InitVisitorShower();
     InitResortNameManager();
+    InitBuilder();
 
     SwitchSceneToName("title");
 }
@@ -48,6 +50,10 @@ void AppUpdate()
     case NAMINGSCENEFLAG:
         UpdateVisitorShower();
         UpdateResortNameManager();
+        break;
+
+    case BUILDINGSCENEFLAG:
+        UpdateBuilder();
         break;
 
     default:

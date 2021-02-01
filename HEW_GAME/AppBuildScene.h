@@ -32,7 +32,11 @@ void UpdateBuildScene()
         CameraWidth;
     int height = GetSceneNodeByName("build")->GetCamAddr()->
         CameraHeight;
-    for (int i = 0; i < height; i++)
+    for (int i = 0; i < width; i++)
+    {
+        *(cam + 40 * width + i) = '-';
+    }
+    for (int i = 41; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {

@@ -241,3 +241,19 @@ struct VISITOR_NODE
         IsUsing = 0;
     }
 };
+
+#define FARBACK_SA_SIZE 9
+#define FARBACK_SA_WIDTH 30
+#define FARBACK_SA_HEIGHT 40
+#define NEARBACK_SA_SIZE 6
+#define NEARBACK_SA_WIDTH 60
+#define NEARBACK_SA_HEIGHT 40
+
+/// <summary>
+/// ±³¾°¤Î¥¹¥×¥é¥¤¥È¥¢¥Ë¥á¥¿¥ë˜‹ÔìÌå
+/// </summary>
+struct STAGE_BACKGROUND_SA
+{
+    SPRITE_ANIME FarBack[FARBACK_SA_SIZE];
+    SPRITE_ANIME NearBack[NEARBACK_SA_SIZE];
+};
