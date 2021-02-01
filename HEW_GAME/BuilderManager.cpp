@@ -10,6 +10,9 @@ int g_TimeCountBM = 0;
 int g_TimeCountBMMoving = 0;
 int g_MovFlg = 0;
 
+//-------------------------
+SPRITE_ANIME g_Test;
+
 void InitBuilder()
 {
     SetCurrBuildingPosByBuilder(0);
@@ -24,6 +27,11 @@ void InitBuilder()
     g_CurrBuildArrow = CreateSpriteAnimator(8,
         "Assets\\SpriteAnimators\\next-arrow\\arrow",
         POSITION_2D(0, 0), 16, 8);
+
+    //-------------------------
+    g_Test = CreateSpriteAnimator(10,
+        "Assets\\SpriteAnimators\\moon\\moon",
+        POSITION_2D(0, 0), 20, 10);
 }
 
 void UpdateBuilder()
@@ -118,6 +126,13 @@ void UpdateBuilder()
         *(cam + 5 * width + 5) = 49;
         *(cam + 5 * width + 6) = 48;
     }
+
+    //-----------------------------------
+    DrawSpriteAnimatorToCamBuffer(
+        GetSceneNodeByName("build")->GetCamAddr(),
+        &g_Test, g_TimeCountBM++ % 60,
+        POSITION_2D(60, 15)
+    );
 }
 
 void TurnOffBuilder()
