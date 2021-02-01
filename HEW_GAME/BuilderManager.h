@@ -5,6 +5,10 @@
 
 #pragma once
 
+#define BUILDER_STOP 0
+#define BUILDER_GO_LEFT 1
+#define BUILDER_GO_RIGHT 2
+
 /// <summary>
 /// 作成者に関しての初期化
 /// </summary>
@@ -24,10 +28,16 @@ void TurnOffBuilder();
 /// 今作っている位置を設定
 /// </summary>
 /// <param name="value">位置の値</param>
-void SetCurrBuildingPos(int value);
+void SetCurrBuildingPosByBuilder(int value);
 
 /// <summary>
 /// 今作っている位置を取得
 /// </summary>
 /// <returns>位置の値</returns>
-int GetCurrBuildingPos();
+int GetCurrBuildingPosByBuilder();
+
+/// <summary>
+/// 作成者の移動方向を設定
+/// </summary>
+/// <param name="value">移動方向</param>
+void SetBuilderMovFlg(int value);

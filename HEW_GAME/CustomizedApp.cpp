@@ -75,7 +75,19 @@ void AppPostPrint()
 
 void AppKeyboardEvent(int keyCode)
 {
-
+    if (GetSceneFlag() == BUILDINGSCENEFLAG)
+    {
+        if (keyCode == A_VALUE)
+        {
+            DebugLog("go left");
+            SetBuilderMovFlg(BUILDER_GO_LEFT);
+        }
+        else if (keyCode == D_VALUE)
+        {
+            DebugLog("go right");
+            SetBuilderMovFlg(BUILDER_GO_RIGHT);
+        }
+    }
 }
 
 void AppButtonEvent(int value)
@@ -111,7 +123,7 @@ void AppButtonEvent(int value)
         BuildingSceneBtnEvent(value);
         break;
 
-    case RESULTSCENEFLAG :
+    case RESULTSCENEFLAG:
         FinalResultSceneBtnEvent(value);
         break;
 

@@ -204,7 +204,7 @@ VISITOR_NODE* GetVisitorArray()
 
 char g_SubName1[15][17];
 char g_SubName2[15][17];
-char g_Nothing[17]="�أأأأأ�";
+char g_Nothing[17] = "�أأأأأ�";
 
 char* GetSubName1ArrayByOffset(int offset)
 {
@@ -255,4 +255,27 @@ void SetConfirmedSubName1(int value)
 void SetConfirmedSubName2(int value)
 {
     g_ConfirmedName[1] = value;
+}
+
+int g_CurrBuildingPos;
+int g_EditBuildingsArray[BUILDINGS_SIZE];
+
+void SetCurrBuildingPos(int value)
+{
+    if (value > BUILDINGS_SIZE || value < 0)
+    {
+        ErrorLogI1("this pos has overflowed:", value);
+        return;
+    }
+    g_CurrBuildingPos = value;
+}
+
+int GetCurrBuildingPos()
+{
+    return g_CurrBuildingPos;
+}
+
+int* GetEditBuildingsArray()
+{
+    return g_EditBuildingsArray;
 }

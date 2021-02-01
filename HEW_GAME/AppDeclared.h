@@ -235,3 +235,23 @@ void SetConfirmedSubName1(int value);
 /// </summary>
 /// <param name="value">応じている番号</param>
 void SetConfirmedSubName2(int value);
+
+#define BUILDINGS_SIZE 10
+
+/// <summary>
+/// 今作っている位置を設定
+/// </summary>
+/// <param name="value">位置の値</param>
+void SetCurrBuildingPos(int value);
+
+/// <summary>
+/// 今作っている位置を取得
+/// </summary>
+/// <returns>位置の値</returns>
+int GetCurrBuildingPos();
+
+/// <summary>
+/// 作成している施設の配列を取得
+/// </summary>
+/// <returns>作成施設配列に指向のポインタ</returns>
+int* GetEditBuildingsArray();
