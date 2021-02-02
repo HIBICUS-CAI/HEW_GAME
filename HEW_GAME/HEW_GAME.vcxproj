@@ -147,6 +147,7 @@
     <ClCompile Include="AppDeclared.cpp" />
     <ClCompile Include="BuildBackgroundShower.cpp" />
     <ClCompile Include="BuilderManager.cpp" />
+    <ClCompile Include="BuildingManager.cpp" />
     <ClCompile Include="ButtonEvents.cpp" />
     <ClCompile Include="ConsolePrint.cpp" />
     <ClCompile Include="CustomizedApp.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="AppTitleScene.h" />
     <ClInclude Include="BuildBackgroundShower.h" />
     <ClInclude Include="BuilderManager.h" />
+    <ClInclude Include="BuildingManager.h" />
     <ClInclude Include="ButtonEvents.h" />
     <ClInclude Include="conioex.h" />
     <ClInclude Include="ConsolePrint.h" />

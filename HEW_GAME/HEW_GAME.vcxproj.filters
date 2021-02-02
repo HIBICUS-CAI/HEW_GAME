@@ -96,6 +96,9 @@
     <ClCompile Include="BuildBackgroundShower.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="BuildingManager.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -210,6 +213,9 @@
       <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="BuildBackgroundShower.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingManager.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

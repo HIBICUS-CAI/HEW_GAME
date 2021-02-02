@@ -12,11 +12,6 @@ void InitBuildScene()
     CreateSceneNode(SCENENODE("build", NULL,
         SCENECAMERA(POSITION_2D(1, 0), 120, 60)));
 
-    //-----------------------------------
-    GetUIObjByName("build")->
-        AddBtn(UI_BUTTON(TEMP_BTN_BUILDING_1, POSITION_2D(27, 53),
-            (char*)"TEST", BTN_DESIGN::LINE));
-
     GetSceneNodeByName("build")->SetBaseUIO(
         GetUIObjByName("build"));
     ClearSceneCamBuffer(GetSceneNodeByName("build"));

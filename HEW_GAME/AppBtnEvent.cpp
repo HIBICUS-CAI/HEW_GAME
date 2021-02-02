@@ -12,6 +12,7 @@
 #include "ResortNameManager.h"
 #include "BuilderManager.h"
 #include "BuildBackgroundShower.h"
+#include "BuildingManager.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -300,18 +301,22 @@ void BuildingSceneBtnEvent(int value)
 
     if (value == SET_BUILDING_TYPE)
     {
-        DebugLog("ready to open sub tpye ui");
-        tempUIO = GetUIObjByName("build-type");
-        if (tempUIO != NULL)
+        if (GetBuilderMovFlg() == BUILDER_STOP &&
+            GetCurrBuildingPosByBuilder() != 0)
         {
-            GetUIObjByName("build")->AddChild(tempUIO);
-            tempUIO->AddParent(GetUIObjByName("build"));
-            tempUIO->TurnOn();
-            SetSelectedBtn(tempUIO->Buttons);
-        }
-        else
-        {
-            ErrorLog("cannot find this UI object");
+            DebugLog("ready to open sub tpye ui");
+            tempUIO = GetUIObjByName("build-type");
+            if (tempUIO != NULL)
+            {
+                GetUIObjByName("build")->AddChild(tempUIO);
+                tempUIO->AddParent(GetUIObjByName("build"));
+                tempUIO->TurnOn();
+                SetSelectedBtn(tempUIO->Buttons);
+            }
+            else
+            {
+                ErrorLog("cannot find this UI object");
+            }
         }
     }
     else if (value == SET_BUILDING_EVENT)
@@ -334,7 +339,7 @@ void BuildingSceneBtnEvent(int value)
     {
         DebugLog("ready to confirm this building");
     }
-    else if (value == TEMP_BTN_BUILDING_1)
+    else if (value == BUILD_IS_END)
     {
         DebugLog("ready to go to resort scene");
         SwitchSceneToName("resort");

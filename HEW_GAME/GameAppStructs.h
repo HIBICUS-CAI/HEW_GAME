@@ -257,3 +257,17 @@ struct STAGE_BACKGROUND_SA
     SPRITE_ANIME FarBack[FARBACK_SA_SIZE];
     SPRITE_ANIME NearBack[NEARBACK_SA_SIZE];
 };
+
+enum class BUILDING_STATUS
+{
+    NOTHING,
+    PLANING,
+    CONFIRMED
+};
+
+struct BUILDING
+{
+    BUILDING_STATUS Status;
+    int Type;
+    int Event;
+};

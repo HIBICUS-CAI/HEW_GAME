@@ -258,7 +258,7 @@ void SetConfirmedSubName2(int value)
 }
 
 int g_CurrBuildingPos;
-int g_EditBuildingsArray[BUILDINGS_SIZE];
+BUILDING g_EditBuildingsArray[BUILDINGS_SIZE];
 
 void SetCurrBuildingPos(int value)
 {
@@ -275,7 +275,7 @@ int GetCurrBuildingPos()
     return g_CurrBuildingPos;
 }
 
-int* GetEditBuildingsArray()
+BUILDING* GetEditBuildingsArray()
 {
     return g_EditBuildingsArray;
 }

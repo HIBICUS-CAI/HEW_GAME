@@ -14,6 +14,7 @@
 #include "ResortNameManager.h"
 #include "BuilderManager.h"
 #include "BuildBackgroundShower.h"
+#include "BuildingManager.h"
 
 void AppInit()
 {
@@ -31,6 +32,7 @@ void AppInit()
     InitResortNameManager();
     InitBuilder();
     InitBuildBackground();
+    InitBuildingManager();
 
     SwitchSceneToName("title");
 }
@@ -55,6 +57,7 @@ void AppUpdate()
         break;
 
     case BUILDINGSCENEFLAG:
+        UpdateBuildingManager();
         UpdateBuildBackground();
         UpdateBuilder();
         break;
@@ -80,7 +83,8 @@ void AppKeyboardEvent(int keyCode)
 {
     if (GetSceneFlag() == BUILDINGSCENEFLAG)
     {
-        if (GetBuilderMovFlg() == BUILDER_STOP)
+        if (GetBuilderMovFlg() == BUILDER_STOP &&
+            !GetUIObjByName("build-type")->Visiblity)
         {
             if (keyCode == A_VALUE)
             {
@@ -93,7 +97,7 @@ void AppKeyboardEvent(int keyCode)
                 SetBuilderMovFlg(BUILDER_GO_RIGHT);
             }
         }
-        
+
     }
 }
 

@@ -309,36 +309,39 @@ void CreateBuildingUIObjs()
     GetUIObjByName("build")->
         AddBtn(UI_BUTTON(CONFIRM_BUILDING, POSITION_2D(27, 51),
             (char*)"確定", BTN_DESIGN::LINE));
+    GetUIObjByName("build")->
+        AddBtn(UI_BUTTON(BUILD_IS_END, POSITION_2D(27, 53),
+            (char*)"完了", BTN_DESIGN::LINE));
 
     CreateUIO("build-type", POSITION_2D(121, 1), 58, 59,
         UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
     GetUIObjByName("build-type")->AddText(UI_TEXT(POSITION_2D(25, 1),
         (char*)"施設種類"));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(9, 8),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+        AddBtn(UI_BUTTON(TYPE_HOTSPRING, POSITION_2D(9, 8),
+            (char*)"      温泉      ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(33, 8),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+        AddBtn(UI_BUTTON(TYPE_FOOD, POSITION_2D(33, 8),
+            (char*)"     食事店     ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(9, 15),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+        AddBtn(UI_BUTTON(TYPE_POOL, POSITION_2D(9, 15),
+            (char*)"     プール     ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(33, 15),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+        AddBtn(UI_BUTTON(TYPE_DRINK, POSITION_2D(33, 15),
+            (char*)"    飲み物店    ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(9, 22),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+        AddBtn(UI_BUTTON(TYPE_CINEMA, POSITION_2D(9, 22),
+            (char*)"     映画館     ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(33, 22),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+        AddBtn(UI_BUTTON(TYPE_KARAOKE, POSITION_2D(33, 22),
+            (char*)"    カラオケ    ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(9, 29),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+        AddBtn(UI_BUTTON(TYPE_RESTPLACE, POSITION_2D(9, 29),
+            (char*)"     宿泊地     ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
-        AddBtn(UI_BUTTON(0, POSITION_2D(33, 29),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
-    GetUIObjByName("build-type")->
+        AddBtn(UI_BUTTON(TYPE_MAKEBYHAND, POSITION_2D(33, 29),
+            (char*)"    手作り店    ", BTN_DESIGN::STRAIGHT));
+    /*GetUIObjByName("build-type")->
         AddBtn(UI_BUTTON(0, POSITION_2D(9, 36),
             (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
@@ -349,7 +352,7 @@ void CreateBuildingUIObjs()
             (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-type")->
         AddBtn(UI_BUTTON(0, POSITION_2D(33, 43),
-            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));
+            (char*)"xxxxxxxxxxxxxxxx", BTN_DESIGN::STRAIGHT));*/
     GetUIObjByName("build-type")->
         AddBtn(UI_BUTTON(BACK_TO_BUILD_TYPE, POSITION_2D(38, 50),
             (char*)"閉じる", BTN_DESIGN::LINE));
