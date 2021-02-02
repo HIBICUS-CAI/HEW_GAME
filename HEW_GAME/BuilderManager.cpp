@@ -7,6 +7,8 @@ SPRITE_ANIME g_WalkingBuilder;
 SPRITE_ANIME g_StandingBuilder;
 SPRITE_ANIME g_CurrBuildArrow;
 int g_TimeCountBM = 0;
+int g_TimeCountBMArrow = 0;
+int g_TimeCountBMBuilder = 0;
 int g_TimeCountBMMoving = 0;
 int g_MovFlg = 0;
 
@@ -17,6 +19,8 @@ void InitBuilder()
 {
     SetCurrBuildingPosByBuilder(0);
     g_TimeCountBM = 0;
+    g_TimeCountBMArrow = 0;
+    g_TimeCountBMBuilder = 0;
     g_TimeCountBMMoving = 0;
     g_WalkingBuilder = CreateSpriteAnimator(30,
         "Assets\\SpriteAnimators\\builder\\builder-walk",
@@ -38,7 +42,7 @@ void UpdateBuilder()
 {
     DrawSpriteAnimatorToCamBuffer(
         GetSceneNodeByName("build")->GetCamAddr(),
-        &g_CurrBuildArrow, g_TimeCountBM++ % 60,
+        &g_CurrBuildArrow, g_TimeCountBMArrow++ % 60,
         POSITION_2D(52, 6)
     );
 
@@ -46,7 +50,7 @@ void UpdateBuilder()
     {
         DrawSpriteAnimatorToCamBuffer(
             GetSceneNodeByName("build")->GetCamAddr(),
-            &g_StandingBuilder, g_TimeCountBM++ % 60,
+            &g_StandingBuilder, g_TimeCountBMBuilder++ % 60,
             POSITION_2D(30, 30)
         );
     }
@@ -56,9 +60,10 @@ void UpdateBuilder()
         {
             DrawSpriteAnimatorToCamBuffer(
                 GetSceneNodeByName("build")->GetCamAddr(),
-                &g_WalkingBuilder, 60 - (g_TimeCountBM++ % 60),
+                &g_WalkingBuilder, 60 - (g_TimeCountBMBuilder % 60),
                 POSITION_2D(30, 30)
             );
+            g_TimeCountBMBuilder += 2;
             if (g_TimeCountBMMoving > 60)
             {
                 SetBuilderMovFlg(BUILDER_STOP);
@@ -76,9 +81,10 @@ void UpdateBuilder()
         {
             DrawSpriteAnimatorToCamBuffer(
                 GetSceneNodeByName("build")->GetCamAddr(),
-                &g_StandingBuilder, g_TimeCountBM++ % 60,
+                &g_StandingBuilder, g_TimeCountBMBuilder++ % 60,
                 POSITION_2D(30, 30)
             );
+            SetBuilderMovFlg(BUILDER_STOP);
         }
     }
     else if (g_MovFlg == BUILDER_GO_RIGHT)
@@ -87,9 +93,10 @@ void UpdateBuilder()
         {
             DrawSpriteAnimatorToCamBuffer(
                 GetSceneNodeByName("build")->GetCamAddr(),
-                &g_WalkingBuilder, g_TimeCountBM++ % 60,
+                &g_WalkingBuilder, g_TimeCountBMBuilder % 60,
                 POSITION_2D(30, 30)
             );
+            g_TimeCountBMBuilder += 2;
             if (g_TimeCountBMMoving > 60)
             {
                 SetBuilderMovFlg(BUILDER_STOP);
@@ -107,9 +114,10 @@ void UpdateBuilder()
         {
             DrawSpriteAnimatorToCamBuffer(
                 GetSceneNodeByName("build")->GetCamAddr(),
-                &g_StandingBuilder, g_TimeCountBM++ % 60,
+                &g_StandingBuilder, g_TimeCountBMBuilder++ % 60,
                 POSITION_2D(30, 30)
             );
+            SetBuilderMovFlg(BUILDER_STOP);
         }
     }
 
@@ -142,6 +150,11 @@ void TurnOffBuilder()
 
 void SetCurrBuildingPosByBuilder(int value)
 {
+    if (value<0 || value>BUILDINGS_SIZE)
+    {
+        ErrorLogI1("you cannot set this value to curr", value);
+        return;
+    }
     SetCurrBuildingPos(value);
 }
 
@@ -152,10 +165,20 @@ int GetCurrBuildingPosByBuilder()
 
 void SetBuilderMovFlg(int value)
 {
-    if (value<0 || value>BUILDINGS_SIZE)
-    {
-        ErrorLogI1("you cannot set this value to curr", value);
-        return;
-    }
     g_MovFlg = value;
+}
+
+int GetBuilderMovFlg()
+{
+    return g_MovFlg;
+}
+
+void ResetBuilder()
+{
+    int g_TimeCountBM = 0;
+    int g_TimeCountBMArrow = 0;
+    int g_TimeCountBMBuilder = 0;
+    int g_TimeCountBMMoving = 0;
+    int g_MovFlg = 0;
+    SetCurrBuildingPosByBuilder(0);
 }

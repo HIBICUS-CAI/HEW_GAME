@@ -77,16 +77,20 @@ void AppKeyboardEvent(int keyCode)
 {
     if (GetSceneFlag() == BUILDINGSCENEFLAG)
     {
-        if (keyCode == A_VALUE)
+        if (GetBuilderMovFlg() == BUILDER_STOP)
         {
-            DebugLog("go left");
-            SetBuilderMovFlg(BUILDER_GO_LEFT);
+            if (keyCode == A_VALUE)
+            {
+                DebugLog("go left");
+                SetBuilderMovFlg(BUILDER_GO_LEFT);
+            }
+            else if (keyCode == D_VALUE)
+            {
+                DebugLog("go right");
+                SetBuilderMovFlg(BUILDER_GO_RIGHT);
+            }
         }
-        else if (keyCode == D_VALUE)
-        {
-            DebugLog("go right");
-            SetBuilderMovFlg(BUILDER_GO_RIGHT);
-        }
+        
     }
 }
 

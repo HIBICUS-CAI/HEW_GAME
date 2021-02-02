@@ -41,3 +41,14 @@ int GetCurrBuildingPosByBuilder();
 /// </summary>
 /// <param name="value">移動方向</param>
 void SetBuilderMovFlg(int value);
+
+/// <summary>
+/// 作成者の移動方向を取得
+/// </summary>
+/// <returns>作成者の移動方向</returns>
+int GetBuilderMovFlg();
+
+/// <summary>
+/// 作成者に関しての特別変数をリセット
+/// </summary>
+void ResetBuilder();

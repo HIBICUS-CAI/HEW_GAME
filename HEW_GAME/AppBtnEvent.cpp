@@ -10,6 +10,7 @@
 #include "VisitorShower.h"
 #include "SceneNode.h"
 #include "ResortNameManager.h"
+#include "BuilderManager.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -238,6 +239,7 @@ void NamingSceneBtnEvent(int value)
             ChangeTextTo(temp);
         (GetUIObjByName("naming")->Texts + 7)->
             ChangeTextTo(temp);
+        ResetBuilder();
         SwitchSceneToName("build");
     }
     else if (
