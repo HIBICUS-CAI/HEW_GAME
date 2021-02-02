@@ -11,6 +11,7 @@
 #include "SceneNode.h"
 #include "ResortNameManager.h"
 #include "BuilderManager.h"
+#include "BuildBackgroundShower.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -189,6 +190,7 @@ void StageSelectSceneBtnEvent(int value)
         SetPlayingStageByManager(STAGE_DESERT);
         SwitchSceneToName("naming");
     }
+    ReloadBackgroundByPlayingStage();
 }
 
 void NamingSceneBtnEvent(int value)

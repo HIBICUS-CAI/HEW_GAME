@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="AppBtnEvent.cpp" />
     <ClCompile Include="AppDeclared.cpp" />
+    <ClCompile Include="BuildBackgroundShower.cpp" />
     <ClCompile Include="BuilderManager.cpp" />
     <ClCompile Include="ButtonEvents.cpp" />
     <ClCompile Include="ConsolePrint.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="AppSwitchEffectScene.h" />
     <ClInclude Include="AppTestScene.h" />
     <ClInclude Include="AppTitleScene.h" />
+    <ClInclude Include="BuildBackgroundShower.h" />
     <ClInclude Include="BuilderManager.h" />
     <ClInclude Include="ButtonEvents.h" />
     <ClInclude Include="conioex.h" />

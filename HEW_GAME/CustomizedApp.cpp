@@ -13,6 +13,7 @@
 #include "VisitorShower.h"
 #include "ResortNameManager.h"
 #include "BuilderManager.h"
+#include "BuildBackgroundShower.h"
 
 void AppInit()
 {
@@ -29,6 +30,7 @@ void AppInit()
     InitVisitorShower();
     InitResortNameManager();
     InitBuilder();
+    InitBuildBackground();
 
     SwitchSceneToName("title");
 }
@@ -53,6 +55,7 @@ void AppUpdate()
         break;
 
     case BUILDINGSCENEFLAG:
+        UpdateBuildBackground();
         UpdateBuilder();
         break;
 
