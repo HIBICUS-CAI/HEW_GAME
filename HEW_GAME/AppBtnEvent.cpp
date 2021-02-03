@@ -342,7 +342,17 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == CONFIRM_BUILDING)
     {
-        DebugLog("ready to confirm this building");
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status != BUILDING_STATUS::NOTHING &&
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type != B_TYPE_NOTHING &&
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event != B_EVNT_NOTHING)
+        {
+            DebugLog("ready to confirm this building");
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::CONFIRMED;
+        }
     }
     else if (value == BUILD_IS_END)
     {
@@ -379,7 +389,6 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == TYPE_HOTSPRING)
     {
-        DebugLog("onnsenn");
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Status = BUILDING_STATUS::PLANING;
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
@@ -532,13 +541,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_NORMALSPR)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_NORMALSPR;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -547,13 +562,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_SKINCARESPR)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_SKINCARESPR;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -562,13 +583,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_WARMSPR)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_WARMSPR;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -577,13 +604,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_HEALTHSPR)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_HEALTHSPR;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -592,13 +625,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_EATBBQ)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_EATBBQ;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -607,13 +646,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_EATLIGHTFOOD)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_EATLIGHTFOOD;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -622,13 +667,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_EATUNAGI)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_EATUNAGI;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -637,13 +688,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_EATRAMEN)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_EATRAMEN;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -652,13 +709,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_EATCURRY)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_EATCURRY;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -667,13 +730,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_EATFRIEDNOODLE)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_EATFRIEDNOODLE;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -682,13 +751,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_POLNORMAL)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_POLNORMAL;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -697,13 +772,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_POLFLUSH)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_POLFLUSH;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -712,13 +793,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_POLNIGHT)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_POLNIGHT;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -727,13 +814,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_POLINFINITY)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_POLINFINITY;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -742,13 +835,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_DRKMILKTEA)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_DRKMILKTEA;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -757,13 +856,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_DRKCAFE)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_DRKCAFE;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -772,13 +877,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_DRKTEA)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_DRKTEA;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -787,13 +898,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_DRKBAR)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_DRKBAR;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -802,13 +919,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_DRKKARUPISU)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_DRKKARUPISU;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -817,13 +940,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_DRKALCOHOL)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_DRKALCOHOL;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -832,13 +961,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MOVHOR)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MOVHOR;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -847,13 +982,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MOVLOVE)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MOVLOVE;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -862,13 +1003,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MOVSF)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MOVSF;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -877,13 +1024,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MOVACT)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MOVACT;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -892,13 +1045,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MOVCOMEDY)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MOVCOMEDY;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -907,13 +1066,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MOVDOCUMENTARY)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MOVDOCUMENTARY;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -922,13 +1087,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_KARASINGLE)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_KARASINGLE;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -937,13 +1108,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_KARAMUTLI)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_KARAMUTLI;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -952,13 +1129,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_RESTCAMP)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_RESTCAMP;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -967,13 +1150,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_RESTHOTEL)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_RESTHOTEL;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -982,13 +1171,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MAKEPRESENT)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MAKEPRESENT;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {
@@ -997,13 +1192,19 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == EVNT_MAKEACSY)
     {
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status == BUILDING_STATUS::CONFIRMED)
+        {
+            (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+                Status = BUILDING_STATUS::PLANING;
+        }
         (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
             Event = B_EVNT_MAKEACSY;
         tempUIO = GetUIObjByName("build-event");
         if (tempUIO != NULL)
         {
             tempUIO->TurnOff();
-            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
         }
         else
         {

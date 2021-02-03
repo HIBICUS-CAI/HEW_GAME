@@ -287,7 +287,7 @@ void CreateBuildingUIObjs()
     CreateUIO("build", POSITION_2D(121, 1), 58, 59,
         UIO_DESIGN::STRAIGHT, NULL, NULL, 1);
     GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(5, 3),
-        (char*)"残りの資金：999999999カラアゲ"));
+        (char*)"残り時間：60"));
     GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(5, 7),
         (char*)"当／予定施設の情報："));
     GetUIObjByName("build")->AddText(UI_TEXT(POSITION_2D(5, 9),

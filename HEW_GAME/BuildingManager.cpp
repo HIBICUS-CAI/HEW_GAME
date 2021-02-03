@@ -1,6 +1,9 @@
 #include "BuilderManager.h"
 #include "AppDeclared.h"
 #include "UIObject.h"
+#include "SceneManager.h"
+
+float g_TimeCountBUILDM = 0.f;
 
 void InitBuildingManager()
 {
@@ -10,6 +13,7 @@ void InitBuildingManager()
         GetEditBuildingsArray()[i].Type = B_TYPE_NOTHING;
         GetEditBuildingsArray()[i].Event = B_EVNT_NOTHING;
     }
+    g_TimeCountBUILDM = 0.f;
 }
 
 void ResetAllEventBtn()
@@ -25,6 +29,19 @@ void ResetAllEventBtn()
 
 void UpdateBuildingManager()
 {
+    g_TimeCountBUILDM += 1.3f;
+    char time[64];
+    sprintf_s(time, sizeof(time), "%s%d", "²Ð¤ê•rég£º",
+        60 - (int)g_TimeCountBUILDM / 60);
+    (GetUIObjByName("build")->Texts)->ChangeTextTo(time);
+    if (g_TimeCountBUILDM > 3600.f)
+    {
+        SwitchSceneToName("resort");
+        GetUIObjByName("build")->ChildUIO = NULL;
+        GetUIObjByName("build-type")->TurnOff();
+        GetUIObjByName("build-event")->TurnOff();
+    }
+
     ResetAllEventBtn();
     UIOBJECT* event = GetUIObjByName("build-event");
     switch ((GetEditBuildingsArray() +
