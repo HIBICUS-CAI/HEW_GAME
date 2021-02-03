@@ -192,6 +192,7 @@ void StageSelectSceneBtnEvent(int value)
         SwitchSceneToName("naming");
     }
     ReloadBackgroundByPlayingStage();
+    ResetBuildingManager();
 }
 
 void NamingSceneBtnEvent(int value)
@@ -321,18 +322,22 @@ void BuildingSceneBtnEvent(int value)
     }
     else if (value == SET_BUILDING_EVENT)
     {
-        DebugLog("ready to open sub event ui");
-        tempUIO = GetUIObjByName("build-event");
-        if (tempUIO != NULL)
+        if ((GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type != B_TYPE_NOTHING)
         {
-            GetUIObjByName("build")->AddChild(tempUIO);
-            tempUIO->AddParent(GetUIObjByName("build"));
-            tempUIO->TurnOn();
-            SetSelectedBtn(tempUIO->Buttons);
-        }
-        else
-        {
-            ErrorLog("cannot find this UI object");
+            DebugLog("ready to open sub event ui");
+            tempUIO = GetUIObjByName("build-event");
+            if (tempUIO != NULL)
+            {
+                GetUIObjByName("build")->AddChild(tempUIO);
+                tempUIO->AddParent(GetUIObjByName("build"));
+                tempUIO->TurnOn();
+                SetSelectedBtn(tempUIO->Buttons);
+            }
+            else
+            {
+                ErrorLog("cannot find this UI object");
+            }
         }
     }
     else if (value == CONFIRM_BUILDING)
@@ -366,6 +371,639 @@ void BuildingSceneBtnEvent(int value)
         {
             tempUIO->TurnOff();
             SetSelectedBtn(tempUIO->ParentUIO->Buttons + 1);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_HOTSPRING)
+    {
+        DebugLog("onnsenn");
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_HOTSPRING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_FOOD)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_FOOD;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_POOL)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_POOL;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_DRINK)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_DRINK;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_CINEMA)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_CINEMA;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_KARAOKE)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_KARAOKE;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_RESTPLACE)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_RESTPLACE;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == TYPE_MAKEBYHAND)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Status = BUILDING_STATUS::PLANING;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Type = B_TYPE_MAKEBYHAND;
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NOTHING;
+        tempUIO = GetUIObjByName("build-type");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_NORMALSPR)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_NORMALSPR;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_SKINCARESPR)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_SKINCARESPR;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_WARMSPR)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_WARMSPR;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_HEALTHSPR)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_HEALTHSPR;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_EATBBQ)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_EATBBQ;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_EATLIGHTFOOD)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_EATLIGHTFOOD;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_EATUNAGI)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_EATUNAGI;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_EATRAMEN)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_EATRAMEN;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_EATCURRY)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_EATCURRY;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_EATFRIEDNOODLE)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_EATFRIEDNOODLE;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_POLNORMAL)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_POLNORMAL;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_POLFLUSH)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_POLFLUSH;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_POLNIGHT)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_POLNIGHT;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_POLINFINITY)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_POLINFINITY;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_DRKMILKTEA)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_DRKMILKTEA;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_DRKCAFE)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_DRKCAFE;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_DRKTEA)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_DRKTEA;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_DRKBAR)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_DRKBAR;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_DRKKARUPISU)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_DRKKARUPISU;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_DRKALCOHOL)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_DRKALCOHOL;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MOVHOR)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MOVHOR;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MOVLOVE)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MOVLOVE;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MOVSF)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MOVSF;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MOVACT)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MOVACT;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MOVCOMEDY)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MOVCOMEDY;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MOVDOCUMENTARY)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MOVDOCUMENTARY;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_KARASINGLE)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_KARASINGLE;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_KARAMUTLI)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_KARAMUTLI;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_RESTCAMP)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_RESTCAMP;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_RESTHOTEL)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_RESTHOTEL;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MAKEPRESENT)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MAKEPRESENT;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
+        }
+        else
+        {
+            ErrorLog("cannot find this UI object");
+        }
+    }
+    else if (value == EVNT_MAKEACSY)
+    {
+        (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
+            Event = B_EVNT_MAKEACSY;
+        tempUIO = GetUIObjByName("build-event");
+        if (tempUIO != NULL)
+        {
+            tempUIO->TurnOff();
+            SetSelectedBtn(tempUIO->ParentUIO->Buttons);
         }
         else
         {

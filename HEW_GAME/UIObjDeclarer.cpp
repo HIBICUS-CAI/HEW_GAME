@@ -379,7 +379,7 @@ void CreateBuildingUIObjs()
     GetUIObjByName("build-event")->
         AddBtn(UI_BUTTON(0, POSITION_2D(33, 22),
             (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
-    GetUIObjByName("build-event")->
+    /*GetUIObjByName("build-event")->
         AddBtn(UI_BUTTON(0, POSITION_2D(9, 29),
             (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-event")->
@@ -396,7 +396,7 @@ void CreateBuildingUIObjs()
             (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("build-event")->
         AddBtn(UI_BUTTON(0, POSITION_2D(33, 43),
-            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));
+            (char*)"oooooooooooooooo", BTN_DESIGN::STRAIGHT));*/
     GetUIObjByName("build-event")->
         AddBtn(UI_BUTTON(BACK_TO_BUILD_EVENT, POSITION_2D(38, 50),
             (char*)"щ]д╕ды", BTN_DESIGN::LINE));

@@ -19,3 +19,8 @@ void UpdateBuildingManager();
 /// 施設作成に関しての処理を閉じる
 /// </summary>
 void TurnOffBuildingManager();
+
+/// <summary>
+/// 施設作成に関しての処理をリセットする
+/// </summary>
+void  ResetBuildingManager();
