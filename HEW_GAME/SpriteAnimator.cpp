@@ -51,7 +51,7 @@ void DrawSingleSpriteToUpdateBuffer(SPRITE* sprite)
     }
 }
 
-void DrawSingleSpriteToCamBuffer(SCENECAMERA* camBuffer, SPRITE* sprite, POSITION_2D posInCam)
+void DrawSingleSpriteToCamBuffer(SCENECAMERA* camBuffer, SPRITE* sprite, POSITION_2D posInCam, int showSpace)
 {
     POSITION_2D startPos = posInCam;
     int startIndex = startPos.posY * camBuffer->CameraWidth + startPos.posX;
@@ -60,15 +60,29 @@ void DrawSingleSpriteToCamBuffer(SCENECAMERA* camBuffer, SPRITE* sprite, POSITIO
     {
         for (int j = 0; j < sprite->Width; j++)
         {
-            if (startPos.posX + j >= camBuffer->CameraWidth ||
-                startPos.posY + i >= camBuffer->CameraHeight ||
-                startPos.posX + j <= 0 || startPos.posY + i <= 0 ||
-                *(sprite->GetSpriteBuffer() + i * sprite->Width + j) == ' ')
+            if (showSpace)
             {
-                continue;
+                if (startPos.posX + j >= camBuffer->CameraWidth ||
+                    startPos.posY + i >= camBuffer->CameraHeight ||
+                    startPos.posX + j <= 0 || startPos.posY + i <= 0)
+                {
+                    continue;
+                }
+                *((camBuffer->GetCamBuffer()) + startIndex + i * camBuffer->CameraWidth + j) =
+                    *(sprite->GetSpriteBuffer() + i * sprite->Width + j);
             }
-            *((camBuffer->GetCamBuffer()) + startIndex + i * camBuffer->CameraWidth + j) =
-                *(sprite->GetSpriteBuffer() + i * sprite->Width + j);
+            else
+            {
+                if (startPos.posX + j >= camBuffer->CameraWidth ||
+                    startPos.posY + i >= camBuffer->CameraHeight ||
+                    startPos.posX + j <= 0 || startPos.posY + i <= 0 ||
+                    *(sprite->GetSpriteBuffer() + i * sprite->Width + j) == ' ')
+                {
+                    continue;
+                }
+                *((camBuffer->GetCamBuffer()) + startIndex + i * camBuffer->CameraWidth + j) =
+                    *(sprite->GetSpriteBuffer() + i * sprite->Width + j);
+            }
         }
     }
 }
@@ -109,7 +123,7 @@ void DrawSpriteAnimatorToUpdateBuffer(SPRITE_ANIME* spriteAnimator, int offset)
     DrawSingleSpriteToUpdateBuffer(spriteAnimator->GetSubSpriteByOffset(offset));
 }
 
-void DrawSpriteAnimatorToCamBuffer(SCENECAMERA* camBuffer, SPRITE_ANIME* spriteAnimator, int offset, POSITION_2D posInCam)
+void DrawSpriteAnimatorToCamBuffer(SCENECAMERA* camBuffer, SPRITE_ANIME* spriteAnimator, int offset, POSITION_2D posInCam, int showSpace)
 {
     if (!spriteAnimator->GetSubSpriteByOffset(offset)->Visible)
     {
@@ -117,7 +131,7 @@ void DrawSpriteAnimatorToCamBuffer(SCENECAMERA* camBuffer, SPRITE_ANIME* spriteA
         {
             return;
         }
-        DrawSpriteAnimatorToCamBuffer(camBuffer, spriteAnimator, --offset, posInCam);
+        DrawSpriteAnimatorToCamBuffer(camBuffer, spriteAnimator, --offset, posInCam, showSpace);
         return;
     }
 
