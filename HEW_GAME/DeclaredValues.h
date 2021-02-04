@@ -63,7 +63,7 @@ char* GetOutputBufferToUpdate();
 /// <returns>出力用バッファに指向のポインタ</returns>
 char* GetOutputBufferToPrint();
 
-#define UIOBJSIZE 10000
+#define UIOBJSIZE 20
 
 /// <summary>
 /// ＵＩアイテム配列を取得

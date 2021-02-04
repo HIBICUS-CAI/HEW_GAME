@@ -152,10 +152,10 @@ void UpdateBuildingManager()
     case B_TYPE_RESTPLACE:
         (event->Buttons + 0)->Event = EVNT_RESTCAMP;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "     ホテル     ");
+            sizeof((event->Buttons + 0)->Text), "   キャンプ場   ");
         (event->Buttons + 1)->Event = EVNT_RESTHOTEL;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "   キャンプ場   ");
+            sizeof((event->Buttons + 1)->Text), "     ホテル     ");
         break;
 
     case B_TYPE_MAKEBYHAND:
@@ -294,10 +294,10 @@ void UpdateBuildingManager()
         (temp->Texts + 3)->ChangeTextTo("施設の内容：皆でカラオケ");
         break;
     case B_EVNT_RESTCAMP:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：ホテル");
+        (temp->Texts + 3)->ChangeTextTo("施設の内容：キャンプ場");
         break;
     case B_EVNT_RESTHOTEL:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：キャンプ場");
+        (temp->Texts + 3)->ChangeTextTo("施設の内容：ホテル");
         break;
     case B_EVNT_MAKEPRESENT:
         (temp->Texts + 3)->ChangeTextTo("施設の内容：手作りお土産");

@@ -15,6 +15,7 @@
 #include "BuilderManager.h"
 #include "BuildBackgroundShower.h"
 #include "BuildingManager.h"
+#include "BuildingShower.h"
 
 void AppInit()
 {
@@ -33,6 +34,7 @@ void AppInit()
     InitBuilder();
     InitBuildBackground();
     InitBuildingManager();
+    InitBuildingShower();
 
     SwitchSceneToName("title");
 }
@@ -59,6 +61,7 @@ void AppUpdate()
     case BUILDINGSCENEFLAG:
         UpdateBuildingManager();
         UpdateBuildBackground();
+        UpdateBuildingShower();
         UpdateBuilder();
         break;
 
