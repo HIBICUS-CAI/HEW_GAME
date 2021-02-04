@@ -16,24 +16,27 @@ float g_OffsetPerFrameCountNrest = 0.f;
 
 void InitBuildBackground()
 {
-    SPRITE temp1 = SPRITE();
-    SPRITE_ANIME temp2 = SPRITE_ANIME();
+    SPRITE* temp1 = new SPRITE();
+    SPRITE_ANIME* temp2 = new SPRITE_ANIME();
     for (int i = 0; i < 8; i++)
     {
-        g_FarBackGSprites[i] = temp1;
+        g_FarBackGSprites[i] = *temp1;
     }
     for (int i = 0; i < 8; i++)
     {
-        g_FarBackGSAs[i] = temp2;
+        g_FarBackGSAs[i] = *temp2;
     }
     for (int i = 0; i < 9; i++)
     {
-        g_NearBackGSAs[i] = temp2;
+        g_NearBackGSAs[i] = *temp2;
     }
     for (int i = 0; i < 10; i++)
     {
-        g_NrestBackGSAs[i] = temp2;
+        g_NrestBackGSAs[i] = *temp2;
     }
+    delete temp1;
+    delete temp2;
+
     g_TimeCountBBS = 0;
     g_OffsetPerFrameCountNear = 0.f;
     g_OffsetPerFrameCountFar = 0.f;

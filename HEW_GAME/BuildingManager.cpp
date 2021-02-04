@@ -36,6 +36,7 @@ void UpdateBuildingManager()
     (GetUIObjByName("build")->Texts)->ChangeTextTo(time);
     if (g_TimeCountBUILDM > 3600.f)
     {
+        SetBuilderMovFlg(BUILDER_STOP);
         SwitchSceneToName("resort");
         GetUIObjByName("build")->ChildUIO = NULL;
         GetUIObjByName("build-type")->TurnOff();

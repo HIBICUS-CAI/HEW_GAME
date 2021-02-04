@@ -160,10 +160,10 @@ int GetBuilderMovFlg()
 
 void ResetBuilder()
 {
-    int g_TimeCountBM = 0;
-    int g_TimeCountBMArrow = 0;
-    int g_TimeCountBMBuilder = 0;
-    int g_TimeCountBMMoving = 0;
-    int g_MovFlg = 0;
+    g_TimeCountBM = 0;
+    g_TimeCountBMArrow = 0;
+    g_TimeCountBMBuilder = 0;
+    g_TimeCountBMMoving = 0;
+    g_MovFlg = 0;
     SetCurrBuildingPosByBuilder(0);
 }

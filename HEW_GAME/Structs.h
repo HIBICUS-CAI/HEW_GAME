@@ -461,6 +461,14 @@ struct SPRITE
 
         return POSITION_2D(posX, posY);
     }
+
+    void Clear()
+    {
+        for (int i = 0; i < SPRITE_MAX_HEIGHT * SPRITE_MAX_WIDTH; i++)
+        {
+            SpriteBuffer[i] = ' ';
+        }
+    }
 };
 
 #ifdef SOUNDBYHAL

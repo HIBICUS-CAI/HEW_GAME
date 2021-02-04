@@ -13,6 +13,7 @@
 #include "BuilderManager.h"
 #include "BuildBackgroundShower.h"
 #include "BuildingManager.h"
+#include "BuildingShower.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -192,7 +193,9 @@ void StageSelectSceneBtnEvent(int value)
         SwitchSceneToName("naming");
     }
     ReloadBackgroundByPlayingStage();
+    ResetBuilder();
     ResetBuildingManager();
+    ResetBuildingShowerTimer();
 }
 
 void NamingSceneBtnEvent(int value)
@@ -243,7 +246,6 @@ void NamingSceneBtnEvent(int value)
             ChangeTextTo(temp);
         (GetUIObjByName("naming")->Texts + 7)->
             ChangeTextTo(temp);
-        ResetBuilder();
         SwitchSceneToName("build");
     }
     else if (
@@ -357,6 +359,7 @@ void BuildingSceneBtnEvent(int value)
     else if (value == BUILD_IS_END)
     {
         DebugLog("ready to go to resort scene");
+        SetBuilderMovFlg(BUILDER_STOP);
         SwitchSceneToName("resort");
     }
     else if (value == BACK_TO_BUILD_TYPE)

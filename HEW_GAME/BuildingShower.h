@@ -24,3 +24,8 @@ void TurnOffBuildingShower();
 /// 今作っている位置にハンマの演出を表示する
 /// </summary>
 void ShowBuildingHammer();
+
+/// <summary>
+/// 施設作成に関しての表示と演出処理の時間をリセットする
+/// </summary>
+void ResetBuildingShowerTimer();
