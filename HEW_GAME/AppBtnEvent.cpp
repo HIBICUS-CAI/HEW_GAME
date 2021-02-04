@@ -354,6 +354,7 @@ void BuildingSceneBtnEvent(int value)
             DebugLog("ready to confirm this building");
             (GetEditBuildingsArray() + GetCurrBuildingPos() - 1)->
                 Status = BUILDING_STATUS::CONFIRMED;
+            ShowBuildingHammer();
         }
     }
     else if (value == BUILD_IS_END)

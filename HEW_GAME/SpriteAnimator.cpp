@@ -3,14 +3,15 @@
 
 SPRITE CreateSingleSprite(const char* fileName, POSITION_2D position, int width, int height)
 {
-    SPRITE tempSingleSprite = SPRITE(position, width, height, 1);
+    SPRITE* tempSingleSprite=new SPRITE(position, width, height, 1);
     FILE* asciiDrawFile = NULL;
     fopen_s(&asciiDrawFile, fileName, "r");
 
     if (asciiDrawFile == NULL)
     {
         ErrorLog("cannot open file when loading single sprite");
-        return SPRITE();
+        SPRITE* nullS = new SPRITE();
+        return *nullS;
     }
 
     char asciiChar = '\\';
@@ -26,10 +27,10 @@ SPRITE CreateSingleSprite(const char* fileName, POSITION_2D position, int width,
             --i;
             continue;
         }
-        *(tempSingleSprite.GetSpriteBuffer() + i) = asciiChar;
+        *(tempSingleSprite->GetSpriteBuffer() + i) = asciiChar;
     }
 
-    return tempSingleSprite;
+    return *tempSingleSprite;
 }
 
 void DrawSingleSpriteToUpdateBuffer(SPRITE* sprite)
@@ -89,23 +90,25 @@ void DrawSingleSpriteToCamBuffer(SCENECAMERA* camBuffer, SPRITE* sprite, POSITIO
 
 SPRITE_ANIME CreateSpriteAnimator(int frameCount, const char* fileName, POSITION_2D position, int width, int height)
 {
+    SPRITE_ANIME* tempSpriteAnimator = new SPRITE_ANIME();
+
     if (frameCount > MAXSIZE_PER_SPRITE_FRAME)
     {
         ErrorLogI1("this animator frame count has overflowed as", frameCount);
-        return SPRITE_ANIME();
+        return *tempSpriteAnimator;
     }
 
     char fileNameWithID[128];
     FILE* pKeyFrameFile = NULL;
-    SPRITE_ANIME tempSpriteAnimator = SPRITE_ANIME();
+    
     for (int i = 0; i < frameCount; i++)
     {
         sprintf_s(fileNameWithID, sizeof(fileNameWithID), "%s%d.txt", fileName, i + 1);
-        tempSpriteAnimator.SetSubSpriteByOffset(CreateSingleSprite(fileNameWithID, position, width, height),
+        tempSpriteAnimator->SetSubSpriteByOffset(CreateSingleSprite(fileNameWithID, position, width, height),
             i * (MAXSIZE_PER_SPRITE_FRAME / frameCount));
     }
 
-    return tempSpriteAnimator;
+    return *tempSpriteAnimator;
 }
 
 void DrawSpriteAnimatorToUpdateBuffer(SPRITE_ANIME* spriteAnimator, int offset)
