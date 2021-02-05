@@ -14,6 +14,7 @@
 #include "BuildBackgroundShower.h"
 #include "BuildingManager.h"
 #include "BuildingShower.h"
+#include "VisitingBackgroundShower.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -361,6 +362,8 @@ void BuildingSceneBtnEvent(int value)
     {
         DebugLog("ready to go to resort scene");
         SetBuilderMovFlg(BUILDER_STOP);
+        ReloadVisitingBackground();
+        ResetResortBGTimerAndOffset();
         SwitchSceneToName("resort");
     }
     else if (value == BACK_TO_BUILD_TYPE)

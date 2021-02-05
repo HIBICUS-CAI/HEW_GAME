@@ -2,6 +2,7 @@
 #include "AppDeclared.h"
 #include "UIObject.h"
 #include "SceneManager.h"
+#include "VisitingBackgroundShower.h"
 
 float g_TimeCountBUILDM = 0.f;
 
@@ -37,6 +38,8 @@ void UpdateBuildingManager()
     if (g_TimeCountBUILDM > 3600.f)
     {
         SetBuilderMovFlg(BUILDER_STOP);
+        ReloadVisitingBackground();
+        ResetResortBGTimerAndOffset();
         SwitchSceneToName("resort");
         GetUIObjByName("build")->ChildUIO = NULL;
         GetUIObjByName("build-type")->TurnOff();

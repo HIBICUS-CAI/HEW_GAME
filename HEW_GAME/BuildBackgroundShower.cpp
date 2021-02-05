@@ -339,3 +339,18 @@ void TurnOffBuildBackground()
 {
 
 }
+
+SPRITE* GetBuildFarSprites()
+{
+    return g_FarBackGSprites;
+}
+
+SPRITE_ANIME* GetBuildFarSAs()
+{
+    return g_FarBackGSAs;
+}
+
+SPRITE_ANIME* GetBuildNearSAs()
+{
+    return g_NearBackGSAs;
+}

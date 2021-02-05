@@ -16,6 +16,8 @@
 #include "BuildBackgroundShower.h"
 #include "BuildingManager.h"
 #include "BuildingShower.h"
+#include "VisitingVisitorShower.h"
+#include "VisitingBackgroundShower.h"
 
 void AppInit()
 {
@@ -35,6 +37,8 @@ void AppInit()
     InitBuildBackground();
     InitBuildingManager();
     InitBuildingShower();
+    InitVisitingVisitorShower();
+    InitVisitingBackground();
 
     SwitchSceneToName("title");
 }
@@ -63,6 +67,11 @@ void AppUpdate()
         UpdateBuildBackground();
         UpdateBuildingShower();
         UpdateBuilder();
+        break;
+
+    case RESORTSCENEFLAG:
+        UpdateVisitingBackground();
+        UpdateVisitingVisitorsShower();
         break;
 
     default:

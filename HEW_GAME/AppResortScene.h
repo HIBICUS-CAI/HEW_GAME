@@ -25,15 +25,17 @@ void UpdateResortScene()
 {
     ClearSceneCamBuffer(GetSceneNodeByName("resort"));
 
-    //-------------------------------------
-    ++g_ResortTimeCount;
     char* cam = GetSceneNodeByName("resort")->GetCamAddr()->
         GetCamBuffer();
     int width = GetSceneNodeByName("resort")->GetCamAddr()->
         CameraWidth;
     int height = GetSceneNodeByName("resort")->GetCamAddr()->
         CameraHeight;
-    for (int i = 0; i < height; i++)
+    for (int i = 0; i < width; i++)
+    {
+        *(cam + 40 * width + i) = '-';
+    }
+    for (int i = 41; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
@@ -41,8 +43,10 @@ void UpdateResortScene()
         }
     }
 
+    //-------------------------------------
+    ++g_ResortTimeCount;
     DebugLogI1("resort scene has used", g_ResortTimeCount);
-    if (g_ResortTimeCount > 60)
+    if (g_ResortTimeCount > 1500)
     {
         g_ResortTimeCount = 0;
         SwitchSceneToName("event");

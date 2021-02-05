@@ -167,6 +167,8 @@
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="UIObjDeclarer.cpp" />
     <ClCompile Include="UIObject.cpp" />
+    <ClCompile Include="VisitingBackgroundShower.cpp" />
+    <ClCompile Include="VisitingVisitorShower.cpp" />
     <ClCompile Include="VisitorManager.cpp" />
     <ClCompile Include="VisitorShower.cpp" />
   </ItemGroup>
@@ -209,6 +211,8 @@
     <ClInclude Include="Tools.h" />
     <ClInclude Include="UIObjDeclarer.h" />
     <ClInclude Include="UIObject.h" />
+    <ClInclude Include="VisitingBackgroundShower.h" />
+    <ClInclude Include="VisitingVisitorShower.h" />
     <ClInclude Include="VisitorManager.h" />
     <ClInclude Include="VisitorShower.h" />
   </ItemGroup>
