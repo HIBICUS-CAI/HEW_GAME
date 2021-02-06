@@ -41,179 +41,6 @@ void InitBuildBackground()
     g_OffsetPerFrameCountNear = 0.f;
     g_OffsetPerFrameCountFar = 0.f;
     g_OffsetPerFrameCountNrest = 0.f;
-
-    for (int i = 0; i < 10; i++)
-    {
-        g_NrestBackGSprites[i] = CreateSingleSprite(
-            "Assets\\Sprites\\building-base.txt",
-            POSITION_2D(100 + i * 60, 38),
-            40, 2
-        );
-    }
-}
-
-void LoadDefaultPart1()
-{
-    g_FarBackGSprites[0] = CreateSingleSprite(
-        "Assets\\Sprites\\hill1.txt", POSITION_2D(0, 0),
-        30, 10);
-    g_FarBackGSprites[1] = CreateSingleSprite(
-        "Assets\\Sprites\\hill2.txt", POSITION_2D(150, 0),
-        30, 10);
-
-    g_FarBackGSAs[0] = CreateSpriteAnimator(4,
-        "Assets\\SpriteAnimators\\sun\\sun",
-        POSITION_2D(100, -2), 20, 10);
-    g_FarBackGSAs[1] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud1-",
-        POSITION_2D(40, 2), 17, 5);
-}
-void LoadDefaultPart2()
-{
-    g_FarBackGSAs[2] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud3-",
-        POSITION_2D(80, 4), 17, 5);
-    g_FarBackGSAs[3] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud5-",
-        POSITION_2D(130, 1), 20, 5);
-
-    g_NearBackGSAs[0] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake1-",
-        POSITION_2D(0, 0), 30, 30);
-    g_NearBackGSAs[1] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake2-",
-        POSITION_2D(30, 0), 30, 30);
-}
-void LoadDefaultPart3()
-{
-    g_NearBackGSAs[2] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake3-",
-        POSITION_2D(60, 0), 30, 30);
-    g_NearBackGSAs[3] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake4-",
-        POSITION_2D(90, 0), 30, 30);
-    g_NearBackGSAs[4] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake5-",
-        POSITION_2D(120, 0), 30, 30);
-    g_NearBackGSAs[5] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake6-",
-        POSITION_2D(150, 0), 30, 30);
-}
-void LoadDefaultPart4()
-{
-    g_NearBackGSAs[6] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake7-",
-        POSITION_2D(180, 0), 30, 30);
-    g_NearBackGSAs[7] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake8-",
-        POSITION_2D(210, 0), 30, 30);
-    g_NearBackGSAs[8] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\lake\\lake9-",
-        POSITION_2D(240, 0), 30, 30);
-}
-
-void LoadBeachPart1()
-{
-    g_FarBackGSAs[0] = CreateSpriteAnimator(4,
-        "Assets\\SpriteAnimators\\sun\\sun",
-        POSITION_2D(70, 14), 20, 10);
-    g_FarBackGSAs[1] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud1-",
-        POSITION_2D(40, 2), 17, 5);
-    g_FarBackGSAs[2] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud3-",
-        POSITION_2D(80, 4), 17, 5);
-    g_FarBackGSAs[3] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud5-",
-        POSITION_2D(130, 1), 20, 5);
-}
-void LoadBeachPart2()
-{
-    g_NearBackGSAs[0] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea1-",
-        POSITION_2D(0, 0), 30, 30);
-    g_NearBackGSAs[1] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea2-",
-        POSITION_2D(30, 0), 30, 30);
-    g_NearBackGSAs[2] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea3-",
-        POSITION_2D(60, 0), 30, 30);
-}
-void LoadBeachPart3()
-{
-    g_NearBackGSAs[3] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea4-",
-        POSITION_2D(90, 0), 30, 30);
-    g_NearBackGSAs[4] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea5-",
-        POSITION_2D(120, 0), 30, 30);
-    g_NearBackGSAs[5] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea6-",
-        POSITION_2D(150, 0), 30, 30);
-}
-void LoadBeachPart4()
-{
-    g_NearBackGSAs[6] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea7-",
-        POSITION_2D(180, 0), 30, 30);
-    g_NearBackGSAs[7] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea8-",
-        POSITION_2D(210, 0), 30, 30);
-    g_NearBackGSAs[8] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\sea\\sea9-",
-        POSITION_2D(240, 0), 30, 30);
-}
-
-void LoadDesertPart1()
-{
-    g_FarBackGSAs[0] = CreateSpriteAnimator(10,
-        "Assets\\SpriteAnimators\\moon\\moon",
-        POSITION_2D(90, 0), 20, 10);
-    g_FarBackGSAs[1] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud1-",
-        POSITION_2D(10, 2), 17, 5);
-    g_FarBackGSAs[2] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud3-",
-        POSITION_2D(40, 4), 17, 5);
-    g_FarBackGSAs[3] = CreateSpriteAnimator(6,
-        "Assets\\SpriteAnimators\\cloud\\cloud5-",
-        POSITION_2D(130, 1), 20, 5);
-}
-void LoadDesertPart2()
-{
-    g_NearBackGSAs[0] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand1-",
-        POSITION_2D(0, 0), 30, 30);
-    g_NearBackGSAs[1] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand2-",
-        POSITION_2D(30, 0), 30, 30);
-    g_NearBackGSAs[2] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand3-",
-        POSITION_2D(60, 0), 30, 30);
-}
-void LoadDesertPart3()
-{
-    g_NearBackGSAs[3] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand4-",
-        POSITION_2D(90, 0), 30, 30);
-    g_NearBackGSAs[4] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand5-",
-        POSITION_2D(120, 0), 30, 30);
-    g_NearBackGSAs[5] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand6-",
-        POSITION_2D(150, 0), 30, 30);
-}
-void LoadDesertPart4()
-{
-    g_NearBackGSAs[6] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand7-",
-        POSITION_2D(180, 0), 30, 30);
-    g_NearBackGSAs[7] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand8-",
-        POSITION_2D(210, 0), 30, 30);
-    g_NearBackGSAs[8] = CreateSpriteAnimator(5,
-        "Assets\\SpriteAnimators\\sand\\sand9-",
-        POSITION_2D(240, 0), 30, 30);
 }
 
 void ReloadBackgroundByPlayingStage()
@@ -224,24 +51,55 @@ void ReloadBackgroundByPlayingStage()
     switch (stageID)
     {
     case STAGE_DEFAULT:
-        LoadDefaultPart1();
-        LoadDefaultPart2();
-        LoadDefaultPart3();
-        LoadDefaultPart4();
+        for (int i = 0; i < 2; i++)
+        {
+            g_FarBackGSprites[i] = *(GetHillsInStage1() + i);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            g_FarBackGSAs[i] = *(GetSunCloudInStage1() + i);
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            g_NearBackGSAs[i] = *(GetLakeSAs() + i);
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            g_NrestBackGSprites[i] = *(GetBuildSceneBase() + i);
+        }
+
         break;
 
     case STAGE_BEACH:
-        LoadBeachPart1();
-        LoadBeachPart2();
-        LoadBeachPart3();
-        LoadBeachPart4();
+        for (int i = 0; i < 4; i++)
+        {
+            g_FarBackGSAs[i] = *(GetSunCloudInStage2() + i);
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            g_NearBackGSAs[i] = *(GetBeachSAs() + i);
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            g_NrestBackGSprites[i] = *(GetBuildSceneBase() + i);
+        }
+
         break;
 
     case STAGE_DESERT:
-        LoadDesertPart1();
-        LoadDesertPart2();
-        LoadDesertPart3();
-        LoadDesertPart4();
+        for (int i = 0; i < 4; i++)
+        {
+            g_FarBackGSAs[i] = *(GetMoonCloudInStage3() + i);
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            g_NearBackGSAs[i] = *(GetDesertSAs() + i);
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            g_NrestBackGSprites[i] = *(GetBuildSceneBase() + i);
+        }
+
         break;
 
     default:

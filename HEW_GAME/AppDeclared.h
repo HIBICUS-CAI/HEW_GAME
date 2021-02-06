@@ -339,3 +339,26 @@ int GetCurrBuildingPos();
 /// </summary>
 /// <returns>作成施設配列に指向のポインタ</returns>
 BUILDING* GetEditBuildingsArray();
+
+/// <summary>
+/// 背景のスプライトを初期化してロードする
+/// </summary>
+void InitAndLoadBGSprite();
+
+SPRITE* GetHillsInStage1();
+
+SPRITE_ANIME* GetSunCloudInStage1();
+
+SPRITE_ANIME* GetSunCloudInStage2();
+
+SPRITE_ANIME* GetMoonCloudInStage3();
+
+SPRITE_ANIME* GetLakeSAs();
+
+SPRITE_ANIME* GetBeachSAs();
+
+SPRITE_ANIME* GetDesertSAs();
+
+SPRITE* GetBuildSceneBase();
+
+SPRITE* GetResortSceneBase();

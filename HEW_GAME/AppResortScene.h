@@ -46,7 +46,7 @@ void UpdateResortScene()
     //-------------------------------------
     ++g_ResortTimeCount;
     DebugLogI1("resort scene has used", g_ResortTimeCount);
-    if (g_ResortTimeCount > 1500)
+    if (g_ResortTimeCount > 800)
     {
         g_ResortTimeCount = 0;
         SwitchSceneToName("event");

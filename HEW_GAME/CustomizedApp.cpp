@@ -28,6 +28,7 @@ void AppInit()
     SetRandom();
     SetSwitchEffectStyle(CreateRandomNumIn(1, 4));
 
+    InitAndLoadBGSprite();
     InitDialogShower();
     InitPlayingStage();
     InitVisitorManager();
