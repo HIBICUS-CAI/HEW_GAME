@@ -108,6 +108,9 @@
     <ClCompile Include="VisitingBackgroundShower.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="VisitingBuildShower.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -234,6 +237,9 @@
       <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="VisitingBackgroundShower.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="VisitingBuildShower.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

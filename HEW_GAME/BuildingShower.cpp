@@ -4,16 +4,6 @@
 #include "SceneNode.h"
 #include "BuilderManager.h"
 
-#define SPRING_OFFSET 0
-#define FOOD_OFFSET 1
-#define POOL_OFFSET 2
-#define DRINK_OFFSET 3
-#define CINEMA_OFFSET 4
-#define KARAOKE_OFFSET 5
-#define HOTEL_OFFSET 6
-#define CAMP_OFFSET 7
-#define HANDMAKE_OFFSET 8
-
 float g_TimeCountBUILDS = 0.f;
 float g_OffsetPerFrameCount = 0.f;
 SPRITE g_BuildingSprites[9];
@@ -317,4 +307,9 @@ void TurnOffBuildingShower()
 void ShowBuildingHammer()
 {
     g_ReadyToConfirmed = 1;
+}
+
+SPRITE* GetBuildingSprites()
+{
+    return g_BuildingSprites;
 }

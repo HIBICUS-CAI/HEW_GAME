@@ -19,3 +19,8 @@ void UpdateVisitingVisitorsShower();
 /// 観光客スプライト表示を閉じる
 /// </summary>
 void TurnOffVisitingVisitorsShower();
+
+/// <summary>
+/// 観光客スプライト表示に関しての時間をリセットする
+/// </summary>
+void ResetVisitingVisitorShowerTime();
