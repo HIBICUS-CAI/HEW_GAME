@@ -36,7 +36,6 @@ void InitVisitingVisitorShower()
 
 void UpdateVisitingVisitorsShower()
 {
-    //if (g_TimeCountVVS > 120)
     if (ResortCanMove())
     {
         for (int i = 0; i < 3; i++)

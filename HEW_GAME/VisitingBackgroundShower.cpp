@@ -31,12 +31,6 @@ void ReloadVisitingBackground()
 
 void UpdateVisitingBackground()
 {
-    /*if (g_TimeCountVBS > 120)
-    {
-        g_ReOffsetPerFrameCountNear += 0.22f / (180.f / 120.f);
-        g_ReOffsetPerFrameCountFar += 0.1f / (180.f / 120.f);
-        g_ReOffsetPerFrameCountNrest += 0.967f;
-    }*/
     if (ResortCanMove())
     {
         g_ReOffsetPerFrameCountNear += 0.22f / (180.f / 120.f);

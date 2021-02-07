@@ -138,12 +138,6 @@ void UpdateVisitingBuildShower()
         }
     }
 
-    /*if (g_VBudSTimeCount > 120)
-    {
-        g_VBudSOffsetPerFrameCount += 0.967f;
-    }
-    ++g_VBudSTimeCount;*/
-
     if (ResortCanMove())
     {
         g_VBudSOffsetPerFrameCount += 0.967f;
