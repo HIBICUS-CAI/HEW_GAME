@@ -3,15 +3,22 @@
 #include "AppDeclared.h"
 #include "SpriteAnimator.h"
 #include "SceneNode.h"
+#include "VisitingVisitorManager.h"
 
 int g_VBudSTimeCount = 0;
 float g_VBudSOffsetPerFrameCount = 0.f;
 POSITION_2D g_VisitingBuildPosOrigin[BUILDINGS_SIZE];
+SPRITE g_GateSprite;
 
 void InitVisitingBuildShower()
 {
     g_VBudSOffsetPerFrameCount = 0.f;
     g_VBudSTimeCount = 0;
+
+    g_GateSprite = CreateSingleSprite(
+        "Assets\\Sprites\\gate.txt",
+        POSITION_2D(70, 19), 40, 19
+    );
 
     for (int i = 0; i < BUILDINGS_SIZE; i++)
     {
@@ -28,6 +35,14 @@ void ResetVisitingBuildShowerTimer()
 
 void UpdateVisitingBuildShower()
 {
+    DrawSingleSpriteToCamBuffer(
+        GetSceneNodeByName("resort")->GetCamAddr(),
+        &g_GateSprite,
+        g_GateSprite.Position -
+        POSITION_2D((int)g_VBudSOffsetPerFrameCount, 0),
+        1
+    );
+
     for (int i = 0; i < BUILDINGS_SIZE; i++)
     {
         if ((GetEditBuildingsArray() + i)->
@@ -123,11 +138,16 @@ void UpdateVisitingBuildShower()
         }
     }
 
-    if (g_VBudSTimeCount > 120)
+    /*if (g_VBudSTimeCount > 120)
     {
         g_VBudSOffsetPerFrameCount += 0.967f;
     }
-    ++g_VBudSTimeCount;
+    ++g_VBudSTimeCount;*/
+
+    if (ResortCanMove())
+    {
+        g_VBudSOffsetPerFrameCount += 0.967f;
+    }
 }
 
 void TurnOffVisitingBuildShower()

@@ -3,6 +3,7 @@
 #include "SpriteAnimator.h"
 #include "BuildBackgroundShower.h"
 #include "SceneNode.h"
+#include "VisitingVisitorManager.h"
 
 SPRITE g_ReNrestBackGSprites[11];
 int g_TimeCountVBS = 0;
@@ -30,13 +31,18 @@ void ReloadVisitingBackground()
 
 void UpdateVisitingBackground()
 {
-    if (g_TimeCountVBS > 120)
+    /*if (g_TimeCountVBS > 120)
+    {
+        g_ReOffsetPerFrameCountNear += 0.22f / (180.f / 120.f);
+        g_ReOffsetPerFrameCountFar += 0.1f / (180.f / 120.f);
+        g_ReOffsetPerFrameCountNrest += 0.967f;
+    }*/
+    if (ResortCanMove())
     {
         g_ReOffsetPerFrameCountNear += 0.22f / (180.f / 120.f);
         g_ReOffsetPerFrameCountFar += 0.1f / (180.f / 120.f);
         g_ReOffsetPerFrameCountNrest += 0.967f;
     }
-
 
     int i = 0;
     while ((GetBuildFarSprites() + i)->Visible)

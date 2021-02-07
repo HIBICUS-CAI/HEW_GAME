@@ -17,6 +17,7 @@
 #include "VisitingBackgroundShower.h"
 #include "VisitingVisitorShower.h"
 #include "VisitingBuildShower.h"
+#include "VisitingVisitorManager.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -199,6 +200,7 @@ void StageSelectSceneBtnEvent(int value)
     ResetBuilder();
     ResetBuildingManager();
     ResetBuildingShowerTimer();
+    ResetResortMoveFlag();
     ResetVisitingVisitorShowerTime();
     ResetVisitingBuildShowerTimer();
 }
