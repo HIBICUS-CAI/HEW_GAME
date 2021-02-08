@@ -8,21 +8,11 @@
 #include <string.h>
 
 QUEUE_INT g_ThoughtQueue;
-SPRITE g_ThoughtList[30];
-
-SPRITE g_test;
 
 void InitThoughtListManager()
 {
     g_ThoughtQueue.Top = CreateQueue();
     g_ThoughtQueue.End = g_ThoughtQueue.Top;
-
-    SPRITE* temp = new SPRITE();
-    for (int i = 0; i < 30; i++)
-    {
-        g_ThoughtList[i] = *temp;
-    }
-    delete temp;
 }
 
 void UpdateThoughtListManager()
@@ -41,30 +31,7 @@ void UpdateThoughtListManager()
             GetThoughtListSprites()[index] = *temp;
             delete temp;
         }
-
-        /*int index = DeQueue(
-            g_ThoughtQueue.Top,
-            g_ThoughtQueue.End
-        );*/
-        //---------------------------
-        /*DrawSingleSpriteToCamBuffer(
-            GetSceneNodeByName("resort")->GetCamAddr(),
-            g_ThoughtList + index,
-            POSITION_2D(38, 42)
-        );*/
-        //g_test = g_ThoughtList[index];
-        //---------------------------
-        /*SPRITE* temp = new SPRITE();
-        g_ThoughtList[index] = *temp;
-        delete temp;*/
     }
-
-    //--------------------------------------
-    /*DrawSingleSpriteToCamBuffer(
-        GetSceneNodeByName("resort")->GetCamAddr(),
-        &g_test,
-        POSITION_2D(38, 42), 1
-    );*/
 }
 
 void TurnOffThoughtListManager()
@@ -236,7 +203,6 @@ void CreateThoughtToQueue(int buildType, int buildEvent)
 void AddSingleThoughtToQueue(const char* thought)
 {
     int index = 0;
-    //while (g_ThoughtList[index].Visible)
     while ((GetThoughtListSprites() + index)->Visible)
     {
         ++index;
