@@ -1,6 +1,7 @@
 #include "VisitingVisitorManager.h"
 #include "AppDeclared.h"
 #include "SceneManager.h"
+#include "ThoughtListManager.h"
 
 int g_VisitingMovFlg = 0;
 int g_VVMTimeCount = 0;
@@ -12,6 +13,7 @@ int g_IsStop = 0;
 int g_CurrColliedOffset = 0;
 int g_CurrOffset = 0;
 int g_FinalTime = 100;
+int g_ShowedNameFlg = 0;
 
 void InitVisitingVisitorManager()
 {
@@ -23,6 +25,7 @@ void InitVisitingVisitorManager()
     g_CurrColliedOffset = 0;
     g_CurrOffset = 0;
     g_FinalTime = 100;
+    g_ShowedNameFlg = 0;
 
     for (int i = 0; i < 11; i++)
     {
@@ -53,6 +56,16 @@ void UpdateVisitingVisitorManager()
             if (!g_IsStop &&
                 g_VisitorsColl.IsCollied(g_BuildingBaseColl[i]))
             {
+                if (!i && !g_ShowedNameFlg)
+                {
+                    g_ShowedNameFlg = 1;
+
+                    CreateThoughtToQueue(
+                        GetCurrColliedBuildingType(),
+                        GetCurrColliedBuildingEvent()
+                    );
+                }
+
                 if (i > 0 &&
                     (GetEditBuildingsArray() + i - 1)->Status ==
                     BUILDING_STATUS::CONFIRMED)
@@ -66,7 +79,10 @@ void UpdateVisitingVisitorManager()
                     DebugLogI1("this event:",
                         GetCurrColliedBuildingEvent());
 
-                    // TODO ここで各感想を生み出す関数を呼ぶ
+                    CreateThoughtToQueue(
+                        GetCurrColliedBuildingType(),
+                        GetCurrColliedBuildingEvent()
+                    );
                 }
 
                 g_CurrOffset = i;
@@ -137,6 +153,7 @@ void ResetResortMoveFlag()
     g_CurrColliedOffset = 0;
     g_CurrOffset = 0;
     g_FinalTime = 100;
+    g_ShowedNameFlg = 0;
 
     for (int i = 0; i < 11; i++)
     {
@@ -155,7 +172,7 @@ void ResetResortMoveFlag()
 
 int GetCurrColliedBuildingType()
 {
-    if (g_CurrColliedOffset>0)
+    if (g_CurrColliedOffset > 0)
     {
         return (GetEditBuildingsArray() +
             g_CurrColliedOffset - 1)->Type;
@@ -185,5 +202,6 @@ char* GetResortName()
     sprintf_s(name, sizeof(name), "%s%s",
         GetSubName1ArrayByOffset(GetConfirmedSubName1And2()[0]),
         GetSubName2ArrayByOffset(GetConfirmedSubName1And2()[1]));
+    DebugLog(name);
     return name;
 }

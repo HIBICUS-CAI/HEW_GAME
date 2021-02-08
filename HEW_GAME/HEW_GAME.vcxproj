@@ -164,6 +164,7 @@
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SpriteAnimator.cpp" />
+    <ClCompile Include="ThoughtListManager.cpp" />
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="UIObjDeclarer.cpp" />
     <ClCompile Include="UIObject.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SpriteAnimator.h" />
     <ClInclude Include="Structs.h" />
+    <ClInclude Include="ThoughtListManager.h" />
     <ClInclude Include="Tools.h" />
     <ClInclude Include="UIObjDeclarer.h" />
     <ClInclude Include="UIObject.h" />

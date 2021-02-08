@@ -20,6 +20,7 @@
 #include "VisitingBackgroundShower.h"
 #include "VisitingBuildShower.h"
 #include "VisitingVisitorManager.h"
+#include "ThoughtListManager.h"
 
 void AppInit()
 {
@@ -44,6 +45,7 @@ void AppInit()
     InitVisitingBackground();
     InitVisitingBuildShower();
     InitVisitingVisitorManager();
+    InitThoughtListManager();
 
     SwitchSceneToName("title");
 }
@@ -76,6 +78,7 @@ void AppUpdate()
 
     case RESORTSCENEFLAG:
         UpdateVisitingVisitorManager();
+        UpdateThoughtListManager();
         UpdateVisitingBackground();
         UpdateVisitingBuildShower();
         UpdateVisitingVisitorsShower();
