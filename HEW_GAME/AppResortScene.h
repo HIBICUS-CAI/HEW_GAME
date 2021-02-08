@@ -36,7 +36,7 @@ void UpdateResortScene()
     {
         for (int j = 0; j < width; j++)
         {
-            *(cam + (i / 2 * 2 + 41) * width + j / 2 * 2) = '.';
+            *(cam + (i / 2 * 2 + 41) * width + j / 4 * 4) = '.';
         }
     }
 }

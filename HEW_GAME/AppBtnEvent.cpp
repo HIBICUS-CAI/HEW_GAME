@@ -18,6 +18,7 @@
 #include "VisitingVisitorShower.h"
 #include "VisitingBuildShower.h"
 #include "VisitingVisitorManager.h"
+#include "ThoughtListManager.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -203,6 +204,7 @@ void StageSelectSceneBtnEvent(int value)
     ResetResortMoveFlag();
     ResetVisitingVisitorShowerTime();
     ResetVisitingBuildShowerTimer();
+    ResetThoughtQueueAndList();
 }
 
 void NamingSceneBtnEvent(int value)

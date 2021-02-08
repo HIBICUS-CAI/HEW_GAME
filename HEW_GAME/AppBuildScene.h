@@ -35,7 +35,7 @@ void UpdateBuildScene()
     {
         for (int j = 0; j < width; j++)
         {
-            *(cam + i * width + j) = '.';
+            *(cam + i * width + j / 2 * 2) = '.';
         }
     }
 }

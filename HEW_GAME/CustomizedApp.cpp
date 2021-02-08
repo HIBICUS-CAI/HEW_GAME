@@ -21,6 +21,7 @@
 #include "VisitingBuildShower.h"
 #include "VisitingVisitorManager.h"
 #include "ThoughtListManager.h"
+#include "ThoughtListShower.h"
 
 void AppInit()
 {
@@ -46,6 +47,7 @@ void AppInit()
     InitVisitingBuildShower();
     InitVisitingVisitorManager();
     InitThoughtListManager();
+    InitThoughtListShower();
 
     SwitchSceneToName("title");
 }
@@ -82,6 +84,7 @@ void AppUpdate()
         UpdateVisitingBackground();
         UpdateVisitingBuildShower();
         UpdateVisitingVisitorsShower();
+        UpdateThoughtListShower();
         break;
 
     default:

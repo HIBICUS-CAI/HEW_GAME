@@ -4,11 +4,11 @@
 #include "VisitingVisitorManager.h"
 #include "SpriteAnimator.h"
 #include "SceneNode.h"
+#include "ThoughtListShower.h"
 #include <string.h>
 
 QUEUE_INT g_ThoughtQueue;
 SPRITE g_ThoughtList[30];
-char g_ThoughtText[30];
 
 SPRITE g_test;
 
@@ -29,29 +29,42 @@ void UpdateThoughtListManager()
 {
     if (g_ThoughtQueue.Top->Next != NULL)
     {
-        int index = DeQueue(
+        if ((GetThoughtListSprites() +
+            g_ThoughtQueue.Top->Next->Data)->
+            Position.posX < -53)
+        {
+            int index = DeQueue(
+                g_ThoughtQueue.Top,
+                g_ThoughtQueue.End
+            );
+            SPRITE* temp = new SPRITE();
+            GetThoughtListSprites()[index] = *temp;
+            delete temp;
+        }
+
+        /*int index = DeQueue(
             g_ThoughtQueue.Top,
             g_ThoughtQueue.End
-        );
+        );*/
         //---------------------------
         /*DrawSingleSpriteToCamBuffer(
             GetSceneNodeByName("resort")->GetCamAddr(),
             g_ThoughtList + index,
             POSITION_2D(38, 42)
         );*/
-        g_test = g_ThoughtList[index];
+        //g_test = g_ThoughtList[index];
         //---------------------------
-        SPRITE* temp = new SPRITE();
+        /*SPRITE* temp = new SPRITE();
         g_ThoughtList[index] = *temp;
-        delete temp;
+        delete temp;*/
     }
 
     //--------------------------------------
-    DrawSingleSpriteToCamBuffer(
+    /*DrawSingleSpriteToCamBuffer(
         GetSceneNodeByName("resort")->GetCamAddr(),
         &g_test,
         POSITION_2D(38, 42), 1
-    );
+    );*/
 }
 
 void TurnOffThoughtListManager()
@@ -223,7 +236,8 @@ void CreateThoughtToQueue(int buildType, int buildEvent)
 void AddSingleThoughtToQueue(const char* thought)
 {
     int index = 0;
-    while (g_ThoughtList[index].Visible)
+    //while (g_ThoughtList[index].Visible)
+    while ((GetThoughtListSprites() + index)->Visible)
     {
         ++index;
         if (index == 30)
@@ -233,17 +247,32 @@ void AddSingleThoughtToQueue(const char* thought)
         }
     }
 
-    g_ThoughtList[index] = CreateSingleSprite(
+    GetThoughtListSprites()[index] = CreateSingleSprite(
         "Assets\\Sprites\\thought.txt",
-        POSITION_2D(0, 0), 52, 3
+        POSITION_2D(180, 42), 52, 3
     );
+
     int length = strlen(thought);
     for (int i = 0; i < length; i++)
     {
-        *(g_ThoughtList[index].GetSpriteBuffer() +
-            g_ThoughtList[index].Width + 2 + i) =
+        *(GetThoughtListSprites()[index].GetSpriteBuffer() +
+            GetThoughtListSprites()[index].Width + 2 + i) =
             thought[i];
     }
 
     EnQueue(g_ThoughtQueue.End, index);
+}
+
+void ResetThoughtQueueAndList()
+{
+    while (g_ThoughtQueue.Top->Next != NULL)
+    {
+        int index = DeQueue(
+            g_ThoughtQueue.Top,
+            g_ThoughtQueue.End
+        );
+        SPRITE* temp = new SPRITE();
+        GetThoughtListSprites()[index] = *temp;
+        delete temp;
+    }
 }

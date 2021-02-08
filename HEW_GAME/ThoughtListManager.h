@@ -32,3 +32,8 @@ void CreateThoughtToQueue(int buildType, int buildEvent);
 /// </summary>
 /// <param name="thought">感想の内容</param>
 void AddSingleThoughtToQueue(const char* thought);
+
+/// <summary>
+/// 感想に関しての内容をリセットする
+/// </summary>
+void ResetThoughtQueueAndList();
