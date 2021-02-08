@@ -8,9 +8,6 @@
 #include "SceneNode.h"
 #include "SceneManager.h"
 
-//--------------------------------
-int g_ResortTimeCount = 0;
-
 void InitResortScene()
 {
     CreateSceneNode(SCENENODE("resort", NULL,
@@ -41,15 +38,6 @@ void UpdateResortScene()
         {
             *(cam + i * width + j) = '.';
         }
-    }
-
-    //-------------------------------------
-    ++g_ResortTimeCount;
-    DebugLogI1("resort scene has used", g_ResortTimeCount);
-    if (g_ResortTimeCount > 1500)
-    {
-        g_ResortTimeCount = 0;
-        SwitchSceneToName("event");
     }
 }
 
