@@ -32,11 +32,11 @@ void UpdateResortScene()
     {
         *(cam + 40 * width + i) = '-';
     }
-    for (int i = 41; i < height; i++)
+    for (int i = 0; i < (height - 41); i++)
     {
         for (int j = 0; j < width; j++)
         {
-            *(cam + i * width + j) = '.';
+            *(cam + (i / 2 * 2 + 41) * width + j / 2 * 2) = '.';
         }
     }
 }

@@ -30,3 +30,21 @@ int ResortCanMove();
 /// 移動フラグをリセットする
 /// </summary>
 void ResetResortMoveFlag();
+
+/// <summary>
+/// 今止まっている位置に施設の種類
+/// </summary>
+/// <returns>施設の種類</returns>
+int GetCurrColliedBuildingType();
+
+/// <summary>
+/// 今止まっている位置に施設の内容
+/// </summary>
+/// <returns>施設の内容</returns>
+int GetCurrColliedBuildingEvent();
+
+/// <summary>
+/// このリゾートの名前を取得
+/// </summary>
+/// <returns>リゾートの名前に指向のポインタ</returns>
+char* GetResortName();

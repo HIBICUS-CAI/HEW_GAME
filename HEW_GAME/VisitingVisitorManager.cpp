@@ -61,6 +61,12 @@ void UpdateVisitingVisitorManager()
                     g_VisitingMovFlg = 0;
                     g_WaitTime = 50;
                     g_CurrColliedOffset = i;
+                    DebugLogI1("this type:",
+                        GetCurrColliedBuildingType());
+                    DebugLogI1("this event:",
+                        GetCurrColliedBuildingEvent());
+
+                    // TODO ここで各感想を生み出す関数を呼ぶ
                 }
 
                 g_CurrOffset = i;
@@ -145,4 +151,39 @@ void ResetResortMoveFlag()
     g_VisitorsColl.Width = 10;
     g_VisitorsColl.Height = 1;
     g_VisitorsColl.ColliRadius = 1.5f;
+}
+
+int GetCurrColliedBuildingType()
+{
+    if (g_CurrColliedOffset>0)
+    {
+        return (GetEditBuildingsArray() +
+            g_CurrColliedOffset - 1)->Type;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+int GetCurrColliedBuildingEvent()
+{
+    if (g_CurrColliedOffset > 0)
+    {
+        return (GetEditBuildingsArray() +
+            g_CurrColliedOffset - 1)->Event;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+char* GetResortName()
+{
+    char name[34];
+    sprintf_s(name, sizeof(name), "%s%s",
+        GetSubName1ArrayByOffset(GetConfirmedSubName1And2()[0]),
+        GetSubName2ArrayByOffset(GetConfirmedSubName1And2()[1]));
+    return name;
 }
