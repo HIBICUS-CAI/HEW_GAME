@@ -54,7 +54,12 @@ void CreateThoughtToQueue(int buildType, int buildEvent)
         char temp[512];
         sprintf_s(temp, sizeof(temp), "%s%s",
             name, "�äƤʤˣ�");
-        AddSingleThoughtToQueue(temp);
+        //AddSingleThoughtToQueue(temp);
+
+        for (int i = 0; i < 3; i++)
+        {
+            AddSingleThoughtToQueue(temp);
+        }
     }
     else
     {
@@ -196,7 +201,12 @@ void CreateThoughtToQueue(int buildType, int buildEvent)
         char temp[512];
         sprintf_s(temp, sizeof(temp), "%s%s%s",
             type, event, "�äƤʤˣ�");
-        AddSingleThoughtToQueue(temp);
+        //AddSingleThoughtToQueue(temp);
+
+        for (int i = 0; i < 2; i++)
+        {
+            AddSingleThoughtToQueue(temp);
+        }
     }
 }
 
@@ -213,9 +223,28 @@ void AddSingleThoughtToQueue(const char* thought)
         }
     }
 
+    int widthOffset = 0;
+    int heightOffset = 0;
+    QSINGLENODE* node = g_ThoughtQueue.Top;
+    do
+    {
+        if (node->Next != NULL)
+        {
+            if ((GetThoughtListSprites() +
+                node->Next->Data)->
+                Position.posX > 127)
+            {
+                widthOffset += 6;
+                heightOffset += 3;
+            }
+
+            node = node->Next;
+        }
+    } while (node->Next != NULL);
+
     GetThoughtListSprites()[index] = CreateSingleSprite(
         "Assets\\Sprites\\thought.txt",
-        POSITION_2D(180, 42), 52, 3
+        POSITION_2D(180 + widthOffset, 42 + heightOffset), 52, 3
     );
 
     int length = strlen(thought);
@@ -226,7 +255,7 @@ void AddSingleThoughtToQueue(const char* thought)
             thought[i];
     }
 
-    EnQueue(g_ThoughtQueue.End, index);
+    g_ThoughtQueue.End = EnQueue(g_ThoughtQueue.End, index);
 }
 
 void ResetThoughtQueueAndList()
@@ -241,4 +270,14 @@ void ResetThoughtQueueAndList()
         GetThoughtListSprites()[index] = *temp;
         delete temp;
     }
+
+    /*if (g_ThoughtQueue.Top != NULL && g_ThoughtQueue.End != NULL)
+    {
+        QSINGLENODE* topNode = g_ThoughtQueue.Top;
+        QSINGLENODE* endNode = g_ThoughtQueue.End;
+        free(&topNode);
+        free(&endNode);
+    }*/
+    g_ThoughtQueue.Top = CreateQueue();
+    g_ThoughtQueue.End = g_ThoughtQueue.Top;
 }
