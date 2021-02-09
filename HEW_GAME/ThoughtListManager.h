@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "GameAppStructs.h"
+
 /// <summary>
 /// 観光客が遊ぶ時感想に関しての処理を初期化する
 /// </summary>
@@ -26,6 +28,14 @@ void TurnOffThoughtListManager();
 /// <param name="buildType">この施設の種類</param>
 /// <param name="buildEvent">この施設の内容</param>
 void CreateThoughtToQueue(int buildType, int buildEvent);
+
+/// <summary>
+/// 一つ種類の観光客に一つの感想を作成
+/// </summary>
+/// <param name="visitorType">観光客の種類</param>
+/// <param name="buildType">施設の種類</param>
+/// <param name="buildEvent">施設の内容</param>
+void CreateSingleTypeVisitorThought(VISITOR_TYPE visitorType, int buildType, int buildEvent);
 
 /// <summary>
 /// 一つの感想を隊列に入れる

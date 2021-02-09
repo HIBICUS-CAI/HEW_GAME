@@ -59,6 +59,7 @@ void CreateThoughtToQueue(int buildType, int buildEvent)
         for (int i = 0; i < 3; i++)
         {
             AddSingleThoughtToQueue(temp);
+            //AddSingleThoughtToQueue("abcdefghijklmnopqrstuvwxyz");
         }
     }
     else
@@ -210,6 +211,16 @@ void CreateThoughtToQueue(int buildType, int buildEvent)
     }
 }
 
+void CreateSingleTypeVisitorThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
+{
+    // 特別のゲートイベント
+    // 普通の名前好きかどうか
+
+    // ステージに対して特別イベント(好き嫌い両方)
+    // 客に対して特別イベント(好きのみ)
+    // 普通に好きかどうか
+}
+
 void AddSingleThoughtToQueue(const char* thought)
 {
     int index = 0;
@@ -225,6 +236,7 @@ void AddSingleThoughtToQueue(const char* thought)
 
     int widthOffset = 0;
     int heightOffset = 0;
+    int canShowFlg[6] = { 1,1,1,1,1,1 };
     QSINGLENODE* node = g_ThoughtQueue.Top;
     do
     {
@@ -232,15 +244,26 @@ void AddSingleThoughtToQueue(const char* thought)
         {
             if ((GetThoughtListSprites() +
                 node->Next->Data)->
-                Position.posX > 127)
+                Position.posX > 128)
             {
                 widthOffset += 6;
-                heightOffset += 3;
+                int indexY = ((GetThoughtListSprites() +
+                    node->Next->Data)->
+                    Position.posY - 42) / 3;
+                canShowFlg[indexY] = 0;
             }
-
             node = node->Next;
         }
     } while (node->Next != NULL);
+
+    for (int i = 0; i < 6; i++)
+    {
+        if (canShowFlg[i])
+        {
+            heightOffset = 3 * i;
+            break;
+        }
+    }
 
     GetThoughtListSprites()[index] = CreateSingleSprite(
         "Assets\\Sprites\\thought.txt",
