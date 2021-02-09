@@ -38,6 +38,13 @@ void CreateThoughtToQueue(int buildType, int buildEvent);
 void CreateSingleTypeVisitorThought(VISITOR_TYPE visitorType, int buildType, int buildEvent);
 
 /// <summary>
+/// ステージによって感想を作成
+/// </summary>
+/// <param name="buildType">施設の種類</param>
+/// <param name="buildEvent">施設の内容</param>
+void CreateSingleTypeThoughtByStage(int buildType, int buildEvent);
+
+/// <summary>
 /// 一つの感想を隊列に入れる
 /// </summary>
 /// <param name="thought">感想の内容</param>
