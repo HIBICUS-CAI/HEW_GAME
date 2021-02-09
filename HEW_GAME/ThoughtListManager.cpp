@@ -271,13 +271,10 @@ void ResetThoughtQueueAndList()
         delete temp;
     }
 
-    /*if (g_ThoughtQueue.Top != NULL && g_ThoughtQueue.End != NULL)
+    if (g_ThoughtQueue.Top != NULL && g_ThoughtQueue.End != NULL)
     {
-        QSINGLENODE* topNode = g_ThoughtQueue.Top;
-        QSINGLENODE* endNode = g_ThoughtQueue.End;
-        free(&topNode);
-        free(&endNode);
-    }*/
+        free(g_ThoughtQueue.Top);
+    }
     g_ThoughtQueue.Top = CreateQueue();
     g_ThoughtQueue.End = g_ThoughtQueue.Top;
 }
