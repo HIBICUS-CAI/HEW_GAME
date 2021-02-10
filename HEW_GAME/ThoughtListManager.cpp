@@ -137,6 +137,10 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         default:
             break;
         }
+        if (subName1 == -1 || subName2 == -1)
+        {
+            strcpy_s(thought, sizeof(thought), "採なんだこのＸＸＸＸって、吭龍わからんわ");
+        }
         if (strcmp(thought, ""))
         {
             AddSingleThoughtToQueue(thought);
