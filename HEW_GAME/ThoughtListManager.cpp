@@ -5,6 +5,7 @@
 #include "SpriteAnimator.h"
 #include "SceneNode.h"
 #include "ThoughtListShower.h"
+#include "VisitorThoughtManager.h"
 #include <string.h>
 
 QUEUE_INT g_ThoughtQueue;
@@ -60,6 +61,8 @@ void CreateSingleTypeVisitorThought(VISITOR_TYPE visitorType, int buildType, int
 
     // 客に対して特別イベント(好きのみ)
     // 普通に好きかどうか
+
+    CreateSingleVisitorThoughtByManager(visitorType, buildType, buildEvent);
 }
 
 void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
@@ -134,7 +137,10 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         default:
             break;
         }
-        AddSingleThoughtToQueue(thought);
+        if (strcmp(thought, ""))
+        {
+            AddSingleThoughtToQueue(thought);
+        }
     }
 
     // ステージに対して特別イベント(好き嫌い両方)

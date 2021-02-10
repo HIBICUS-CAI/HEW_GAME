@@ -175,6 +175,7 @@
     <ClCompile Include="VisitingVisitorShower.cpp" />
     <ClCompile Include="VisitorManager.cpp" />
     <ClCompile Include="VisitorShower.cpp" />
+    <ClCompile Include="VisitorThoughtManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppBtnEvent.h" />
@@ -223,6 +224,7 @@
     <ClInclude Include="VisitingVisitorShower.h" />
     <ClInclude Include="VisitorManager.h" />
     <ClInclude Include="VisitorShower.h" />
+    <ClInclude Include="VisitorThoughtManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
