@@ -146,6 +146,116 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
             AddSingleThoughtToQueue(thought);
         }
     }
+    else
+    {
+        char thought[50] = "";
+        int stageID = GetPlayingStage();
+
+        switch (stageID)
+        {
+        case STAGE_DEFAULT:
+            if (buildEvent==B_EVNT_EATBBQ)
+            {
+                strcpy_s(thought, sizeof(thought), 
+                    "この風景でバーベキューするって心地よいね！");
+            }
+            else if (buildEvent==B_EVNT_DRKTEA)
+            {
+                strcpy_s(thought, sizeof(thought), 
+                    "川の流れを見ながらお茶、素晴らしい");
+            }
+            else if (buildEvent == B_EVNT_RESTCAMP)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "良い風景とキャンプ場、相性ぴったりですね");
+            }
+            else if (buildEvent == B_EVNT_POLNIGHT)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "今は昼ですけど、夜になるまでなんか役に立たないね");
+            }
+            break;
+
+        case STAGE_BEACH:
+            if (buildType == B_TYPE_HOTSPRING)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "海浜に来た以上やっぱり海に行きたいよ");
+            }
+            else if (buildEvent == B_EVNT_POLINFINITY)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "おおこのプールの広さ、もはや海のレベルじゃない？");
+            }
+            else if (buildEvent == B_EVNT_DRKALCOHOL)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "ここで酒飲むのは楽だな");
+            }
+            else if (buildType == B_TYPE_MAKEBYHAND)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "いいね、海浜には色んな素材がありますので");
+            }
+            else if (buildEvent == B_EVNT_EATUNAGI)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "運送費免除あとウナギも安いで美味しいになった！");
+            }
+            else if (buildEvent == B_EVNT_POLNIGHT)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "いまは朝じゃない？それも海の隣ですよ？");
+            }
+            break;
+
+        case STAGE_DESERT:
+            if (buildType == B_TYPE_HOTSPRING)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "いいね、夜は寒いし乾燥だし、温泉まじいい！");
+            }
+            else if (buildEvent == B_EVNT_POLNORMAL)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "普通のプールは夜になると閉めちゃうね？勿体ないな");
+            }
+            else if (buildEvent == B_EVNT_POLINFINITY)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "おお、砂漠の中にインフィニティプールで最高です！");
+            }
+            else if (buildEvent == B_EVNT_POLNIGHT)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "夜のでナイトプール最高っす！");
+            }
+            else if (buildEvent == B_EVNT_DRKBAR)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "窓の外の風景見ながら一杯の品って贅沢ですよ");
+            }
+            else if (buildEvent == B_EVNT_MOVHOR)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "ここはもう十分怖いですよ、夜だし他の人もいないし");
+            }
+            else if (buildEvent == B_EVNT_RESTCAMP)
+            {
+                strcpy_s(thought, sizeof(thought),
+                    "え？ここでキャンプすると砂と埃だらけじゃん？");
+            }
+            break;
+
+        default:
+            break;
+        }
+
+        if (strcmp(thought, ""))
+        {
+            AddSingleThoughtToQueue(thought);
+        }
+    }
 
     // ステージに対して特別イベント(好き嫌い両方)
 }

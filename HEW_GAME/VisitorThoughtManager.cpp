@@ -429,11 +429,7 @@ void CreateWhaleThought(int buildType, int buildEvent)
             strcpy_s(thought, sizeof(thought), "山は珍しいものクジ！経営者に感謝申し上げクジ！");
         }
 
-        if (subName1 == 12)
-        {
-            strcpy_s(thought, sizeof(thought), "非人間動物同士としてちょっと嫌味クジ．．．");
-        }
-        else if (subName1 == 0 || subName1 == 4)
+        if (subName1 == 0 || subName1 == 4)
         {
             strcpy_s(thought, sizeof(thought), "嫌なことを思い出したクジ．．．");
         }
