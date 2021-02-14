@@ -55,7 +55,72 @@ void CreateStudentThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildEvent == B_EVNT_EATBBQ)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "バーベキューか、自分の手でご飯を作るのは楽しいね");
+        }
+        else if (buildEvent == B_EVNT_EATRAMEN)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おおこの圧倒的なラーメン感！おおこの圧倒的なラーメン感！");
+        }
+        else if (buildEvent == B_EVNT_POLFLUSH)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "何これめっちゃ面白い！普通のプールより楽しい！");
+        }
+        else if (buildEvent == B_EVNT_DRKMILKTEA)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "タピオカこそこんな幸せが出来上がれるね");
+        }
+        else if (buildEvent == B_EVNT_MOVLOVE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "恋愛映画はいつも飽きになれないね");
+        }
+        else if (buildEvent == B_EVNT_MOVSF)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "こんなかっこいい技術現実にも実現ほしいですね");
+        }
+        else if (buildEvent == B_EVNT_MOVACT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おおこのカッコ良さ素晴らしい！");
+        }
+        else if (buildEvent == B_EVNT_KARAMUTLI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "やっぱり一緒に歌うのは楽しい！次の曲お願い～");
+        }
+        else if (buildEvent == B_EVNT_RESTCAMP)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "テント出来上がりの達成感いいね");
+        }
 
+        if (buildEvent == B_EVNT_HEALTHSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この匂いやばくない？");
+        }
+        else if (buildEvent == B_EVNT_EATCURRY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "なんか普段の弁当を思い出した．．．美味しいけど");
+        }
+        else if (buildEvent == B_EVNT_DRKKARUPISU)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "え？子供っぽいっすか？");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ホラーちょっと苦手よまじで");
+        }
     }
 
     SetRandom();
@@ -125,7 +190,104 @@ void CreateCoupleThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildEvent == B_EVNT_SKINCARESPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この温泉肌に優しいと聞きましたわ");
+        }
+        else if (buildEvent == B_EVNT_WARMSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おおこの暖かさ、気持ちいいよね");
+        }
+        else if (buildEvent == B_EVNT_EATLIGHTFOOD)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "普通のデート感もいいですよね");
+        }
+        else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "なんか祭りに楽しんでいるみたい！");
+        }
+        else if (buildEvent == B_EVNT_POLINFINITY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "すごい！この無限な広さやばくない？");
+        }
+        else if (buildEvent == B_EVNT_POLNORMAL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "普通のデート感もいいですよね");
+        }
+        else if (buildEvent == B_EVNT_DRKMILKTEA)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この幸せの甘さでめっちゃいい！心にしみれるわ");
+        }
+        else if (buildEvent == B_EVNT_DRKCAFE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "普通のデート感もいいですよね");
+        }
+        else if (buildEvent == B_EVNT_DRKBAR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おしゃれの一品飲もうか？");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "なんかいろんな意味でワクワクするわ");
+        }
+        else if (buildEvent == B_EVNT_MOVLOVE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "いいねこの物語、二人が一緒にいってくれてよかった");
+        }
+        else if (buildEvent == B_EVNT_MOVCOMEDY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "これ本当におもしろいですよね");
+        }
+        else if (buildEvent == B_EVNT_MAKEACSY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "一緒に記念のアクセサリーを作りましょう！");
+        }
+        else if (buildEvent == B_EVNT_MAKEPRESENT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "友たちのお為に特別なお土産を作りましょう！");
+        }
 
+        if (buildEvent == B_EVNT_EATBBQ ||
+            buildEvent == B_EVNT_EATRAMEN ||
+            buildEvent == B_EVNT_EATCURRY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "匂いが．．．ちょっとね．．．");
+        }
+        else if (buildEvent == B_EVNT_DRKALCOHOL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "もっとおしゃれな店がいいな");
+        }
+        else if (buildEvent == B_EVNT_DRKKARUPISU)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "えっ？何このカルピス放題って");
+        }
+        else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "もっといい選択があるはずじゃん");
+        }
+        else if (buildEvent == B_EVNT_KARASINGLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "え？二人で一緒に歌いたいよもう");
+        }
     }
 
     SetRandom();
@@ -179,7 +341,98 @@ void CreateProgrammerThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildEvent == B_EVNT_WARMSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "暖かくになったね、もう冷房には何も怖くないよ");
+        }
+        else if (buildEvent == B_EVNT_HEALTHSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "体から力がどんどん現れている、いいよね");
+        }
+        else if (buildEvent == B_EVNT_EATBBQ)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "バーベキューのは超久しぶりだね、楽しみにしている");
+        }
+        else if (buildEvent == B_EVNT_EATUNAGI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "このうまさすごいね、どんなバグでも怖くないだ");
+        }
+        else if (buildEvent == B_EVNT_POLFLUSH)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "水流の中に泳ぐのは予想以上楽しいね");
+        }
+        else if (buildEvent == B_EVNT_DRKTEA ||
+            buildEvent == B_EVNT_DRKBAR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "いいね、普段はこんな店あんまり来ないんだ");
+        }
+        else if (buildEvent == B_EVNT_MOVSF)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "技術はここまでできるか、やっぱり未来は期待できる");
+        }
+        else if (buildEvent == B_EVNT_MOVACT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この熱血感ずいぶん久しぶりだ");
+        }
+        else if (buildEvent == B_EVNT_MOVCOMEDY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "すごく面白いですね、このコメディ");
+        }
+        else if (buildEvent == B_EVNT_KARASINGLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "一人で歌うのは気楽なことだ");
+        }
+        else if (buildEvent == B_EVNT_RESTHOTEL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ホテルの落ち着く感はいいね、パソコンも使えるし");
+        }
+        else if (buildType == B_TYPE_MAKEBYHAND)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "手作りのものに匠の精神も多少ありますね");
+        }
 
+        if (buildEvent == B_EVNT_EATRAMEN)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "仕事の時昼飯はもうラーメンいっぱいだね");
+        }
+        else if (buildEvent == B_EVNT_DRKMILKTEA)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "甘すぎくないタピオカって");
+        }
+        else if (buildEvent == B_EVNT_DRKALCOHOL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "嫌だ上司に飲まさせられた記憶が蘇った");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "せっかくのリゾートにもっと穏やかになりたいな");
+        }
+        else if (buildEvent == B_EVNT_MOVLOVE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "えっ？こんなこと言ったらおしまいじゃん？");
+        }
+        else if (buildEvent == B_EVNT_KARAMUTLI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "皆の前に歌うのは少し恥ずかしくなるな");
+        }
     }
 
     SetRandom();
@@ -238,7 +491,63 @@ void CreateArtistThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildType == B_TYPE_HOTSPRING)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "温泉に沁みれたらアイデアがどんどん出ていきますね");
+        }
+        else if (buildEvent == B_EVNT_EATUNAGI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ウナギ屋は良い技が持ってますね、美しいほどの旨い");
+        }
+        else if (buildEvent == B_EVNT_EATCURRY ||
+            buildEvent == B_EVNT_EATRAMEN)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "日常感たっぷりですが、これも美感の起こりの一つね");
+        }
+        else if (buildEvent == B_EVNT_POLINFINITY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "無限に延べてるボーダーラインに色んな可能性がある");
+        }
+        else if (buildEvent == B_EVNT_DRKTEA)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この香ばしいお茶はもう無敵だわ");
+        }
+        else if (buildEvent == B_EVNT_MOVLOVE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "人々の気持ちや感情が全ての美しいものの根源だね");
+        }
+        else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "昔の人にいろんな知識や経験など得られますね");
+        }
+        else if (buildEvent == B_EVNT_RESTCAMP)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "自然と話し合いと自分を納得できるようになった");
+        }
 
+        if (buildEvent == B_EVNT_EATFRIEDNOODLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "あ昔の祭りの時思い出した、楽しい思い出じゃないが");
+        }
+        else if (buildType == B_TYPE_KARAOKE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ああ歌うのは苦手ですよ．．．");
+        }
+        else if (buildEvent == B_EVNT_RESTHOTEL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "なんか出張してる気がする？");
+        }
     }
 
     SetRandom();
@@ -296,7 +605,85 @@ void CreateOfficerThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildEvent == B_EVNT_SKINCARESPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "これ肌にすごく効果的と聞きました！");
+        }
+        else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "いいね、祭りっぽくな感じ");
+        }
+        else if (buildEvent == B_EVNT_EATBBQ)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "自分の手でご飯を作るのはたのたのしい～");
+        }
+        else if (buildEvent == B_EVNT_POLINFINITY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おお～なんだなんだこの広さ、すごい！");
+        }
+        else if (buildEvent == B_EVNT_POLNIGHT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "夜のプールこそ独特な面白さがあるとはな");
+        }
+        else if (buildEvent == B_EVNT_DRKMILKTEA)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "タピオカの味に人を元気にさせる力がある！");
+        }
+        else if (buildEvent == B_EVNT_DRKBAR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ゆっくりと一杯飲もう？雰囲気いいし");
+        }
+        else if (buildEvent == B_EVNT_KARAMUTLI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "やっぱ皆でカラオケしての方が楽しいね");
+        }
+        else if (buildEvent == B_EVNT_MAKEACSY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "凄い、これって「あたし～限定～」ということじゃん");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "普段はあんまりホラー見てないんがなんか新鮮な感じ");
+        }
+        else if (buildEvent == B_EVNT_MOVSF ||
+            buildEvent == B_EVNT_MOVACT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おお～これやばくない？本当にかっこいい！");
+        }
 
+        if (buildEvent == B_EVNT_NORMALSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "うんん、単純な温泉ってなんかちょっとつまらん");
+        }
+        else if (buildEvent == B_EVNT_EATRAMEN ||
+            buildEvent == B_EVNT_EATCURRY ||
+            buildEvent == B_EVNT_DRKCAFE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "もっと特別なものが欲しいね");
+        }
+        else if (buildEvent == B_EVNT_DRKALCOHOL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "これは仕事終わりの飲み会かい！");
+        }
+        else if (buildEvent == B_EVNT_MOVLOVE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "個人的にはインパクトが欲しいね");
+        }
     }
 
     SetRandom();
@@ -350,7 +737,103 @@ void CreateFamilyThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildType == B_TYPE_HOTSPRING)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "次の家族旅行も温泉いきましょうよ");
+        }
+        else if (buildEvent == B_EVNT_POLNIGHT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "どんな時でも来れるプールっていいよね");
+        }
+        else if (buildEvent == B_EVNT_EATBBQ)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "火傷注意して一緒に美味しいご飯作りましょう！");
+        }
+        else if (buildEvent == B_EVNT_EATCURRY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "同じ美味しいが母ちゃんのカレーとは違う風味がある");
+        }
+        else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "焼きそばからのいい香り！");
+        }
+        else if (buildEvent == B_EVNT_DRKKARUPISU)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "父ちゃん母ちゃんカルピス飲みたい！");
+        }
+        else if (buildEvent == B_EVNT_DRKCAFE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "家族の間でこんなゆっくりの時間が一番だね");
+        }
+        else if (buildEvent == B_EVNT_MOVSF)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ね太郎、このキャラかっこいいでしょう？");
+        }
+        else if (buildEvent == B_EVNT_MOVCOMEDY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この映画面白いねママ");
+        }
+        else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "花ちゃん、将来このような立派な人間になりたい！");
+        }
+        else if (buildEvent == B_EVNT_KARAMUTLI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "家族で一緒にカラオケしてもなかなか楽しいじゃん");
+        }
+        else if (buildEvent == B_EVNT_RESTCAMP)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "父ちゃん母ちゃんキャンプって凄く楽しい！");
+        }
+        else if (buildEvent == B_EVNT_MAKEPRESENT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "自分でお土産を作るのもいいね");
+        }
 
+        if (buildEvent == B_EVNT_POLFLUSH)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "一郎入るな、流水プールはまだ危険すぎるんだろう？");
+        }
+        else if (buildEvent == B_EVNT_POLINFINITY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "花ちゃんーーどこにいるのーーーー");
+        }
+        else if (buildEvent == B_EVNT_DRKBAR ||
+            buildEvent == B_EVNT_DRKALCOHOL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おいおい、未成年がいるでしょう？");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "怖くない怖くない。ホラーってまじ有り得ないわ");
+        }
+        else if (buildEvent == B_EVNT_MOVACT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "嫌だ血が出てる。。。");
+        }
+        else if (buildEvent == B_EVNT_KARASINGLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "わざわざ私たち分けて必要ないじゃん");
+        }
     }
 
     SetRandom();
@@ -397,7 +880,79 @@ void CreateRabbitThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildEvent == B_EVNT_NORMALSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "いいウギ、この暖かさ");
+        }
+        else if (buildEvent == B_EVNT_EATRAMEN ||
+            buildEvent == B_EVNT_EATCURRY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "あ、これ本当に美味しいウギ！");
+        }
+        else if (buildEvent == B_EVNT_EATLIGHTFOOD ||
+            buildEvent == B_EVNT_DRKCAFE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この店凄くおしゃれウギ");
+        }
+        else if (buildEvent == B_EVNT_DRKALCOHOL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "賑やかにも嬉しいウギ");
+        }
+        else if (buildEvent == B_EVNT_MOVLOVE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "感動されたウギ．．．");
+        }
+        else if (buildEvent == B_EVNT_MOVCOMEDY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "これ面白いウギ！");
+        }
+        else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "こういうのも人間かウギ．．．");
+        }
+        else if (buildEvent == B_EVNT_RESTHOTEL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "あ～森より良すぎるだウギ");
+        }
+        else if (buildEvent == B_EVNT_MAKEPRESENT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "友たちに何を作って上げるがいいウギ");
+        }
 
+        if (buildEvent == B_EVNT_HEALTHSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この匂いもうダメウギ．．．");
+        }
+        else if (buildEvent == B_EVNT_EATUNAGI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ひっ、ひどいウギ．．．");
+        }
+        else if (buildEvent == B_EVNT_POLFLUSH)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "一生登れない気がするウギ．．．");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "あああ血だ血だっ！");
+        }
+        else if (buildEvent == B_EVNT_MOVACT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "苦手なんだよこのタイプ．．．");
+        }
     }
 
     SetRandom();
@@ -440,7 +995,85 @@ void CreateWhaleThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildEvent == B_EVNT_WARMSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おお、体が完全に温まったぞクジ！");
+        }
+        else if (buildEvent == B_EVNT_EATBBQ)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この肉本当に旨いクジ！");
+        }
+        else if (buildEvent == B_EVNT_EATUNAGI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "魚ってこんな美味しいものだっけ？");
+        }
+        else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "美味しいクジ、このぬるぬるのめん");
+        }
+        else if (buildEvent == B_EVNT_POLINFINITY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "小さい海みたい！小さいクジけど");
+        }
+        else if (buildEvent == B_EVNT_DRKKARUPISU)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "面白いクジこの酸っぱいな水！");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "このなかなかのインパクトがあるクジ、面白い");
+        }
+        else if (buildEvent == B_EVNT_MOVLOVE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "いいよクジ、この甘酸っぱいな感じ");
+        }
+        else if (buildEvent == B_EVNT_MOVCOMEDY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ハハハハハこれ超面白いクジ！");
+        }
+        else if (buildEvent == B_EVNT_KARAMUTLI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "私たちくじらだもんね、一緒に歌うのは一番楽クジ");
+        }
+        else if (buildEvent == B_EVNT_MAKEACSY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "私もこんな綺麗なアクセサリー作れるクジ？");
+        }
 
+        if (buildEvent == B_EVNT_HEALTHSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ああ、この匂い本当にたまらないクジ");
+        }
+        else if (buildEvent == B_EVNT_POLNORMAL ||
+            buildEvent == B_EVNT_POLFLUSH ||
+            buildEvent == B_EVNT_POLNIGHT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "え？このプール小さすぎるでしょう？");
+        }
+        else if (buildEvent == B_EVNT_DRKALCOHOL ||
+            buildEvent == B_EVNT_DRKBAR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "酒は少々苦手クジ．．．");
+        }
+        else if (buildEvent == B_EVNT_KARASINGLE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ええ？歌うのは皆一緒でこそ楽しいでしょう？");
+        }
     }
 
     SetRandom();
@@ -479,7 +1112,83 @@ void CreateCamelThought(int buildType, int buildEvent)
     }
     else
     {
+        if (buildEvent == B_EVNT_WARMSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "完全に温まったぞ、夜の砂漠でも怖くないクダ！");
+        }
+        else if (buildEvent == B_EVNT_EATLIGHTFOOD)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "この店凄くおしゃれクダ");
+        }
+        else if (buildEvent == B_EVNT_EATRAMEN ||
+            buildEvent == B_EVNT_EATCURRY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "あ、これ本当に美味しいクダ！");
+        }
+        else if (buildType == B_TYPE_POOL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "水の中に泳ぐのは凄く楽しいクダ！");
+        }
+        else if (buildEvent == B_EVNT_DRKTEA)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "いいねこのお茶の香り");
+        }
+        else if (buildEvent == B_EVNT_DRKBAR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "うん、おしゃれの店におしゃれの一品、いいクダ");
+        }
+        else if (buildEvent == B_EVNT_MOVACT)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "おお、凄いよこの映画");
+        }
+        else if (buildEvent == B_EVNT_MOVCOMEDY)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "これ面白いクダ！");
+        }
+        else if (buildEvent == B_EVNT_RESTHOTEL)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "あ～砂漠より良すぎるだクダ");
+        }
 
+        if (buildEvent == B_EVNT_HEALTHSPR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "何なんだこの匂い");
+        }
+        else if (buildEvent == B_EVNT_EATUNAGI)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ひっ、ひどいクダ．．．");
+        }
+        else if (buildEvent == B_EVNT_EATBBQ)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "皆ほぼ肉を焼いてるクダ？");
+        }
+        else if (buildEvent == B_EVNT_MOVHOR)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "砂漠はもう十分こわいのにぃ！");
+        }
+        else if (buildType == B_TYPE_KARAOKE)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "ぼく歌うのは苦手クダ．．．");
+        }
+        else if (buildEvent == B_EVNT_RESTCAMP)
+        {
+            strcpy_s(thought, sizeof(thought),
+                "なんかしんどいの砂漠生活を思い出したクダ");
+        }
     }
 
     SetRandom();
