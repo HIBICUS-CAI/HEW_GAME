@@ -154,14 +154,14 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         switch (stageID)
         {
         case STAGE_DEFAULT:
-            if (buildEvent==B_EVNT_EATBBQ)
+            if (buildEvent == B_EVNT_EATBBQ)
             {
-                strcpy_s(thought, sizeof(thought), 
+                strcpy_s(thought, sizeof(thought),
                     "仇及餫劓匹田奈矛平亙奈允月勻化陑華方中友ㄐ");
             }
-            else if (buildEvent==B_EVNT_DRKTEA)
+            else if (buildEvent == B_EVNT_DRKTEA)
             {
-                strcpy_s(thought, sizeof(thought), 
+                strcpy_s(thought, sizeof(thought),
                     "捶及霜木毛��卅互日云脰﹜匼ю日仄中");
             }
             else if (buildEvent == B_EVNT_RESTCAMP)
@@ -339,4 +339,9 @@ void ResetThoughtQueueAndList()
     }
     g_ThoughtQueue.Top = CreateQueue();
     g_ThoughtQueue.End = g_ThoughtQueue.Top;
+
+    if (GetSceneNodeByName("resort") != NULL)
+    {
+        ClearSceneCamBuffer(GetSceneNodeByName("resort"));
+    }
 }
