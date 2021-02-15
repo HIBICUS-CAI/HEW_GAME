@@ -67,6 +67,28 @@ struct SCENENODE
     {
         return BaseUIObj;
     }
+
+    void WriteStrToCamBuffer(POSITION_2D pos, const char* string)
+    {
+        int width = GetCamAddr()->CameraWidth;
+        int height = GetCamAddr()->CameraHeight;
+        char* buffer = GetCamAddr()->GetCamBuffer();
+        int startX = pos.posX;
+        int startY = pos.posY;
+        int strLen = strlen(string);
+
+        if (startY < height && startY >= 0)
+        {
+            for (int i = 0; i < strLen; i++)
+            {
+                if ((startX + i) >= 0 && (startX + i) < width)
+                {
+                    *(buffer + startY * width + startX + i) =
+                        *(string + i);
+                }
+            }
+        }
+    }
 };
 
 /// <summary>
