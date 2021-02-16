@@ -123,6 +123,9 @@
     <ClCompile Include="VisitorThoughtManager.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="ResultFinalThought.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -264,6 +267,9 @@
       <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="VisitorThoughtManager.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultFinalThought.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

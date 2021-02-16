@@ -2,6 +2,7 @@
 #include "AppDeclared.h"
 #include "SceneManager.h"
 #include "ThoughtListManager.h"
+#include "ResultFinalThought.h"
 
 int g_VisitingMovFlg = 0;
 int g_VVMTimeCount = 0;
@@ -122,6 +123,7 @@ void UpdateVisitingVisitorManager()
             if (!(--g_FinalTime))
             {
                 SwitchSceneToName("result");
+                CreateResultFinalThought();
             }
         }
     }

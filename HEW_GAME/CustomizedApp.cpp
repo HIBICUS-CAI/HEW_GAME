@@ -22,6 +22,7 @@
 #include "VisitingVisitorManager.h"
 #include "ThoughtListManager.h"
 #include "ThoughtListShower.h"
+#include "ResultFinalThought.h"
 
 void AppInit()
 {
@@ -48,6 +49,7 @@ void AppInit()
     InitVisitingVisitorManager();
     InitThoughtListManager();
     InitThoughtListShower();
+    InitResultFinalThought();
 
     SwitchSceneToName("title");
 }
@@ -85,6 +87,10 @@ void AppUpdate()
         UpdateVisitingBuildShower();
         UpdateVisitingVisitorsShower();
         UpdateThoughtListShower();
+        break;
+
+    case RESULTSCENEFLAG:
+        UpdateResultFinalThought();
         break;
 
     default:
