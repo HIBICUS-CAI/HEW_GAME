@@ -7,6 +7,7 @@
 #include "ThoughtListShower.h"
 #include "VisitorThoughtManager.h"
 #include "ResultTips.h"
+#include "FinalResult.h"
 #include <string.h>
 
 QUEUE_INT g_ThoughtQueue;

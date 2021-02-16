@@ -40,30 +40,65 @@ int GetVisitorsCountByType(VISITOR_TYPE type)
 
 void VisitorFeelVeryGood(VISITOR_TYPE visitorType)
 {
-    int count = GetVisitorsCountByType(visitorType);
-    g_Score += count * 4;
+    if (visitorType != VISITOR_TYPE::NONE)
+    {
+        int count = GetVisitorsCountByType(visitorType);
+        g_Score += count * 4;
+    }
+    else
+    {
+        g_Score += 4;
+    }
 }
 
 void VisitorFeelGood(VISITOR_TYPE visitorType)
 {
-    int count = GetVisitorsCountByType(visitorType);
-    g_Score += count * 2;
+    if (visitorType != VISITOR_TYPE::NONE)
+    {
+        int count = GetVisitorsCountByType(visitorType);
+        g_Score += count * 2;
+    }
+    else
+    {
+        g_Score += 2;
+    }
 }
 
 void VisitorFeelAlright(VISITOR_TYPE visitorType)
 {
-    int count = GetVisitorsCountByType(visitorType);
-    g_Score += count * 1;
+    if (visitorType != VISITOR_TYPE::NONE)
+    {
+        int count = GetVisitorsCountByType(visitorType);
+        g_Score += count * 1;
+    }
+    else
+    {
+        g_Score += 1;
+    }
 }
 
 void VisitorFeelBad(VISITOR_TYPE visitorType)
 {
-    int count = GetVisitorsCountByType(visitorType);
-    g_Score -= count * 2;
+    if (visitorType != VISITOR_TYPE::NONE)
+    {
+        int count = GetVisitorsCountByType(visitorType);
+        g_Score -= count * 2;
+    }
+    else
+    {
+        g_Score -= 2;
+    }
 }
 
 void VisitorFeelVeryBad(VISITOR_TYPE visitorType)
 {
-    int count = GetVisitorsCountByType(visitorType);
-    g_Score -= count * 4;
+    if (visitorType != VISITOR_TYPE::NONE)
+    {
+        int count = GetVisitorsCountByType(visitorType);
+        g_Score -= 4;
+    }
+    else
+    {
+        g_Score -= 4;
+    }
 }
