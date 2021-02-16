@@ -161,6 +161,7 @@
     <ClCompile Include="PlayingStageManager.cpp" />
     <ClCompile Include="ResortNameManager.cpp" />
     <ClCompile Include="ResultFinalThought.cpp" />
+    <ClCompile Include="ResultTips.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="SoundManager.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="PlayingStageManager.h" />
     <ClInclude Include="ResortNameManager.h" />
     <ClInclude Include="ResultFinalThought.h" />
+    <ClInclude Include="ResultTips.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneNode.h" />
     <ClInclude Include="SoundManager.h" />

@@ -1,6 +1,7 @@
 #include "ResultFinalThought.h"
 #include "AppDeclared.h"
 #include "SceneNode.h"
+#include "ResultTips.h"
 
 #define FINAL_THOUGHTS_SIZE 7
 char g_FinalThought[FINAL_THOUGHTS_SIZE][128] = { "","","","","","","" };
@@ -307,6 +308,10 @@ void UpdateResultFinalThought()
                 GetSceneNodeByName("result")->
                 GetCamAddr()->CameraWidth)
             {
+                if (!GetCanShowTipsFlg())
+                {
+                    SetCanShowTipsFlg(1);
+                }
                 for (int i = 0; i < FINAL_THOUGHTS_SIZE; i++)
                 {
                     if (strcmp(g_FinalThought[i], ""))

@@ -20,6 +20,7 @@
 #include "VisitingVisitorManager.h"
 #include "ThoughtListManager.h"
 #include "ResultFinalThought.h"
+#include "ResultTips.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -207,6 +208,7 @@ void StageSelectSceneBtnEvent(int value)
     ResetVisitingBuildShowerTimer();
     ResetThoughtQueueAndList();
     ResetResultFinalThought();
+    ResetResultTips();
 }
 
 void NamingSceneBtnEvent(int value)

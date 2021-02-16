@@ -126,6 +126,9 @@
     <ClCompile Include="ResultFinalThought.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="ResultTips.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -270,6 +273,9 @@
       <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="ResultFinalThought.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultTips.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,6 +2,7 @@
 #include "ThoughtListManager.h"
 #include "AppDeclared.h"
 #include "Tools.h"
+#include "ResultTips.h"
 
 void CreateStudentThought(int buildType, int buildEvent)
 {

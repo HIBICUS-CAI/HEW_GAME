@@ -6,6 +6,7 @@
 #include "SceneNode.h"
 #include "ThoughtListShower.h"
 #include "VisitorThoughtManager.h"
+#include "ResultTips.h"
 #include <string.h>
 
 QUEUE_INT g_ThoughtQueue;
@@ -173,6 +174,7 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
             {
                 strcpy_s(thought, sizeof(thought),
                     "今は昼ですけど、夜になるまでなんか役に立たないね");
+                SetResultTipsTo("このステージには昼です");
             }
             break;
 
@@ -206,6 +208,7 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
             {
                 strcpy_s(thought, sizeof(thought),
                     "いまは朝じゃない？それも海の隣ですよ？");
+                SetResultTipsTo("日登時の海浜はナイトプールと相性悪いでしょう");
             }
             break;
 
@@ -239,11 +242,13 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
             {
                 strcpy_s(thought, sizeof(thought),
                     "ここはもう十分怖いですよ、夜だし他の人もいないし");
+                SetResultTipsTo("夜の砂漠はもう十分怖いかもしれません");
             }
             else if (buildEvent == B_EVNT_RESTCAMP)
             {
                 strcpy_s(thought, sizeof(thought),
                     "え？ここでキャンプすると砂と埃だらけじゃん？");
+                SetResultTipsTo("砂漠にキャンプするのはちょっと微妙でしょう");
             }
             break;
 
