@@ -24,6 +24,7 @@
 #include "ThoughtListShower.h"
 #include "ResultFinalThought.h"
 #include "ResultTips.h"
+#include "FinalResult.h"
 
 void AppInit()
 {
@@ -52,6 +53,7 @@ void AppInit()
     InitThoughtListShower();
     InitResultFinalThought();
     InitResultTips();
+    InitFinalResult();
 
     SwitchSceneToName("title");
 }
@@ -94,6 +96,7 @@ void AppUpdate()
     case RESULTSCENEFLAG:
         UpdateResultFinalThought();
         UpdateResultTips();
+        UpdateFinalResult();
         break;
 
     default:

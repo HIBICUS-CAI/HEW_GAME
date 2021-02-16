@@ -4,7 +4,7 @@
 #include "Tools.h"
 #include "ResultTips.h"
 
-void CreateStudentThought(int buildType, int buildEvent)
+void CreateStudentThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -135,7 +135,7 @@ void CreateStudentThought(int buildType, int buildEvent)
     }
 }
 
-void CreateCoupleThought(int buildType, int buildEvent)
+void CreateCoupleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -307,7 +307,7 @@ void CreateCoupleThought(int buildType, int buildEvent)
     }
 }
 
-void CreateProgrammerThought(int buildType, int buildEvent)
+void CreateProgrammerThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -458,7 +458,7 @@ void CreateProgrammerThought(int buildType, int buildEvent)
     }
 }
 
-void CreateArtistThought(int buildType, int buildEvent)
+void CreateArtistThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -576,7 +576,7 @@ void CreateArtistThought(int buildType, int buildEvent)
     }
 }
 
-void CreateOfficerThought(int buildType, int buildEvent)
+void CreateOfficerThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -716,7 +716,7 @@ void CreateOfficerThought(int buildType, int buildEvent)
     }
 }
 
-void CreateFamilyThought(int buildType, int buildEvent)
+void CreateFamilyThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -872,7 +872,7 @@ void CreateFamilyThought(int buildType, int buildEvent)
     }
 }
 
-void CreateRabbitThought(int buildType, int buildEvent)
+void CreateRabbitThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -996,7 +996,7 @@ void CreateRabbitThought(int buildType, int buildEvent)
     }
 }
 
-void CreateWhaleThought(int buildType, int buildEvent)
+void CreateWhaleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -1121,7 +1121,7 @@ void CreateWhaleThought(int buildType, int buildEvent)
     }
 }
 
-void CreateCamelThought(int buildType, int buildEvent)
+void CreateCamelThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
     char thought[50] = "";
     if (buildType == -1 || buildEvent == -1)
@@ -1249,31 +1249,31 @@ void CreateSingleVisitorThoughtByManager(VISITOR_TYPE visitorType, int buildType
     case VISITOR_TYPE::NONE:
         break;
     case VISITOR_TYPE::STUDENTS:
-        CreateStudentThought(buildType, buildEvent);
+        CreateStudentThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::COUPLE:
-        CreateCoupleThought(buildType, buildEvent);
+        CreateCoupleThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::PROGRAMMER:
-        CreateProgrammerThought(buildType, buildEvent);
+        CreateProgrammerThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::ARTIST:
-        CreateArtistThought(buildType, buildEvent);
+        CreateArtistThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::OFFICER:
-        CreateOfficerThought(buildType, buildEvent);
+        CreateOfficerThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::FAMILY:
-        CreateFamilyThought(buildType, buildEvent);
+        CreateFamilyThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::RABBIT:
-        CreateRabbitThought(buildType, buildEvent);
+        CreateRabbitThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::WHALE:
-        CreateWhaleThought(buildType, buildEvent);
+        CreateWhaleThought(visitorType, buildType, buildEvent);
         break;
     case VISITOR_TYPE::CAMEL:
-        CreateCamelThought(buildType, buildEvent);
+        CreateCamelThought(visitorType, buildType, buildEvent);
         break;
     default:
         break;

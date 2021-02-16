@@ -21,6 +21,7 @@
 #include "ThoughtListManager.h"
 #include "ResultFinalThought.h"
 #include "ResultTips.h"
+#include "FinalResult.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -209,6 +210,7 @@ void StageSelectSceneBtnEvent(int value)
     ResetThoughtQueueAndList();
     ResetResultFinalThought();
     ResetResultTips();
+    ResetFinalResult();
 }
 
 void NamingSceneBtnEvent(int value)

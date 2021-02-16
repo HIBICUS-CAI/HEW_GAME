@@ -154,6 +154,7 @@
     <ClCompile Include="CustomizedApp.cpp" />
     <ClCompile Include="DeclaredValuesGetter.cpp" />
     <ClCompile Include="DialogShower.cpp" />
+    <ClCompile Include="FinalResult.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="InputDispose.cpp" />
     <ClCompile Include="LogsOutput.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="DeclaredValues.h" />
     <ClInclude Include="DefinedValues.h" />
     <ClInclude Include="DialogShower.h" />
+    <ClInclude Include="FinalResult.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameAppStructs.h" />
     <ClInclude Include="InputDispose.h" />
