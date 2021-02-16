@@ -106,21 +106,25 @@ void CreateStudentThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "この匂いやばくない？");
+            SetResultTipsTo("硫黄泉の匂いは若い人に対してちょっと強烈すぎるかもしれません");
         }
         else if (buildEvent == B_EVNT_EATCURRY)
         {
             strcpy_s(thought, sizeof(thought),
                 "なんか普段の弁当を思い出した．．．美味しいけど");
+            SetResultTipsTo("学生に対してカレーは日常すぎるかもしれません");
         }
         else if (buildEvent == B_EVNT_DRKKARUPISU)
         {
             strcpy_s(thought, sizeof(thought),
                 "え？子供っぽいっすか？");
+            SetResultTipsTo("この時期の若い人は子供っぽいものが好きではありません");
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
                 "ホラーちょっと苦手よまじで");
+            SetResultTipsTo("深い理由がないが、とある生徒はホラー映画にすごく苦手なので");
         }
     }
 
@@ -268,26 +272,31 @@ void CreateCoupleThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "匂いが．．．ちょっとね．．．");
+            SetResultTipsTo("強い匂いがあるところにデートしないでほうがいいですよ");
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
                 "もっとおしゃれな店がいいな");
+            SetResultTipsTo("酒場のは少々騒がしい場所なので");
         }
         else if (buildEvent == B_EVNT_DRKKARUPISU)
         {
             strcpy_s(thought, sizeof(thought),
                 "えっ？何このカルピス放題って");
+            SetResultTipsTo("カルピスはカップルにはちょっと微妙かも");
         }
         else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
         {
             strcpy_s(thought, sizeof(thought),
                 "もっといい選択があるはずじゃん");
+            SetResultTipsTo("この主題は人によって好き嫌いがあります");
         }
         else if (buildEvent == B_EVNT_KARASINGLE)
         {
             strcpy_s(thought, sizeof(thought),
                 "え？二人で一緒に歌いたいよもう");
+            SetResultTipsTo("カップルに対して普通のカラオケのほうがいいかもしれません");
         }
     }
 
@@ -408,31 +417,37 @@ void CreateProgrammerThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "仕事の時昼飯はもうラーメンいっぱいだね");
+            SetResultTipsTo("どうやらプログラマーの昼飯は常にラーメンである");
         }
         else if (buildEvent == B_EVNT_DRKMILKTEA)
         {
             strcpy_s(thought, sizeof(thought),
                 "甘すぎくないタピオカって");
+            SetResultTipsTo("深い理由がないがプログラマーはどうやらタピオカ好きではありません");
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
                 "嫌だ上司に飲まさせられた記憶が蘇った");
+            SetResultTipsTo("遥か昔、とあるプログラマーは上司に無理矢理飲まさせられたことがある");
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
                 "せっかくのリゾートにもっと穏やかになりたいな");
+            SetResultTipsTo("大したことないんが、このプログラマーはホラー苦手です");
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
                 "えっ？こんなこと言ったらおしまいじゃん？");
+            SetResultTipsTo("このプログラマーはいつも合理的なものを追求しています");
         }
         else if (buildEvent == B_EVNT_KARAMUTLI)
         {
             strcpy_s(thought, sizeof(thought),
                 "皆の前に歌うのは少し恥ずかしくなるな");
+            SetResultTipsTo("どうやらこのプログラマーは人の前に歌う事が嫌いです");
         }
     }
 
@@ -538,16 +553,19 @@ void CreateArtistThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "あ昔の祭りの時思い出した、楽しい思い出じゃないが");
+            SetResultTipsTo("ここの話ですが、アーティストさんは昔ある祭りに彼氏にフラれたみたい");
         }
         else if (buildType == B_TYPE_KARAOKE)
         {
             strcpy_s(thought, sizeof(thought),
                 "ああ歌うのは苦手ですよ．．．");
+            SetResultTipsTo("キャラの個性なんですけど、アーティストさんは歌うことが嫌みたい");
         }
         else if (buildEvent == B_EVNT_RESTHOTEL)
         {
             strcpy_s(thought, sizeof(thought),
                 "なんか出張してる気がする？");
+            SetResultTipsTo("アーティストさんはいつも絶賛在宅勤務しているそうです");
         }
     }
 
@@ -667,6 +685,7 @@ void CreateOfficerThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "うんん、単純な温泉ってなんかちょっとつまらん");
+            SetResultTipsTo("どうやら事務員さんは日常と違う体験を探しています");
         }
         else if (buildEvent == B_EVNT_EATRAMEN ||
             buildEvent == B_EVNT_EATCURRY ||
@@ -674,16 +693,19 @@ void CreateOfficerThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "もっと特別なものが欲しいね");
+            SetResultTipsTo("どうやら事務員さんは日常と違う体験を探しています");
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
                 "これは仕事終わりの飲み会かい！");
+            SetResultTipsTo("事務員さんに対して多分仕事後の飲み会はもう飽きたです");
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
                 "個人的にはインパクトが欲しいね");
+            SetResultTipsTo("結果が見通しやすいなことは事務員さんが探しているものではありません");
         }
     }
 
@@ -808,32 +830,38 @@ void CreateFamilyThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "一郎入るな、流水プールはまだ危険すぎるんだろう？");
+            SetResultTipsTo("子供に対して流水プールはまだまだ早い");
         }
         else if (buildEvent == B_EVNT_POLINFINITY)
         {
             strcpy_s(thought, sizeof(thought),
                 "花ちゃんーーどこにいるのーーーー");
+            SetResultTipsTo("子供を自分の周りに縛りたくないが広い場所に迷子になる可能性が非常に高い");
         }
         else if (buildEvent == B_EVNT_DRKBAR ||
             buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
                 "おいおい、未成年がいるでしょう？");
+            SetResultTipsTo("未成年に対して酒はダメです");
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
                 "怖くない怖くない。ホラーってまじ有り得ないわ");
+            SetResultTipsTo("ホラー映画は子供に対して不適切なものです");
         }
         else if (buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
                 "嫌だ血が出てる。。。");
+            SetResultTipsTo("アクション映画の暴力内容は子供に対して不適切なものです");
         }
         else if (buildEvent == B_EVNT_KARASINGLE)
         {
             strcpy_s(thought, sizeof(thought),
                 "わざわざ私たち分けて必要ないじゃん");
+            SetResultTipsTo("家族メンバーに一緒にいることが大切なのです");
         }
     }
 
@@ -933,26 +961,31 @@ void CreateRabbitThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "この匂いもうダメウギ．．．");
+            SetResultTipsTo("動物に対して硫黄泉の匂いがちょっと強烈すぎます");
         }
         else if (buildEvent == B_EVNT_EATUNAGI)
         {
             strcpy_s(thought, sizeof(thought),
                 "ひっ、ひどいウギ．．．");
+            SetResultTipsTo("同じく人間に食べられる同士なので、そいつを食うのはちょっと残酷なことです");
         }
         else if (buildEvent == B_EVNT_POLFLUSH)
         {
             strcpy_s(thought, sizeof(thought),
                 "一生登れない気がするウギ．．．");
+            SetResultTipsTo("流水プールから脱出のはウサギさん自分の力でできることではありません");
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
                 "あああ血だ血だっ！");
+            SetResultTipsTo("かわいいうさぎさんに対してホラーは刺激すぎます");
         }
         else if (buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
                 "苦手なんだよこのタイプ．．．");
+            SetResultTipsTo("かわいいうさぎさんに対してアクション映画は刺激すぎます");
         }
     }
 
@@ -1056,6 +1089,7 @@ void CreateWhaleThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "ああ、この匂い本当にたまらないクジ");
+            SetResultTipsTo("動物に対して硫黄泉の匂いがちょっと強烈すぎます");
         }
         else if (buildEvent == B_EVNT_POLNORMAL ||
             buildEvent == B_EVNT_POLFLUSH ||
@@ -1063,17 +1097,20 @@ void CreateWhaleThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "え？このプール小さすぎるでしょう？");
+            SetResultTipsTo("いつも自由自在に泳いでいるくじらに対してプールはほぼ小さいすぎます");
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL ||
             buildEvent == B_EVNT_DRKBAR)
         {
             strcpy_s(thought, sizeof(thought),
                 "酒は少々苦手クジ．．．");
+            SetResultTipsTo("もし高圧の海の中に酔っ払いになると頭はごちゃごちゃになります");
         }
         else if (buildEvent == B_EVNT_KARASINGLE)
         {
             strcpy_s(thought, sizeof(thought),
                 "ええ？歌うのは皆一緒でこそ楽しいでしょう？");
+            SetResultTipsTo("くじらは社交意識がある動物なので、歌でコミュニケーションを行う必要があります");
         }
     }
 
@@ -1164,31 +1201,37 @@ void CreateCamelThought(int buildType, int buildEvent)
         {
             strcpy_s(thought, sizeof(thought),
                 "何なんだこの匂い");
+            SetResultTipsTo("動物に対して硫黄泉の匂いがちょっと強烈すぎます");
         }
         else if (buildEvent == B_EVNT_EATUNAGI)
         {
             strcpy_s(thought, sizeof(thought),
                 "ひっ、ひどいクダ．．．");
+            SetResultTipsTo("植食動物に対して肉を食うのは残酷なことです");
         }
         else if (buildEvent == B_EVNT_EATBBQ)
         {
             strcpy_s(thought, sizeof(thought),
                 "皆ほぼ肉を焼いてるクダ？");
+            SetResultTipsTo("植食動物に対して肉を食うのは残酷なことです");
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
                 "砂漠はもう十分こわいのにぃ！");
+            SetResultTipsTo("夜になると砂漠に色んな動物が出てしまい、駱駝さんに対してそれは十分ホラーでした");
         }
         else if (buildType == B_TYPE_KARAOKE)
         {
             strcpy_s(thought, sizeof(thought),
                 "ぼく歌うのは苦手クダ．．．");
+            SetResultTipsTo("深い理由がないがらくださんは歌えませんみたい");
         }
         else if (buildEvent == B_EVNT_RESTCAMP)
         {
             strcpy_s(thought, sizeof(thought),
                 "なんかしんどいの砂漠生活を思い出したクダ");
+            SetResultTipsTo("ほぼ全ての哺乳動物に対して砂漠は暮らしつらい場所である");
         }
     }
 

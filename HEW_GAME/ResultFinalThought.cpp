@@ -270,6 +270,28 @@ void CreateResultFinalThought()
             }
         }
     }
+
+    thoughtFlg = 1;
+    for (int i = 0; i < FINAL_THOUGHTS_SIZE; i++)
+    {
+        if (strcmp(g_FinalThought[i], ""))
+        {
+            thoughtFlg = 0;
+            break;
+        }
+    }
+    if (thoughtFlg)
+    {
+        for (int i = 0; i < FINAL_THOUGHTS_SIZE; i++)
+        {
+            if (!strcmp(g_FinalThought[i], ""))
+            {
+                strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
+                    "¤³¤Î¥ê¥¾©`¥È¤Ê¤«¤Ê¤«˜S¤·¤¤¤Ç¤¹¤Í");
+                break;
+            }
+        }
+    }
 }
 
 void UpdateResultFinalThought()
