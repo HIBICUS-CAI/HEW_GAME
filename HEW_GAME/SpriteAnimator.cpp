@@ -29,7 +29,7 @@ SPRITE CreateSingleSprite(const char* fileName, POSITION_2D position, int width,
         }
         *(tempSingleSprite->GetSpriteBuffer() + i) = asciiChar;
     }
-
+    fclose(asciiDrawFile);
     return *tempSingleSprite;
 }
 

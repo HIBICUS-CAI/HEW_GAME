@@ -70,15 +70,52 @@ void InitFinalResult()
 
 void UpdateFinalResult()
 {
+    int rankOffset = 0;
+
+    if (g_Score <= 60)
+    {
+        rankOffset = C_RANK_OFFSET;
+    }
+    else if (g_Score <= 75)
+    {
+        rankOffset = B_RANK_OFFSET;
+    }
+    else
+    {
+        int canBeS = 0;
+        for (int i = 0; i < VISITOR_MAX_SIZE; i++)
+        {
+            if ((GetVisitorArray() + i)->Type == 
+                VISITOR_TYPE::RABBIT || 
+                (GetVisitorArray() + i)->Type ==
+                VISITOR_TYPE::WHALE || 
+                (GetVisitorArray() + i)->Type ==
+                VISITOR_TYPE::CAMEL)
+            {
+                canBeS = 1;
+                break;
+            }
+        }
+
+        if (canBeS)
+        {
+            rankOffset = S_RANK_OFFSET;
+        }
+        else
+        {
+            rankOffset = A_RANK_OFFSET;
+        }
+    }
+
     DrawSpriteAnimatorToCamBuffer(
         GetSceneNodeByName("result")->GetCamAddr(),
-        g_RankSA + 3, (g_tttt++) % 60, POSITION_2D(1, 1)
+        g_RankSA + rankOffset, (g_tttt++) % 60, POSITION_2D(1, 1)
     );
 }
 
 void ResetFinalResult()
 {
-    g_Score = 50;
+    g_Score = 70;
 }
 
 void TurnOffFinalResult()
