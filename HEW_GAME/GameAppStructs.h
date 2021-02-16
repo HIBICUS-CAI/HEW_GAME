@@ -85,6 +85,10 @@ struct SCENENODE
                 {
                     *(buffer + startY * width + startX + i) =
                         *(string + i);
+                    if (startX < 0 && startX + i < 2 && i % 2)
+                    {
+                        *(buffer + startY * width + startX + i) = ' ';
+                    }
                 }
             }
         }
