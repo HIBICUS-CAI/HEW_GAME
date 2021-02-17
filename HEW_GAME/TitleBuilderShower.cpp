@@ -74,7 +74,7 @@ void UpdateTitleBuilderShower()
             )
         );
 
-        if ((int)g_StandBuilderFallDis < 19)
+        if ((int)g_StandBuilderFallDis < 20)
         {
             ++g_TimeCountTBSFall;
         }

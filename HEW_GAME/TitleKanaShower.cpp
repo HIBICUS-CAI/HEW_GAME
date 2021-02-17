@@ -8,7 +8,10 @@ int g_TimeCountTKS = 0;
 POSITION_2D g_KanaPos[7];
 int g_TimeCountLoadWaitTKS = 0;
 int g_FinishWaitTKS = 0;
-float g_FallDistance;
+float g_FallDistance = 0.f;
+int g_NeedToJumpWhenTouchTKS = 1;
+float g_JumpDistance = 0.f;
+int g_TimeCountJumpTKS = 0;
 
 void InitTitleKanaShower()
 {
@@ -28,6 +31,9 @@ void InitTitleKanaShower()
     g_TimeCountLoadWaitTKS = 0;
     g_FinishWaitTKS = 0;
     g_FallDistance = 0.f;
+    g_NeedToJumpWhenTouchTKS = 1;
+    g_JumpDistance = 0.f;
+    g_TimeCountJumpTKS = 0;
 }
 
 void UpdateTitleKanaShower()
@@ -47,13 +53,24 @@ void UpdateTitleKanaShower()
             (0.016f * (float)g_TimeCountTKS) *
             (0.016f * (float)g_TimeCountTKS) * 30.f;
 
+        if (g_NeedToJumpWhenTouchTKS &&
+            (int)g_FallDistance >= 25)
+        {
+            g_JumpDistance = (0.5f * 0.016f * 9.8f * g_TimeCountTKS * 30.f) *
+                0.016f * (float)g_TimeCountJumpTKS -
+                0.5f * 9.8f *
+                (0.016f * (float)g_TimeCountJumpTKS) *
+                (0.016f * (float)g_TimeCountJumpTKS) * 30.f;
+        }
+
         for (int i = 0; i < 7; i++)
         {
             DrawSingleSpriteToCamBuffer(
                 GetSceneNodeByName("title")->GetCamAddr(),
                 g_TitleKana + i,
                 POSITION_2D(g_KanaPos[i].posX,
-                    g_KanaPos[i].posY + (int)g_FallDistance)
+                    g_KanaPos[i].posY + (int)g_FallDistance -
+                    (int)g_JumpDistance)
             );
         }
 
@@ -61,8 +78,16 @@ void UpdateTitleKanaShower()
         {
             ++g_TimeCountTKS;
         }
-        else
+
+        if ((int)g_JumpDistance >= 0 &&
+            (int)g_FallDistance >= 25)
         {
+            ++g_TimeCountJumpTKS;
+        }
+
+        if ((int)g_JumpDistance < 0)
+        {
+            g_NeedToJumpWhenTouchTKS = 0;
             if (!GetCanShowStandBuilderFlg())
             {
                 SetCanShowStandBuilderFlg(1);
@@ -82,4 +107,7 @@ void ResetTitleKanaShower()
     g_TimeCountLoadWaitTKS = 0;
     g_FinishWaitTKS = 0;
     g_FallDistance = 0.f;
+    g_NeedToJumpWhenTouchTKS = 1;
+    g_JumpDistance = 0.f;
+    g_TimeCountJumpTKS = 0;
 }
