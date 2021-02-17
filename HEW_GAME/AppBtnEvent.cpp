@@ -22,6 +22,7 @@
 #include "ResultFinalThought.h"
 #include "ResultTips.h"
 #include "FinalResult.h"
+#include "TitleBuilderShower.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -1259,6 +1260,7 @@ void FinalResultSceneBtnEvent(int value)
         DebugLog("ready to back to title scene");
         ResetPlayingStageByManager();
         ResetVisitorManager();
+        ResetTitleBuilderShower();
         SwitchSceneToName("title");
     }
     else if (value == SAVE_AT_1)

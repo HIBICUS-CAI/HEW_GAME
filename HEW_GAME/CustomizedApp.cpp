@@ -25,6 +25,7 @@
 #include "ResultFinalThought.h"
 #include "ResultTips.h"
 #include "FinalResult.h"
+#include "TitleBuilderShower.h"
 
 void AppInit()
 {
@@ -54,6 +55,7 @@ void AppInit()
     InitResultFinalThought();
     InitResultTips();
     InitFinalResult();
+    InitTitleBuilderShower();
 
     SwitchSceneToName("title");
 }
@@ -64,6 +66,10 @@ void AppUpdate()
 
     switch (GetSceneFlag())
     {
+    case TITLESCENEFLAG:
+        UpdateTitleBuilderShower();
+        break;
+
     case DIALOGSCENEFLAG:
         UpdateDialogShower();
         break;
