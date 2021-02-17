@@ -26,6 +26,7 @@
 #include "ResultTips.h"
 #include "FinalResult.h"
 #include "TitleBuilderShower.h"
+#include "TitleKanaShower.h"
 
 void AppInit()
 {
@@ -56,6 +57,7 @@ void AppInit()
     InitResultTips();
     InitFinalResult();
     InitTitleBuilderShower();
+    InitTitleKanaShower();
 
     SwitchSceneToName("title");
 }
@@ -68,6 +70,7 @@ void AppUpdate()
     {
     case TITLESCENEFLAG:
         UpdateTitleBuilderShower();
+        UpdateTitleKanaShower();
         break;
 
     case DIALOGSCENEFLAG:

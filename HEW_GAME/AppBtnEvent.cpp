@@ -23,6 +23,7 @@
 #include "ResultTips.h"
 #include "FinalResult.h"
 #include "TitleBuilderShower.h"
+#include "TitleKanaShower.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -1261,6 +1262,7 @@ void FinalResultSceneBtnEvent(int value)
         ResetPlayingStageByManager();
         ResetVisitorManager();
         ResetTitleBuilderShower();
+        ResetTitleKanaShower();
         SwitchSceneToName("title");
     }
     else if (value == SAVE_AT_1)

@@ -170,6 +170,7 @@
     <ClCompile Include="ThoughtListManager.cpp" />
     <ClCompile Include="ThoughtListShower.cpp" />
     <ClCompile Include="TitleBuilderShower.cpp" />
+    <ClCompile Include="TitleKanaShower.cpp" />
     <ClCompile Include="Tools.cpp" />
     <ClCompile Include="UIObjDeclarer.cpp" />
     <ClCompile Include="UIObject.cpp" />
@@ -223,6 +224,7 @@
     <ClInclude Include="ThoughtListManager.h" />
     <ClInclude Include="ThoughtListShower.h" />
     <ClInclude Include="TitleBuilderShower.h" />
+    <ClInclude Include="TitleKanaShower.h" />
     <ClInclude Include="Tools.h" />
     <ClInclude Include="UIObjDeclarer.h" />
     <ClInclude Include="UIObject.h" />
