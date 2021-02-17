@@ -13,6 +13,11 @@
 void InitFinalResult();
 
 /// <summary>
+/// 点数によってランクを計算する
+/// </summary>
+void CountFinalRank();
+
+/// <summary>
 /// 最終結果に関してのの計算と表示を実行する
 /// </summary>
 void UpdateFinalResult();
@@ -56,3 +61,15 @@ void VisitorFeelBad(VISITOR_TYPE visitorType);
 /// </summary>
 /// <param name="visitorType">この観光客のタイプ</param>
 void VisitorFeelVeryBad(VISITOR_TYPE visitorType);
+
+/// <summary>
+/// ランクが表現できるかどうかを取得
+/// </summary>
+/// <returns>ランク表現のフラグ</returns>
+int GetShowRankFlg();
+
+/// <summary>
+/// ランクが表現できるかどうかを設定
+/// </summary>
+/// <param name="value">設定させたい値</param>
+void SetShowRankFlg(int value);

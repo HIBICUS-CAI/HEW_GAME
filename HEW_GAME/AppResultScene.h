@@ -13,7 +13,7 @@ void InitResultScene()
         SCENECAMERA(POSITION_2D(1, 0), 178, 60)));
 
     GetSceneNodeByName("result")->SetBaseUIO(
-        GetUIObjByName("final-result"));
+        GetUIObjByName("empty"));
     ClearSceneCamBuffer(GetSceneNodeByName("result"));
 }
 

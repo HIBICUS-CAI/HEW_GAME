@@ -2,6 +2,7 @@
 #include "AppDeclared.h"
 #include "SpriteAnimator.h"
 #include "SceneNode.h"
+#include "UIObject.h"
 
 #define S_RANK_OFFSET 0
 #define A_RANK_OFFSET 1
@@ -10,9 +11,9 @@
 
 int g_Score = 50;
 SPRITE_ANIME g_RankSA[4];
-
-//-------------------------
-int g_tttt = 0;
+int g_RankOffset = 0;
+int g_TimeCountFR = 0;
+int g_IsGoingToShow = 0;
 
 void LoadRankS()
 {
@@ -61,6 +62,9 @@ void LoadRankC()
 void InitFinalResult()
 {
     g_Score = 50;
+    g_RankOffset = 0;
+    g_TimeCountFR = 0;
+    g_IsGoingToShow = 0;
 
     LoadRankS();
     LoadRankA();
@@ -68,27 +72,27 @@ void InitFinalResult()
     LoadRankC();
 }
 
-void UpdateFinalResult()
+void CountFinalRank()
 {
-    int rankOffset = 0;
+    g_RankOffset = 0;
 
     if (g_Score <= 60)
     {
-        rankOffset = C_RANK_OFFSET;
+        g_RankOffset = C_RANK_OFFSET;
     }
     else if (g_Score <= 75)
     {
-        rankOffset = B_RANK_OFFSET;
+        g_RankOffset = B_RANK_OFFSET;
     }
     else
     {
         int canBeS = 0;
         for (int i = 0; i < VISITOR_MAX_SIZE; i++)
         {
-            if ((GetVisitorArray() + i)->Type == 
-                VISITOR_TYPE::RABBIT || 
+            if ((GetVisitorArray() + i)->Type ==
+                VISITOR_TYPE::RABBIT ||
                 (GetVisitorArray() + i)->Type ==
-                VISITOR_TYPE::WHALE || 
+                VISITOR_TYPE::WHALE ||
                 (GetVisitorArray() + i)->Type ==
                 VISITOR_TYPE::CAMEL)
             {
@@ -99,23 +103,61 @@ void UpdateFinalResult()
 
         if (canBeS)
         {
-            rankOffset = S_RANK_OFFSET;
+            g_RankOffset = S_RANK_OFFSET;
         }
         else
         {
-            rankOffset = A_RANK_OFFSET;
+            g_RankOffset = A_RANK_OFFSET;
         }
     }
+}
 
-    DrawSpriteAnimatorToCamBuffer(
-        GetSceneNodeByName("result")->GetCamAddr(),
-        g_RankSA + rankOffset, (g_tttt++) % 60, POSITION_2D(1, 1)
-    );
+void UpdateFinalResult()
+{
+    if (g_IsGoingToShow)
+    {
+        DrawSpriteAnimatorToCamBuffer(
+            GetSceneNodeByName("result")->GetCamAddr(),
+            g_RankSA + g_RankOffset, (g_TimeCountFR++) % 60,
+            (g_RankSA + g_RankOffset)->SubSprites->Position
+        );
+
+        if (g_TimeCountFR >= 120)
+        {
+            g_TimeCountFR = 0;
+        }
+
+        if ((g_RankSA + g_RankOffset)->SubSprites->Position.posX <
+            GetSceneNodeByName("result")->GetCamAddr()->CameraWidth / 2 -
+            (g_RankSA + g_RankOffset)->SubSprites->Width / 2)
+        {
+            ++(g_RankSA + g_RankOffset)->SubSprites->Position.posX;
+        }
+    }
 }
 
 void ResetFinalResult()
 {
-    g_Score = 70;
+    if ((g_RankSA + g_RankOffset)->SubSprites->Visible)
+    {
+        for (int j = 0; j < MAXSIZE_PER_SPRITE_FRAME; j++)
+        {
+            g_RankSA[g_RankOffset].GetSubSpriteByOffset(j)->Position =
+                POSITION_2D(-71, 2);
+        }
+    }
+
+    g_Score = 50;
+    g_RankOffset = 0;
+    g_TimeCountFR = 0;
+    g_IsGoingToShow = 0;
+
+    if (GetSceneNodeByName("result") != NULL)
+    {
+        ClearSceneCamBuffer(GetSceneNodeByName("result"));
+        GetSceneNodeByName("result")->SetBaseUIO(GetUIObjByName("empty"));
+        SetSelectedBtn(GetUIObjByName("empty")->Buttons);
+    }
 }
 
 void TurnOffFinalResult()
@@ -200,5 +242,22 @@ void VisitorFeelVeryBad(VISITOR_TYPE visitorType)
     else
     {
         g_Score -= 4;
+    }
+}
+
+int GetShowRankFlg()
+{
+    return g_IsGoingToShow;
+}
+
+void SetShowRankFlg(int value)
+{
+    if (value)
+    {
+        g_IsGoingToShow = 1;
+    }
+    else
+    {
+        g_IsGoingToShow = 0;
     }
 }

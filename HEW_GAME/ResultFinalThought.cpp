@@ -2,6 +2,7 @@
 #include "AppDeclared.h"
 #include "SceneNode.h"
 #include "ResultTips.h"
+#include "FinalResult.h"
 
 #define FINAL_THOUGHTS_SIZE 7
 char g_FinalThought[FINAL_THOUGHTS_SIZE][128] = { "","","","","","","" };
@@ -292,6 +293,8 @@ void CreateResultFinalThought()
             }
         }
     }
+
+    CountFinalRank();
 }
 
 void UpdateResultFinalThought()
@@ -333,6 +336,17 @@ void UpdateResultFinalThought()
                 if (!GetCanShowTipsFlg())
                 {
                     SetCanShowTipsFlg(1);
+                }
+                if (!GetShowRankFlg())
+                {
+                    SetShowRankFlg(1);
+                }
+                if (GetSceneNodeByName("result")->GetBaseUIOAddr() ==
+                    GetUIObjByName("empty"))
+                {
+                    GetSceneNodeByName("result")->
+                        SetBaseUIO(GetUIObjByName("final-result"));
+                    SetSelectedBtn(GetUIObjByName("final-result")->Buttons);
                 }
                 for (int i = 0; i < FINAL_THOUGHTS_SIZE; i++)
                 {
