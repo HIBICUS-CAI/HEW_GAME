@@ -74,13 +74,15 @@ void InitFinalResult()
 
 void CountFinalRank()
 {
+    DebugLogI1("×î½KµãÊý:", g_Score);
+
     g_RankOffset = 0;
 
-    if (g_Score <= 60)
+    if (g_Score <= 80)
     {
         g_RankOffset = C_RANK_OFFSET;
     }
-    else if (g_Score <= 75)
+    else if (g_Score <= 99)
     {
         g_RankOffset = B_RANK_OFFSET;
     }
