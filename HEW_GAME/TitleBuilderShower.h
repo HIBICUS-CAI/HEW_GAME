@@ -24,3 +24,15 @@ void TurnOffTitleBuilderShower();
 /// 左右移動のビルダー表示に関しての機能をリセットする
 /// </summary>
 void ResetTitleBuilderShower();
+
+/// <summary>
+/// 立っているビルダーが表現できるかどうかを取得
+/// </summary>
+/// <returns>ビルダー表現のフラグ</returns>
+int GetCanShowStandBuilderFlg();
+
+/// <summary>
+/// 立っているビルダーが表現できるかどうかをを設定
+/// </summary>
+/// <param name="value">設定させたい値</param>
+void SetCanShowStandBuilderFlg(int value);

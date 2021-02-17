@@ -10,6 +10,9 @@ float g_PosOffsetDelta = 0.f;
 int g_SwitchFlg = 1;
 int g_TimeCountLoadWait = 0;
 int g_FinishWait = 0;
+int g_CanShowStandBuilder = 0;
+float g_StandBuilderFallDis = 0.f;
+int g_TimeCountTBSFall = 0;
 
 void InitTitleBuilderShower()
 {
@@ -24,7 +27,7 @@ void InitTitleBuilderShower()
     }
     *temp = CreateSpriteAnimator(
         8, "Assets\\SpriteAnimators\\builder\\builder-stand",
-        POSITION_2D(0, 0), 20, 10
+        POSITION_2D(140, -10), 20, 10
     );
     g_TitleStandBuilder = *temp;
     delete temp;
@@ -48,10 +51,35 @@ void InitTitleBuilderShower()
     g_SwitchFlg = 1;
     g_TimeCountLoadWait = 0;
     g_FinishWait = 0;
+    g_CanShowStandBuilder = 0;
+    g_StandBuilderFallDis = 0.f;
+    g_TimeCountTBSFall = 0;
 }
 
 void UpdateTitleBuilderShower()
 {
+    if (g_CanShowStandBuilder)
+    {
+        g_StandBuilderFallDis = 0.5f * 9.8f *
+            (0.016f * (float)g_TimeCountTBSFall) *
+            (0.016f * (float)g_TimeCountTBSFall) * 30.f;
+
+        DrawSpriteAnimatorToCamBuffer(
+            GetSceneNodeByName("title")->GetCamAddr(),
+            &g_TitleStandBuilder, g_TimeCountTBS % 60,
+            POSITION_2D(
+                g_TitleStandBuilder.SubSprites->Position.posX,
+                g_TitleStandBuilder.SubSprites->Position.posY+
+                (int)g_StandBuilderFallDis
+            )
+        );
+
+        if ((int)g_StandBuilderFallDis < 19)
+        {
+            ++g_TimeCountTBSFall;
+        }
+    }
+
     if (g_TimeCountLoadWait>65)
     {
         g_FinishWait = 1;
@@ -140,6 +168,26 @@ void ResetTitleBuilderShower()
     g_SwitchFlg = 1;
     g_TimeCountLoadWait = 0;
     g_FinishWait = 0;
+    g_CanShowStandBuilder = 0;
+    g_StandBuilderFallDis = 0.f;
+    g_TimeCountTBSFall = 0;
 
     ClearSceneCamBuffer(GetSceneNodeByName("title"));
+}
+
+int GetCanShowStandBuilderFlg()
+{
+    return g_CanShowStandBuilder;
+}
+
+void SetCanShowStandBuilderFlg(int value)
+{
+    if (value)
+    {
+        g_CanShowStandBuilder = 1;
+    }
+    else
+    {
+        g_CanShowStandBuilder = 0;
+    }
 }
