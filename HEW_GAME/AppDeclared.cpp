@@ -77,14 +77,24 @@ DIALOG_EVENT g_DialogEvents[DIALOG_EVENT_SIZE];
 
 void InitAndLoadDialogEvents()
 {
-    DIALOG_EVENT temp = DIALOG_EVENT();
+    DIALOG_EVENT* temp = new DIALOG_EVENT();
     for (int i = 0; i < DIALOG_EVENT_SIZE; i++)
     {
-        *(g_DialogEvents + i) = temp;
+        *(g_DialogEvents + i) = *temp;
     }
+    delete temp;
 
     // ¤³¤³¤Ç¥Õ¥¡¥¤¥ë¥í©`¥É¤òÐÐ¤¦
     LoadSingleDialogEvnetFromID(DIALOG_NEW_GAME, "Assets\\DialogTexts\\new_game.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_STUDENT, "Assets\\DialogTexts\\visitor_tips_student.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_COUPLE, "Assets\\DialogTexts\\visitor_tips_couple.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_PROGRAMMER, "Assets\\DialogTexts\\visitor_tips_programmer.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_ARTIST, "Assets\\DialogTexts\\visitor_tips_artist.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_OFFICER, "Assets\\DialogTexts\\visitor_tips_officer.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_FAMILY, "Assets\\DialogTexts\\visitor_tips_family.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_RABBIT, "Assets\\DialogTexts\\visitor_tips_rabbit.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_WHALE, "Assets\\DialogTexts\\visitor_tips_whale.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_TIPS_CAMEL, "Assets\\DialogTexts\\visitor_tips_camel.txt");
 }
 
 void LoadSingleDialogEvnetFromID(int id, const char* path)

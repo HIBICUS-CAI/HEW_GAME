@@ -63,6 +63,87 @@ void UpdateDialogShower()
                 SetIsDialogFinish(0);
             }
         }
+        else if (dialogEventID == DIALOG_TIPS_STUDENT)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_STUDENT);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_COUPLE)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_COUPLE);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_PROGRAMMER)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_PROGRAMMER);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_ARTIST)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_ARTIST);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_OFFICER)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_OFFICER);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_FAMILY)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_FAMILY);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_RABBIT)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_RABBIT);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_WHALE)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_WHALE);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
+        else if (dialogEventID == DIALOG_TIPS_CAMEL)
+        {
+            DebugLog("ready to go to new game dialog");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(DIALOG_TIPS_CAMEL);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
         else
         {
             ErrorLogI1("cannot find this dialog ID", dialogEventID);

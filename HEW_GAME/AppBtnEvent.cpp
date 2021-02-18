@@ -2,6 +2,7 @@
 #include "GameAppStructs.h"
 #include "AppDeclared.h"
 #include "UIObject.h"
+#include "Tools.h"
 #include "DeclaredValues.h"
 #include "SceneManager.h"
 #include "DialogShower.h"
@@ -159,6 +160,18 @@ void DialogSceneBtnEvent(int value)
                 {
                     SwitchSceneToName("title");
                 }
+                else if (GetDialogEvent() == DIALOG_TIPS_STUDENT ||
+                    GetDialogEvent() == DIALOG_TIPS_COUPLE ||
+                    GetDialogEvent() == DIALOG_TIPS_PROGRAMMER ||
+                    GetDialogEvent() == DIALOG_TIPS_ARTIST ||
+                    GetDialogEvent() == DIALOG_TIPS_OFFICER ||
+                    GetDialogEvent() == DIALOG_TIPS_FAMILY ||
+                    GetDialogEvent() == DIALOG_TIPS_RABBIT ||
+                    GetDialogEvent() == DIALOG_TIPS_WHALE ||
+                    GetDialogEvent() == DIALOG_TIPS_CAMEL)
+                {
+                    SwitchSceneToName("build");
+                }
                 ResetUsingPointerAndFlag();
             }
         }
@@ -168,6 +181,18 @@ void DialogSceneBtnEvent(int value)
             {
                 SwitchSceneToName("title");
             }
+            else if (GetDialogEvent() == DIALOG_TIPS_STUDENT ||
+                GetDialogEvent() == DIALOG_TIPS_COUPLE ||
+                GetDialogEvent() == DIALOG_TIPS_PROGRAMMER ||
+                GetDialogEvent() == DIALOG_TIPS_ARTIST ||
+                GetDialogEvent() == DIALOG_TIPS_OFFICER ||
+                GetDialogEvent() == DIALOG_TIPS_FAMILY ||
+                GetDialogEvent() == DIALOG_TIPS_RABBIT ||
+                GetDialogEvent() == DIALOG_TIPS_WHALE ||
+                GetDialogEvent() == DIALOG_TIPS_CAMEL)
+            {
+                SwitchSceneToName("build");
+            }
             ResetUsingPointerAndFlag();
         }
     }
@@ -176,7 +201,19 @@ void DialogSceneBtnEvent(int value)
         DebugLog("ready to temp");
         if (GetDialogEvent() == DIALOG_NEW_GAME)
         {
-            SwitchSceneToName("select");
+            SwitchSceneToName("title");
+        }
+        else if (GetDialogEvent() == DIALOG_TIPS_STUDENT ||
+            GetDialogEvent() == DIALOG_TIPS_COUPLE ||
+            GetDialogEvent() == DIALOG_TIPS_PROGRAMMER ||
+            GetDialogEvent() == DIALOG_TIPS_ARTIST ||
+            GetDialogEvent() == DIALOG_TIPS_OFFICER ||
+            GetDialogEvent() == DIALOG_TIPS_FAMILY ||
+            GetDialogEvent() == DIALOG_TIPS_RABBIT ||
+            GetDialogEvent() == DIALOG_TIPS_WHALE ||
+            GetDialogEvent() == DIALOG_TIPS_CAMEL)
+        {
+            SwitchSceneToName("build");
         }
         ResetUsingPointerAndFlag();
     }
@@ -266,7 +303,70 @@ void NamingSceneBtnEvent(int value)
             ChangeTextTo(temp);
         (GetUIObjByName("naming")->Texts + 7)->
             ChangeTextTo(temp);
-        SwitchSceneToName("build");
+
+        VISITOR_TYPE types[4] = { VISITOR_TYPE::NONE, VISITOR_TYPE::NONE, VISITOR_TYPE::NONE, VISITOR_TYPE::NONE };
+        int typeCount = 0;
+        int alreadyExit = 0;
+        for (int i = 0; i < VISITOR_MAX_SIZE; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if ((GetVisitorArray() + i)->Type == types[j] &&
+                    (GetVisitorArray() + i)->Type != VISITOR_TYPE::NONE)
+                {
+                    alreadyExit = 1;
+                    break;
+                }
+            }
+            if (alreadyExit)
+            {
+                alreadyExit = 0;
+            }
+            else if (typeCount < 4)
+            {
+                types[typeCount] = (GetVisitorArray() + i)->Type;
+                ++typeCount;
+            }
+        }
+        SetRandom();
+        int index = CreateRandomNumIn(0, typeCount - 1);
+        int dialogEvent = 0;
+        switch (types[index])
+        {
+        case VISITOR_TYPE::STUDENTS:
+            dialogEvent = DIALOG_TIPS_STUDENT;
+            break;
+        case VISITOR_TYPE::COUPLE:
+            dialogEvent = DIALOG_TIPS_COUPLE;
+            break;
+        case VISITOR_TYPE::PROGRAMMER:
+            dialogEvent = DIALOG_TIPS_PROGRAMMER;
+            break;
+        case VISITOR_TYPE::ARTIST:
+            dialogEvent = DIALOG_TIPS_ARTIST;
+            break;
+        case VISITOR_TYPE::OFFICER:
+            dialogEvent = DIALOG_TIPS_OFFICER;
+            break;
+        case VISITOR_TYPE::FAMILY:
+            dialogEvent = DIALOG_TIPS_FAMILY;
+            break;
+        case VISITOR_TYPE::RABBIT:
+            dialogEvent = DIALOG_TIPS_RABBIT;
+            break;
+        case VISITOR_TYPE::WHALE:
+            dialogEvent = DIALOG_TIPS_WHALE;
+            break;
+        case VISITOR_TYPE::CAMEL:
+            dialogEvent = DIALOG_TIPS_CAMEL;
+            break;
+
+        default:
+            DebugLogI1("dont exist this visitor type:", (int)types[index]);
+            break;
+        }
+        SetDialogEvent(dialogEvent);
+        SwitchSceneToName("dialog");
     }
     else if (
         value == SUB1_1_1NAME || value == SUB1_1_2NAME ||
