@@ -215,6 +215,7 @@
     <ClInclude Include="LogsOutput.h" />
     <ClInclude Include="PlayingStageManager.h" />
     <ClInclude Include="ResortNameManager.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ResultFinalThought.h" />
     <ClInclude Include="ResultTips.h" />
     <ClInclude Include="SceneManager.h" />
@@ -237,6 +238,12 @@
     <ClInclude Include="VisitorManager.h" />
     <ClInclude Include="VisitorShower.h" />
     <ClInclude Include="VisitorThoughtManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HEW_GAME.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Image\fantasy_builder_icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
