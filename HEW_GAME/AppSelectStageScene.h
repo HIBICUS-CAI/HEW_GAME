@@ -19,6 +19,24 @@ void InitSelectStageScene()
 void UpdateSelectStageScene()
 {
     ClearSceneCamBuffer(GetSceneNodeByName("select"));
+
+    char* cam = GetSceneNodeByName("select")->GetCamAddr()->
+        GetCamBuffer();
+    int width = GetSceneNodeByName("select")->GetCamAddr()->
+        CameraWidth;
+    int height = GetSceneNodeByName("select")->GetCamAddr()->
+        CameraHeight;
+    for (int i = 0; i < width; i++)
+    {
+        *(cam + 55 * width + i) = '-';
+    }
+    for (int i = 0; i < (height - 56); i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            *(cam + (i + 56) * width + j / 2 * 2) = '.';
+        }
+    }
 }
 
 void TurnOffSelectStageScene()

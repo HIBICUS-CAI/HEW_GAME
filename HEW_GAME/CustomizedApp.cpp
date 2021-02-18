@@ -27,6 +27,7 @@
 #include "FinalResult.h"
 #include "TitleBuilderShower.h"
 #include "TitleKanaShower.h"
+#include "StageSelectBackShower.h"
 
 void AppInit()
 {
@@ -58,6 +59,7 @@ void AppInit()
     InitFinalResult();
     InitTitleBuilderShower();
     InitTitleKanaShower();
+    InitStageSelectBackGShower();
 
     SwitchSceneToName("title");
 }
@@ -79,6 +81,7 @@ void AppUpdate()
 
     case SELECTSCENEFLAG:
         UpdatePlayingStage();
+        UpdateStageSelectBackGShower();
         break;
 
     case NAMINGSCENEFLAG:

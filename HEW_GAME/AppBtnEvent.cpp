@@ -24,6 +24,7 @@
 #include "FinalResult.h"
 #include "TitleBuilderShower.h"
 #include "TitleKanaShower.h"
+#include "StageSelectBackShower.h"
 
 void TitleSceneBtnEvent(int value)
 {
@@ -189,18 +190,21 @@ void StageSelectSceneBtnEvent(int value)
         DebugLog("ready to load stage 1");
         SetPlayingStageByManager(STAGE_DEFAULT);
         SwitchSceneToName("naming");
+        ResetStageSelectBackGShower();
     }
     else if (value == BEGIN_STAGE_2)
     {
         DebugLog("ready to load stage 2");
         SetPlayingStageByManager(STAGE_BEACH);
         SwitchSceneToName("naming");
+        ResetStageSelectBackGShower();
     }
     else if (value == BEGIN_STAGE_3)
     {
         DebugLog("ready to load stage 3");
         SetPlayingStageByManager(STAGE_DESERT);
         SwitchSceneToName("naming");
+        ResetStageSelectBackGShower();
     }
     ReloadBackgroundByPlayingStage();
     ResetBuilder();
