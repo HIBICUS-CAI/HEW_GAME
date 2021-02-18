@@ -33,8 +33,7 @@ void TitleSceneBtnEvent(int value)
     if (value == START_NEW_GAME)
     {
         DebugLog("ready to start game");
-        SetDialogEvent(DIALOG_NEW_GAME);
-        SwitchSceneToName("dialog");
+        SwitchSceneToName("select");
     }
     else if (value == LOAD_GAME_DATA)
     {
@@ -158,7 +157,7 @@ void DialogSceneBtnEvent(int value)
             {
                 if (GetDialogEvent() == DIALOG_NEW_GAME)
                 {
-                    SwitchSceneToName("select");
+                    SwitchSceneToName("title");
                 }
                 ResetUsingPointerAndFlag();
             }
@@ -167,7 +166,7 @@ void DialogSceneBtnEvent(int value)
         {
             if (GetDialogEvent() == DIALOG_NEW_GAME)
             {
-                SwitchSceneToName("select");
+                SwitchSceneToName("title");
             }
             ResetUsingPointerAndFlag();
         }

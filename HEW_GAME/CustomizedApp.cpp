@@ -61,7 +61,9 @@ void AppInit()
     InitTitleKanaShower();
     InitStageSelectBackGShower();
 
-    SwitchSceneToName("title");
+
+    SetDialogEvent(DIALOG_NEW_GAME);
+    SwitchSceneToName("dialog");
 }
 
 void AppUpdate()
