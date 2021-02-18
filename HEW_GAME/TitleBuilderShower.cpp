@@ -69,7 +69,7 @@ void UpdateTitleBuilderShower()
             &g_TitleStandBuilder, g_TimeCountTBS % 60,
             POSITION_2D(
                 g_TitleStandBuilder.SubSprites->Position.posX,
-                g_TitleStandBuilder.SubSprites->Position.posY+
+                g_TitleStandBuilder.SubSprites->Position.posY +
                 (int)g_StandBuilderFallDis
             )
         );
@@ -80,7 +80,7 @@ void UpdateTitleBuilderShower()
         }
     }
 
-    if (g_TimeCountLoadWait>65)
+    if (g_TimeCountLoadWait > 65)
     {
         g_FinishWait = 1;
     }
@@ -109,6 +109,10 @@ void UpdateTitleBuilderShower()
                     g_TitleWalkBuilder + i, offset,
                     g_PosToShow[i] + POSITION_2D((int)g_PosOffsetDelta, 0)
                 );
+                GetSceneNodeByName("title")->WriteStrToCamBuffer(
+                    g_PosToShow[i] + POSITION_2D((int)g_PosOffsetDelta - 5, 10),
+                    "------------------------------"
+                );
             }
             else
             {
@@ -125,6 +129,10 @@ void UpdateTitleBuilderShower()
                     GetSceneNodeByName("title")->GetCamAddr(),
                     g_TitleWalkBuilder + i, offset,
                     g_PosToShow[i] - POSITION_2D((int)g_PosOffsetDelta, 0)
+                );
+                GetSceneNodeByName("title")->WriteStrToCamBuffer(
+                    g_PosToShow[i] - POSITION_2D((int)g_PosOffsetDelta + 5, -10),
+                    "------------------------------"
                 );
             }
         }
