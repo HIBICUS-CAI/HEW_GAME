@@ -131,15 +131,15 @@ void SwitchSAFlag()
 
 void SetPreSprite(char* preName)
 {
-    if (!strcmp(preName, "あなた"))
+    if (!strcmp(preName, "面接担当者一"))
     {
         g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_LUXUN;
     }
-    else if (!strcmp(preName, "担当者"))
+    else if (!strcmp(preName, "面接担当者二"))
     {
         g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_YUKICHI;
     }
-    else if (!strcmp(preName, "天使"))
+    else if (!strcmp(preName, "あなた"))
     {
         g_UsingTalkPeopleSprites = g_TalkPeopleSprites + CHARA_EINSTEIN;
     }
@@ -147,7 +147,7 @@ void SetPreSprite(char* preName)
 
 void SwitchSprite(char* thisName, char* preName)
 {
-    if (!strcmp(thisName, "あなた"))
+    if (!strcmp(thisName, "面接担当者一"))
     {
         if (strcmp(preName, thisName))
         {
@@ -158,7 +158,7 @@ void SwitchSprite(char* thisName, char* preName)
             SetPreSprite(preName);
         }
     }
-    else if (!strcmp(thisName, "担当者"))
+    else if (!strcmp(thisName, "面接担当者二"))
     {
         if (strcmp(preName, thisName))
         {
@@ -169,7 +169,7 @@ void SwitchSprite(char* thisName, char* preName)
             SetPreSprite(preName);
         }
     }
-    else if (!strcmp(thisName, "天使"))
+    else if (!strcmp(thisName, "あなた"))
     {
         if (strcmp(preName, thisName))
         {
