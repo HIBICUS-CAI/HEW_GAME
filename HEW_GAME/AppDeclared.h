@@ -125,6 +125,10 @@
 #define DIALOG_TIPS_RABBIT 0x09
 #define DIALOG_TIPS_WHALE 0x0a
 #define DIALOG_TIPS_CAMEL 0x0b
+#define DIALOG_RANK_S 0x0c
+#define DIALOG_RANK_A 0x0d
+#define DIALOG_RANK_B 0x0e
+#define DIALOG_RANK_C 0x0f
 
 /// <summary>
 /// •∑©`•Û≈‰¡–§Ú»°µ√

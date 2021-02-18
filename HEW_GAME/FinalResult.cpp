@@ -263,3 +263,8 @@ void SetShowRankFlg(int value)
         g_IsGoingToShow = 0;
     }
 }
+
+int GetFinalScore()
+{
+    return g_Score;
+}

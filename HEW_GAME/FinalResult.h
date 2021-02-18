@@ -73,3 +73,9 @@ int GetShowRankFlg();
 /// </summary>
 /// <param name="value">設定させたい値</param>
 void SetShowRankFlg(int value);
+
+/// <summary>
+/// 最終点数を取得
+/// </summary>
+/// <returns>最終点数</returns>
+int GetFinalScore();

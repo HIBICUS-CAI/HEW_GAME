@@ -172,6 +172,13 @@ void DialogSceneBtnEvent(int value)
                 {
                     SwitchSceneToName("build");
                 }
+                else if (GetDialogEvent() == DIALOG_RANK_S ||
+                    GetDialogEvent() == DIALOG_RANK_A ||
+                    GetDialogEvent() == DIALOG_RANK_B ||
+                    GetDialogEvent() == DIALOG_RANK_C)
+                {
+                    SwitchSceneToName("title");
+                }
                 ResetUsingPointerAndFlag();
             }
         }
@@ -192,6 +199,13 @@ void DialogSceneBtnEvent(int value)
                 GetDialogEvent() == DIALOG_TIPS_CAMEL)
             {
                 SwitchSceneToName("build");
+            }
+            else if (GetDialogEvent() == DIALOG_RANK_S ||
+                GetDialogEvent() == DIALOG_RANK_A ||
+                GetDialogEvent() == DIALOG_RANK_B ||
+                GetDialogEvent() == DIALOG_RANK_C)
+            {
+                SwitchSceneToName("title");
             }
             ResetUsingPointerAndFlag();
         }
@@ -214,6 +228,13 @@ void DialogSceneBtnEvent(int value)
             GetDialogEvent() == DIALOG_TIPS_CAMEL)
         {
             SwitchSceneToName("build");
+        }
+        else if (GetDialogEvent() == DIALOG_RANK_S ||
+            GetDialogEvent() == DIALOG_RANK_A ||
+            GetDialogEvent() == DIALOG_RANK_B ||
+            GetDialogEvent() == DIALOG_RANK_C)
+        {
+            SwitchSceneToName("title");
         }
         ResetUsingPointerAndFlag();
     }
@@ -304,34 +325,19 @@ void NamingSceneBtnEvent(int value)
         (GetUIObjByName("naming")->Texts + 7)->
             ChangeTextTo(temp);
 
-        VISITOR_TYPE types[4] = { VISITOR_TYPE::NONE, VISITOR_TYPE::NONE, VISITOR_TYPE::NONE, VISITOR_TYPE::NONE };
-        int typeCount = 0;
-        int alreadyExit = 0;
+        VISITOR_TYPE type = VISITOR_TYPE::NONE;
+        int visitorCount = 0;
         for (int i = 0; i < VISITOR_MAX_SIZE; i++)
         {
-            for (int j = 0; j < 4; j++)
+            if ((GetVisitorArray()+i)->IsUsing)
             {
-                if ((GetVisitorArray() + i)->Type == types[j] &&
-                    (GetVisitorArray() + i)->Type != VISITOR_TYPE::NONE)
-                {
-                    alreadyExit = 1;
-                    break;
-                }
-            }
-            if (alreadyExit)
-            {
-                alreadyExit = 0;
-            }
-            else if (typeCount < 4)
-            {
-                types[typeCount] = (GetVisitorArray() + i)->Type;
-                ++typeCount;
+                ++visitorCount;
             }
         }
         SetRandom();
-        int index = CreateRandomNumIn(0, typeCount - 1);
+        int index = CreateRandomNumIn(0, visitorCount - 1);
         int dialogEvent = 0;
-        switch (types[index])
+        switch ((GetVisitorArray() + index)->Type)
         {
         case VISITOR_TYPE::STUDENTS:
             dialogEvent = DIALOG_TIPS_STUDENT;
@@ -362,7 +368,7 @@ void NamingSceneBtnEvent(int value)
             break;
 
         default:
-            DebugLogI1("dont exist this visitor type:", (int)types[index]);
+            DebugLogI1("dont exist this visitor type:", (int)(GetVisitorArray() + index)->Type);
             break;
         }
         SetDialogEvent(dialogEvent);
@@ -1363,10 +1369,47 @@ void FinalResultSceneBtnEvent(int value)
     {
         DebugLog("ready to back to title scene");
         ResetPlayingStageByManager();
-        ResetVisitorManager();
         ResetTitleBuilderShower();
         ResetTitleKanaShower();
-        SwitchSceneToName("title");
+
+        int score = GetFinalScore();
+        int dialogEvent = 0;
+        if (score <= 80)
+        {
+            dialogEvent = DIALOG_RANK_C;
+        }
+        else if (score <= 99)
+        {
+            dialogEvent = DIALOG_RANK_B;
+        }
+        else
+        {
+            int canBeS = 0;
+            for (int i = 0; i < VISITOR_MAX_SIZE; i++)
+            {
+                if ((GetVisitorArray() + i)->Type ==
+                    VISITOR_TYPE::RABBIT ||
+                    (GetVisitorArray() + i)->Type ==
+                    VISITOR_TYPE::WHALE ||
+                    (GetVisitorArray() + i)->Type ==
+                    VISITOR_TYPE::CAMEL)
+                {
+                    canBeS = 1;
+                    break;
+                }
+            }
+
+            if (canBeS)
+            {
+                dialogEvent = DIALOG_RANK_S;
+            }
+            else
+            {
+                dialogEvent = DIALOG_RANK_A;
+            }
+        }
+        SetDialogEvent(dialogEvent);
+        SwitchSceneToName("dialog");
     }
     else if (value == SAVE_AT_1)
     {
@@ -1394,4 +1437,6 @@ void FinalResultSceneBtnEvent(int value)
             ErrorLog("cannot find this UI object");
         }
     }
+
+    ResetVisitorManager();
 }

@@ -144,6 +144,18 @@ void UpdateDialogShower()
                 SetIsDialogFinish(0);
             }
         }
+        else if (dialogEventID == DIALOG_RANK_S ||
+            dialogEventID == DIALOG_RANK_A ||
+            dialogEventID == DIALOG_RANK_B ||
+            dialogEventID == DIALOG_RANK_C)
+        {
+            DebugLog("ready to show rank review");
+            gp_GoingDialogEvent = GetDiaLogEventByEventID(dialogEventID);
+            if (gp_GoingDialogEvent != NULL)
+            {
+                SetIsDialogFinish(0);
+            }
+        }
         else
         {
             ErrorLogI1("cannot find this dialog ID", dialogEventID);
@@ -235,7 +247,7 @@ void SwitchSprite(char* thisName, char* preName)
             SwitchSAFlag();
 
             g_UsingTalkPeopleSprAni = g_TalkPeopleSprAni + CHARA_LUXUN;
-            
+
             SetPreSprite(preName);
         }
     }

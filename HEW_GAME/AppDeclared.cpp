@@ -95,6 +95,10 @@ void InitAndLoadDialogEvents()
     LoadSingleDialogEvnetFromID(DIALOG_TIPS_RABBIT, "Assets\\DialogTexts\\visitor_tips_rabbit.txt");
     LoadSingleDialogEvnetFromID(DIALOG_TIPS_WHALE, "Assets\\DialogTexts\\visitor_tips_whale.txt");
     LoadSingleDialogEvnetFromID(DIALOG_TIPS_CAMEL, "Assets\\DialogTexts\\visitor_tips_camel.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_RANK_S, "Assets\\DialogTexts\\rankreview_S.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_RANK_A, "Assets\\DialogTexts\\rankreview_A.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_RANK_B, "Assets\\DialogTexts\\rankreview_B.txt");
+    LoadSingleDialogEvnetFromID(DIALOG_RANK_C, "Assets\\DialogTexts\\rankreview_C.txt");
 }
 
 void LoadSingleDialogEvnetFromID(int id, const char* path)
