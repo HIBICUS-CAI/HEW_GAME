@@ -140,7 +140,7 @@ void UpdateVisitingBuildShower()
 
     if (ResortCanMove())
     {
-        g_VBudSOffsetPerFrameCount += 0.967f;
+        g_VBudSOffsetPerFrameCount += 0.967f * SPEED_ZOOM;
     }
 }
 

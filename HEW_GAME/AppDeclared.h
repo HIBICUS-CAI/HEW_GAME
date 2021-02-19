@@ -6,6 +6,8 @@
 #pragma once
 #include "GameAppStructs.h"
 
+#define SPEED_ZOOM 0.6923f
+
 #define SCENENODESIZE 20
 
 //------------------------------

@@ -33,9 +33,9 @@ void UpdateVisitingBackground()
 {
     if (ResortCanMove())
     {
-        g_ReOffsetPerFrameCountNear += 0.22f / (180.f / 120.f);
-        g_ReOffsetPerFrameCountFar += 0.1f / (180.f / 120.f);
-        g_ReOffsetPerFrameCountNrest += 0.967f;
+        g_ReOffsetPerFrameCountNear += 0.22f / (180.f / 120.f) * SPEED_ZOOM;
+        g_ReOffsetPerFrameCountFar += 0.1f / (180.f / 120.f) * SPEED_ZOOM;
+        g_ReOffsetPerFrameCountNrest += 0.967f * SPEED_ZOOM;
     }
 
     int i = 0;

@@ -55,7 +55,7 @@ void UpdateVisitingVisitorsShower()
             DrawSpriteAnimatorToCamBuffer(
                 GetSceneNodeByName("resort")->GetCamAddr(),
                 g_VisitorsInResortStand + i,
-                (g_TimeCountVVS) % 60,
+                (g_TimeCountVVS / 2) % 60,
                 POSITION_2D(70 + 10 * i, 30)
             );
         }

@@ -8,6 +8,8 @@
 #pragma comment(lib, "Winmm.lib")
 #endif // SOUNDBYHAL
 
+//#define NOTSOUND
+
 void InitSoundSys()
 {
 #ifdef SOUNDBYHAL
@@ -31,6 +33,7 @@ void InitSoundSys()
 void LoadSound(const char* fileName, const char* soundName,
     int isAlwaysNeed)
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     SOUNDFILE_LOADED* soundNotLoaded = NULL;
     for (int i = 0; i < SOUNDFILE_SIZE; i++)
@@ -83,6 +86,7 @@ void LoadSound(const char* fileName, const char* soundName,
         &(soundNotLoaded->SoundFileSize));
     ChangeSoundFileVolume(soundNotLoaded, 0.2);
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }
 
 #ifdef SOUNDBYHAL
@@ -91,7 +95,11 @@ SOUNDFILE_LOADED* GetSoundFile(const char* soundName)
 SOUNDFILE_IN_MEMBITE* GetSoundFile(const char* soundName)
 #endif // SOUNDBYHAL
 {
+#ifndef NOTSOUND
     return GetSoundFilesInMemBites(soundName);
+#else
+    return NULL;
+#endif // !NOTSOUND
 }
 
 #ifdef SOUNDBYHAL
@@ -100,6 +108,7 @@ void ChangeSoundFileVolume(const char* soundName, int vol)
 void ChangeSoundFileVolume(const char* soundName, float vol)
 #endif // SOUNDBYHAL
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     SOUNDFILE_LOADED* sound = GetSoundFile(soundName);
     setvolume(sound->Handle, vol);
@@ -114,6 +123,7 @@ void ChangeSoundFileVolume(const char* soundName, float vol)
         p[i] = (float)p[i] * vol;
     }
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }
 
 #ifdef SOUNDBYHAL
@@ -122,6 +132,7 @@ void ChangeSoundFileVolume(SOUNDFILE_LOADED* sound, int vol)
 void ChangeSoundFileVolume(SOUNDFILE_IN_MEMBITE* sound, float vol)
 #endif // SOUNDBYHAL
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     setvolume(sound->Handle, vol);
 #else
@@ -134,6 +145,7 @@ void ChangeSoundFileVolume(SOUNDFILE_IN_MEMBITE* sound, float vol)
         p[i] = (float)p[i] * vol;
     }
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }
 
 #ifdef SOUNDBYHAL
@@ -142,6 +154,7 @@ void PlayBackgroundMusic(SOUNDFILE_LOADED* sound)
 void PlayBackgroundMusic(SOUNDFILE_IN_MEMBITE* sound)
 #endif // SOUNDBYHAL
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     if (sound == NULL)
     {
@@ -163,6 +176,7 @@ void PlayBackgroundMusic(SOUNDFILE_IN_MEMBITE* sound)
         PlaySound((LPCSTR)sound->SoundFileInBitesWithVolume, NULL, SND_MEMORY | SND_ASYNC | SND_LOOP);
     }
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }
 
 #ifdef SOUNDBYHAL
@@ -171,6 +185,7 @@ void PlayEffectSound(SOUNDFILE_LOADED* sound)
 void PlayEffectSound(SOUNDFILE_IN_MEMBITE* sound)
 #endif // SOUNDBYHAL
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     if (sound == NULL)
     {
@@ -189,6 +204,7 @@ void PlayEffectSound(SOUNDFILE_IN_MEMBITE* sound)
     temp->SoundHandle = CreateThread(NULL, 0,
         (LPTHREAD_START_ROUTINE)PlaySingleSoundOnce, sound, 0, NULL);
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }
 
 #ifndef SOUNDBYHAL
@@ -209,6 +225,7 @@ void PlaySingleSoundOnce(SOUNDFILE_IN_MEMBITE* sound)
 
 void CheckAllSoundHasEnded()
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     for (int i = 0; i < SOUNDFILE_SIZE; i++)
     {
@@ -221,6 +238,7 @@ void CheckAllSoundHasEnded()
         }
     }
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }
 
 #ifdef SOUNDBYHAL
@@ -229,16 +247,19 @@ void UninstallSound(SOUNDFILE_LOADED* sound)
 void UninstallSound(SOUNDFILE_IN_MEMBITE* sound)
 #endif // SOUNDBYHAL
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     closesound(sound->Handle);
     *sound = SOUNDFILE_LOADED();
 #else
 
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }
 
 void TurnOffSoundSys()
 {
+#ifndef NOTSOUND
 #ifdef SOUNDBYHAL
     for (int i = 0; i < SOUNDFILE_SIZE; i++)
     {
@@ -257,4 +278,5 @@ void TurnOffSoundSys()
         *(GetSoundFilesInMemBitesArray() + i) = SOUNDFILE_IN_MEMBITE();
     }
 #endif // SOUNDBYHAL
+#endif // !NOTSOUND
 }

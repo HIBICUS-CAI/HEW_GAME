@@ -42,7 +42,7 @@ void UpdateBuilder()
     {
         DrawSpriteAnimatorToCamBuffer(
             GetSceneNodeByName("build")->GetCamAddr(),
-            &g_StandingBuilder, g_TimeCountBMBuilder++ % 60,
+            &g_StandingBuilder, g_TimeCountBMBuilder++ / 2 % 60,
             POSITION_2D(30, 30)
         );
     }
@@ -55,7 +55,7 @@ void UpdateBuilder()
                 &g_WalkingBuilder, 60 - (g_TimeCountBMBuilder % 60) - 1,
                 POSITION_2D(30, 30)
             );
-            g_TimeCountBMBuilder += 2;
+            g_TimeCountBMBuilder += 1;
             if (g_TimeCountBMMoving > 60)
             {
                 SetBuilderMovFlg(BUILDER_STOP);
@@ -88,7 +88,7 @@ void UpdateBuilder()
                 &g_WalkingBuilder, g_TimeCountBMBuilder % 60,
                 POSITION_2D(30, 30)
             );
-            g_TimeCountBMBuilder += 2;
+            g_TimeCountBMBuilder += 1;
             if (g_TimeCountBMMoving > 60)
             {
                 SetBuilderMovFlg(BUILDER_STOP);

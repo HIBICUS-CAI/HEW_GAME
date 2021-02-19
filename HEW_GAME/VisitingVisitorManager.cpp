@@ -14,7 +14,7 @@ OBJECT g_VisitorsColl;
 int g_IsStop = 0;
 int g_CurrColliedOffset = 0;
 int g_CurrOffset = 0;
-int g_FinalTime = 200;
+int g_FinalTime = 300;
 int g_ShowedNameFlg = 0;
 
 void InitVisitingVisitorManager()
@@ -26,7 +26,7 @@ void InitVisitingVisitorManager()
     g_IsStop = 0;
     g_CurrColliedOffset = 0;
     g_CurrOffset = 0;
-    g_FinalTime = 200;
+    g_FinalTime = 300;
     g_ShowedNameFlg = 0;
 
     for (int i = 0; i < 11; i++)
@@ -98,7 +98,7 @@ void UpdateVisitingVisitorManager()
         }
         else
         {
-            g_FrameTimeCount += 0.985f;
+            g_FrameTimeCount += 0.985f * SPEED_ZOOM;
             for (int i = 0; i < 11; i++)
             {
                 g_BuildingBaseColl[i].Position =
@@ -172,7 +172,7 @@ void ResetResortMoveFlag()
     g_IsStop = 0;
     g_CurrColliedOffset = 0;
     g_CurrOffset = 0;
-    g_FinalTime = 200;
+    g_FinalTime = 300;
     g_ShowedNameFlg = 0;
 
     for (int i = 0; i < 11; i++)

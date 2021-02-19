@@ -51,16 +51,16 @@ void UpdateTitleKanaShower()
     {
         g_FallDistance = 0.5f * 9.8f *
             (0.016f * (float)g_TimeCountTKS) *
-            (0.016f * (float)g_TimeCountTKS) * 30.f;
+            (0.016f * (float)g_TimeCountTKS) * 30.f * SPEED_ZOOM;
 
         if (g_NeedToJumpWhenTouchTKS &&
             (int)g_FallDistance >= 25)
         {
             g_JumpDistance = (0.5f * 0.016f * 9.8f * g_TimeCountTKS * 30.f) *
-                0.016f * (float)g_TimeCountJumpTKS -
+                0.016f * (float)g_TimeCountJumpTKS * SPEED_ZOOM -
                 0.5f * 9.8f *
                 (0.016f * (float)g_TimeCountJumpTKS) *
-                (0.016f * (float)g_TimeCountJumpTKS) * 30.f;
+                (0.016f * (float)g_TimeCountJumpTKS) * 30.f * SPEED_ZOOM;
         }
 
         for (int i = 0; i < 7; i++)

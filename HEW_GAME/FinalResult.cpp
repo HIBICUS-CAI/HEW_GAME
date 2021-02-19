@@ -120,7 +120,7 @@ void UpdateFinalResult()
     {
         DrawSpriteAnimatorToCamBuffer(
             GetSceneNodeByName("result")->GetCamAddr(),
-            g_RankSA + g_RankOffset, (g_TimeCountFR++) % 60,
+            g_RankSA + g_RankOffset, (g_TimeCountFR++ / 2) % 60,
             (g_RankSA + g_RankOffset)->SubSprites->Position
         );
 

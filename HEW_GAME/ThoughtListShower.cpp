@@ -24,7 +24,7 @@ void UpdateThoughtListShower()
         if ((g_ThoughtListSprites + i)->Visible)
         {
             DrawThoughtSpriteByOffset(i);
-            if (g_TimeCountTLS % 2)
+            if (!(g_TimeCountTLS % 3))
             {
                 (g_ThoughtListSprites + i)->Position.posX =
                     (g_ThoughtListSprites + i)->Position.posX - 1;

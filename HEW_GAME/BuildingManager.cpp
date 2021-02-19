@@ -30,7 +30,7 @@ void ResetAllEventBtn()
 
 void UpdateBuildingManager()
 {
-    g_TimeCountBUILDM += 1.3f;
+    g_TimeCountBUILDM += 1.3f * SPEED_ZOOM;
     char time[64];
     sprintf_s(time, sizeof(time), "%s%d", "écÇËéûä‘ÅF",
         60 - (int)g_TimeCountBUILDM / 60);

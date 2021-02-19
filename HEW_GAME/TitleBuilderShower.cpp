@@ -62,11 +62,11 @@ void UpdateTitleBuilderShower()
     {
         g_StandBuilderFallDis = 0.5f * 9.8f *
             (0.016f * (float)g_TimeCountTBSFall) *
-            (0.016f * (float)g_TimeCountTBSFall) * 30.f;
+            (0.016f * (float)g_TimeCountTBSFall) * 30.f * SPEED_ZOOM;
 
         DrawSpriteAnimatorToCamBuffer(
             GetSceneNodeByName("title")->GetCamAddr(),
-            &g_TitleStandBuilder, g_TimeCountTBS % 60,
+            &g_TitleStandBuilder, g_TimeCountTBS / 2 % 60,
             POSITION_2D(
                 g_TitleStandBuilder.SubSprites->Position.posX,
                 g_TitleStandBuilder.SubSprites->Position.posY +
@@ -146,11 +146,11 @@ void UpdateTitleBuilderShower()
 
         if (g_SwitchFlg)
         {
-            g_PosOffsetDelta += 0.9f;
+            g_PosOffsetDelta += 0.9f * SPEED_ZOOM;
         }
         else
         {
-            g_PosOffsetDelta -= 0.9f;
+            g_PosOffsetDelta -= 0.9f * SPEED_ZOOM;
         }
 
         if (g_PosOffsetDelta > 200.f)
