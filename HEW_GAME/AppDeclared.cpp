@@ -1,5 +1,6 @@
 #include "AppDeclared.h"
 #include "SpriteAnimator.h"
+#include "SoundManager.h"
 
 SCENENODE g_SceneNodes[SCENENODESIZE];
 
@@ -610,4 +611,28 @@ SPRITE* GetBuildSceneBase()
 SPRITE* GetResortSceneBase()
 {
     return g_ResortSceneBase;
+}
+
+void LoadSoundFilesAlwaysUse()
+{
+    LoadSound(
+        "Assets\\Sounds\\button_move.mp3",
+        "button_move", 1
+    );
+    LoadSound(
+        "Assets\\Sounds\\button_event.mp3",
+        "button_event", 1
+    );
+    LoadSound(
+        "Assets\\Sounds\\dialog_next.mp3",
+        "dialog_next", 1
+    );
+    LoadSound(
+        "Assets\\Sounds\\build_confirm.mp3",
+        "build_confirm", 1
+    );
+    LoadSound(
+        "Assets\\Sounds\\build_finish.mp3",
+        "build_finish", 1
+    );
 }

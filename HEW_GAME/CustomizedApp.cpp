@@ -34,6 +34,7 @@ void AppInit()
     CreateAllUIObjs();
     InitSceneNodes();
     InitAndLoadDialogEvents();
+    LoadSoundFilesAlwaysUse();
     SetSwitchEffectFlag(0);
     SetRandom();
     SetSwitchEffectStyle(CreateRandomNumIn(1, 4));
@@ -64,6 +65,11 @@ void AppInit()
 
     SetDialogEvent(DIALOG_NEW_GAME);
     SwitchSceneToName("dialog");
+    LoadSound(
+        "Assets\\Sounds\\title.mp3",
+        "title_bgm"
+    );
+    PlayBackgroundMusic(GetSoundFile("title_bgm"));
 }
 
 void AppUpdate()
@@ -132,6 +138,14 @@ void AppPostPrint()
 
 void AppKeyboardEvent(int keyCode)
 {
+    if (keyCode == I_VALUE ||
+        keyCode == J_VALUE ||
+        keyCode == K_VALUE ||
+        keyCode == L_VALUE)
+    {
+        PlayEffectSound(GetSoundFile("button_move"));
+    }
+
     if (GetSceneFlag() == BUILDINGSCENEFLAG)
     {
         if (GetBuilderMovFlg() == BUILDER_STOP &&
@@ -154,6 +168,23 @@ void AppKeyboardEvent(int keyCode)
 
 void AppButtonEvent(int value)
 {
+    if (value == DIALOG_NEXT)
+    {
+        PlayEffectSound(GetSoundFile("dialog_next"));
+    }
+    else if (value == CONFIRM_BUILDING)
+    {
+        PlayEffectSound(GetSoundFile("build_confirm"));
+    }
+    else if (value == BUILD_IS_END)
+    {
+        PlayEffectSound(GetSoundFile("build_finish"));
+    }
+    else
+    {
+        PlayEffectSound(GetSoundFile("button_event"));
+    }
+
     switch (GetSceneFlag())
     {
     case TESTSCENEFLAG:

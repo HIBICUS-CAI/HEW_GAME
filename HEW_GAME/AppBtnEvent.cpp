@@ -5,6 +5,7 @@
 #include "Tools.h"
 #include "DeclaredValues.h"
 #include "SceneManager.h"
+#include "SoundManager.h"
 #include "DialogShower.h"
 #include "PlayingStageManager.h"
 #include "VisitorManager.h"
@@ -178,6 +179,12 @@ void DialogSceneBtnEvent(int value)
                     GetDialogEvent() == DIALOG_RANK_C)
                 {
                     SwitchSceneToName("title");
+                    LoadSound(
+                        "Assets\\Sounds\\title.mp3",
+                        "title_bgm"
+                    );
+                    UninstallSound(GetSoundFile("result"));
+                    PlayBackgroundMusic(GetSoundFile("title_bgm"));
                 }
                 ResetUsingPointerAndFlag();
             }
@@ -206,6 +213,12 @@ void DialogSceneBtnEvent(int value)
                 GetDialogEvent() == DIALOG_RANK_C)
             {
                 SwitchSceneToName("title");
+                LoadSound(
+                    "Assets\\Sounds\\title.mp3",
+                    "title_bgm"
+                );
+                UninstallSound(GetSoundFile("result"));
+                PlayBackgroundMusic(GetSoundFile("title_bgm"));
             }
             ResetUsingPointerAndFlag();
         }
@@ -235,6 +248,12 @@ void DialogSceneBtnEvent(int value)
             GetDialogEvent() == DIALOG_RANK_C)
         {
             SwitchSceneToName("title");
+            LoadSound(
+                "Assets\\Sounds\\title.mp3",
+                "title_bgm"
+            );
+            UninstallSound(GetSoundFile("result"));
+            PlayBackgroundMusic(GetSoundFile("title_bgm"));
         }
         ResetUsingPointerAndFlag();
     }
@@ -248,6 +267,12 @@ void StageSelectSceneBtnEvent(int value)
         SetPlayingStageByManager(STAGE_DEFAULT);
         SwitchSceneToName("naming");
         ResetStageSelectBackGShower();
+        LoadSound(
+            "Assets\\Sounds\\stage_default.mp3",
+            "stage_default"
+        );
+        UninstallSound(GetSoundFile("title_bgm"));
+        PlayBackgroundMusic(GetSoundFile("stage_default"));
     }
     else if (value == BEGIN_STAGE_2)
     {
@@ -255,6 +280,12 @@ void StageSelectSceneBtnEvent(int value)
         SetPlayingStageByManager(STAGE_BEACH);
         SwitchSceneToName("naming");
         ResetStageSelectBackGShower();
+        LoadSound(
+            "Assets\\Sounds\\stage_beach.mp3",
+            "stage_beach"
+        );
+        UninstallSound(GetSoundFile("title_bgm"));
+        PlayBackgroundMusic(GetSoundFile("stage_beach"));
     }
     else if (value == BEGIN_STAGE_3)
     {
@@ -262,6 +293,12 @@ void StageSelectSceneBtnEvent(int value)
         SetPlayingStageByManager(STAGE_DESERT);
         SwitchSceneToName("naming");
         ResetStageSelectBackGShower();
+        LoadSound(
+            "Assets\\Sounds\\stage_desert.mp3",
+            "stage_desert"
+        );
+        UninstallSound(GetSoundFile("title_bgm"));
+        PlayBackgroundMusic(GetSoundFile("stage_desert"));
     }
     ReloadBackgroundByPlayingStage();
     ResetBuilder();

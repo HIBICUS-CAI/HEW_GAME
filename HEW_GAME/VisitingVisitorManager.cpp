@@ -1,6 +1,7 @@
 #include "VisitingVisitorManager.h"
 #include "AppDeclared.h"
 #include "SceneManager.h"
+#include "SoundManager.h"
 #include "ThoughtListManager.h"
 #include "ResultFinalThought.h"
 
@@ -124,6 +125,23 @@ void UpdateVisitingVisitorManager()
             {
                 SwitchSceneToName("result");
                 CreateResultFinalThought();
+                LoadSound(
+                    "Assets\\Sounds\\result.mp3",
+                    "result"
+                );
+                if (GetPlayingStage()==STAGE_DEFAULT)
+                {
+                    UninstallSound(GetSoundFile("stage_default"));
+                }
+                else if (GetPlayingStage()==STAGE_BEACH)
+                {
+                    UninstallSound(GetSoundFile("stage_beach"));
+                }
+                else if (GetPlayingStage()==STAGE_DESERT)
+                {
+                    UninstallSound(GetSoundFile("stage_desert"));
+                }
+                PlayBackgroundMusic(GetSoundFile("result"));
             }
         }
     }

@@ -375,3 +375,8 @@ SPRITE_ANIME* GetDesertSAs();
 SPRITE* GetBuildSceneBase();
 
 SPRITE* GetResortSceneBase();
+
+/// <summary>
+/// いつも使ている音声ファイルをロードする
+/// </summary>
+void LoadSoundFilesAlwaysUse();
