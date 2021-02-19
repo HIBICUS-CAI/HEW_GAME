@@ -1,31 +1,31 @@
 //------------------------------------------------------------------------
-// ファイル名: VisitingBackgroundShower.h
-// 機能: リゾートに各ステージのスプライトを表示
+// 僼傽僀儖柤: VisitingBackgroundShower.h
+// 婡擻: 儕僝乕僩偵奺僗僥乕僕偺僗僾儔僀僩傪昞帵
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// リゾートに各ステージのスプライトを初期化する
+/// 儕僝乕僩偵奺僗僥乕僕偺僗僾儔僀僩傪弶婜壔偡傞
 /// </summary>
 void InitVisitingBackground();
 
 /// <summary>
-/// リゾートに各ステージのスプライトを再ロード
+/// 儕僝乕僩偵奺僗僥乕僕偺僗僾儔僀僩傪嵞儘乕僪
 /// </summary>
 void ReloadVisitingBackground();
 
 /// <summary>
-/// リゾートに各ステージのスプライトを描画する
+/// 儕僝乕僩偵奺僗僥乕僕偺僗僾儔僀僩傪昤夋偡傞
 /// </summary>
 void UpdateVisitingBackground();
 
 /// <summary>
-/// リゾートに各ステージのスプライトを閉じる
+/// 儕僝乕僩偵奺僗僥乕僕偺僗僾儔僀僩傪暵偠傞
 /// </summary>
 void TurnOffVisitingBackground();
 
 /// <summary>
-/// リゾートに関しての内容をリセット
+/// 儕僝乕僩偵娭偟偰偺撪梕傪儕僙僢僩
 /// </summary>
 void ResetResortBGTimerAndOffset();

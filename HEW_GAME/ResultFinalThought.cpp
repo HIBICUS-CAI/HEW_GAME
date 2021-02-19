@@ -28,7 +28,7 @@ void CreateResultFinalThought()
     BUILDING* buildingsArray = GetEditBuildingsArray();
     int thoughtFlg = 0;
 
-    // 宿泊地がない
+    // 廻攽抧偑側偄
     thoughtFlg = 1;
     for (int i = 0; i < BUILDINGS_SIZE; i++)
     {
@@ -46,14 +46,14 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "このリゾートなぜ泊まる場所何一つもないですか？");
+                    "偙偺儕僝乕僩側偤攽傑傞応強壗堦偮傕側偄偱偡偐丠");
                 VisitorFeelVeryBad(VISITOR_TYPE::NONE);
                 break;
             }
         }
     }
 
-    // 空けてる場所が長い
+    // 嬻偗偰傞応強偑挿偄
     thoughtFlg = 0;
     int emptyLen = 0;
     for (int i = 0; i < BUILDINGS_SIZE; i++)
@@ -86,14 +86,14 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "連続未利用場所が多いね、バランスがよくないかもしれません");
+                    "楢懕枹棙梡応強偑懡偄偹丄僶儔儞僗偑傛偔側偄偐傕偟傟傑偣傫");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
         }
     }
 
-    // 施設が多すぎ
+    // 巤愝偑懡偡偓
     thoughtFlg = 0;
     int confirmedCount = 0;
     for (int i = 0; i < BUILDINGS_SIZE; i++)
@@ -114,14 +114,14 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "施設の数が多くない？ここは遊園地ではないし");
+                    "巤愝偺悢偑懡偔側偄丠偙偙偼梀墍抧偱偼側偄偟");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
         }
     }
 
-    // 食事がない
+    // 怘帠偑側偄
     thoughtFlg = 1;
     for (int i = 0; i < BUILDINGS_SIZE; i++)
     {
@@ -139,14 +139,14 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "食事処がないね、腹はペコペコになっています");
+                    "怘帠張偑側偄偹丄暊偼儁僐儁僐偵側偭偰偄傑偡");
                 VisitorFeelVeryBad(VISITOR_TYPE::NONE);
                 break;
             }
         }
     }
 
-    // 飲み物がない
+    // 堸傒暔偑側偄
     thoughtFlg = 1;
     for (int i = 0; i < BUILDINGS_SIZE; i++)
     {
@@ -164,14 +164,14 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "飲み物がないか、喉が焼いていますよ．．．");
+                    "堸傒暔偑側偄偐丄岮偑從偄偰偄傑偡傛丏丏丏");
                 VisitorFeelVeryBad(VISITOR_TYPE::NONE);
                 break;
             }
         }
     }
 
-    // 同じ種類の施設が多すぎ
+    // 摨偠庬椶偺巤愝偑懡偡偓
     int countByType[9] = { 0,0,0,0,0,0,0,0,0 };
     for (int i = 0; i < BUILDINGS_SIZE; i++)
     {
@@ -187,7 +187,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "温泉系の施設の数が多くない？");
+                    "壏愹宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -200,7 +200,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "食事系の施設の数が多くない？");
+                    "怘帠宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -213,7 +213,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "プール系の施設の数が多くない？");
+                    "僾乕儖宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -226,7 +226,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "飲み物系の施設の数が多くない？");
+                    "堸傒暔宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -239,7 +239,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "映画系の施設の数が多くない？");
+                    "塮夋宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -252,7 +252,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "カラオケ系の施設の数が多くない？");
+                    "僇儔僆働宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -265,7 +265,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "宿泊地系の施設の数が多くない？");
+                    "廻攽抧宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -278,7 +278,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "手作り系の施設の数が多くない？");
+                    "庤嶌傝宯偺巤愝偺悢偑懡偔側偄丠");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
                 break;
             }
@@ -301,7 +301,7 @@ void CreateResultFinalThought()
             if (!strcmp(g_FinalThought[i], ""))
             {
                 strcpy_s(g_FinalThought[i], sizeof(g_FinalThought[i]),
-                    "このリゾートなかなか楽しいですね");
+                    "偙偺儕僝乕僩側偐側偐妝偟偄偱偡偹");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
                 break;
             }

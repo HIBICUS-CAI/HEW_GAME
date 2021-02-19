@@ -1,26 +1,26 @@
 //------------------------------------------------------------------------
-// ファイル名: TitleKanaShower.h
-// 機能: タイトルシーンにタイトル仮名を表示する
+// 僼傽僀儖柤: TitleKanaShower.h
+// 婡擻: 僞僀僩儖僔乕儞偵僞僀僩儖壖柤傪昞帵偡傞
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// タイトル仮名表示に関しての機能を初期化する
+/// 僞僀僩儖壖柤昞帵偵娭偟偰偺婡擻傪弶婜壔偡傞
 /// </summary>
 void InitTitleKanaShower();
 
 /// <summary>
-/// タイトル仮名表示に関しての機能を実行する
+/// 僞僀僩儖壖柤昞帵偵娭偟偰偺婡擻傪幚峴偡傞
 /// </summary>
 void UpdateTitleKanaShower();
 
 /// <summary>
-/// タイトル仮名表示に関しての機能を閉じる
+/// 僞僀僩儖壖柤昞帵偵娭偟偰偺婡擻傪暵偠傞
 /// </summary>
 void TurnOffTitleKanaShower();
 
 /// <summary>
-/// タイトル仮名表示に関しての機能をリセットする
+/// 僞僀僩儖壖柤昞帵偵娭偟偰偺婡擻傪儕僙僢僩偡傞
 /// </summary>
 void ResetTitleKanaShower();

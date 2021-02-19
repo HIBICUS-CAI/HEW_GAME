@@ -32,7 +32,7 @@ void UpdateBuildingManager()
 {
     g_TimeCountBUILDM += 1.3f;
     char time[64];
-    sprintf_s(time, sizeof(time), "%s%d", "残り時間：",
+    sprintf_s(time, sizeof(time), "%s%d", "巆傝帪娫丗",
         60 - (int)g_TimeCountBUILDM / 60);
     (GetUIObjByName("build")->Texts)->ChangeTextTo(time);
     if (g_TimeCountBUILDM > 3600.f)
@@ -54,121 +54,121 @@ void UpdateBuildingManager()
     case B_TYPE_HOTSPRING:
         (event->Buttons + 0)->Event = EVNT_NORMALSPR;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "    単純温泉    ");
+            sizeof((event->Buttons + 0)->Text), "    扨弮壏愹    ");
         (event->Buttons + 1)->Event = EVNT_SKINCARESPR;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "     重曹泉     ");
+            sizeof((event->Buttons + 1)->Text), "     廳憘愹     ");
         (event->Buttons + 2)->Event = EVNT_WARMSPR;
         strcpy_s((event->Buttons + 2)->Text,
-            sizeof((event->Buttons + 2)->Text), "    塩化物泉    ");
+            sizeof((event->Buttons + 2)->Text), "    墫壔暔愹    ");
         (event->Buttons + 3)->Event = EVNT_HEALTHSPR;
         strcpy_s((event->Buttons + 3)->Text,
-            sizeof((event->Buttons + 3)->Text), "     硫黄泉     ");
+            sizeof((event->Buttons + 3)->Text), "     棸墿愹     ");
         break;
 
     case B_TYPE_FOOD:
         (event->Buttons + 0)->Event = EVNT_EATBBQ;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "  バーベキュー  ");
+            sizeof((event->Buttons + 0)->Text), "  僶乕儀僉儏乕  ");
         (event->Buttons + 1)->Event = EVNT_EATLIGHTFOOD;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "     喫茶店     ");
+            sizeof((event->Buttons + 1)->Text), "     媔拑揦     ");
         (event->Buttons + 2)->Event = EVNT_EATUNAGI;
         strcpy_s((event->Buttons + 2)->Text,
-            sizeof((event->Buttons + 2)->Text), "    うなぎ屋    ");
+            sizeof((event->Buttons + 2)->Text), "    偆側偓壆    ");
         (event->Buttons + 3)->Event = EVNT_EATRAMEN;
         strcpy_s((event->Buttons + 3)->Text,
-            sizeof((event->Buttons + 3)->Text), "   ラーメン屋   ");
+            sizeof((event->Buttons + 3)->Text), "   儔乕儊儞壆   ");
         (event->Buttons + 4)->Event = EVNT_EATCURRY;
         strcpy_s((event->Buttons + 4)->Text,
-            sizeof((event->Buttons + 4)->Text), "    カレー屋    ");
+            sizeof((event->Buttons + 4)->Text), "    僇儗乕壆    ");
         (event->Buttons + 5)->Event = EVNT_EATFRIEDNOODLE;
         strcpy_s((event->Buttons + 5)->Text,
-            sizeof((event->Buttons + 5)->Text), "    焼きそば    ");
+            sizeof((event->Buttons + 5)->Text), "    從偒偦偽    ");
         break;
 
     case B_TYPE_POOL:
         (event->Buttons + 0)->Event = EVNT_POLNORMAL;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "  普通のプール  ");
+            sizeof((event->Buttons + 0)->Text), "  晛捠偺僾乕儖  ");
         (event->Buttons + 1)->Event = EVNT_POLFLUSH;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "   流水プール   ");
+            sizeof((event->Buttons + 1)->Text), "   棳悈僾乕儖   ");
         (event->Buttons + 2)->Event = EVNT_POLNIGHT;
         strcpy_s((event->Buttons + 2)->Text,
-            sizeof((event->Buttons + 2)->Text), "  ナイトプール  ");
+            sizeof((event->Buttons + 2)->Text), "  僫僀僩僾乕儖  ");
         (event->Buttons + 3)->Event = EVNT_POLINFINITY;
         strcpy_s((event->Buttons + 3)->Text,
-            sizeof((event->Buttons + 3)->Text), " infiniteプール ");
+            sizeof((event->Buttons + 3)->Text), " infinite僾乕儖 ");
         break;
 
     case B_TYPE_DRINK:
         (event->Buttons + 0)->Event = EVNT_DRKMILKTEA;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "    タピオカ    ");
+            sizeof((event->Buttons + 0)->Text), "    僞僺僆僇    ");
         (event->Buttons + 1)->Event = EVNT_DRKCAFE;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "     カフェ     ");
+            sizeof((event->Buttons + 1)->Text), "     僇僼僃     ");
         (event->Buttons + 2)->Event = EVNT_DRKTEA;
         strcpy_s((event->Buttons + 2)->Text,
-            sizeof((event->Buttons + 2)->Text), "      茶室      ");
+            sizeof((event->Buttons + 2)->Text), "      拑幒      ");
         (event->Buttons + 3)->Event = EVNT_DRKBAR;
         strcpy_s((event->Buttons + 3)->Text,
-            sizeof((event->Buttons + 3)->Text), "      バー      ");
+            sizeof((event->Buttons + 3)->Text), "      僶乕      ");
         (event->Buttons + 4)->Event = EVNT_DRKKARUPISU;
         strcpy_s((event->Buttons + 4)->Text,
-            sizeof((event->Buttons + 4)->Text), "  カルピス放題  ");
+            sizeof((event->Buttons + 4)->Text), "  僇儖僺僗曻戣  ");
         (event->Buttons + 5)->Event = EVNT_DRKALCOHOL;
         strcpy_s((event->Buttons + 5)->Text,
-            sizeof((event->Buttons + 5)->Text), "      酒場      ");
+            sizeof((event->Buttons + 5)->Text), "      庰応      ");
         break;
 
     case B_TYPE_CINEMA:
         (event->Buttons + 0)->Event = EVNT_MOVHOR;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "     ホラー     ");
+            sizeof((event->Buttons + 0)->Text), "     儂儔乕     ");
         (event->Buttons + 1)->Event = EVNT_MOVLOVE;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "    れんあい    ");
+            sizeof((event->Buttons + 1)->Text), "    傟傫偁偄    ");
         (event->Buttons + 2)->Event = EVNT_MOVSF;
         strcpy_s((event->Buttons + 2)->Text,
-            sizeof((event->Buttons + 2)->Text), "      ＳＦ      ");
+            sizeof((event->Buttons + 2)->Text), "      俽俥      ");
         (event->Buttons + 3)->Event = EVNT_MOVACT;
         strcpy_s((event->Buttons + 3)->Text,
-            sizeof((event->Buttons + 3)->Text), "   アクション   ");
+            sizeof((event->Buttons + 3)->Text), "   傾僋僔儑儞   ");
         (event->Buttons + 4)->Event = EVNT_MOVCOMEDY;
         strcpy_s((event->Buttons + 4)->Text,
-            sizeof((event->Buttons + 4)->Text), "    コメディ    ");
+            sizeof((event->Buttons + 4)->Text), "    僐儊僨傿    ");
         (event->Buttons + 5)->Event = EVNT_MOVDOCUMENTARY;
         strcpy_s((event->Buttons + 5)->Text,
-            sizeof((event->Buttons + 5)->Text), "      伝記      ");
+            sizeof((event->Buttons + 5)->Text), "      揱婰      ");
         break;
 
     case B_TYPE_KARAOKE:
         (event->Buttons + 0)->Event = EVNT_KARASINGLE;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), " 一人でカラオケ ");
+            sizeof((event->Buttons + 0)->Text), " 堦恖偱僇儔僆働 ");
         (event->Buttons + 1)->Event = EVNT_KARAMUTLI;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "  皆でカラオケ  ");
+            sizeof((event->Buttons + 1)->Text), "  奆偱僇儔僆働  ");
         break;
 
     case B_TYPE_RESTPLACE:
         (event->Buttons + 0)->Event = EVNT_RESTCAMP;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "   キャンプ場   ");
+            sizeof((event->Buttons + 0)->Text), "   僉儍儞僾応   ");
         (event->Buttons + 1)->Event = EVNT_RESTHOTEL;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "     ホテル     ");
+            sizeof((event->Buttons + 1)->Text), "     儂僥儖     ");
         break;
 
     case B_TYPE_MAKEBYHAND:
         (event->Buttons + 0)->Event = EVNT_RESTCAMP;
         strcpy_s((event->Buttons + 0)->Text,
-            sizeof((event->Buttons + 0)->Text), "  手作りお土産  ");
+            sizeof((event->Buttons + 0)->Text), "  庤嶌傝偍搚嶻  ");
         (event->Buttons + 1)->Event = EVNT_RESTHOTEL;
         strcpy_s((event->Buttons + 1)->Text,
-            sizeof((event->Buttons + 1)->Text), "手作アクセサリー");
+            sizeof((event->Buttons + 1)->Text), "庤嶌傾僋僙僒儕乕");
         break;
 
     default:
@@ -184,133 +184,133 @@ void UpdateBuildingManager()
     switch (currType)
     {
     case B_TYPE_HOTSPRING:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：温泉");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗壏愹");
         break;
     case B_TYPE_FOOD:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：食事店");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗怘帠揦");
         break;
     case B_TYPE_POOL:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：プール");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗僾乕儖");
         break;
     case B_TYPE_DRINK:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：飲み物店");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗堸傒暔揦");
         break;
     case B_TYPE_CINEMA:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：映画館");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗塮夋娰");
         break;
     case B_TYPE_KARAOKE:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：カラオケ");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗僇儔僆働");
         break;
     case B_TYPE_RESTPLACE:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：宿泊地");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗廻攽抧");
         break;
     case B_TYPE_MAKEBYHAND:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：手作り店");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗庤嶌傝揦");
         break;
     default:
-        (temp->Texts + 2)->ChangeTextTo("施設の種類：");
+        (temp->Texts + 2)->ChangeTextTo("巤愝偺庬椶丗");
         break;
     }
     switch (currEvent)
     {
     case B_EVNT_NORMALSPR:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：単純温泉");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗扨弮壏愹");
         break;
     case B_EVNT_SKINCARESPR:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：重曹泉");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗廳憘愹");
         break;
     case B_EVNT_WARMSPR:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：塩化物泉");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗墫壔暔愹");
         break;
     case B_EVNT_HEALTHSPR:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：硫黄泉");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗棸墿愹");
         break;
     case B_EVNT_EATBBQ:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：バーベキュー");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僶乕儀僉儏乕");
         break;
     case B_EVNT_EATLIGHTFOOD:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：喫茶店");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗媔拑揦");
         break;
     case B_EVNT_EATUNAGI:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：うなぎ屋");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗偆側偓壆");
         break;
     case B_EVNT_EATRAMEN:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：ラーメン屋");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗儔乕儊儞壆");
         break;
     case B_EVNT_EATCURRY:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：カレー");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僇儗乕");
         break;
     case B_EVNT_EATFRIEDNOODLE:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：焼きそば");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗從偒偦偽");
         break;
     case B_EVNT_POLNORMAL:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：普通のプール");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗晛捠偺僾乕儖");
         break;
     case B_EVNT_POLFLUSH:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：流水プール");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗棳悈僾乕儖");
         break;
     case B_EVNT_POLNIGHT:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：ナイトプール");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僫僀僩僾乕儖");
         break;
     case B_EVNT_POLINFINITY:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：インフィニティプール");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僀儞僼傿僯僥傿僾乕儖");
         break;
     case B_EVNT_DRKMILKTEA:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：タピオカ店");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僞僺僆僇揦");
         break;
     case B_EVNT_DRKCAFE:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：カフェ");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僇僼僃");
         break;
     case B_EVNT_DRKTEA:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：茶室");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗拑幒");
         break;
     case B_EVNT_DRKBAR:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：バー");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僶乕");
         break;
     case B_EVNT_DRKKARUPISU:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：カルピス放題");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僇儖僺僗曻戣");
         break;
     case B_EVNT_DRKALCOHOL:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：酒場");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗庰応");
         break;
     case B_EVNT_MOVHOR:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：ホラー");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗儂儔乕");
         break;
     case B_EVNT_MOVLOVE:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：れんあい");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗傟傫偁偄");
         break;
     case B_EVNT_MOVSF:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：ＳＦ");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗俽俥");
         break;
     case B_EVNT_MOVACT:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：アクション");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗傾僋僔儑儞");
         break;
     case B_EVNT_MOVCOMEDY:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：コメディ");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僐儊僨傿");
         break;
     case B_EVNT_MOVDOCUMENTARY:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：伝記");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗揱婰");
         break;
     case B_EVNT_KARASINGLE:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：一人でカラオケ");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗堦恖偱僇儔僆働");
         break;
     case B_EVNT_KARAMUTLI:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：皆でカラオケ");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗奆偱僇儔僆働");
         break;
     case B_EVNT_RESTCAMP:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：キャンプ場");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗僉儍儞僾応");
         break;
     case B_EVNT_RESTHOTEL:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：ホテル");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗儂僥儖");
         break;
     case B_EVNT_MAKEPRESENT:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：手作りお土産");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗庤嶌傝偍搚嶻");
         break;
     case B_EVNT_MAKEACSY:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：手作アクセサリー");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗庤嶌傾僋僙僒儕乕");
         break;
     default:
-        (temp->Texts + 3)->ChangeTextTo("施設の内容：");
+        (temp->Texts + 3)->ChangeTextTo("巤愝偺撪梕丗");
         break;
     }
 }

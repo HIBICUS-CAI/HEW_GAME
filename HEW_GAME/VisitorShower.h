@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: VisitorShower.h
-// 機能: 作成された観光客を表示させる
+// 僼傽僀儖柤: VisitorShower.h
+// 婡擻: 嶌惉偝傟偨娤岝媞傪昞帵偝偣傞
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,27 +8,27 @@
 #define VISITORTYPE_MAXSIZE 9 
 
 /// <summary>
-/// 観光客アニメタルを初期化する
+/// 娤岝媞傾僯儊僞儖傪弶婜壔偡傞
 /// </summary>
 void InitVisitorShower();
 
 /// <summary>
-/// 観光客アニメタルを実行する
+/// 娤岝媞傾僯儊僞儖傪幚峴偡傞
 /// </summary>
 void UpdateVisitorShower();
 
 /// <summary>
-/// 観光客アニメタルを閉じる
+/// 娤岝媞傾僯儊僞儖傪暵偠傞
 /// </summary>
 void TurnOffVisitorShower();
 
 /// <summary>
-/// 観光客スプライトを表示するかどうかを設定
+/// 娤岝媞僗僾儔僀僩傪昞帵偡傞偐偳偆偐傪愝掕
 /// </summary>
-/// <param name="flag">表示のフラグ</param>
+/// <param name="flag">昞帵偺僼儔僌</param>
 void SetShowVisitorFlg(int flag);
 
 /// <summary>
-/// 観光客スプライト表示に関しての内容をリセット
+/// 娤岝媞僗僾儔僀僩昞帵偵娭偟偰偺撪梕傪儕僙僢僩
 /// </summary>
 void ResetAllAboutShowVisitors();

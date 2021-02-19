@@ -1,26 +1,26 @@
 //------------------------------------------------------------------------
-// ファイル名: StageSelectBackShower.h
-// 機能: 選択シーンに背景を表示する
+// 僼傽僀儖柤: StageSelectBackShower.h
+// 婡擻: 慖戰僔乕儞偵攚宨傪昞帵偡傞
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 選択シーンに背景表示機能を初期化する
+/// 慖戰僔乕儞偵攚宨昞帵婡擻傪弶婜壔偡傞
 /// </summary>
 void InitStageSelectBackGShower();
 
 /// <summary>
-/// 選択シーンに背景表示機能を実行する
+/// 慖戰僔乕儞偵攚宨昞帵婡擻傪幚峴偡傞
 /// </summary>
 void UpdateStageSelectBackGShower();
 
 /// <summary>
-/// 選択シーンに背景表示機能を閉じる
+/// 慖戰僔乕儞偵攚宨昞帵婡擻傪暵偠傞
 /// </summary>
 void TurnOffStageSelectBackGShower();
 
 /// <summary>
-/// 選択シーンに背景表示機能をリセットする
+/// 慖戰僔乕儞偵攚宨昞帵婡擻傪儕僙僢僩偡傞
 /// </summary>
 void ResetStageSelectBackGShower();

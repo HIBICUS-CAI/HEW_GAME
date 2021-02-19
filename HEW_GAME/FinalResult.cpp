@@ -74,7 +74,7 @@ void InitFinalResult()
 
 void CountFinalRank()
 {
-    DebugLogI1("×î½KµãÊı:", g_Score);
+    DebugLogI1("ÅI“_”:", g_Score);
 
     g_RankOffset = 0;
 

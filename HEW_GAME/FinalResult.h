@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: FinalResult.h
-// 機能: 最終結果に関してのの計算と表示
+// 僼傽僀儖柤: FinalResult.h
+// 婡擻: 嵟廔寢壥偵娭偟偰偺偺寁嶼偲昞帵
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,74 +8,74 @@
 #include "GameAppStructs.h"
 
 /// <summary>
-/// 最終結果に関してのの計算と表示を初期化する
+/// 嵟廔寢壥偵娭偟偰偺偺寁嶼偲昞帵傪弶婜壔偡傞
 /// </summary>
 void InitFinalResult();
 
 /// <summary>
-/// 点数によってランクを計算する
+/// 揰悢偵傛偭偰儔儞僋傪寁嶼偡傞
 /// </summary>
 void CountFinalRank();
 
 /// <summary>
-/// 最終結果に関してのの計算と表示を実行する
+/// 嵟廔寢壥偵娭偟偰偺偺寁嶼偲昞帵傪幚峴偡傞
 /// </summary>
 void UpdateFinalResult();
 
 /// <summary>
-/// 最終結果に関してのの計算と表示をリセットする
+/// 嵟廔寢壥偵娭偟偰偺偺寁嶼偲昞帵傪儕僙僢僩偡傞
 /// </summary>
 void ResetFinalResult();
 
 /// <summary>
-/// 最終結果に関してのの計算と表示を閉じる
+/// 嵟廔寢壥偵娭偟偰偺偺寁嶼偲昞帵傪暵偠傞
 /// </summary>
 void TurnOffFinalResult();
 
 /// <summary>
-/// このタイプの観光客が非常に喜ぶ
+/// 偙偺僞僀僾偺娤岝媞偑旕忢偵婌傇
 /// </summary>
-/// <param name="visitorType">この観光客のタイプ</param>
+/// <param name="visitorType">偙偺娤岝媞偺僞僀僾</param>
 void VisitorFeelVeryGood(VISITOR_TYPE visitorType);
 
 /// <summary>
-/// このタイプの観光客が喜ぶ
+/// 偙偺僞僀僾偺娤岝媞偑婌傇
 /// </summary>
-/// <param name="visitorType">この観光客のタイプ</param>
+/// <param name="visitorType">偙偺娤岝媞偺僞僀僾</param>
 void VisitorFeelGood(VISITOR_TYPE visitorType);
 
 /// <summary>
-/// このタイプの観光客がまあまあと思う
+/// 偙偺僞僀僾偺娤岝媞偑傑偁傑偁偲巚偆
 /// </summary>
-/// <param name="visitorType">この観光客のタイプ</param>
+/// <param name="visitorType">偙偺娤岝媞偺僞僀僾</param>
 void VisitorFeelAlright(VISITOR_TYPE visitorType);
 
 /// <summary>
-/// このタイプの観光客が気に入らない
+/// 偙偺僞僀僾偺娤岝媞偑婥偵擖傜側偄
 /// </summary>
-/// <param name="visitorType">この観光客のタイプ</param>
+/// <param name="visitorType">偙偺娤岝媞偺僞僀僾</param>
 void VisitorFeelBad(VISITOR_TYPE visitorType);
 
 /// <summary>
-/// このタイプの観光客が非常に気に入らない
+/// 偙偺僞僀僾偺娤岝媞偑旕忢偵婥偵擖傜側偄
 /// </summary>
-/// <param name="visitorType">この観光客のタイプ</param>
+/// <param name="visitorType">偙偺娤岝媞偺僞僀僾</param>
 void VisitorFeelVeryBad(VISITOR_TYPE visitorType);
 
 /// <summary>
-/// ランクが表現できるかどうかを取得
+/// 儔儞僋偑昞尰偱偒傞偐偳偆偐傪庢摼
 /// </summary>
-/// <returns>ランク表現のフラグ</returns>
+/// <returns>儔儞僋昞尰偺僼儔僌</returns>
 int GetShowRankFlg();
 
 /// <summary>
-/// ランクが表現できるかどうかを設定
+/// 儔儞僋偑昞尰偱偒傞偐偳偆偐傪愝掕
 /// </summary>
-/// <param name="value">設定させたい値</param>
+/// <param name="value">愝掕偝偣偨偄抣</param>
 void SetShowRankFlg(int value);
 
 /// <summary>
-/// 最終点数を取得
+/// 嵟廔揰悢傪庢摼
 /// </summary>
-/// <returns>最終点数</returns>
+/// <returns>嵟廔揰悢</returns>
 int GetFinalScore();

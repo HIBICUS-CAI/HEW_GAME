@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: BuildingShower.h
-// 機能: 施設作成に関しての表示と演出処理
+// 僼傽僀儖柤: BuildingShower.h
+// 婡擻: 巤愝嶌惉偵娭偟偰偺昞帵偲墘弌張棟
 //------------------------------------------------------------------------
 
 #pragma once
@@ -18,32 +18,32 @@
 #define HANDMAKE_OFFSET 8
 
 /// <summary>
-/// 施設作成に関しての表示と演出処理を初期化する
+/// 巤愝嶌惉偵娭偟偰偺昞帵偲墘弌張棟傪弶婜壔偡傞
 /// </summary>
 void InitBuildingShower();
 
 /// <summary>
-/// 施設作成に関しての表示と演出処理を実行する
+/// 巤愝嶌惉偵娭偟偰偺昞帵偲墘弌張棟傪幚峴偡傞
 /// </summary>
 void UpdateBuildingShower();
 
 /// <summary>
-/// 施設作成に関しての表示と演出処理を閉じる
+/// 巤愝嶌惉偵娭偟偰偺昞帵偲墘弌張棟傪暵偠傞
 /// </summary>
 void TurnOffBuildingShower();
 
 /// <summary>
-/// 今作っている位置にハンマの演出を表示する
+/// 崱嶌偭偰偄傞埵抲偵僴儞儅偺墘弌傪昞帵偡傞
 /// </summary>
 void ShowBuildingHammer();
 
 /// <summary>
-/// 施設作成に関しての表示と演出処理の時間をリセットする
+/// 巤愝嶌惉偵娭偟偰偺昞帵偲墘弌張棟偺帪娫傪儕僙僢僩偡傞
 /// </summary>
 void ResetBuildingShowerTimer();
 
 /// <summary>
-/// 各施設のスプライトを保存している配列を取得
+/// 奺巤愝偺僗僾儔僀僩傪曐懚偟偰偄傞攝楍傪庢摼
 /// </summary>
-/// <returns>スプライトを保存している配列に指向のポインタ</returns>
+/// <returns>僗僾儔僀僩傪曐懚偟偰偄傞攝楍偵巜岦偺億僀儞僞</returns>
 SPRITE* GetBuildingSprites();

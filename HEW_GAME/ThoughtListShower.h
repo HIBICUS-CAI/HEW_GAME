@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: ThoughtListShower.h
-// 機能: 観光客感想を表示させる処理
+// 僼傽僀儖柤: ThoughtListShower.h
+// 婡擻: 娤岝媞姶憐傪昞帵偝偣傞張棟
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,28 +8,28 @@
 #include "GameAppStructs.h"
 
 /// <summary>
-/// 観光客感想を表示させる処理の初期化
+/// 娤岝媞姶憐傪昞帵偝偣傞張棟偺弶婜壔
 /// </summary>
 void InitThoughtListShower();
 
 /// <summary>
-/// 観光客感想を表示させる処理を実行
+/// 娤岝媞姶憐傪昞帵偝偣傞張棟傪幚峴
 /// </summary>
 void UpdateThoughtListShower();
 
 /// <summary>
-/// 観光客感想を表示させる処理を閉じる
+/// 娤岝媞姶憐傪昞帵偝偣傞張棟傪暵偠傞
 /// </summary>
 void TurnOffThoughtListShower();
 
 /// <summary>
-/// 感想スプライト配列を取得
+/// 姶憐僗僾儔僀僩攝楍傪庢摼
 /// </summary>
-/// <returns>配列に指向のポインタ</returns>
+/// <returns>攝楍偵巜岦偺億僀儞僞</returns>
 SPRITE* GetThoughtListSprites();
 
 /// <summary>
-/// 感想スプライトを描画する
+/// 姶憐僗僾儔僀僩傪昤夋偡傞
 /// </summary>
-/// <param name="offset">偏移量</param>
+/// <param name="offset">曃堏検</param>
 void DrawThoughtSpriteByOffset(int offset);

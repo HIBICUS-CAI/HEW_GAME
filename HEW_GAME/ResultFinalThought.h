@@ -1,31 +1,31 @@
 //------------------------------------------------------------------------
-// ファイル名: ResultFinalThought.h
-// 機能: リゾート全体的な感想の作成と表示
+// 僼傽僀儖柤: ResultFinalThought.h
+// 婡擻: 儕僝乕僩慡懱揑側姶憐偺嶌惉偲昞帵
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// リゾート全体的な感想の作成と表示機能を初期化する
+/// 儕僝乕僩慡懱揑側姶憐偺嶌惉偲昞帵婡擻傪弶婜壔偡傞
 /// </summary>
 void InitResultFinalThought();
 
 /// <summary>
-/// リゾート全体的な感想を作成する
+/// 儕僝乕僩慡懱揑側姶憐傪嶌惉偡傞
 /// </summary>
 void CreateResultFinalThought();
 
 /// <summary>
-/// リゾート全体的な感想の作成と表示機能を実行する
+/// 儕僝乕僩慡懱揑側姶憐偺嶌惉偲昞帵婡擻傪幚峴偡傞
 /// </summary>
 void UpdateResultFinalThought();
 
 /// <summary>
-/// リゾート全体的な感想の作成と表示機能をリセットする
+/// 儕僝乕僩慡懱揑側姶憐偺嶌惉偲昞帵婡擻傪儕僙僢僩偡傞
 /// </summary>
 void ResetResultFinalThought();
 
 /// <summary>
-/// リゾート全体的な感想の作成と表示機能を閉じる
+/// 儕僝乕僩慡懱揑側姶憐偺嶌惉偲昞帵婡擻傪暵偠傞
 /// </summary>
 void TurnOffResultFinalThought();

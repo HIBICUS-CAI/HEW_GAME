@@ -14,45 +14,45 @@ void InitResortNameManager()
     SetConfirmedSubName1(-1);
     SetConfirmedSubName2(-1);
 
-    strcpy_s(GetSubName1ArrayByOffset(0), 17, "涼しい");
-    strcpy_s(GetSubName1ArrayByOffset(1), 17, "明るい");
-    strcpy_s(GetSubName1ArrayByOffset(2), 17, "甘酸っぱい");
-    strcpy_s(GetSubName1ArrayByOffset(3), 17, "尊い");
-    strcpy_s(GetSubName1ArrayByOffset(4), 17, "深い");
-    strcpy_s(GetSubName1ArrayByOffset(5), 17, "イコール");
-    strcpy_s(GetSubName1ArrayByOffset(6), 17, "一時的");
-    strcpy_s(GetSubName1ArrayByOffset(7), 17, "架空");
-    strcpy_s(GetSubName1ArrayByOffset(8), 17, "グローバル");
-    strcpy_s(GetSubName1ArrayByOffset(9), 17, "空気読めない");
-    strcpy_s(GetSubName1ArrayByOffset(10), 17, "タピオカ");
-    strcpy_s(GetSubName1ArrayByOffset(11), 17, "わたあめ");
-    strcpy_s(GetSubName1ArrayByOffset(12), 17, "パンダ");
-    strcpy_s(GetSubName1ArrayByOffset(13), 17, "世界");
-    strcpy_s(GetSubName1ArrayByOffset(14), 17, "サラリーマン");
-    strcpy_s(GetSubName2ArrayByOffset(0), 17, "空気");
-    strcpy_s(GetSubName2ArrayByOffset(1), 17, "リゾート");
-    strcpy_s(GetSubName2ArrayByOffset(2), 17, "森");
-    strcpy_s(GetSubName2ArrayByOffset(3), 17, "ラーメン屋");
-    strcpy_s(GetSubName2ArrayByOffset(4), 17, "英雄");
-    strcpy_s(GetSubName2ArrayByOffset(5), 17, "喫茶店");
-    strcpy_s(GetSubName2ArrayByOffset(6), 17, "山");
-    strcpy_s(GetSubName2ArrayByOffset(7), 17, "海");
-    strcpy_s(GetSubName2ArrayByOffset(8), 17, "キャンプ場");
-    strcpy_s(GetSubName2ArrayByOffset(9), 17, "事務所");
-    strcpy_s(GetSubName2ArrayByOffset(10), 17, "荘");
-    strcpy_s(GetSubName2ArrayByOffset(11), 17, "島");
-    strcpy_s(GetSubName2ArrayByOffset(12), 17, "パレス");
-    strcpy_s(GetSubName2ArrayByOffset(13), 17, "村");
-    strcpy_s(GetSubName2ArrayByOffset(14), 17, "パラダイス");
+    strcpy_s(GetSubName1ArrayByOffset(0), 17, "椓偟偄");
+    strcpy_s(GetSubName1ArrayByOffset(1), 17, "柧傞偄");
+    strcpy_s(GetSubName1ArrayByOffset(2), 17, "娒巁偭傁偄");
+    strcpy_s(GetSubName1ArrayByOffset(3), 17, "懜偄");
+    strcpy_s(GetSubName1ArrayByOffset(4), 17, "怺偄");
+    strcpy_s(GetSubName1ArrayByOffset(5), 17, "僀僐乕儖");
+    strcpy_s(GetSubName1ArrayByOffset(6), 17, "堦帪揑");
+    strcpy_s(GetSubName1ArrayByOffset(7), 17, "壦嬻");
+    strcpy_s(GetSubName1ArrayByOffset(8), 17, "僌儘乕僶儖");
+    strcpy_s(GetSubName1ArrayByOffset(9), 17, "嬻婥撉傔側偄");
+    strcpy_s(GetSubName1ArrayByOffset(10), 17, "僞僺僆僇");
+    strcpy_s(GetSubName1ArrayByOffset(11), 17, "傢偨偁傔");
+    strcpy_s(GetSubName1ArrayByOffset(12), 17, "僷儞僟");
+    strcpy_s(GetSubName1ArrayByOffset(13), 17, "悽奅");
+    strcpy_s(GetSubName1ArrayByOffset(14), 17, "僒儔儕乕儅儞");
+    strcpy_s(GetSubName2ArrayByOffset(0), 17, "嬻婥");
+    strcpy_s(GetSubName2ArrayByOffset(1), 17, "儕僝乕僩");
+    strcpy_s(GetSubName2ArrayByOffset(2), 17, "怷");
+    strcpy_s(GetSubName2ArrayByOffset(3), 17, "儔乕儊儞壆");
+    strcpy_s(GetSubName2ArrayByOffset(4), 17, "塸梇");
+    strcpy_s(GetSubName2ArrayByOffset(5), 17, "媔拑揦");
+    strcpy_s(GetSubName2ArrayByOffset(6), 17, "嶳");
+    strcpy_s(GetSubName2ArrayByOffset(7), 17, "奀");
+    strcpy_s(GetSubName2ArrayByOffset(8), 17, "僉儍儞僾応");
+    strcpy_s(GetSubName2ArrayByOffset(9), 17, "帠柋強");
+    strcpy_s(GetSubName2ArrayByOffset(10), 17, "憫");
+    strcpy_s(GetSubName2ArrayByOffset(11), 17, "搰");
+    strcpy_s(GetSubName2ArrayByOffset(12), 17, "僷儗僗");
+    strcpy_s(GetSubName2ArrayByOffset(13), 17, "懞");
+    strcpy_s(GetSubName2ArrayByOffset(14), 17, "僷儔僟僀僗");
 }
 
 void UpdateResortNameManager()
 {
-    char temp[17] = "  ＸＸＸＸＸＸ  ";
+    char temp[17] = "  倃倃倃倃倃倃  ";
 
     if (GetUIObjByName("subname1")->Visiblity)
     {
-        if (!strcmp(GetSelectedBtn()->Text, "閉じる"))
+        if (!strcmp(GetSelectedBtn()->Text, "暵偠傞"))
         {
             (GetUIObjByName("naming")->Texts + 6)->
                 ChangeTextTo(temp);
@@ -63,7 +63,7 @@ void UpdateResortNameManager()
     }
     else if (GetUIObjByName("subname2")->Visiblity)
     {
-        if (!strcmp(GetSelectedBtn()->Text, "閉じる"))
+        if (!strcmp(GetSelectedBtn()->Text, "暵偠傞"))
         {
             (GetUIObjByName("naming")->Texts + 7)->
                 ChangeTextTo(temp);

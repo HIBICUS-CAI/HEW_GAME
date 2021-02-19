@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: BuilderManager.h
-// 機能: 施設担当者に関しての処理
+// 僼傽僀儖柤: BuilderManager.h
+// 婡擻: 巤愝扴摉幰偵娭偟偰偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
@@ -10,45 +10,45 @@
 #define BUILDER_GO_RIGHT 2
 
 /// <summary>
-/// 作成者に関しての初期化
+/// 嶌惉幰偵娭偟偰偺弶婜壔
 /// </summary>
 void InitBuilder();
 
 /// <summary>
-/// 作成者に関しての処理を更新する
+/// 嶌惉幰偵娭偟偰偺張棟傪峏怴偡傞
 /// </summary>
 void UpdateBuilder();
 
 /// <summary>
-/// 作成者に関しての処理を閉じる
+/// 嶌惉幰偵娭偟偰偺張棟傪暵偠傞
 /// </summary>
 void TurnOffBuilder();
 
 /// <summary>
-/// 今作っている位置を設定
+/// 崱嶌偭偰偄傞埵抲傪愝掕
 /// </summary>
-/// <param name="value">位置の値</param>
+/// <param name="value">埵抲偺抣</param>
 void SetCurrBuildingPosByBuilder(int value);
 
 /// <summary>
-/// 今作っている位置を取得
+/// 崱嶌偭偰偄傞埵抲傪庢摼
 /// </summary>
-/// <returns>位置の値</returns>
+/// <returns>埵抲偺抣</returns>
 int GetCurrBuildingPosByBuilder();
 
 /// <summary>
-/// 作成者の移動方向を設定
+/// 嶌惉幰偺堏摦曽岦傪愝掕
 /// </summary>
-/// <param name="value">移動方向</param>
+/// <param name="value">堏摦曽岦</param>
 void SetBuilderMovFlg(int value);
 
 /// <summary>
-/// 作成者の移動方向を取得
+/// 嶌惉幰偺堏摦曽岦傪庢摼
 /// </summary>
-/// <returns>作成者の移動方向</returns>
+/// <returns>嶌惉幰偺堏摦曽岦</returns>
 int GetBuilderMovFlg();
 
 /// <summary>
-/// 作成者に関しての特別変数をリセット
+/// 嶌惉幰偵娭偟偰偺摿暿曄悢傪儕僙僢僩
 /// </summary>
 void ResetBuilder();

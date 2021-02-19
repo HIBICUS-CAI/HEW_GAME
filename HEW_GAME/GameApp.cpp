@@ -10,7 +10,7 @@
 
 int Init()
 {
-    system("mode con cp select=936&&cls");
+    system("mode con cp select=932&&cls");
 
     SetGameRunFlag(1);
 
@@ -29,13 +29,13 @@ int Init()
         CreateUIO("child", POSITION_2D(3, 3), 60, 15, UIO_DESIGN::STRAIGHT, 0));
     GetUIObjByID(10001)->AddParent(GetUIObjByID(10001));
     GetUIObjByID(10001)->AddText(UI_TEXT(POSITION_2D(1, 1),
-        (char*)"¥¢¥Û¥¢¥Û¥Þ¥ó"));
+        (char*)"ƒAƒzƒAƒzƒ}ƒ“"));
     GetUIObjByName("child")->AddBtn(UI_BUTTON(0, POSITION_2D(3, 3),
-        (char*)"¥Ü¥¿¥ó1", BTN_DESIGN::LINE));
+        (char*)"ƒ{ƒ^ƒ“1", BTN_DESIGN::LINE));
     GetUIObjByName("child")->AddBtn(UI_BUTTON(0, POSITION_2D(9, 4),
-        (char*)"¥Ü¥¿¥ó2", BTN_DESIGN::LINE));
+        (char*)"ƒ{ƒ^ƒ“2", BTN_DESIGN::LINE));
     GetUIObjByName("child")->AddBtn(UI_BUTTON(TEST_CLOSETHIS, POSITION_2D(10, 7),
-        (char*)"é]¤¸¤ë", BTN_DESIGN::STRAIGHT));*/
+        (char*)"•Â‚¶‚é", BTN_DESIGN::STRAIGHT));*/
 
     return 1;
 }

@@ -1,38 +1,38 @@
 //------------------------------------------------------------------------
-// ファイル名: PlayingStageManager.h
-// 機能: 各ステージを管理する機能を提供
+// 僼傽僀儖柤: PlayingStageManager.h
+// 婡擻: 奺僗僥乕僕傪娗棟偡傞婡擻傪採嫙
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// ステージ管理機能を初期化する
+/// 僗僥乕僕娗棟婡擻傪弶婜壔偡傞
 /// </summary>
 void InitPlayingStage();
 
 /// <summary>
-/// ステージ管理機能を実行
+/// 僗僥乕僕娗棟婡擻傪幚峴
 /// </summary>
 void UpdatePlayingStage();
 
 /// <summary>
-/// ステージ管理機能を閉じる
+/// 僗僥乕僕娗棟婡擻傪暵偠傞
 /// </summary>
 void TurnOffPlayingStage();
 
 /// <summary>
-/// 今選択されているステージを取得
+/// 崱慖戰偝傟偰偄傞僗僥乕僕傪庢摼
 /// </summary>
-/// <returns>ステージ番号</returns>
+/// <returns>僗僥乕僕斣崋</returns>
 int GetPlayingStageByManager();
 
 /// <summary>
-/// 選択されたステージを保存
+/// 慖戰偝傟偨僗僥乕僕傪曐懚
 /// </summary>
-/// <param name="stageID">選択されたステージの番号</param>
+/// <param name="stageID">慖戰偝傟偨僗僥乕僕偺斣崋</param>
 void SetPlayingStageByManager(int stageID);
 
 /// <summary>
-/// 保存されたステージをリセット
+/// 曐懚偝傟偨僗僥乕僕傪儕僙僢僩
 /// </summary>
 void ResetPlayingStageByManager();

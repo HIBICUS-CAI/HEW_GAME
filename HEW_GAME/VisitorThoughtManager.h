@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: VisitorThoughtManager.h
-// 機能: 各観光客が遊ぶ時感想の作成
+// 僼傽僀儖柤: VisitorThoughtManager.h
+// 婡擻: 奺娤岝媞偑梀傇帪姶憐偺嶌惉
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,9 +8,9 @@
 #include "GameAppStructs.h"
 
 /// <summary>
-/// 管理機能によって一つ種類の観光客に一つの感想を作成
+/// 娗棟婡擻偵傛偭偰堦偮庬椶偺娤岝媞偵堦偮偺姶憐傪嶌惉
 /// </summary>
-/// <param name="visitorType">観光客の種類</param>
-/// <param name="buildType">施設の種類</param>
-/// <param name="buildEvent">施設の内容</param>
+/// <param name="visitorType">娤岝媞偺庬椶</param>
+/// <param name="buildType">巤愝偺庬椶</param>
+/// <param name="buildEvent">巤愝偺撪梕</param>
 void CreateSingleVisitorThoughtByManager(VISITOR_TYPE visitorType, int buildType, int buildEvent);

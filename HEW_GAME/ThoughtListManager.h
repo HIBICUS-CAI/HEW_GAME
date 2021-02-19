@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: ThoughtListManager.h
-// 機能: 観光客が遊ぶ時感想に関しての処理
+// 僼傽僀儖柤: ThoughtListManager.h
+// 婡擻: 娤岝媞偑梀傇帪姶憐偵娭偟偰偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,49 +8,49 @@
 #include "GameAppStructs.h"
 
 /// <summary>
-/// 観光客が遊ぶ時感想に関しての処理を初期化する
+/// 娤岝媞偑梀傇帪姶憐偵娭偟偰偺張棟傪弶婜壔偡傞
 /// </summary>
 void InitThoughtListManager();
 
 /// <summary>
-/// 観光客が遊ぶ時感想に関しての処理を実行する
+/// 娤岝媞偑梀傇帪姶憐偵娭偟偰偺張棟傪幚峴偡傞
 /// </summary>
 void UpdateThoughtListManager();
 
 /// <summary>
-/// 観光客が遊ぶ時感想に関しての処理を閉じる
+/// 娤岝媞偑梀傇帪姶憐偵娭偟偰偺張棟傪暵偠傞
 /// </summary>
 void TurnOffThoughtListManager();
 
 /// <summary>
-/// 各観光客に感想を生み出す
+/// 奺娤岝媞偵姶憐傪惗傒弌偡
 /// </summary>
-/// <param name="buildType">この施設の種類</param>
-/// <param name="buildEvent">この施設の内容</param>
+/// <param name="buildType">偙偺巤愝偺庬椶</param>
+/// <param name="buildEvent">偙偺巤愝偺撪梕</param>
 void CreateThoughtToQueue(int buildType, int buildEvent);
 
 /// <summary>
-/// 一つ種類の観光客に一つの感想を作成
+/// 堦偮庬椶偺娤岝媞偵堦偮偺姶憐傪嶌惉
 /// </summary>
-/// <param name="visitorType">観光客の種類</param>
-/// <param name="buildType">施設の種類</param>
-/// <param name="buildEvent">施設の内容</param>
+/// <param name="visitorType">娤岝媞偺庬椶</param>
+/// <param name="buildType">巤愝偺庬椶</param>
+/// <param name="buildEvent">巤愝偺撪梕</param>
 void CreateSingleTypeVisitorThought(VISITOR_TYPE visitorType, int buildType, int buildEvent);
 
 /// <summary>
-/// ステージによって感想を作成
+/// 僗僥乕僕偵傛偭偰姶憐傪嶌惉
 /// </summary>
-/// <param name="buildType">施設の種類</param>
-/// <param name="buildEvent">施設の内容</param>
+/// <param name="buildType">巤愝偺庬椶</param>
+/// <param name="buildEvent">巤愝偺撪梕</param>
 void CreateSingleTypeThoughtByStage(int buildType, int buildEvent);
 
 /// <summary>
-/// 一つの感想を隊列に入れる
+/// 堦偮偺姶憐傪戉楍偵擖傟傞
 /// </summary>
-/// <param name="thought">感想の内容</param>
+/// <param name="thought">姶憐偺撪梕</param>
 void AddSingleThoughtToQueue(const char* thought);
 
 /// <summary>
-/// 感想に関しての内容をリセットする
+/// 姶憐偵娭偟偰偺撪梕傪儕僙僢僩偡傞
 /// </summary>
 void ResetThoughtQueueAndList();

@@ -59,17 +59,17 @@ void CreateThoughtToQueue(int buildType, int buildEvent)
 
 void CreateSingleTypeVisitorThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
 {
-    // 普通の名前好きかどうか
+    // 晛捠偺柤慜岲偒偐偳偆偐
 
-    // 客に対して特別イベント(好きのみ)
-    // 普通に好きかどうか
+    // 媞偵懳偟偰摿暿僀儀儞僩(岲偒偺傒)
+    // 晛捠偵岲偒偐偳偆偐
 
     CreateSingleVisitorThoughtByManager(visitorType, buildType, buildEvent);
 }
 
 void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
 {
-    // 特別のゲートイベント
+    // 摿暿偺僎乕僩僀儀儞僩
     if (buildType == -1 || buildEvent == -1)
     {
         int stageID = GetPlayingStage();
@@ -82,22 +82,22 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         case STAGE_DEFAULT:
             if (subName2 == 6)
             {
-                strcpy_s(thought, sizeof(thought), "多分遠いところにも山があるから？面白い");
+                strcpy_s(thought, sizeof(thought), "懡暘墦偄偲偙傠偵傕嶳偑偁傞偐傜丠柺敀偄");
                 VisitorFeelAlright(VISITOR_TYPE::NONE);
             }
             else if (subName2 == 8)
             {
-                strcpy_s(thought, sizeof(thought), "ここの環境キャンプ場と相性ぴったりだね！");
+                strcpy_s(thought, sizeof(thought), "偙偙偺娐嫬僉儍儞僾応偲憡惈傄偭偨傝偩偹両");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (subName2 == 13)
             {
-                strcpy_s(thought, sizeof(thought), "確か村みたい特別な落ち着ける感じ");
+                strcpy_s(thought, sizeof(thought), "妋偐懞傒偨偄摿暿側棊偪拝偗傞姶偠");
                 VisitorFeelAlright(VISITOR_TYPE::NONE);
             }
             else if (subName1 == 1)
             {
-                strcpy_s(thought, sizeof(thought), "明るいって確かに似合うんですね");
+                strcpy_s(thought, sizeof(thought), "柧傞偄偭偰妋偐偵帡崌偆傫偱偡偹");
                 VisitorFeelAlright(VISITOR_TYPE::NONE);
             }
             break;
@@ -105,22 +105,22 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         case STAGE_BEACH:
             if (subName2 == 11)
             {
-                strcpy_s(thought, sizeof(thought), "海があれば島、島があれば海、いい名前ですね");
+                strcpy_s(thought, sizeof(thought), "奀偑偁傟偽搰丄搰偑偁傟偽奀丄偄偄柤慜偱偡偹");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (subName1 == 6)
             {
-                strcpy_s(thought, sizeof(thought), "日の出が一時的もんね、美しいのはこれあるかも");
+                strcpy_s(thought, sizeof(thought), "擔偺弌偑堦帪揑傕傫偹丄旤偟偄偺偼偙傟偁傞偐傕");
                 VisitorFeelAlright(VISITOR_TYPE::NONE);
             }
             else if (subName1 == 0)
             {
-                strcpy_s(thought, sizeof(thought), "海浜の風が確か涼しいね");
+                strcpy_s(thought, sizeof(thought), "奀昹偺晽偑妋偐椓偟偄偹");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (subName2 == 7)
             {
-                strcpy_s(thought, sizeof(thought), "ま、そもそもここはうみだね");
+                strcpy_s(thought, sizeof(thought), "傑丄偦傕偦傕偙偙偼偆傒偩偹");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             break;
@@ -128,22 +128,22 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         case STAGE_DESERT:
             if (subName2 == 11)
             {
-                strcpy_s(thought, sizeof(thought), "漠々たる砂漠、ここはまさに島、本当にいい名前だ");
+                strcpy_s(thought, sizeof(thought), "敊乆偨傞嵒敊丄偙偙偼傑偝偵搰丄杮摉偵偄偄柤慜偩");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (subName2 == 7)
             {
-                strcpy_s(thought, sizeof(thought), "広い砂漠、まさに海みたい");
+                strcpy_s(thought, sizeof(thought), "峀偄嵒敊丄傑偝偵奀傒偨偄");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (subName1 == 4)
             {
-                strcpy_s(thought, sizeof(thought), "ボーダーライン見えない砂漠、深さ満々だね");
+                strcpy_s(thought, sizeof(thought), "儃乕僟乕儔僀儞尒偊側偄嵒敊丄怺偝枮乆偩偹");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (subName2 == 2)
             {
-                strcpy_s(thought, sizeof(thought), "確かここってオアシスみたいな感じ！");
+                strcpy_s(thought, sizeof(thought), "妋偐偙偙偭偰僆傾僔僗傒偨偄側姶偠両");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             break;
@@ -153,7 +153,7 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         }
         if (subName1 == -1 || subName2 == -1)
         {
-            strcpy_s(thought, sizeof(thought), "何なんだこのＸＸＸＸって、意味わからんわ");
+            strcpy_s(thought, sizeof(thought), "壗側傫偩偙偺倃倃倃倃偭偰丄堄枴傢偐傜傫傢");
             VisitorFeelVeryBad(VISITOR_TYPE::NONE);
         }
         if (strcmp(thought, ""))
@@ -172,26 +172,26 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
             if (buildEvent == B_EVNT_EATBBQ)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "この風景でバーベキューするって心地よいね！");
+                    "偙偺晽宨偱僶乕儀僉儏乕偡傞偭偰怱抧傛偄偹両");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_DRKTEA)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "川の流れを見ながらお茶、素晴らしい");
+                    "愳偺棳傟傪尒側偑傜偍拑丄慺惏傜偟偄");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_RESTCAMP)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "良い風景とキャンプ場、相性ぴったりですね");
+                    "椙偄晽宨偲僉儍儞僾応丄憡惈傄偭偨傝偱偡偹");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_POLNIGHT)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "今は昼ですけど、夜になるまでなんか役に立たないね");
-                SetResultTipsTo("このステージには昼です");
+                    "崱偼拫偱偡偗偳丄栭偵側傞傑偱側傫偐栶偵棫偨側偄偹");
+                SetResultTipsTo("偙偺僗僥乕僕偵偼拫偱偡");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
             }
             break;
@@ -200,38 +200,38 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
             if (buildType == B_TYPE_HOTSPRING)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "海浜に来た以上やっぱり海に行きたいよ");
+                    "奀昹偵棃偨埲忋傗偭傁傝奀偵峴偒偨偄傛");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_POLINFINITY)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "おおこのプールの広さ、もはや海のレベルじゃない？");
+                    "偍偍偙偺僾乕儖偺峀偝丄傕偼傗奀偺儗儀儖偠傖側偄丠");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_DRKALCOHOL)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "ここで酒飲むのは楽だな");
+                    "偙偙偱庰堸傓偺偼妝偩側");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (buildType == B_TYPE_MAKEBYHAND)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "いいね、海浜には色んな素材がありますので");
+                    "偄偄偹丄奀昹偵偼怓傫側慺嵽偑偁傝傑偡偺偱");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_EATUNAGI)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "運送費免除あとウナギも安いで美味しいになった！");
+                    "塣憲旓柶彍偁偲僂僫僊傕埨偄偱旤枴偟偄偵側偭偨両");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_POLNIGHT)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "いまは朝じゃない？それも海の隣ですよ？");
-                SetResultTipsTo("日登時の海浜はナイトプールと相性悪いでしょう");
+                    "偄傑偼挬偠傖側偄丠偦傟傕奀偺椬偱偡傛丠");
+                SetResultTipsTo("擔搊帪偺奀昹偼僫僀僩僾乕儖偲憡惈埆偄偱偟傚偆");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
             }
             break;
@@ -240,45 +240,45 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
             if (buildType == B_TYPE_HOTSPRING)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "いいね、夜は寒いし乾燥だし、温泉まじいい！");
+                    "偄偄偹丄栭偼姦偄偟姡憞偩偟丄壏愹傑偠偄偄両");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_POLNORMAL)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "普通のプールは夜になると閉めちゃうね？勿体ないな");
+                    "晛捠偺僾乕儖偼栭偵側傞偲暵傔偪傖偆偹丠栜懱側偄側");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_POLINFINITY)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "おお、砂漠の中にインフィニティプールで最高です！");
+                    "偍偍丄嵒敊偺拞偵僀儞僼傿僯僥傿僾乕儖偱嵟崅偱偡両");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_POLNIGHT)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "夜のでナイトプール最高っす！");
+                    "栭偺偱僫僀僩僾乕儖嵟崅偭偡両");
                 VisitorFeelVeryGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_DRKBAR)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "窓の外の風景見ながら一杯の品って贅沢ですよ");
+                    "憢偺奜偺晽宨尒側偑傜堦攖偺昳偭偰嬉戲偱偡傛");
                 VisitorFeelGood(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_MOVHOR)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "ここはもう十分怖いですよ、夜だし他の人もいないし");
-                SetResultTipsTo("夜の砂漠はもう十分怖いかもしれません");
+                    "偙偙偼傕偆廫暘晐偄偱偡傛丄栭偩偟懠偺恖傕偄側偄偟");
+                SetResultTipsTo("栭偺嵒敊偼傕偆廫暘晐偄偐傕偟傟傑偣傫");
                 VisitorFeelBad(VISITOR_TYPE::NONE);
             }
             else if (buildEvent == B_EVNT_RESTCAMP)
             {
                 strcpy_s(thought, sizeof(thought),
-                    "え？ここでキャンプすると砂と埃だらけじゃん？");
-                SetResultTipsTo("砂漠にキャンプするのはちょっと微妙でしょう");
+                    "偊丠偙偙偱僉儍儞僾偡傞偲嵒偲毢偩傜偗偠傖傫丠");
+                SetResultTipsTo("嵒敊偵僉儍儞僾偡傞偺偼偪傚偭偲旝柇偱偟傚偆");
                 VisitorFeelVeryBad(VISITOR_TYPE::NONE);
             }
             break;
@@ -293,7 +293,7 @@ void CreateSingleTypeThoughtByStage(int buildType, int buildEvent)
         }
     }
 
-    // ステージに対して特別イベント(好き嫌い両方)
+    // 僗僥乕僕偵懳偟偰摿暿僀儀儞僩(岲偒寵偄椉曽)
 }
 
 void AddSingleThoughtToQueue(const char* thought)

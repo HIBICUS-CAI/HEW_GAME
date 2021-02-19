@@ -1,21 +1,21 @@
 //------------------------------------------------------------------------
-// ファイル名: VisitorManager.h
-// 機能: 観光客情報を作成、管理する機能を提供
+// 僼傽僀儖柤: VisitorManager.h
+// 婡擻: 娤岝媞忣曬傪嶌惉丄娗棟偡傞婡擻傪採嫙
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 観光客機能を初期化する
+/// 娤岝媞婡擻傪弶婜壔偡傞
 /// </summary>
 void InitVisitorManager();
 
 /// <summary>
-/// 観光客情報をリセット
+/// 娤岝媞忣曬傪儕僙僢僩
 /// </summary>
 void ResetVisitorManager();
 
 /// <summary>
-/// 観光客情報を作成
+/// 娤岝媞忣曬傪嶌惉
 /// </summary>
 void CreateVisitors();

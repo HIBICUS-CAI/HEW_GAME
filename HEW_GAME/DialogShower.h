@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: DialogShower.h
-// 機能: 対話を行う時実行すべきの処理
+// 僼傽僀儖柤: DialogShower.h
+// 婡擻: 懳榖傪峴偆帪幚峴偡傋偒偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,45 +8,45 @@
 #define PEOPLE_SPRITE_SIZE 16
 
 /// <summary>
-/// 対話処理機能を初期化する
+/// 懳榖張棟婡擻傪弶婜壔偡傞
 /// </summary>
 void InitDialogShower();
 
 /// <summary>
-/// 対話処理機能を実行する
+/// 懳榖張棟婡擻傪幚峴偡傞
 /// </summary>
 void UpdateDialogShower();
 
 /// <summary>
-/// 対話処理機能を閉じる
+/// 懳榖張棟婡擻傪暵偠傞
 /// </summary>
 void TurnOffDialogShower();
 
 /// <summary>
-/// 対話インデックスを取得
+/// 懳榖僀儞僨僢僋僗傪庢摼
 /// </summary>
-/// <returns>対話インデックス</returns>
+/// <returns>懳榖僀儞僨僢僋僗</returns>
 int GetDialogIndex();
 
 /// <summary>
-/// 対話インデックスを設定
+/// 懳榖僀儞僨僢僋僗傪愝掕
 /// </summary>
-/// <param name="value">設定させたい値</param>
+/// <param name="value">愝掕偝偣偨偄抣</param>
 void SetDialogIndex(int value);
 
 /// <summary>
-/// 対話イベントが終わる直後関連変数をリセット
+/// 懳榖僀儀儞僩偑廔傢傞捈屻娭楢曄悢傪儕僙僢僩
 /// </summary>
 void ResetUsingPointerAndFlag();
 
 /// <summary>
-/// もし喋っている人が変わったらスプライトも変わっていく
+/// 傕偟挐偭偰偄傞恖偑曄傢偭偨傜僗僾儔僀僩傕曄傢偭偰偄偔
 /// </summary>
-/// <param name="thisName">今喋っている人</param>
-/// <param name="preName">前回喋った人</param>
+/// <param name="thisName">崱挐偭偰偄傞恖</param>
+/// <param name="preName">慜夞挐偭偨恖</param>
 void SwitchSprite(char* thisName, char* preName);
 
 /// <summary>
-/// スプライトアニメタルフラグによってスプライトを更新
+/// 僗僾儔僀僩傾僯儊僞儖僼儔僌偵傛偭偰僗僾儔僀僩傪峏怴
 /// </summary>
 void DrawTalkingSprite();

@@ -1,38 +1,38 @@
 //------------------------------------------------------------------------
-// ファイル名: ResortNameManager.h
-// 機能: リゾート名前を作成、管理する機能を提供
+// 僼傽僀儖柤: ResortNameManager.h
+// 婡擻: 儕僝乕僩柤慜傪嶌惉丄娗棟偡傞婡擻傪採嫙
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// リゾート名前に関しての内容を初期化する
+/// 儕僝乕僩柤慜偵娭偟偰偺撪梕傪弶婜壔偡傞
 /// </summary>
 void InitResortNameManager();
 
 /// <summary>
-/// リゾート名前に関しての処理を行う
+/// 儕僝乕僩柤慜偵娭偟偰偺張棟傪峴偆
 /// </summary>
 void UpdateResortNameManager();
 
 /// <summary>
-/// リゾート名前に関しての処理を閉じる
+/// 儕僝乕僩柤慜偵娭偟偰偺張棟傪暵偠傞
 /// </summary>
 void TurnOffResortNameManager();
 
 /// <summary>
-/// 確定された名前と関連変数を保存する
+/// 妋掕偝傟偨柤慜偲娭楢曄悢傪曐懚偡傞
 /// </summary>
 void SaveConfirmedName();
 
 /// <summary>
-/// 臨時的なプレフィックスを設定
+/// 椪帪揑側僾儗僼傿僢僋僗傪愝掕
 /// </summary>
-/// <param name="value">ボタン値</param>
+/// <param name="value">儃僞儞抣</param>
 void SetTempName1(int value);
 
 /// <summary>
-/// 臨時的なサフィックスを設定
+/// 椪帪揑側僒僼傿僢僋僗傪愝掕
 /// </summary>
-/// <param name="value">ボタン値</param>
+/// <param name="value">儃僞儞抣</param>
 void SetTempName2(int value);

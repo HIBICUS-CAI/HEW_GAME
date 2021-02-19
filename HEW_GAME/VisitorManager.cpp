@@ -83,42 +83,42 @@ void CreateVisitors()
         case 1:
             visitorType = VISITOR_TYPE::STUDENTS;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "学生：", num);
+                "妛惗丗", num);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
         case 2:
             visitorType = VISITOR_TYPE::COUPLE;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "カップル：", num);
+                "僇僢僾儖丗", num);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
         case 3:
             visitorType = VISITOR_TYPE::PROGRAMMER;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "プログラマー：", num);
+                "僾儘僌儔儅乕丗", num);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
         case 4:
             visitorType = VISITOR_TYPE::ARTIST;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "アーティスト：", num);
+                "傾乕僥傿僗僩丗", num);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
         case 5:
             visitorType = VISITOR_TYPE::OFFICER;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "事務員：", num);
+                "帠柋堳丗", num);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
         case 6:
             visitorType = VISITOR_TYPE::FAMILY;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "家族：", num);
+                "壠懓丗", num);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
@@ -149,21 +149,21 @@ void CreateVisitors()
         case STAGE_DEFAULT:
             spType = VISITOR_TYPE::RABBIT;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "うさぎ：", spNum);
+                "偆偝偓丗", spNum);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
         case STAGE_BEACH:
             spType = VISITOR_TYPE::WHALE;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "くじら：", spNum);
+                "偔偠傜丗", spNum);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;
         case STAGE_DESERT:
             spType = VISITOR_TYPE::CAMEL;
             sprintf_s(temp, sizeof(temp), "%s%d",
-                "らくだ：", spNum);
+                "傜偔偩丗", spNum);
             (GetUIObjByName("naming")->Texts + (g_TextOffset++))->
                 ChangeTextTo(temp);
             break;

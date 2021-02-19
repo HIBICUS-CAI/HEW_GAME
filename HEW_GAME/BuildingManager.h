@@ -1,26 +1,26 @@
 //------------------------------------------------------------------------
-// ファイル名: BuildingManager.h
-// 機能: 施設作成に関しての処理
+// 僼傽僀儖柤: BuildingManager.h
+// 婡擻: 巤愝嶌惉偵娭偟偰偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 施設作成に関しての処理を初期化する
+/// 巤愝嶌惉偵娭偟偰偺張棟傪弶婜壔偡傞
 /// </summary>
 void InitBuildingManager();
 
 /// <summary>
-/// 施設作成に関しての処理を実行する
+/// 巤愝嶌惉偵娭偟偰偺張棟傪幚峴偡傞
 /// </summary>
 void UpdateBuildingManager();
 
 /// <summary>
-/// 施設作成に関しての処理を閉じる
+/// 巤愝嶌惉偵娭偟偰偺張棟傪暵偠傞
 /// </summary>
 void TurnOffBuildingManager();
 
 /// <summary>
-/// 施設作成に関しての処理をリセットする
+/// 巤愝嶌惉偵娭偟偰偺張棟傪儕僙僢僩偡傞
 /// </summary>
 void  ResetBuildingManager();

@@ -15,53 +15,53 @@ void CreateStudentThought(VISITOR_TYPE visitorType, int buildType, int buildEven
 
         if (subName1 == 5)
         {
-            strcpy_s(thought, sizeof(thought), "イコールって素敵な言葉っすね");
+            strcpy_s(thought, sizeof(thought), "僀僐乕儖偭偰慺揋側尵梩偭偡偹");
             VisitorFeelAlright(visitorType);
         }
         else if (subName1 == 9)
         {
-            strcpy_s(thought, sizeof(thought), "ヤバい、なんか個性満々だねｗｗｗ");
+            strcpy_s(thought, sizeof(thought), "儎僶偄丄側傫偐屄惈枮乆偩偹倵倵倵");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 10)
         {
-            strcpy_s(thought, sizeof(thought), "いいね、但しタピオカ飲みたいになる");
+            strcpy_s(thought, sizeof(thought), "偄偄偹丄扐偟僞僺僆僇堸傒偨偄偵側傞");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 11)
         {
-            strcpy_s(thought, sizeof(thought), "ふわふわな感じもいいっすね");
+            strcpy_s(thought, sizeof(thought), "傆傢傆傢側姶偠傕偄偄偭偡偹");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 3)
         {
-            strcpy_s(thought, sizeof(thought), "放課後ラーメンみたいな解放感ｗ");
+            strcpy_s(thought, sizeof(thought), "曻壽屻儔乕儊儞傒偨偄側夝曻姶倵");
             VisitorFeelAlright(visitorType);
         }
         else if (subName2 == 9)
         {
-            strcpy_s(thought, sizeof(thought), "この名前大人っぽいですね");
+            strcpy_s(thought, sizeof(thought), "偙偺柤慜戝恖偭傐偄偱偡偹");
             VisitorFeelGood(visitorType);
         }
 
         if (subName1 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "深いってなんか不快っすね");
+            strcpy_s(thought, sizeof(thought), "怺偄偭偰側傫偐晄夣偭偡偹");
             VisitorFeelBad(visitorType);
         }
         else if (subName1 == 6)
         {
-            strcpy_s(thought, sizeof(thought), "一時的ってどういうことですよ");
+            strcpy_s(thought, sizeof(thought), "堦帪揑偭偰偳偆偄偆偙偲偱偡傛");
             VisitorFeelBad(visitorType);
         }
         else if (subName2 == 1)
         {
-            strcpy_s(thought, sizeof(thought), "え？ちょっと地味な感じ．．．？");
+            strcpy_s(thought, sizeof(thought), "偊丠偪傚偭偲抧枴側姶偠丏丏丏丠");
             VisitorFeelBad(visitorType);
         }
         else if (subName2 == 12)
         {
-            strcpy_s(thought, sizeof(thought), "この名前複数の場所に見たことがある．．．");
+            strcpy_s(thought, sizeof(thought), "偙偺柤慜暋悢偺応強偵尒偨偙偲偑偁傞丏丏丏");
             VisitorFeelBad(visitorType);
         }
     }
@@ -70,84 +70,84 @@ void CreateStudentThought(VISITOR_TYPE visitorType, int buildType, int buildEven
         if (buildEvent == B_EVNT_EATBBQ)
         {
             strcpy_s(thought, sizeof(thought),
-                "バーベキューか、自分の手でご飯を作るのは楽しいね");
+                "僶乕儀僉儏乕偐丄帺暘偺庤偱偛斞傪嶌傞偺偼妝偟偄偹");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATRAMEN)
         {
             strcpy_s(thought, sizeof(thought),
-                "おおこの圧倒的なラーメン感！おおこの圧倒的なラーメン感！");
+                "偍偍偙偺埑搢揑側儔乕儊儞姶両偍偍偙偺埑搢揑側儔乕儊儞姶両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_POLFLUSH)
         {
             strcpy_s(thought, sizeof(thought),
-                "何これめっちゃ面白い！普通のプールより楽しい！");
+                "壗偙傟傔偭偪傖柺敀偄両晛捠偺僾乕儖傛傝妝偟偄両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKMILKTEA)
         {
             strcpy_s(thought, sizeof(thought),
-                "タピオカこそこんな幸せが出来上がれるね");
+                "僞僺僆僇偙偦偙傫側岾偣偑弌棃忋偑傟傞偹");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
-                "恋愛映画はいつも飽きになれないね");
+                "楒垽塮夋偼偄偮傕朞偒偵側傟側偄偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVSF)
         {
             strcpy_s(thought, sizeof(thought),
-                "こんなかっこいい技術現実にも実現ほしいですね");
+                "偙傫側偐偭偙偄偄媄弍尰幚偵傕幚尰傎偟偄偱偡偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
-                "おおこのカッコ良さ素晴らしい！");
+                "偍偍偙偺僇僢僐椙偝慺惏傜偟偄両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_KARAMUTLI)
         {
             strcpy_s(thought, sizeof(thought),
-                "やっぱり一緒に歌うのは楽しい！次の曲お願い～");
+                "傗偭傁傝堦弿偵壧偆偺偼妝偟偄両師偺嬋偍婅偄乣");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTCAMP)
         {
             strcpy_s(thought, sizeof(thought),
-                "テント出来上がりの達成感いいね");
+                "僥儞僩弌棃忋偑傝偺払惉姶偄偄偹");
             VisitorFeelGood(visitorType);
         }
 
         if (buildEvent == B_EVNT_HEALTHSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "この匂いやばくない？");
-            SetResultTipsTo("硫黄泉の匂いは若い人に対してちょっと強烈すぎるかもしれません");
+                "偙偺擋偄傗偽偔側偄丠");
+            SetResultTipsTo("棸墿愹偺擋偄偼庒偄恖偵懳偟偰偪傚偭偲嫮楏偡偓傞偐傕偟傟傑偣傫");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_EATCURRY)
         {
             strcpy_s(thought, sizeof(thought),
-                "なんか普段の弁当を思い出した．．．美味しいけど");
-            SetResultTipsTo("学生に対してカレーは日常すぎるかもしれません");
+                "側傫偐晛抜偺曎摉傪巚偄弌偟偨丏丏丏旤枴偟偄偗偳");
+            SetResultTipsTo("妛惗偵懳偟偰僇儗乕偼擔忢偡偓傞偐傕偟傟傑偣傫");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKKARUPISU)
         {
             strcpy_s(thought, sizeof(thought),
-                "え？子供っぽいっすか？");
-            SetResultTipsTo("この時期の若い人は子供っぽいものが好きではありません");
+                "偊丠巕嫙偭傐偄偭偡偐丠");
+            SetResultTipsTo("偙偺帪婜偺庒偄恖偼巕嫙偭傐偄傕偺偑岲偒偱偼偁傝傑偣傫");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "ホラーちょっと苦手よまじで");
-            SetResultTipsTo("深い理由がないが、とある生徒はホラー映画にすごく苦手なので");
+                "儂儔乕偪傚偭偲嬯庤傛傑偠偱");
+            SetResultTipsTo("怺偄棟桼偑側偄偑丄偲偁傞惗搆偼儂儔乕塮夋偵偡偛偔嬯庤側偺偱");
             VisitorFeelVeryBad(visitorType);
         }
     }
@@ -169,63 +169,63 @@ void CreateCoupleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
 
         if (subName1 == 2)
         {
-            strcpy_s(thought, sizeof(thought), "この名前って私たちのことを思い出せるね");
+            strcpy_s(thought, sizeof(thought), "偙偺柤慜偭偰巹偨偪偺偙偲傪巚偄弌偣傞偹");
             VisitorFeelVeryGood(visitorType);
         }
         else if (subName1 == 1)
         {
-            strcpy_s(thought, sizeof(thought), "明るいね、ここのことも、私たちの未来もって感じ？");
+            strcpy_s(thought, sizeof(thought), "柧傞偄偹丄偙偙偺偙偲傕丄巹偨偪偺枹棃傕偭偰姶偠丠");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 3)
         {
-            strcpy_s(thought, sizeof(thought), "尊いってやばくない？ワクワクになるｗ");
+            strcpy_s(thought, sizeof(thought), "懜偄偭偰傗偽偔側偄丠儚僋儚僋偵側傞倵");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 10)
         {
-            strcpy_s(thought, sizeof(thought), "あっ、ちょうどタピオカ飲みたい");
+            strcpy_s(thought, sizeof(thought), "偁偭丄偪傚偆偳僞僺僆僇堸傒偨偄");
             VisitorFeelVeryGood(visitorType);
         }
         else if (subName1 == 11)
         {
-            strcpy_s(thought, sizeof(thought), "ふわふわな感じが好き！");
+            strcpy_s(thought, sizeof(thought), "傆傢傆傢側姶偠偑岲偒両");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 5)
         {
-            strcpy_s(thought, sizeof(thought), "喫茶店ね、のんびりの時間が欲しいね");
+            strcpy_s(thought, sizeof(thought), "媔拑揦偹丄偺傫傃傝偺帪娫偑梸偟偄偹");
             VisitorFeelAlright(visitorType);
         }
         else if (subName2 == 6 || subName2 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "ダイアモンドのような永遠な感じ");
+            strcpy_s(thought, sizeof(thought), "僟僀傾儌儞僪偺傛偆側塱墦側姶偠");
             VisitorFeelAlright(visitorType);
         }
 
         if (subName1 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "あんたいつも使ってる深い理由とぴったりですよね");
+            strcpy_s(thought, sizeof(thought), "偁傫偨偄偮傕巊偭偰傞怺偄棟桼偲傄偭偨傝偱偡傛偹");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName1 == 6)
         {
-            strcpy_s(thought, sizeof(thought), "一時的ってこういうわけないもん！");
+            strcpy_s(thought, sizeof(thought), "堦帪揑偭偰偙偆偄偆傢偗側偄傕傫両");
             VisitorFeelBad(visitorType);
         }
         else if (subName1 == 9 || subName2 == 0)
         {
-            strcpy_s(thought, sizeof(thought), "なんか私たちのことを暗示する気？");
+            strcpy_s(thought, sizeof(thought), "側傫偐巹偨偪偺偙偲傪埫帵偡傞婥丠");
             VisitorFeelBad(visitorType);
         }
         else if (subName2 == 9)
         {
-            strcpy_s(thought, sizeof(thought), "もう普段は仕事いっぱいだよ");
+            strcpy_s(thought, sizeof(thought), "傕偆晛抜偼巇帠偄偭傁偄偩傛");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName1 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "架空のものはちょっと好きになれないよ");
+            strcpy_s(thought, sizeof(thought), "壦嬻偺傕偺偼偪傚偭偲岲偒偵側傟側偄傛");
             VisitorFeelBad(visitorType);
         }
     }
@@ -234,85 +234,85 @@ void CreateCoupleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
         if (buildEvent == B_EVNT_SKINCARESPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "この温泉肌に優しいと聞きましたわ");
+                "偙偺壏愹敡偵桪偟偄偲暦偒傑偟偨傢");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_WARMSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "おおこの暖かさ、気持ちいいよね");
+                "偍偍偙偺抔偐偝丄婥帩偪偄偄傛偹");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATLIGHTFOOD)
         {
             strcpy_s(thought, sizeof(thought),
-                "普通のデート感もいいですよね");
+                "晛捠偺僨乕僩姶傕偄偄偱偡傛偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "なんか祭りに楽しんでいるみたい！");
+                "側傫偐嵳傝偵妝偟傫偱偄傞傒偨偄両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_POLINFINITY)
         {
             strcpy_s(thought, sizeof(thought),
-                "すごい！この無限な広さやばくない？");
+                "偡偛偄両偙偺柍尷側峀偝傗偽偔側偄丠");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_POLNORMAL)
         {
             strcpy_s(thought, sizeof(thought),
-                "普通のデート感もいいですよね");
+                "晛捠偺僨乕僩姶傕偄偄偱偡傛偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKMILKTEA)
         {
             strcpy_s(thought, sizeof(thought),
-                "この幸せの甘さでめっちゃいい！心にしみれるわ");
+                "偙偺岾偣偺娒偝偱傔偭偪傖偄偄両怱偵偟傒傟傞傢");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKCAFE)
         {
             strcpy_s(thought, sizeof(thought),
-                "普通のデート感もいいですよね");
+                "晛捠偺僨乕僩姶傕偄偄偱偡傛偹");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKBAR)
         {
             strcpy_s(thought, sizeof(thought),
-                "おしゃれの一品飲もうか？");
+                "偍偟傖傟偺堦昳堸傕偆偐丠");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "なんかいろんな意味でワクワクするわ");
+                "側傫偐偄傠傫側堄枴偱儚僋儚僋偡傞傢");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
-                "いいねこの物語、二人が一緒にいってくれてよかった");
+                "偄偄偹偙偺暔岅丄擇恖偑堦弿偵偄偭偰偔傟偰傛偐偭偨");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVCOMEDY)
         {
             strcpy_s(thought, sizeof(thought),
-                "これ本当におもしろいですよね");
+                "偙傟杮摉偵偍傕偟傠偄偱偡傛偹");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MAKEACSY)
         {
             strcpy_s(thought, sizeof(thought),
-                "一緒に記念のアクセサリーを作りましょう！");
+                "堦弿偵婰擮偺傾僋僙僒儕乕傪嶌傝傑偟傚偆両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MAKEPRESENT)
         {
             strcpy_s(thought, sizeof(thought),
-                "友たちのお為に特別なお土産を作りましょう！");
+                "桭偨偪偺偍堊偵摿暿側偍搚嶻傪嶌傝傑偟傚偆両");
             VisitorFeelGood(visitorType);
         }
 
@@ -321,36 +321,36 @@ void CreateCoupleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
             buildEvent == B_EVNT_EATCURRY)
         {
             strcpy_s(thought, sizeof(thought),
-                "匂いが．．．ちょっとね．．．");
-            SetResultTipsTo("強い匂いがあるところにデートしないでほうがいいですよ");
+                "擋偄偑丏丏丏偪傚偭偲偹丏丏丏");
+            SetResultTipsTo("嫮偄擋偄偑偁傞偲偙傠偵僨乕僩偟側偄偱傎偆偑偄偄偱偡傛");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
-                "もっとおしゃれな店がいいな");
-            SetResultTipsTo("酒場のは少々騒がしい場所なので");
+                "傕偭偲偍偟傖傟側揦偑偄偄側");
+            SetResultTipsTo("庰応偺偼彮乆憶偑偟偄応強側偺偱");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKKARUPISU)
         {
             strcpy_s(thought, sizeof(thought),
-                "えっ？何このカルピス放題って");
-            SetResultTipsTo("カルピスはカップルにはちょっと微妙かも");
+                "偊偭丠壗偙偺僇儖僺僗曻戣偭偰");
+            SetResultTipsTo("僇儖僺僗偼僇僢僾儖偵偼偪傚偭偲旝柇偐傕");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
         {
             strcpy_s(thought, sizeof(thought),
-                "もっといい選択があるはずじゃん");
-            SetResultTipsTo("この主題は人によって好き嫌いがあります");
+                "傕偭偲偄偄慖戰偑偁傞偼偢偠傖傫");
+            SetResultTipsTo("偙偺庡戣偼恖偵傛偭偰岲偒寵偄偑偁傝傑偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_KARASINGLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "え？二人で一緒に歌いたいよもう");
-            SetResultTipsTo("カップルに対して普通のカラオケのほうがいいかもしれません");
+                "偊丠擇恖偱堦弿偵壧偄偨偄傛傕偆");
+            SetResultTipsTo("僇僢僾儖偵懳偟偰晛捠偺僇儔僆働偺傎偆偑偄偄偐傕偟傟傑偣傫");
             VisitorFeelVeryBad(visitorType);
         }
     }
@@ -372,43 +372,43 @@ void CreateProgrammerThought(VISITOR_TYPE visitorType, int buildType, int buildE
 
         if (subName1 == 1)
         {
-            strcpy_s(thought, sizeof(thought), "いつも黒いUIに見るとしんどいよ、明るい方がいいね");
+            strcpy_s(thought, sizeof(thought), "偄偮傕崟偄UI偵尒傞偲偟傫偳偄傛丄柧傞偄曽偑偄偄偹");
             VisitorFeelAlright(visitorType);
         }
         else if (subName1 == 5)
         {
-            strcpy_s(thought, sizeof(thought), "イコールってすばらしいよ、バグの検出も楽だし");
+            strcpy_s(thought, sizeof(thought), "僀僐乕儖偭偰偡偽傜偟偄傛丄僶僌偺専弌傕妝偩偟");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "架空の想像力は私たちに必要だね");
+            strcpy_s(thought, sizeof(thought), "壦嬻偺憐憸椡偼巹偨偪偵昁梫偩偹");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 8)
         {
-            strcpy_s(thought, sizeof(thought), "ここでグローバルのもの？いいじゃんどこも使えるｗ");
+            strcpy_s(thought, sizeof(thought), "偙偙偱僌儘乕僶儖偺傕偺丠偄偄偠傖傫偳偙傕巊偊傞倵");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 2 || subName2 == 6 || subName2 == 7 || subName2 == 11)
         {
-            strcpy_s(thought, sizeof(thought), "いいよこの名前、無限のバグから解放された気がする");
+            strcpy_s(thought, sizeof(thought), "偄偄傛偙偺柤慜丄柍尷偺僶僌偐傜夝曻偝傟偨婥偑偡傞");
             VisitorFeelAlright(visitorType);
         }
 
         if (subName1 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "深いところに隠してるバグが嫌いだよ");
+            strcpy_s(thought, sizeof(thought), "怺偄偲偙傠偵塀偟偰傞僶僌偑寵偄偩傛");
             VisitorFeelBad(visitorType);
         }
         else if (subName1 == 9 || subName1 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "えっ、俺のことですか？");
+            strcpy_s(thought, sizeof(thought), "偊偭丄壌偺偙偲偱偡偐丠");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName2 == 9)
         {
-            strcpy_s(thought, sizeof(thought), "せっかく仕事から逃れたのによ");
+            strcpy_s(thought, sizeof(thought), "偣偭偐偔巇帠偐傜摝傟偨偺偵傛");
             VisitorFeelBad(visitorType);
         }
     }
@@ -417,117 +417,117 @@ void CreateProgrammerThought(VISITOR_TYPE visitorType, int buildType, int buildE
         if (buildEvent == B_EVNT_WARMSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "暖かくになったね、もう冷房には何も怖くないよ");
+                "抔偐偔偵側偭偨偹丄傕偆椻朳偵偼壗傕晐偔側偄傛");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_HEALTHSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "体から力がどんどん現れている、いいよね");
+                "懱偐傜椡偑偳傫偳傫尰傟偰偄傞丄偄偄傛偹");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATBBQ)
         {
             strcpy_s(thought, sizeof(thought),
-                "バーベキューのは超久しぶりだね、楽しみにしている");
+                "僶乕儀僉儏乕偺偼挻媣偟傇傝偩偹丄妝偟傒偵偟偰偄傞");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATUNAGI)
         {
             strcpy_s(thought, sizeof(thought),
-                "このうまさすごいね、どんなバグでも怖くないだ");
+                "偙偺偆傑偝偡偛偄偹丄偳傫側僶僌偱傕晐偔側偄偩");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_POLFLUSH)
         {
             strcpy_s(thought, sizeof(thought),
-                "水流の中に泳ぐのは予想以上楽しいね");
+                "悈棳偺拞偵塲偖偺偼梊憐埲忋妝偟偄偹");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKTEA ||
             buildEvent == B_EVNT_DRKBAR)
         {
             strcpy_s(thought, sizeof(thought),
-                "いいね、普段はこんな店あんまり来ないんだ");
+                "偄偄偹丄晛抜偼偙傫側揦偁傫傑傝棃側偄傫偩");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVSF)
         {
             strcpy_s(thought, sizeof(thought),
-                "技術はここまでできるか、やっぱり未来は期待できる");
+                "媄弍偼偙偙傑偱偱偒傞偐丄傗偭傁傝枹棃偼婜懸偱偒傞");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
-                "この熱血感ずいぶん久しぶりだ");
+                "偙偺擬寣姶偢偄傇傫媣偟傇傝偩");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVCOMEDY)
         {
             strcpy_s(thought, sizeof(thought),
-                "すごく面白いですね、このコメディ");
+                "偡偛偔柺敀偄偱偡偹丄偙偺僐儊僨傿");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_KARASINGLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "一人で歌うのは気楽なことだ");
+                "堦恖偱壧偆偺偼婥妝側偙偲偩");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTHOTEL)
         {
             strcpy_s(thought, sizeof(thought),
-                "ホテルの落ち着く感はいいね、パソコンも使えるし");
+                "儂僥儖偺棊偪拝偔姶偼偄偄偹丄僷僜僐儞傕巊偊傞偟");
             VisitorFeelAlright(visitorType);
         }
         else if (buildType == B_TYPE_MAKEBYHAND)
         {
             strcpy_s(thought, sizeof(thought),
-                "手作りのものに匠の精神も多少ありますね");
+                "庤嶌傝偺傕偺偵彔偺惛恄傕懡彮偁傝傑偡偹");
             VisitorFeelAlright(visitorType);
         }
 
         if (buildEvent == B_EVNT_EATRAMEN)
         {
             strcpy_s(thought, sizeof(thought),
-                "仕事の時昼飯はもうラーメンいっぱいだね");
-            SetResultTipsTo("どうやらプログラマーの昼飯は常にラーメンである");
+                "巇帠偺帪拫斞偼傕偆儔乕儊儞偄偭傁偄偩偹");
+            SetResultTipsTo("偳偆傗傜僾儘僌儔儅乕偺拫斞偼忢偵儔乕儊儞偱偁傞");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKMILKTEA)
         {
             strcpy_s(thought, sizeof(thought),
-                "甘すぎくないタピオカって");
-            SetResultTipsTo("深い理由がないがプログラマーはどうやらタピオカ好きではありません");
+                "娒偡偓偔側偄僞僺僆僇偭偰");
+            SetResultTipsTo("怺偄棟桼偑側偄偑僾儘僌儔儅乕偼偳偆傗傜僞僺僆僇岲偒偱偼偁傝傑偣傫");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
-                "嫌だ上司に飲まさせられた記憶が蘇った");
-            SetResultTipsTo("遥か昔、とあるプログラマーは上司に無理矢理飲まさせられたことがある");
+                "寵偩忋巌偵堸傑偝偣傜傟偨婰壇偑慼偭偨");
+            SetResultTipsTo("梱偐愄丄偲偁傞僾儘僌儔儅乕偼忋巌偵柍棟栴棟堸傑偝偣傜傟偨偙偲偑偁傞");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "せっかくのリゾートにもっと穏やかになりたいな");
-            SetResultTipsTo("大したことないんが、このプログラマーはホラー苦手です");
+                "偣偭偐偔偺儕僝乕僩偵傕偭偲壐傗偐偵側傝偨偄側");
+            SetResultTipsTo("戝偟偨偙偲側偄傫偑丄偙偺僾儘僌儔儅乕偼儂儔乕嬯庤偱偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
-                "えっ？こんなこと言ったらおしまいじゃん？");
-            SetResultTipsTo("このプログラマーはいつも合理的なものを追求しています");
+                "偊偭丠偙傫側偙偲尵偭偨傜偍偟傑偄偠傖傫丠");
+            SetResultTipsTo("偙偺僾儘僌儔儅乕偼偄偮傕崌棟揑側傕偺傪捛媮偟偰偄傑偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_KARAMUTLI)
         {
             strcpy_s(thought, sizeof(thought),
-                "皆の前に歌うのは少し恥ずかしくなるな");
-            SetResultTipsTo("どうやらこのプログラマーは人の前に歌う事が嫌いです");
+                "奆偺慜偵壧偆偺偼彮偟抪偢偐偟偔側傞側");
+            SetResultTipsTo("偳偆傗傜偙偺僾儘僌儔儅乕偼恖偺慜偵壧偆帠偑寵偄偱偡");
             VisitorFeelBad(visitorType);
         }
     }
@@ -549,49 +549,49 @@ void CreateArtistThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
 
         if (subName1 == 1)
         {
-            strcpy_s(thought, sizeof(thought), "明るいって、このリゾートにいい色を染まったね");
+            strcpy_s(thought, sizeof(thought), "柧傞偄偭偰丄偙偺儕僝乕僩偵偄偄怓傪愼傑偭偨偹");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "多様な醍醐味があるので深いでしょう");
+            strcpy_s(thought, sizeof(thought), "懡條側戠岉枴偑偁傞偺偱怺偄偱偟傚偆");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "架空のものこそ無限な可能性を生み出せるね");
+            strcpy_s(thought, sizeof(thought), "壦嬻偺傕偺偙偦柍尷側壜擻惈傪惗傒弌偣傞偹");
             VisitorFeelAlright(visitorType);
         }
         else if (subName2 == 2 || subName2 == 6 ||
             subName2 == 7 || subName2 == 10 || subName2 == 11)
         {
-            strcpy_s(thought, sizeof(thought), "いい発想を生み出せるそう名前です");
+            strcpy_s(thought, sizeof(thought), "偄偄敪憐傪惗傒弌偣傞偦偆柤慜偱偡");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 6)
         {
-            strcpy_s(thought, sizeof(thought), "一時的のものだからこそ特別な美感がありますね");
+            strcpy_s(thought, sizeof(thought), "堦帪揑偺傕偺偩偐傜偙偦摿暿側旤姶偑偁傝傑偡偹");
             VisitorFeelAlright(visitorType);
         }
         else if (subName2 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "おおっ、ここで私のパラダイスですよ！");
+            strcpy_s(thought, sizeof(thought), "偍偍偭丄偙偙偱巹偺僷儔僟僀僗偱偡傛両");
             VisitorFeelAlright(visitorType);
         }
 
         if (subName1 == 5)
         {
-            strcpy_s(thought, sizeof(thought), "理性すぎる言葉から美を生み出すのは相当難しいよ");
+            strcpy_s(thought, sizeof(thought), "棟惈偡偓傞尵梩偐傜旤傪惗傒弌偡偺偼憡摉擄偟偄傛");
             VisitorFeelBad(visitorType);
         }
         else if (subName1 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "サラリーマンって．．．ちょっとあれですよね");
+            strcpy_s(thought, sizeof(thought), "僒儔儕乕儅儞偭偰丏丏丏偪傚偭偲偁傟偱偡傛偹");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName2 == 1 || subName2 == 12)
         {
-            strcpy_s(thought, sizeof(thought), "個性が少ないね、インパクトが少々足りません");
+            strcpy_s(thought, sizeof(thought), "屄惈偑彮側偄偹丄僀儞僷僋僩偑彮乆懌傝傑偣傫");
             VisitorFeelBad(visitorType);
         }
     }
@@ -600,72 +600,72 @@ void CreateArtistThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
         if (buildType == B_TYPE_HOTSPRING)
         {
             strcpy_s(thought, sizeof(thought),
-                "温泉に沁みれたらアイデアがどんどん出ていきますね");
+                "壏愹偵煄傒傟偨傜傾僀僨傾偑偳傫偳傫弌偰偄偒傑偡偹");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATUNAGI)
         {
             strcpy_s(thought, sizeof(thought),
-                "ウナギ屋は良い技が持ってますね、美しいほどの旨い");
+                "僂僫僊壆偼椙偄媄偑帩偭偰傑偡偹丄旤偟偄傎偳偺巪偄");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATCURRY ||
             buildEvent == B_EVNT_EATRAMEN)
         {
             strcpy_s(thought, sizeof(thought),
-                "日常感たっぷりですが、これも美感の起こりの一つね");
+                "擔忢姶偨偭傉傝偱偡偑丄偙傟傕旤姶偺婲偙傝偺堦偮偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_POLINFINITY)
         {
             strcpy_s(thought, sizeof(thought),
-                "無限に延べてるボーダーラインに色んな可能性がある");
+                "柍尷偵墑傋偰傞儃乕僟乕儔僀儞偵怓傫側壜擻惈偑偁傞");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKTEA)
         {
             strcpy_s(thought, sizeof(thought),
-                "この香ばしいお茶はもう無敵だわ");
+                "偙偺崄偽偟偄偍拑偼傕偆柍揋偩傢");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
-                "人々の気持ちや感情が全ての美しいものの根源だね");
+                "恖乆偺婥帩偪傗姶忣偑慡偰偺旤偟偄傕偺偺崻尮偩偹");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
         {
             strcpy_s(thought, sizeof(thought),
-                "昔の人にいろんな知識や経験など得られますね");
+                "愄偺恖偵偄傠傫側抦幆傗宱尡側偳摼傜傟傑偡偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTCAMP)
         {
             strcpy_s(thought, sizeof(thought),
-                "自然と話し合いと自分を納得できるようになった");
+                "帺慠偲榖偟崌偄偲帺暘傪擺摼偱偒傞傛偆偵側偭偨");
             VisitorFeelGood(visitorType);
         }
 
         if (buildEvent == B_EVNT_EATFRIEDNOODLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "あ昔の祭りの時思い出した、楽しい思い出じゃないが");
-            SetResultTipsTo("ここの話ですが、アーティストさんは昔ある祭りに彼氏にフラれたみたい");
+                "偁愄偺嵳傝偺帪巚偄弌偟偨丄妝偟偄巚偄弌偠傖側偄偑");
+            SetResultTipsTo("偙偙偺榖偱偡偑丄傾乕僥傿僗僩偝傫偼愄偁傞嵳傝偵斵巵偵僼儔傟偨傒偨偄");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildType == B_TYPE_KARAOKE)
         {
             strcpy_s(thought, sizeof(thought),
-                "ああ歌うのは苦手ですよ．．．");
-            SetResultTipsTo("キャラの個性なんですけど、アーティストさんは歌うことが嫌みたい");
+                "偁偁壧偆偺偼嬯庤偱偡傛丏丏丏");
+            SetResultTipsTo("僉儍儔偺屄惈側傫偱偡偗偳丄傾乕僥傿僗僩偝傫偼壧偆偙偲偑寵傒偨偄");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTHOTEL)
         {
             strcpy_s(thought, sizeof(thought),
-                "なんか出張してる気がする？");
-            SetResultTipsTo("アーティストさんはいつも絶賛在宅勤務しているそうです");
+                "側傫偐弌挘偟偰傞婥偑偡傞丠");
+            SetResultTipsTo("傾乕僥傿僗僩偝傫偼偄偮傕愨巀嵼戭嬑柋偟偰偄傞偦偆偱偡");
             VisitorFeelBad(visitorType);
         }
     }
@@ -687,48 +687,48 @@ void CreateOfficerThought(VISITOR_TYPE visitorType, int buildType, int buildEven
 
         if (subName1 == 0)
         {
-            strcpy_s(thought, sizeof(thought), "涼しいっていいですね、いつも正装で息苦しいよ");
+            strcpy_s(thought, sizeof(thought), "椓偟偄偭偰偄偄偱偡偹丄偄偮傕惓憰偱懅嬯偟偄傛");
             VisitorFeelAlright(visitorType);
         }
         else if (subName1 == 9)
         {
-            strcpy_s(thought, sizeof(thought), "空気読むのは飽きた、今日だけ読まない人になりたい");
+            strcpy_s(thought, sizeof(thought), "嬻婥撉傓偺偼朞偒偨丄崱擔偩偗撉傑側偄恖偵側傝偨偄");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 11)
         {
-            strcpy_s(thought, sizeof(thought), "このふわふわ感がさしぶりね、周りはいつも硬いし");
+            strcpy_s(thought, sizeof(thought), "偙偺傆傢傆傢姶偑偝偟傇傝偹丄廃傝偼偄偮傕峝偄偟");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 1 || subName2 == 8 || subName2 == 10)
         {
-            strcpy_s(thought, sizeof(thought), "いいよね、この落ち着くの感じ");
+            strcpy_s(thought, sizeof(thought), "偄偄傛偹丄偙偺棊偪拝偔偺姶偠");
             VisitorFeelAlright(visitorType);
         }
 
         if (subName1 == 1)
         {
-            strcpy_s(thought, sizeof(thought), "いつも明るすぎ場所に働いてるのでちょっと飽きたね");
+            strcpy_s(thought, sizeof(thought), "偄偮傕柧傞偡偓応強偵摥偄偰傞偺偱偪傚偭偲朞偒偨偹");
             VisitorFeelBad(visitorType);
         }
         else if (subName1 == 2)
         {
-            strcpy_s(thought, sizeof(thought), "甘酸っぱいって何でちょっとイライラ気がする？");
+            strcpy_s(thought, sizeof(thought), "娒巁偭傁偄偭偰壗偱偪傚偭偲僀儔僀儔婥偑偡傞丠");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName1 == 13 || subName2 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "何なんだこの生意気さ");
+            strcpy_s(thought, sizeof(thought), "壗側傫偩偙偺惗堄婥偝");
             VisitorFeelBad(visitorType);
         }
         else if (subName1 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "もうきた以上仕事の内容は考えたくないよ");
+            strcpy_s(thought, sizeof(thought), "傕偆偒偨埲忋巇帠偺撪梕偼峫偊偨偔側偄傛");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName2 == 12 || subName2 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "ちょっと落ち着かないねこの名前");
+            strcpy_s(thought, sizeof(thought), "偪傚偭偲棊偪拝偐側偄偹偙偺柤慜");
             VisitorFeelBad(visitorType);
         }
     }
@@ -737,76 +737,76 @@ void CreateOfficerThought(VISITOR_TYPE visitorType, int buildType, int buildEven
         if (buildEvent == B_EVNT_SKINCARESPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "これ肌にすごく効果的と聞きました！");
+                "偙傟敡偵偡偛偔岠壥揑偲暦偒傑偟偨両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "いいね、祭りっぽくな感じ");
+                "偄偄偹丄嵳傝偭傐偔側姶偠");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATBBQ)
         {
             strcpy_s(thought, sizeof(thought),
-                "自分の手でご飯を作るのはたのたのしい～");
+                "帺暘偺庤偱偛斞傪嶌傞偺偼偨偺偨偺偟偄乣");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_POLINFINITY)
         {
             strcpy_s(thought, sizeof(thought),
-                "おお～なんだなんだこの広さ、すごい！");
+                "偍偍乣側傫偩側傫偩偙偺峀偝丄偡偛偄両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_POLNIGHT)
         {
             strcpy_s(thought, sizeof(thought),
-                "夜のプールこそ独特な面白さがあるとはな");
+                "栭偺僾乕儖偙偦撈摿側柺敀偝偑偁傞偲偼側");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKMILKTEA)
         {
             strcpy_s(thought, sizeof(thought),
-                "タピオカの味に人を元気にさせる力がある！");
+                "僞僺僆僇偺枴偵恖傪尦婥偵偝偣傞椡偑偁傞両");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKBAR)
         {
             strcpy_s(thought, sizeof(thought),
-                "ゆっくりと一杯飲もう？雰囲気いいし");
+                "備偭偔傝偲堦攖堸傕偆丠暤埻婥偄偄偟");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_KARAMUTLI)
         {
             strcpy_s(thought, sizeof(thought),
-                "やっぱ皆でカラオケしての方が楽しいね");
+                "傗偭傁奆偱僇儔僆働偟偰偺曽偑妝偟偄偹");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MAKEACSY)
         {
             strcpy_s(thought, sizeof(thought),
-                "凄い、これって「あたし～限定～」ということじゃん");
+                "惁偄丄偙傟偭偰乽偁偨偟乣尷掕乣乿偲偄偆偙偲偠傖傫");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "普段はあんまりホラー見てないんがなんか新鮮な感じ");
+                "晛抜偼偁傫傑傝儂儔乕尒偰側偄傫偑側傫偐怴慛側姶偠");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVSF ||
             buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
-                "おお～これやばくない？本当にかっこいい！");
+                "偍偍乣偙傟傗偽偔側偄丠杮摉偵偐偭偙偄偄両");
             VisitorFeelAlright(visitorType);
         }
 
         if (buildEvent == B_EVNT_NORMALSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "うんん、単純な温泉ってなんかちょっとつまらん");
-            SetResultTipsTo("どうやら事務員さんは日常と違う体験を探しています");
+                "偆傫傫丄扨弮側壏愹偭偰側傫偐偪傚偭偲偮傑傜傫");
+            SetResultTipsTo("偳偆傗傜帠柋堳偝傫偼擔忢偲堘偆懱尡傪扵偟偰偄傑偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_EATRAMEN ||
@@ -814,22 +814,22 @@ void CreateOfficerThought(VISITOR_TYPE visitorType, int buildType, int buildEven
             buildEvent == B_EVNT_DRKCAFE)
         {
             strcpy_s(thought, sizeof(thought),
-                "もっと特別なものが欲しいね");
-            SetResultTipsTo("どうやら事務員さんは日常と違う体験を探しています");
+                "傕偭偲摿暿側傕偺偑梸偟偄偹");
+            SetResultTipsTo("偳偆傗傜帠柋堳偝傫偼擔忢偲堘偆懱尡傪扵偟偰偄傑偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
-                "これは仕事終わりの飲み会かい！");
-            SetResultTipsTo("事務員さんに対して多分仕事後の飲み会はもう飽きたです");
+                "偙傟偼巇帠廔傢傝偺堸傒夛偐偄両");
+            SetResultTipsTo("帠柋堳偝傫偵懳偟偰懡暘巇帠屻偺堸傒夛偼傕偆朞偒偨偱偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
-                "個人的にはインパクトが欲しいね");
-            SetResultTipsTo("結果が見通しやすいなことは事務員さんが探しているものではありません");
+                "屄恖揑偵偼僀儞僷僋僩偑梸偟偄偹");
+            SetResultTipsTo("寢壥偑尒捠偟傗偡偄側偙偲偼帠柋堳偝傫偑扵偟偰偄傞傕偺偱偼偁傝傑偣傫");
             VisitorFeelBad(visitorType);
         }
     }
@@ -851,43 +851,43 @@ void CreateFamilyThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
 
         if (subName1 == 11)
         {
-            strcpy_s(thought, sizeof(thought), "ほら、美味しい綿あめですよ～");
+            strcpy_s(thought, sizeof(thought), "傎傜丄旤枴偟偄柸偁傔偱偡傛乣");
             VisitorFeelAlright(visitorType);
         }
         else if (subName1 == 12)
         {
-            strcpy_s(thought, sizeof(thought), "この前見に行ったパンダさんかわいいですね");
+            strcpy_s(thought, sizeof(thought), "偙偺慜尒偵峴偭偨僷儞僟偝傫偐傢偄偄偱偡偹");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 2)
         {
-            strcpy_s(thought, sizeof(thought), "昔のことが思い出したねパパ");
+            strcpy_s(thought, sizeof(thought), "愄偺偙偲偑巚偄弌偟偨偹僷僷");
             VisitorFeelGood(visitorType);
         }
         else if (subName1 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "お伽話にいるな感じですね～");
+            strcpy_s(thought, sizeof(thought), "偍壘榖偵偄傞側姶偠偱偡偹乣");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 8 || subName2 == 10)
         {
-            strcpy_s(thought, sizeof(thought), "名前だけでも綺麗ところで断言できますね");
+            strcpy_s(thought, sizeof(thought), "柤慜偩偗偱傕鉟楉偲偙傠偱抐尵偱偒傑偡偹");
             VisitorFeelAlright(visitorType);
         }
 
         if (subName1 == 9)
         {
-            strcpy_s(thought, sizeof(thought), "え？これは小さい子に見させないものでしょう？");
+            strcpy_s(thought, sizeof(thought), "偊丠偙傟偼彫偝偄巕偵尒偝偣側偄傕偺偱偟傚偆丠");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName1 == 4 || subName1 == 6)
         {
-            strcpy_s(thought, sizeof(thought), "子供にはわかりずらいでしょう");
+            strcpy_s(thought, sizeof(thought), "巕嫙偵偼傢偐傝偢傜偄偱偟傚偆");
             VisitorFeelBad(visitorType);
         }
         else if (subName2 == 12)
         {
-            strcpy_s(thought, sizeof(thought), "なんか変な場所を思いついた．．．");
+            strcpy_s(thought, sizeof(thought), "側傫偐曄側応強傪巚偄偮偄偨丏丏丏");
             VisitorFeelVeryBad(visitorType);
         }
     }
@@ -896,123 +896,123 @@ void CreateFamilyThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
         if (buildType == B_TYPE_HOTSPRING)
         {
             strcpy_s(thought, sizeof(thought),
-                "次の家族旅行も温泉いきましょうよ");
+                "師偺壠懓椃峴傕壏愹偄偒傑偟傚偆傛");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_POLNIGHT)
         {
             strcpy_s(thought, sizeof(thought),
-                "どんな時でも来れるプールっていいよね");
+                "偳傫側帪偱傕棃傟傞僾乕儖偭偰偄偄傛偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_EATBBQ)
         {
             strcpy_s(thought, sizeof(thought),
-                "火傷注意して一緒に美味しいご飯作りましょう！");
+                "壩彎拲堄偟偰堦弿偵旤枴偟偄偛斞嶌傝傑偟傚偆両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATCURRY)
         {
             strcpy_s(thought, sizeof(thought),
-                "同じ美味しいが母ちゃんのカレーとは違う風味がある");
+                "摨偠旤枴偟偄偑曣偪傖傫偺僇儗乕偲偼堘偆晽枴偑偁傞");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "焼きそばからのいい香り！");
+                "從偒偦偽偐傜偺偄偄崄傝両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKKARUPISU)
         {
             strcpy_s(thought, sizeof(thought),
-                "父ちゃん母ちゃんカルピス飲みたい！");
+                "晝偪傖傫曣偪傖傫僇儖僺僗堸傒偨偄両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKCAFE)
         {
             strcpy_s(thought, sizeof(thought),
-                "家族の間でこんなゆっくりの時間が一番だね");
+                "壠懓偺娫偱偙傫側備偭偔傝偺帪娫偑堦斣偩偹");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVSF)
         {
             strcpy_s(thought, sizeof(thought),
-                "ね太郎、このキャラかっこいいでしょう？");
+                "偹懢榊丄偙偺僉儍儔偐偭偙偄偄偱偟傚偆丠");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVCOMEDY)
         {
             strcpy_s(thought, sizeof(thought),
-                "この映画面白いねママ");
+                "偙偺塮夋柺敀偄偹儅儅");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
         {
             strcpy_s(thought, sizeof(thought),
-                "花ちゃん、将来このような立派な人間になりたい！");
+                "壴偪傖傫丄彨棃偙偺傛偆側棫攈側恖娫偵側傝偨偄両");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_KARAMUTLI)
         {
             strcpy_s(thought, sizeof(thought),
-                "家族で一緒にカラオケしてもなかなか楽しいじゃん");
+                "壠懓偱堦弿偵僇儔僆働偟偰傕側偐側偐妝偟偄偠傖傫");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTCAMP)
         {
             strcpy_s(thought, sizeof(thought),
-                "父ちゃん母ちゃんキャンプって凄く楽しい！");
+                "晝偪傖傫曣偪傖傫僉儍儞僾偭偰惁偔妝偟偄両");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MAKEPRESENT)
         {
             strcpy_s(thought, sizeof(thought),
-                "自分でお土産を作るのもいいね");
+                "帺暘偱偍搚嶻傪嶌傞偺傕偄偄偹");
             VisitorFeelAlright(visitorType);
         }
 
         if (buildEvent == B_EVNT_POLFLUSH)
         {
             strcpy_s(thought, sizeof(thought),
-                "一郎入るな、流水プールはまだ危険すぎるんだろう？");
-            SetResultTipsTo("子供に対して流水プールはまだまだ早い");
+                "堦榊擖傞側丄棳悈僾乕儖偼傑偩婋尟偡偓傞傫偩傠偆丠");
+            SetResultTipsTo("巕嫙偵懳偟偰棳悈僾乕儖偼傑偩傑偩憗偄");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_POLINFINITY)
         {
             strcpy_s(thought, sizeof(thought),
-                "花ちゃんーーどこにいるのーーーー");
-            SetResultTipsTo("子供を自分の周りに縛りたくないが広い場所に迷子になる可能性が非常に高い");
+                "壴偪傖傫乕乕偳偙偵偄傞偺乕乕乕乕");
+            SetResultTipsTo("巕嫙傪帺暘偺廃傝偵敍傝偨偔側偄偑峀偄応強偵柪巕偵側傞壜擻惈偑旕忢偵崅偄");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKBAR ||
             buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
-                "おいおい、未成年がいるでしょう？");
-            SetResultTipsTo("未成年に対して酒はダメです");
+                "偍偄偍偄丄枹惉擭偑偄傞偱偟傚偆丠");
+            SetResultTipsTo("枹惉擭偵懳偟偰庰偼僟儊偱偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "怖くない怖くない。ホラーってまじ有り得ないわ");
-            SetResultTipsTo("ホラー映画は子供に対して不適切なものです");
+                "晐偔側偄晐偔側偄丅儂儔乕偭偰傑偠桳傝摼側偄傢");
+            SetResultTipsTo("儂儔乕塮夋偼巕嫙偵懳偟偰晄揔愗側傕偺偱偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
-                "嫌だ血が出てる。。。");
-            SetResultTipsTo("アクション映画の暴力内容は子供に対して不適切なものです");
+                "寵偩寣偑弌偰傞丅丅丅");
+            SetResultTipsTo("傾僋僔儑儞塮夋偺朶椡撪梕偼巕嫙偵懳偟偰晄揔愗側傕偺偱偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_KARASINGLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "わざわざ私たち分けて必要ないじゃん");
-            SetResultTipsTo("家族メンバーに一緒にいることが大切なのです");
+                "傢偞傢偞巹偨偪暘偗偰昁梫側偄偠傖傫");
+            SetResultTipsTo("壠懓儊儞僶乕偵堦弿偵偄傞偙偲偑戝愗側偺偱偡");
             VisitorFeelVeryBad(visitorType);
         }
     }
@@ -1035,33 +1035,33 @@ void CreateRabbitThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
         if (subName1 == 8 || subName1 == 10 || subName1 == 14 ||
             subName2 == 5 || subName2 == 12 || subName2 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "なんか人間っぽいしワクワクするウギ！");
+            strcpy_s(thought, sizeof(thought), "側傫偐恖娫偭傐偄偟儚僋儚僋偡傞僂僊両");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "海は珍しいものウギ！経営者に感謝申し上げウギ！");
+            strcpy_s(thought, sizeof(thought), "奀偼捒偟偄傕偺僂僊両宱塩幰偵姶幱怽偟忋偘僂僊両");
             VisitorFeelGood(visitorType);
         }
 
         if (subName1 == 12)
         {
-            strcpy_s(thought, sizeof(thought), "非人間動物同士としてちょっと嫌味ウギ．．．");
+            strcpy_s(thought, sizeof(thought), "旕恖娫摦暔摨巑偲偟偰偪傚偭偲寵枴僂僊丏丏丏");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName2 == 13)
         {
-            strcpy_s(thought, sizeof(thought), "村って危ういところじゃないウギ？");
+            strcpy_s(thought, sizeof(thought), "懞偭偰婋偆偄偲偙傠偠傖側偄僂僊丠");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName1 == 0 || subName1 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "嫌なことを思い出したウギ．．．");
+            strcpy_s(thought, sizeof(thought), "寵側偙偲傪巚偄弌偟偨僂僊丏丏丏");
             VisitorFeelBad(visitorType);
         }
         else if (subName2 == 2 || subName2 == 6)
         {
-            strcpy_s(thought, sizeof(thought), "山とか森とかもう見飽きたウギ！");
+            strcpy_s(thought, sizeof(thought), "嶳偲偐怷偲偐傕偆尒朞偒偨僂僊両");
             VisitorFeelBad(visitorType);
         }
     }
@@ -1070,93 +1070,93 @@ void CreateRabbitThought(VISITOR_TYPE visitorType, int buildType, int buildEvent
         if (buildEvent == B_EVNT_NORMALSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "いいウギ、この暖かさ");
+                "偄偄僂僊丄偙偺抔偐偝");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATRAMEN ||
             buildEvent == B_EVNT_EATCURRY)
         {
             strcpy_s(thought, sizeof(thought),
-                "あ、これ本当に美味しいウギ！");
+                "偁丄偙傟杮摉偵旤枴偟偄僂僊両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATLIGHTFOOD ||
             buildEvent == B_EVNT_DRKCAFE)
         {
             strcpy_s(thought, sizeof(thought),
-                "この店凄くおしゃれウギ");
+                "偙偺揦惁偔偍偟傖傟僂僊");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL)
         {
             strcpy_s(thought, sizeof(thought),
-                "賑やかにも嬉しいウギ");
+                "擌傗偐偵傕婐偟偄僂僊");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
-                "感動されたウギ．．．");
+                "姶摦偝傟偨僂僊丏丏丏");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVCOMEDY)
         {
             strcpy_s(thought, sizeof(thought),
-                "これ面白いウギ！");
+                "偙傟柺敀偄僂僊両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVDOCUMENTARY)
         {
             strcpy_s(thought, sizeof(thought),
-                "こういうのも人間かウギ．．．");
+                "偙偆偄偆偺傕恖娫偐僂僊丏丏丏");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTHOTEL)
         {
             strcpy_s(thought, sizeof(thought),
-                "あ～森より良すぎるだウギ");
+                "偁乣怷傛傝椙偡偓傞偩僂僊");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MAKEPRESENT)
         {
             strcpy_s(thought, sizeof(thought),
-                "友たちに何を作って上げるがいいウギ");
+                "桭偨偪偵壗傪嶌偭偰忋偘傞偑偄偄僂僊");
             VisitorFeelAlright(visitorType);
         }
 
         if (buildEvent == B_EVNT_HEALTHSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "この匂いもうダメウギ．．．");
-            SetResultTipsTo("動物に対して硫黄泉の匂いがちょっと強烈すぎます");
+                "偙偺擋偄傕偆僟儊僂僊丏丏丏");
+            SetResultTipsTo("摦暔偵懳偟偰棸墿愹偺擋偄偑偪傚偭偲嫮楏偡偓傑偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_EATUNAGI)
         {
             strcpy_s(thought, sizeof(thought),
-                "ひっ、ひどいウギ．．．");
-            SetResultTipsTo("同じく人間に食べられる同士なので、そいつを食うのはちょっと残酷なことです");
+                "傂偭丄傂偳偄僂僊丏丏丏");
+            SetResultTipsTo("摨偠偔恖娫偵怘傋傜傟傞摨巑側偺偱丄偦偄偮傪怘偆偺偼偪傚偭偲巆崜側偙偲偱偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_POLFLUSH)
         {
             strcpy_s(thought, sizeof(thought),
-                "一生登れない気がするウギ．．．");
-            SetResultTipsTo("流水プールから脱出のはウサギさん自分の力でできることではありません");
+                "堦惗搊傟側偄婥偑偡傞僂僊丏丏丏");
+            SetResultTipsTo("棳悈僾乕儖偐傜扙弌偺偼僂僒僊偝傫帺暘偺椡偱偱偒傞偙偲偱偼偁傝傑偣傫");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "あああ血だ血だっ！");
-            SetResultTipsTo("かわいいうさぎさんに対してホラーは刺激すぎます");
+                "偁偁偁寣偩寣偩偭両");
+            SetResultTipsTo("偐傢偄偄偆偝偓偝傫偵懳偟偰儂儔乕偼巋寖偡偓傑偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
-                "苦手なんだよこのタイプ．．．");
-            SetResultTipsTo("かわいいうさぎさんに対してアクション映画は刺激すぎます");
+                "嬯庤側傫偩傛偙偺僞僀僾丏丏丏");
+            SetResultTipsTo("偐傢偄偄偆偝偓偝傫偵懳偟偰傾僋僔儑儞塮夋偼巋寖偡偓傑偡");
             VisitorFeelBad(visitorType);
         }
     }
@@ -1179,28 +1179,28 @@ void CreateWhaleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
         if (subName1 == 8 || subName1 == 10 || subName1 == 14 ||
             subName2 == 5 || subName2 == 12 || subName2 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "なんか人間っぽいしワクワクするクジ！");
+            strcpy_s(thought, sizeof(thought), "側傫偐恖娫偭傐偄偟儚僋儚僋偡傞僋僕両");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 2)
         {
-            strcpy_s(thought, sizeof(thought), "森は珍しいものクジ！経営者に感謝申し上げクジ！");
+            strcpy_s(thought, sizeof(thought), "怷偼捒偟偄傕偺僋僕両宱塩幰偵姶幱怽偟忋偘僋僕両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (subName2 == 6)
         {
-            strcpy_s(thought, sizeof(thought), "山は珍しいものクジ！経営者に感謝申し上げクジ！");
+            strcpy_s(thought, sizeof(thought), "嶳偼捒偟偄傕偺僋僕両宱塩幰偵姶幱怽偟忋偘僋僕両");
             VisitorFeelVeryGood(visitorType);
         }
 
         if (subName1 == 0 || subName1 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "嫌なことを思い出したクジ．．．");
+            strcpy_s(thought, sizeof(thought), "寵側偙偲傪巚偄弌偟偨僋僕丏丏丏");
             VisitorFeelBad(visitorType);
         }
         else if (subName2 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "海はもう見飽きたクジ！");
+            strcpy_s(thought, sizeof(thought), "奀偼傕偆尒朞偒偨僋僕両");
             VisitorFeelBad(visitorType);
         }
     }
@@ -1209,75 +1209,75 @@ void CreateWhaleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
         if (buildEvent == B_EVNT_WARMSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "おお、体が完全に温まったぞクジ！");
+                "偍偍丄懱偑姰慡偵壏傑偭偨偧僋僕両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATBBQ)
         {
             strcpy_s(thought, sizeof(thought),
-                "この肉本当に旨いクジ！");
+                "偙偺擏杮摉偵巪偄僋僕両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATUNAGI)
         {
             strcpy_s(thought, sizeof(thought),
-                "魚ってこんな美味しいものだっけ？");
+                "嫑偭偰偙傫側旤枴偟偄傕偺偩偭偗丠");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATFRIEDNOODLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "美味しいクジ、このぬるぬるのめん");
+                "旤枴偟偄僋僕丄偙偺偸傞偸傞偺傔傫");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_POLINFINITY)
         {
             strcpy_s(thought, sizeof(thought),
-                "小さい海みたい！小さいクジけど");
+                "彫偝偄奀傒偨偄両彫偝偄僋僕偗偳");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKKARUPISU)
         {
             strcpy_s(thought, sizeof(thought),
-                "面白いクジこの酸っぱいな水！");
+                "柺敀偄僋僕偙偺巁偭傁偄側悈両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "このなかなかのインパクトがあるクジ、面白い");
+                "偙偺側偐側偐偺僀儞僷僋僩偑偁傞僋僕丄柺敀偄");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVLOVE)
         {
             strcpy_s(thought, sizeof(thought),
-                "いいよクジ、この甘酸っぱいな感じ");
+                "偄偄傛僋僕丄偙偺娒巁偭傁偄側姶偠");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVCOMEDY)
         {
             strcpy_s(thought, sizeof(thought),
-                "ハハハハハこれ超面白いクジ！");
+                "僴僴僴僴僴偙傟挻柺敀偄僋僕両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_KARAMUTLI)
         {
             strcpy_s(thought, sizeof(thought),
-                "私たちくじらだもんね、一緒に歌うのは一番楽クジ");
+                "巹偨偪偔偠傜偩傕傫偹丄堦弿偵壧偆偺偼堦斣妝僋僕");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MAKEACSY)
         {
             strcpy_s(thought, sizeof(thought),
-                "私もこんな綺麗なアクセサリー作れるクジ？");
+                "巹傕偙傫側鉟楉側傾僋僙僒儕乕嶌傟傞僋僕丠");
             VisitorFeelAlright(visitorType);
         }
 
         if (buildEvent == B_EVNT_HEALTHSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "ああ、この匂い本当にたまらないクジ");
-            SetResultTipsTo("動物に対して硫黄泉の匂いがちょっと強烈すぎます");
+                "偁偁丄偙偺擋偄杮摉偵偨傑傜側偄僋僕");
+            SetResultTipsTo("摦暔偵懳偟偰棸墿愹偺擋偄偑偪傚偭偲嫮楏偡偓傑偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_POLNORMAL ||
@@ -1285,23 +1285,23 @@ void CreateWhaleThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
             buildEvent == B_EVNT_POLNIGHT)
         {
             strcpy_s(thought, sizeof(thought),
-                "え？このプール小さすぎるでしょう？");
-            SetResultTipsTo("いつも自由自在に泳いでいるくじらに対してプールはほぼ小さいすぎます");
+                "偊丠偙偺僾乕儖彫偝偡偓傞偱偟傚偆丠");
+            SetResultTipsTo("偄偮傕帺桼帺嵼偵塲偄偱偄傞偔偠傜偵懳偟偰僾乕儖偼傎傏彫偝偄偡偓傑偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKALCOHOL ||
             buildEvent == B_EVNT_DRKBAR)
         {
             strcpy_s(thought, sizeof(thought),
-                "酒は少々苦手クジ．．．");
-            SetResultTipsTo("もし高圧の海の中に酔っ払いになると頭はごちゃごちゃになります");
+                "庰偼彮乆嬯庤僋僕丏丏丏");
+            SetResultTipsTo("傕偟崅埑偺奀偺拞偵悓偭暐偄偵側傞偲摢偼偛偪傖偛偪傖偵側傝傑偡");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_KARASINGLE)
         {
             strcpy_s(thought, sizeof(thought),
-                "ええ？歌うのは皆一緒でこそ楽しいでしょう？");
-            SetResultTipsTo("くじらは社交意識がある動物なので、歌でコミュニケーションを行う必要があります");
+                "偊偊丠壧偆偺偼奆堦弿偱偙偦妝偟偄偱偟傚偆丠");
+            SetResultTipsTo("偔偠傜偼幮岎堄幆偑偁傞摦暔側偺偱丄壧偱僐儈儏僯働乕僔儑儞傪峴偆昁梫偑偁傝傑偡");
             VisitorFeelVeryBad(visitorType);
         }
     }
@@ -1324,23 +1324,23 @@ void CreateCamelThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
         if (subName1 == 8 || subName1 == 10 || subName1 == 14 ||
             subName2 == 5 || subName2 == 12 || subName2 == 14)
         {
-            strcpy_s(thought, sizeof(thought), "なんか人間っぽいしワクワクするクダ！");
+            strcpy_s(thought, sizeof(thought), "側傫偐恖娫偭傐偄偟儚僋儚僋偡傞僋僟両");
             VisitorFeelGood(visitorType);
         }
         else if (subName2 == 7)
         {
-            strcpy_s(thought, sizeof(thought), "海は珍しいものクダ！経営者に感謝申し上げクダ！");
+            strcpy_s(thought, sizeof(thought), "奀偼捒偟偄傕偺僋僟両宱塩幰偵姶幱怽偟忋偘僋僟両");
             VisitorFeelVeryGood(visitorType);
         }
 
         if (subName1 == 12)
         {
-            strcpy_s(thought, sizeof(thought), "非人間動物同士としてちょっと嫌味クダ．．．");
+            strcpy_s(thought, sizeof(thought), "旕恖娫摦暔摨巑偲偟偰偪傚偭偲寵枴僋僟丏丏丏");
             VisitorFeelVeryBad(visitorType);
         }
         else if (subName1 == 0 || subName1 == 4)
         {
-            strcpy_s(thought, sizeof(thought), "嫌なことを思い出したクダ．．．");
+            strcpy_s(thought, sizeof(thought), "寵側偙偲傪巚偄弌偟偨僋僟丏丏丏");
             VisitorFeelBad(visitorType);
         }
     }
@@ -1349,99 +1349,99 @@ void CreateCamelThought(VISITOR_TYPE visitorType, int buildType, int buildEvent)
         if (buildEvent == B_EVNT_WARMSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "完全に温まったぞ、夜の砂漠でも怖くないクダ！");
+                "姰慡偵壏傑偭偨偧丄栭偺嵒敊偱傕晐偔側偄僋僟両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATLIGHTFOOD)
         {
             strcpy_s(thought, sizeof(thought),
-                "この店凄くおしゃれクダ");
+                "偙偺揦惁偔偍偟傖傟僋僟");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_EATRAMEN ||
             buildEvent == B_EVNT_EATCURRY)
         {
             strcpy_s(thought, sizeof(thought),
-                "あ、これ本当に美味しいクダ！");
+                "偁丄偙傟杮摉偵旤枴偟偄僋僟両");
             VisitorFeelGood(visitorType);
         }
         else if (buildType == B_TYPE_POOL)
         {
             strcpy_s(thought, sizeof(thought),
-                "水の中に泳ぐのは凄く楽しいクダ！");
+                "悈偺拞偵塲偖偺偼惁偔妝偟偄僋僟両");
             VisitorFeelVeryGood(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKTEA)
         {
             strcpy_s(thought, sizeof(thought),
-                "いいねこのお茶の香り");
+                "偄偄偹偙偺偍拑偺崄傝");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_DRKBAR)
         {
             strcpy_s(thought, sizeof(thought),
-                "うん、おしゃれの店におしゃれの一品、いいクダ");
+                "偆傫丄偍偟傖傟偺揦偵偍偟傖傟偺堦昳丄偄偄僋僟");
             VisitorFeelAlright(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVACT)
         {
             strcpy_s(thought, sizeof(thought),
-                "おお、凄いよこの映画");
+                "偍偍丄惁偄傛偙偺塮夋");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVCOMEDY)
         {
             strcpy_s(thought, sizeof(thought),
-                "これ面白いクダ！");
+                "偙傟柺敀偄僋僟両");
             VisitorFeelGood(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTHOTEL)
         {
             strcpy_s(thought, sizeof(thought),
-                "あ～砂漠より良すぎるだクダ");
+                "偁乣嵒敊傛傝椙偡偓傞偩僋僟");
             VisitorFeelVeryGood(visitorType);
         }
 
         if (buildEvent == B_EVNT_HEALTHSPR)
         {
             strcpy_s(thought, sizeof(thought),
-                "何なんだこの匂い");
-            SetResultTipsTo("動物に対して硫黄泉の匂いがちょっと強烈すぎます");
+                "壗側傫偩偙偺擋偄");
+            SetResultTipsTo("摦暔偵懳偟偰棸墿愹偺擋偄偑偪傚偭偲嫮楏偡偓傑偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_EATUNAGI)
         {
             strcpy_s(thought, sizeof(thought),
-                "ひっ、ひどいクダ．．．");
-            SetResultTipsTo("植食動物に対して肉を食うのは残酷なことです");
+                "傂偭丄傂偳偄僋僟丏丏丏");
+            SetResultTipsTo("怉怘摦暔偵懳偟偰擏傪怘偆偺偼巆崜側偙偲偱偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_EATBBQ)
         {
             strcpy_s(thought, sizeof(thought),
-                "皆ほぼ肉を焼いてるクダ？");
-            SetResultTipsTo("植食動物に対して肉を食うのは残酷なことです");
+                "奆傎傏擏傪從偄偰傞僋僟丠");
+            SetResultTipsTo("怉怘摦暔偵懳偟偰擏傪怘偆偺偼巆崜側偙偲偱偡");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildEvent == B_EVNT_MOVHOR)
         {
             strcpy_s(thought, sizeof(thought),
-                "砂漠はもう十分こわいのにぃ！");
-            SetResultTipsTo("夜になると砂漠に色んな動物が出てしまい、駱駝さんに対してそれは十分ホラーでした");
+                "嵒敊偼傕偆廫暘偙傢偄偺偵偂両");
+            SetResultTipsTo("栭偵側傞偲嵒敊偵怓傫側摦暔偑弌偰偟傑偄丄閜閗偝傫偵懳偟偰偦傟偼廫暘儂儔乕偱偟偨");
             VisitorFeelVeryBad(visitorType);
         }
         else if (buildType == B_TYPE_KARAOKE)
         {
             strcpy_s(thought, sizeof(thought),
-                "ぼく歌うのは苦手クダ．．．");
-            SetResultTipsTo("深い理由がないがらくださんは歌えませんみたい");
+                "傏偔壧偆偺偼嬯庤僋僟丏丏丏");
+            SetResultTipsTo("怺偄棟桼偑側偄偑傜偔偩偝傫偼壧偊傑偣傫傒偨偄");
             VisitorFeelBad(visitorType);
         }
         else if (buildEvent == B_EVNT_RESTCAMP)
         {
             strcpy_s(thought, sizeof(thought),
-                "なんかしんどいの砂漠生活を思い出したクダ");
-            SetResultTipsTo("ほぼ全ての哺乳動物に対して砂漠は暮らしつらい場所である");
+                "側傫偐偟傫偳偄偺嵒敊惗妶傪巚偄弌偟偨僋僟");
+            SetResultTipsTo("傎傏慡偰偺歁擕摦暔偵懳偟偰嵒敊偼曢傜偟偮傜偄応強偱偁傞");
             VisitorFeelVeryBad(visitorType);
         }
     }

@@ -1,12 +1,12 @@
 //------------------------------------------------------------------------
-// ファイル名: ButtonEvents.h
-// 機能: ボタンの機能を行う
+// 僼傽僀儖柤: ButtonEvents.h
+// 婡擻: 儃僞儞偺婡擻傪峴偆
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// ボタンの機能を行う
+/// 儃僞儞偺婡擻傪峴偆
 /// </summary>
-/// <param name="value">ボタンのイベント番号</param>
+/// <param name="value">儃僞儞偺僀儀儞僩斣崋</param>
 void RunButtonEvent(int value);

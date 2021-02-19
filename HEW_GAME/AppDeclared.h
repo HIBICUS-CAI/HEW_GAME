@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: AppDeclared.h
-// 機能: 拡張要素に関しての値の声明
+// 僼傽僀儖柤: AppDeclared.h
+// 婡擻: 奼挘梫慺偵娭偟偰偺抣偺惡柧
 //------------------------------------------------------------------------
 
 #pragma once
@@ -131,64 +131,64 @@
 #define DIALOG_RANK_C 0x0f
 
 /// <summary>
-/// シーン配列を取得
+/// 僔乕儞攝楍傪庢摼
 /// </summary>
-/// <returns>シーン配列</returns>
+/// <returns>僔乕儞攝楍</returns>
 SCENENODE* GetSceneNodeArray();
 
 /// <summary>
-/// シーン配列を設定
+/// 僔乕儞攝楍傪愝掕
 /// </summary>
-/// <param name="index">シーンの偏移量</param>
-/// <param name="temp">臨時的なシーン声明</param>
+/// <param name="index">僔乕儞偺曃堏検</param>
+/// <param name="temp">椪帪揑側僔乕儞惡柧</param>
 void SetSceneNodeArray(int index, SCENENODE temp);
 
 /// <summary>
-/// 使っているシーンを設定
+/// 巊偭偰偄傞僔乕儞傪愝掕
 /// </summary>
-/// <param name="sceneNode">シーン指向のポインタ</param>
+/// <param name="sceneNode">僔乕儞巜岦偺億僀儞僞</param>
 void SetCurrScene(SCENENODE* sceneNode);
 
 /// <summary>
-/// 使っているシーンを取得
+/// 巊偭偰偄傞僔乕儞傪庢摼
 /// </summary>
-/// <returns>シーン指向のポインタ</returns>
+/// <returns>僔乕儞巜岦偺億僀儞僞</returns>
 SCENENODE* GetCurrScene();
 
 /// <summary>
-/// 対話事件の番号を取得
+/// 懳榖帠審偺斣崋傪庢摼
 /// </summary>
-/// <returns>対話事件の番号</returns>
+/// <returns>懳榖帠審偺斣崋</returns>
 int GetDialogEvent();
 
 /// <summary>
-/// 対話事件の番号を設定
+/// 懳榖帠審偺斣崋傪愝掕
 /// </summary>
-/// <param name="id">対話事件の番号</param>
+/// <param name="id">懳榖帠審偺斣崋</param>
 void SetDialogEvent(int id);
 
 /// <summary>
-/// 当対話は終わったか
+/// 摉懳榖偼廔傢偭偨偐
 /// </summary>
-/// <returns>終わったかどうかの標識</returns>
+/// <returns>廔傢偭偨偐偳偆偐偺昗幆</returns>
 int IsDialogFinish();
 
 /// <summary>
-/// 当対話事件は終わったかを設定
+/// 摉懳榖帠審偼廔傢偭偨偐傪愝掕
 /// </summary>
-/// <param name="id">標識</param>
+/// <param name="id">昗幆</param>
 void SetIsDialogFinish(int value);
 
 /// <summary>
-/// 変換エフェクトの標識を取得
+/// 曄姺僄僼僃僋僩偺昗幆傪庢摼
 /// </summary>
-/// <returns>変換エフェクトの標識</returns>
+/// <returns>曄姺僄僼僃僋僩偺昗幆</returns>
 int GetSwitchEffectFlag();
 
 /// <summary>
-/// 変換エフェクトの標識を設定
+/// 曄姺僄僼僃僋僩偺昗幆傪愝掕
 /// </summary>
-/// <param name="id">標識</param>
+/// <param name="id">昗幆</param>
 void SetSwitchEffectFlag(int value);
 
 #define UP2DOWN 1
@@ -197,36 +197,36 @@ void SetSwitchEffectFlag(int value);
 #define RIGHT2LEFT 4
 
 /// <summary>
-/// 変換エフェクトのスタイルを取得
+/// 曄姺僄僼僃僋僩偺僗僞僀儖傪庢摼
 /// </summary>
-/// <returns>変換エフェクトのスタイル</returns>
+/// <returns>曄姺僄僼僃僋僩偺僗僞僀儖</returns>
 int GetSwitchEffectStyle();
 
 /// <summary>
-/// 変換エフェクトのスタイルを設定
+/// 曄姺僄僼僃僋僩偺僗僞僀儖傪愝掕
 /// </summary>
-/// <param name="id">スタイル</param>
+/// <param name="id">僗僞僀儖</param>
 void SetSwitchEffectStyle(int value);
 
 #define DIALOG_EVENT_SIZE 32
 
 /// <summary>
-/// 対話データを初期化してロードする
+/// 懳榖僨乕僞傪弶婜壔偟偰儘乕僪偡傞
 /// </summary>
 void InitAndLoadDialogEvents();
 
 /// <summary>
-/// ファイルからひとつの対話イベントを上書きする
+/// 僼傽僀儖偐傜傂偲偮偺懳榖僀儀儞僩傪忋彂偒偡傞
 /// </summary>
-/// <param name="id">対話イベントの番号</param>
-/// <param name="path">ファイルのアドレス</param>
+/// <param name="id">懳榖僀儀儞僩偺斣崋</param>
+/// <param name="path">僼傽僀儖偺傾僪儗僗</param>
 void LoadSingleDialogEvnetFromID(int id, const char* path);
 
 /// <summary>
-/// 対話イベントデータを取得
+/// 懳榖僀儀儞僩僨乕僞傪庢摼
 /// </summary>
-/// <param name="id">対話イベントの番号</param>
-/// <returns>対話イベント指向のポインタ</returns>
+/// <param name="id">懳榖僀儀儞僩偺斣崋</param>
+/// <returns>懳榖僀儀儞僩巜岦偺億僀儞僞</returns>
 DIALOG_EVENT* GetDiaLogEventByEventID(int id);
 
 #define STAGE_DEFAULT 1
@@ -234,74 +234,74 @@ DIALOG_EVENT* GetDiaLogEventByEventID(int id);
 #define STAGE_DESERT 3
 
 /// <summary>
-/// 今選択されているステージを取得
+/// 崱慖戰偝傟偰偄傞僗僥乕僕傪庢摼
 /// </summary>
-/// <returns>ステージ番号</returns>
+/// <returns>僗僥乕僕斣崋</returns>
 int GetPlayingStage();
 
 /// <summary>
-/// 選択されたステージを保存
+/// 慖戰偝傟偨僗僥乕僕傪曐懚
 /// </summary>
-/// <param name="stageID">選択されたステージの番号</param>
+/// <param name="stageID">慖戰偝傟偨僗僥乕僕偺斣崋</param>
 void SetPlayingStage(int stageID);
 
 /// <summary>
-/// 保存されたステージをリセット
+/// 曐懚偝傟偨僗僥乕僕傪儕僙僢僩
 /// </summary>
 void ResetPlayingStage();
 
 #define VISITOR_MAX_SIZE 16
 
 /// <summary>
-/// 観光客情報配列を取得
+/// 娤岝媞忣曬攝楍傪庢摼
 /// </summary>
-/// <returns>観光客情報配列指向のポインタ</returns>
+/// <returns>娤岝媞忣曬攝楍巜岦偺億僀儞僞</returns>
 VISITOR_NODE* GetVisitorArray();
 
 /// <summary>
-/// プレフィックスを取得
+/// 僾儗僼傿僢僋僗傪庢摼
 /// </summary>
-/// <param name="offset">偏移量</param>
-/// <returns>偏移量に応じる配列ポインタ</returns>
+/// <param name="offset">曃堏検</param>
+/// <returns>曃堏検偵墳偠傞攝楍億僀儞僞</returns>
 char* GetSubName1ArrayByOffset(int offset);
 
 /// <summary>
-/// サフィックスを取得
+/// 僒僼傿僢僋僗傪庢摼
 /// </summary>
-/// <param name="offset">偏移量</param>
-/// <returns>偏移量に応じる配列ポインタ</returns>
+/// <param name="offset">曃堏検</param>
+/// <returns>曃堏検偵墳偠傞攝楍億僀儞僞</returns>
 char* GetSubName2ArrayByOffset(int offset);
 
 /// <summary>
-/// 確認された名前を取得
+/// 妋擣偝傟偨柤慜傪庢摼
 /// </summary>
-/// <returns>名前配列に指向のポインタ</returns>
+/// <returns>柤慜攝楍偵巜岦偺億僀儞僞</returns>
 int* GetConfirmedSubName1And2();
 
 /// <summary>
-/// 確認されたプレフィックスを設定
+/// 妋擣偝傟偨僾儗僼傿僢僋僗傪愝掕
 /// </summary>
-/// <param name="value">応じている番号</param>
+/// <param name="value">墳偠偰偄傞斣崋</param>
 void SetConfirmedSubName1(int value);
 
 /// <summary>
-/// 確認されたサフィックスを設定
+/// 妋擣偝傟偨僒僼傿僢僋僗傪愝掕
 /// </summary>
-/// <param name="value">応じている番号</param>
+/// <param name="value">墳偠偰偄傞斣崋</param>
 void SetConfirmedSubName2(int value);
 
 #define BUILDINGS_SIZE 10
 
 /// <summary>
-/// 今作っている位置を設定
+/// 崱嶌偭偰偄傞埵抲傪愝掕
 /// </summary>
-/// <param name="value">位置の値</param>
+/// <param name="value">埵抲偺抣</param>
 void SetCurrBuildingPos(int value);
 
 /// <summary>
-/// 今作っている位置を取得
+/// 崱嶌偭偰偄傞埵抲傪庢摼
 /// </summary>
-/// <returns>位置の値</returns>
+/// <returns>埵抲偺抣</returns>
 int GetCurrBuildingPos();
 
 #define B_TYPE_NOTHING 0
@@ -348,13 +348,13 @@ int GetCurrBuildingPos();
 #define B_EVNT_MAKEACSY 82
 
 /// <summary>
-/// 作成している施設の配列を取得
+/// 嶌惉偟偰偄傞巤愝偺攝楍傪庢摼
 /// </summary>
-/// <returns>作成施設配列に指向のポインタ</returns>
+/// <returns>嶌惉巤愝攝楍偵巜岦偺億僀儞僞</returns>
 BUILDING* GetEditBuildingsArray();
 
 /// <summary>
-/// 背景のスプライトを初期化してロードする
+/// 攚宨偺僗僾儔僀僩傪弶婜壔偟偰儘乕僪偡傞
 /// </summary>
 void InitAndLoadBGSprite();
 

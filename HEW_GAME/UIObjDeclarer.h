@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: UIObjDeclarer.h
-// 機能: 全てのＵＩアイテムの声明と作成
+// 僼傽僀儖柤: UIObjDeclarer.h
+// 婡擻: 慡偰偺倀俬傾僀僥儉偺惡柧偲嶌惉
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,41 +8,41 @@
 #include "UIObject.h"
 
 /// <summary>
-/// 全てのＵＩアイテムの基本を作成する
+/// 慡偰偺倀俬傾僀僥儉偺婎杮傪嶌惉偡傞
 /// </summary>
 void CreateAllUIObjs();
 
 /// <summary>
-/// 何もないアイテムを作成
+/// 壗傕側偄傾僀僥儉傪嶌惉
 /// </summary>
 void CreateEmptyUIObjs();
 
 /// <summary>
-/// タイトル画面に関してのアイテムを作成
+/// 僞僀僩儖夋柺偵娭偟偰偺傾僀僥儉傪嶌惉
 /// </summary>
 void CreateTitleUIObjs();
 
 /// <summary>
-/// 話し合い画面に関してのアイテムを作成
+/// 榖偟崌偄夋柺偵娭偟偰偺傾僀僥儉傪嶌惉
 /// </summary>
 void CreateDialogUIObjs();
 
 /// <summary>
-/// ステージ選択画面に関してのアイテムを作成
+/// 僗僥乕僕慖戰夋柺偵娭偟偰偺傾僀僥儉傪嶌惉
 /// </summary>
 void CreateStageSelectUIObjs();
 
 /// <summary>
-/// リゾート名前画面に関してのアイテムを作成
+/// 儕僝乕僩柤慜夋柺偵娭偟偰偺傾僀僥儉傪嶌惉
 /// </summary>
 void CreateNameSetUIObjs();
 
 /// <summary>
-/// 施設作成画面に関してのアイテムを作成
+/// 巤愝嶌惉夋柺偵娭偟偰偺傾僀僥儉傪嶌惉
 /// </summary>
 void CreateBuildingUIObjs();
 
 /// <summary>
-/// 最終結果画面に関してのアイテムを作成
+/// 嵟廔寢壥夋柺偵娭偟偰偺傾僀僥儉傪嶌惉
 /// </summary>
 void CreateFinalResultUIObjs();

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: GameApp.h
-// 機能: ゲームの基本循環
+// 僼傽僀儖柤: GameApp.h
+// 婡擻: 僎乕儉偺婎杮弞娐
 //------------------------------------------------------------------------
 
 #pragma once
@@ -12,27 +12,27 @@
 #include "Structs.h"
 
 /// <summary>
-/// ゲームが必要なものを全部初期化する
+/// 僎乕儉偑昁梫側傕偺傪慡晹弶婜壔偡傞
 /// </summary>
-/// <returns>成功かどうかを示す</returns>
+/// <returns>惉岟偐偳偆偐傪帵偡</returns>
 int Init();
 
 /// <summary>
-/// ゲームを実行する
+/// 僎乕儉傪幚峴偡傞
 /// </summary>
 void RunGame();
 
 /// <summary>
-/// ゲームを閉じる
+/// 僎乕儉傪暵偠傞
 /// </summary>
 void TurnOff();
 
 /// <summary>
-/// ゲームの要素を更新する
+/// 僎乕儉偺梫慺傪峏怴偡傞
 /// </summary>
 void Update();
 
 /// <summary>
-/// 出力用バッファを文字配列のように出力する
+/// 弌椡梡僶僢僼傽傪暥帤攝楍偺傛偆偵弌椡偡傞
 /// </summary>
 void Draw();

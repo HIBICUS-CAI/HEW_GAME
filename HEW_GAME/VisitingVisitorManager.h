@@ -1,50 +1,50 @@
 //------------------------------------------------------------------------
-// ファイル名: VisitingVisitorManager.h
-// 機能: 観光客が遊ぶ時に関しての処理
+// 僼傽僀儖柤: VisitingVisitorManager.h
+// 婡擻: 娤岝媞偑梀傇帪偵娭偟偰偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 観光客が遊ぶ時に関しての処理を初期化
+/// 娤岝媞偑梀傇帪偵娭偟偰偺張棟傪弶婜壔
 /// </summary>
 void InitVisitingVisitorManager();
 
 /// <summary>
-/// 観光客が遊ぶ時に関しての処理を実行する
+/// 娤岝媞偑梀傇帪偵娭偟偰偺張棟傪幚峴偡傞
 /// </summary>
 void UpdateVisitingVisitorManager();
 
 /// <summary>
-/// 観光客が遊ぶ時に関しての処理を閉じる
+/// 娤岝媞偑梀傇帪偵娭偟偰偺張棟傪暵偠傞
 /// </summary>
 void TurnOffVisitingVisitorManager();
 
 /// <summary>
-/// 観光客、施設と背景が動けるかどうか
+/// 娤岝媞丄巤愝偲攚宨偑摦偗傞偐偳偆偐
 /// </summary>
-/// <returns>動けるかどうか</returns>
+/// <returns>摦偗傞偐偳偆偐</returns>
 int ResortCanMove();
 
 /// <summary>
-/// 移動フラグをリセットする
+/// 堏摦僼儔僌傪儕僙僢僩偡傞
 /// </summary>
 void ResetResortMoveFlag();
 
 /// <summary>
-/// 今止まっている位置に施設の種類
+/// 崱巭傑偭偰偄傞埵抲偵巤愝偺庬椶
 /// </summary>
-/// <returns>施設の種類</returns>
+/// <returns>巤愝偺庬椶</returns>
 int GetCurrColliedBuildingType();
 
 /// <summary>
-/// 今止まっている位置に施設の内容
+/// 崱巭傑偭偰偄傞埵抲偵巤愝偺撪梕
 /// </summary>
-/// <returns>施設の内容</returns>
+/// <returns>巤愝偺撪梕</returns>
 int GetCurrColliedBuildingEvent();
 
 /// <summary>
-/// このリゾートの名前を取得
+/// 偙偺儕僝乕僩偺柤慜傪庢摼
 /// </summary>
-/// <returns>リゾートの名前に指向のポインタ</returns>
+/// <returns>儕僝乕僩偺柤慜偵巜岦偺億僀儞僞</returns>
 char* GetResortName();

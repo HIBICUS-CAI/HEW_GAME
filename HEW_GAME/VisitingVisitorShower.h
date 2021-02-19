@@ -1,26 +1,26 @@
 //------------------------------------------------------------------------
-// ファイル名: VisitingVisitorShower.h
-// 機能: リゾートにいるの観光客に対してのスプライト表示
+// 僼傽僀儖柤: VisitingVisitorShower.h
+// 婡擻: 儕僝乕僩偵偄傞偺娤岝媞偵懳偟偰偺僗僾儔僀僩昞帵
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 観光客スプライト表示を初期化する
+/// 娤岝媞僗僾儔僀僩昞帵傪弶婜壔偡傞
 /// </summary>
 void InitVisitingVisitorShower();
 
 /// <summary>
-/// 観光客スプライト表示を実行
+/// 娤岝媞僗僾儔僀僩昞帵傪幚峴
 /// </summary>
 void UpdateVisitingVisitorsShower();
 
 /// <summary>
-/// 観光客スプライト表示を閉じる
+/// 娤岝媞僗僾儔僀僩昞帵傪暵偠傞
 /// </summary>
 void TurnOffVisitingVisitorsShower();
 
 /// <summary>
-/// 観光客スプライト表示に関しての時間をリセットする
+/// 娤岝媞僗僾儔僀僩昞帵偵娭偟偰偺帪娫傪儕僙僢僩偡傞
 /// </summary>
 void ResetVisitingVisitorShowerTime();

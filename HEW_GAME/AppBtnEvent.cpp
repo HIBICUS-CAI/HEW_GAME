@@ -319,7 +319,7 @@ void NamingSceneBtnEvent(int value)
 
         ResetAllAboutShowVisitors();
         ClearSceneCamBuffer(GetSceneNodeByName("naming"));
-        char temp[17] = "  £Ø£Ø£Ø£Ø£Ø£Ø  ";
+        char temp[17] = "  ‚w‚w‚w‚w‚w‚w  ";
         (GetUIObjByName("naming")->Texts + 6)->
             ChangeTextTo(temp);
         (GetUIObjByName("naming")->Texts + 7)->

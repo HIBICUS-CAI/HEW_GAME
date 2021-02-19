@@ -1,11 +1,11 @@
 /**
  * @file	conioex.h
- * @brief	Win32 コンソール I/O 拡張ヘッダ for Visual C++/Borland C++
+ * @brief	Win32 僐儞僜乕儖 I/O 奼挘僿僢僟 for Visual C++/Borland C++
  *
- * @author	HAL名古屋 教務部　浜谷浩彦
- * @date	2009/10/08 (木)
- * @date	2009/10/15 (木) msleep 関数を追加。
- * @date	2010/01/13 (水) playsound 関数で、常に先頭へシーク。
+ * @author	HAL柤屆壆 嫵柋晹丂昹扟峗旻
+ * @date	2009/10/08 (栘)
+ * @date	2009/10/15 (栘) msleep 娭悢傪捛壛丅
+ * @date	2010/01/13 (悈) playsound 娭悢偱丄忢偵愭摢傊僔乕僋丅
  * @version	1.02
  */
 #ifndef __CONIOEX_H
@@ -54,26 +54,26 @@ __inline int _kbhit(void) {return kbhit();}
 #ifndef __COLORS
 #define __COLORS
 enum COLORS {
-	BLACK,			/* 黒		*/
-	BLUE,			/* 濃い青	*/
-	GREEN,			/* 緑		*/
-	CYAN,			/* 青緑		*/
-	RED,			/* 濃い赤	*/
-	MAGENTA,		/* 紫		*/
-	BROWN,			/* 濃い黄	*/
-	LIGHTGRAY,		/* 25%灰色	*/
-	DARKGRAY,		/* 50%灰色	*/
-	LIGHTBLUE,		/* 青		*/
-	LIGHTGREEN,		/* 明るい緑	*/
-	LIGHTCYAN,		/* 水色		*/
-	LIGHTRED,		/* 赤		*/
-	LIGHTMAGENTA,	/* ピンク	*/
-	YELLOW,			/* 黄		*/
-	WHITE			/* 白		*/
+	BLACK,			/* 崟		*/
+	BLUE,			/* 擹偄惵	*/
+	GREEN,			/* 椢		*/
+	CYAN,			/* 惵椢		*/
+	RED,			/* 擹偄愒	*/
+	MAGENTA,		/* 巼		*/
+	BROWN,			/* 擹偄墿	*/
+	LIGHTGRAY,		/* 25%奃怓	*/
+	DARKGRAY,		/* 50%奃怓	*/
+	LIGHTBLUE,		/* 惵		*/
+	LIGHTGREEN,		/* 柧傞偄椢	*/
+	LIGHTCYAN,		/* 悈怓		*/
+	LIGHTRED,		/* 愒		*/
+	LIGHTMAGENTA,	/* 僺儞僋	*/
+	YELLOW,			/* 墿		*/
+	WHITE			/* 敀		*/
 };
 #endif /* _COLORS */
 
-CONIOEX_INST WORD	__conioex_h_wAttribute		/* 境界色 */
+CONIOEX_INST WORD	__conioex_h_wAttribute		/* 嫬奅怓 */
 #ifndef CONIOEX
 = LIGHTGRAY
 #endif /* CONIOEX */
@@ -82,9 +82,9 @@ CONIOEX_INST WORD	__conioex_h_wAttribute		/* 境界色 */
 
 
 /**
- * @brief	水平方向のカーソル位置を取得
+ * @brief	悈暯曽岦偺僇乕僜儖埵抲傪庢摼
  *
- * @return	現在のカーソル位置のX座標(1～)
+ * @return	尰嵼偺僇乕僜儖埵抲偺X嵗昗(1乣)
  */
 int wherex(void)
 #ifdef CONIOEX
@@ -99,9 +99,9 @@ int wherex(void)
 #endif /* CONIOEX */
 
 /**
- * @brief	垂直方向のカーソル位置を取得
+ * @brief	悅捈曽岦偺僇乕僜儖埵抲傪庢摼
  *
- * @return	現在のカーソル位置のY座標(1～)
+ * @return	尰嵼偺僇乕僜儖埵抲偺Y嵗昗(1乣)
  */
 int wherey(void)
 #ifdef CONIOEX
@@ -116,10 +116,10 @@ int wherey(void)
 #endif /* CONIOEX */
 
 /**
- * @brief	カーソル位置の移動
+ * @brief	僇乕僜儖埵抲偺堏摦
  *
- * @param	x [入力] X座標(1～)
- * @param	y [入力] Y座標(1～)
+ * @param	x [擖椡] X嵗昗(1乣)
+ * @param	y [擖椡] Y嵗昗(1乣)
  */
 void gotoxy(int x, int y)
 #ifdef CONIOEX
@@ -139,7 +139,7 @@ void gotoxy(int x, int y)
 #endif /* CONIOEX */
 
 /**
- * @brief	行末まで消去
+ * @brief	峴枛傑偱徚嫀
  */
 void clreol(void)
 #ifdef CONIOEX
@@ -163,7 +163,7 @@ void clreol(void)
 #endif /* CONIOEX */
 
 /**
- * @brief	画面消去
+ * @brief	夋柺徚嫀
  */
 void clrscr(void)
 #ifdef CONIOEX
@@ -185,7 +185,7 @@ void clrscr(void)
 #endif /* CONIOEX */
 
 /**
- * @brief	文字色高輝度化
+ * @brief	暥帤怓崅婸搙壔
  */
 void highvideo(void)
 #ifdef CONIOEX
@@ -201,7 +201,7 @@ void highvideo(void)
 #endif /* CONIOEX */
 
 /**
- * @brief	文字色低輝度化
+ * @brief	暥帤怓掅婸搙壔
  */
 void lowvideo(void)
 #ifdef CONIOEX
@@ -217,7 +217,7 @@ void lowvideo(void)
 #endif /* CONIOEX */
 
 /**
- * @brief	既定文字色設定
+ * @brief	婛掕暥帤怓愝掕
  */
 void normvideo(void)
 #ifdef CONIOEX
@@ -283,7 +283,7 @@ void setcursortype(int cur_t)
 __inline void _setcursortype(int cur_t) {setcursortype(cur_t);}
 
 /**
- * @brief	現在行に挿入
+ * @brief	尰嵼峴偵憓擖
  */
 void insline(void)
 #ifdef CONIOEX
@@ -319,7 +319,7 @@ void insline(void)
 #endif /* CONIOEX */
 
 /**
- * @brief	現在行の削除
+ * @brief	尰嵼峴偺嶍彍
  */
 void delline(void)
 #ifdef CONIOEX
@@ -387,8 +387,8 @@ __inline void msleep(unsigned long msecs) {Sleep(msecs);}
 #define PK_INS					VK_INSERT
 #define PK_DEL					VK_DELETE
 #define PK_TAB					VK_TAB
-#define PK_NFER					VK_KANA		/* [無変換]	*/
-#define PK_XFER					VK_CONVERT	/* [変換]	*/
+#define PK_NFER					VK_KANA		/* [柍曄姺]	*/
+#define PK_XFER					VK_CONVERT	/* [曄姺]	*/
 #define PK_0					0x30
 #define PK_1					0x31
 #define PK_2					0x32
@@ -399,16 +399,16 @@ __inline void msleep(unsigned long msecs) {Sleep(msecs);}
 #define PK_7					0x37
 #define PK_8					0x38
 #define PK_9					0x39
-#define PK_NUMPAD0				VK_NUMPAD0	/* テンキーの[0]	*/
-#define PK_NUMPAD1				VK_NUMPAD1	/* テンキーの[1]	*/
-#define PK_NUMPAD2				VK_NUMPAD2	/* テンキーの[2]	*/
-#define PK_NUMPAD3				VK_NUMPAD3	/* テンキーの[3]	*/
-#define PK_NUMPAD4				VK_NUMPAD4	/* テンキーの[4]	*/
-#define PK_NUMPAD5				VK_NUMPAD5	/* テンキーの[5]	*/
-#define PK_NUMPAD6				VK_NUMPAD6	/* テンキーの[6]	*/
-#define PK_NUMPAD7				VK_NUMPAD7	/* テンキーの[7]	*/
-#define PK_NUMPAD8				VK_NUMPAD8	/* テンキーの[8]	*/
-#define PK_NUMPAD9				VK_NUMPAD9	/* テンキーの[9]	*/
+#define PK_NUMPAD0				VK_NUMPAD0	/* 僥儞僉乕偺[0]	*/
+#define PK_NUMPAD1				VK_NUMPAD1	/* 僥儞僉乕偺[1]	*/
+#define PK_NUMPAD2				VK_NUMPAD2	/* 僥儞僉乕偺[2]	*/
+#define PK_NUMPAD3				VK_NUMPAD3	/* 僥儞僉乕偺[3]	*/
+#define PK_NUMPAD4				VK_NUMPAD4	/* 僥儞僉乕偺[4]	*/
+#define PK_NUMPAD5				VK_NUMPAD5	/* 僥儞僉乕偺[5]	*/
+#define PK_NUMPAD6				VK_NUMPAD6	/* 僥儞僉乕偺[6]	*/
+#define PK_NUMPAD7				VK_NUMPAD7	/* 僥儞僉乕偺[7]	*/
+#define PK_NUMPAD8				VK_NUMPAD8	/* 僥儞僉乕偺[8]	*/
+#define PK_NUMPAD9				VK_NUMPAD9	/* 僥儞僉乕偺[9]	*/
 #define PK_A					0x41
 #define PK_B					0x42
 #define PK_C					0x43
@@ -439,26 +439,26 @@ __inline void msleep(unsigned long msecs) {Sleep(msecs);}
 #define PK_LT					0x0BC		/* [,]	*/
 #define PK_GT					0x0BE		/* [.]	*/
 #define PK_SLUSH				0x0BF		/* [?]	*/
-#define PK_DOT					VK_DECIMAL	/* テンキーの[.]	*/
-#define PK_DIV					VK_DIVIDE	/* テンキーの[/]	*/
+#define PK_DOT					VK_DECIMAL	/* 僥儞僉乕偺[.]	*/
+#define PK_DIV					VK_DIVIDE	/* 僥儞僉乕偺[/]	*/
 #define PK_BSLUSH				0x0E2		/* [_]	*/
 
 #define PK_SEMICOLON			0x0BB		/* [;]	*/
-#define PK_ADD					VK_ADD		/* テンキーの[+]	*/
+#define PK_ADD					VK_ADD		/* 僥儞僉乕偺[+]	*/
 #define PK_COLON				0x0BA		/* [:]	*/
-#define PK_MUL					VK_MULTIPLY	/* テンキーの[*]	*/
+#define PK_MUL					VK_MULTIPLY	/* 僥儞僉乕偺[*]	*/
 #define PK_RBRACE				0x0DD		/* []]	*/
 
 #define PK_ATMARK				0x0C0		/* [@]	*/
 #define PK_LBRACE				0x0DB		/* [[]	*/
 
 #define PK_MINUS				0x0BD		/* [-]	*/
-#define PK_SUB					VK_SUBTRACT	/* テンキーの[-]	*/
+#define PK_SUB					VK_SUBTRACT	/* 僥儞僉乕偺[-]	*/
 #define PK_XOR					0x0DE		/* [^]	*/
 #define PK_YEN					0x0DC		/* [\]	*/
 
-#define PK_KANJI				0x0F3		/* [半角/全角]	*/
-#define PK_CAPS					0x0F0		/* [英数][ひらがな]	*/
+#define PK_KANJI				0x0F3		/* [敿妏/慡妏]	*/
+#define PK_CAPS					0x0F0		/* [塸悢][傂傜偑側]	*/
 
 #define PM_LEFT					VK_LBUTTON
 #define PM_MID					VK_MBUTTON
@@ -499,9 +499,9 @@ CONIOEX_INST COORD	__conioex_h_crdMouse
 ;
 
 /**
- * @brief	キー情報リセット
+ * @brief	僉乕忣曬儕僙僢僩
  *
- * @return	なし
+ * @return	側偟
  */
 void reinport(void)
 #ifdef CONIOEX
@@ -518,10 +518,10 @@ void reinport(void)
 
 
 /**
- * @brief	各種リアルタイム入力
+ * @brief	奺庬儕傾儖僞僀儉擖椡
  *
- * @param	port [入力] ポート番号(P*_*)
- * @return	入力値
+ * @param	port [擖椡] 億乕僩斣崋(P*_*)
+ * @return	擖椡抣
  */
 int inport(int port)
 #ifdef CONIOEX
@@ -531,7 +531,7 @@ int inport(int port)
 	DWORD	dwEvent;
 	HANDLE	h;
 
-	/* ゲームパッド入力 */
+	/* 僎乕儉僷僢僪擖椡 */
 	if ((port & 0xfe00) == 0x0200) {
 		int		id = (port & 0x01f0) >> 4;
 		int		func = port & 0x0f;
@@ -557,7 +557,7 @@ int inport(int port)
 		}
 		return 0;
 	}
-	// キー/マウス イベント チェック
+	// 僉乕/儅僂僗 僀儀儞僩 僠僃僢僋
 	dwEvent = 0;
 	h = GetStdHandle(STD_INPUT_HANDLE);
 	if (GetNumberOfConsoleInputEvents(h, &dwEvent) && dwEvent) {
@@ -615,7 +615,7 @@ int inport(int port)
 		}
 	}
 
-	// マウス座標を返す
+	// 儅僂僗嵗昗傪曉偡
 	switch (port) {
 	case PM_CURX:
 		return __conioex_h_crdMouse.X + 1;
@@ -624,7 +624,7 @@ int inport(int port)
 	default:
 		break;
 	}
-	// キー状態を返す
+	// 僉乕忬懺傪曉偡
 	return (__conioex_h_dwKeyMap[(port & 0x0FF) >> 5] & (0x01 << (port & 31))) != 0;
 }
 #endif /* CONIOEX */
@@ -637,11 +637,11 @@ typedef struct {
 } __conioex_h_SoundInfo;
 
 /**
- * @brief	サウンド ファイルを開く
+ * @brief	僒僂儞僪 僼傽僀儖傪奐偔
  *
- * @param	path [入力] ファイル名
- * @retval	非0	サウンド ハンドル
- * @retval	0	エラー
+ * @param	path [擖椡] 僼傽僀儖柤
+ * @retval	旕0	僒僂儞僪 僴儞僪儖
+ * @retval	0	僄儔乕
  */
 int opensound(char *path)
 #ifdef CONIOEX
@@ -701,9 +701,9 @@ int opensound(char *path)
 #endif /* CONIOEX */
 
 /**
- * @brief	サウンド ファイルを閉じる
+ * @brief	僒僂儞僪 僼傽僀儖傪暵偠傞
  *
- * @param	hsound [入力] サウンド ハンドル
+ * @param	hsound [擖椡] 僒僂儞僪 僴儞僪儖
  */
 void closesound(int hsound)
 #ifdef CONIOEX
@@ -724,10 +724,10 @@ void closesound(int hsound)
 #endif /* CONIOEX */
 
 /**
- * @brief	サウンドを再生する
+ * @brief	僒僂儞僪傪嵞惗偡傞
  *
- * @param	hsound [入力] サウンド ハンドル
- * @param	repeat [入力] ループ有無
+ * @param	hsound [擖椡] 僒僂儞僪 僴儞僪儖
+ * @param	repeat [擖椡] 儖乕僾桳柍
  */
 void playsound(int hsound, int repeat)
 #ifdef CONIOEX
@@ -765,9 +765,9 @@ void playsound(int hsound, int repeat)
 #endif /* CONIOEX */
 
 /**
- * @brief	サウンド再生を停止する
+ * @brief	僒僂儞僪嵞惗傪掆巭偡傞
  *
- * @param	hsound [入力] サウンド ハンドル
+ * @param	hsound [擖椡] 僒僂儞僪 僴儞僪儖
  */
 void stopsound(int hsound)
 #ifdef CONIOEX
@@ -788,10 +788,10 @@ void stopsound(int hsound)
 #endif /* CONIOEX */
 
 /**
- * @brief	サウンド再生状態の取得
+ * @brief	僒僂儞僪嵞惗忬懺偺庢摼
  *
- * @param	hsound [入力] サウンド ハンドル
- * @return	再生中ならば 0 以外を返す。
+ * @param	hsound [擖椡] 僒僂儞僪 僴儞僪儖
+ * @return	嵞惗拞側傜偽 0 埲奜傪曉偡丅
  */
 int checksound(int hsound)
 #ifdef CONIOEX
@@ -815,9 +815,9 @@ int checksound(int hsound)
 #endif /* CONIOEX */
 
 /**
- * @brief	ループ再生の強制更新
+ * @brief	儖乕僾嵞惗偺嫮惂峏怴
  *
- * @param	hsound [入力] サウンド ハンドル
+ * @param	hsound [擖椡] 僒僂儞僪 僴儞僪儖
  */
 void updatesound(int hsound)
 #ifdef CONIOEX
@@ -857,10 +857,10 @@ void updatesound(int hsound)
 #endif /* CONIOEX */
 
 /**
- * @brief	再生音量を設定する
+ * @brief	嵞惗壒検傪愝掕偡傞
  *
- * @param	hsound [入力] サウンド ハンドル
- * @param	percent [入力] 音量 (0 ～ 100)
+ * @param	hsound [擖椡] 僒僂儞僪 僴儞僪儖
+ * @param	percent [擖椡] 壒検 (0 乣 100)
  */
 void setvolume(int hsound, int percent)
 #ifdef CONIOEX

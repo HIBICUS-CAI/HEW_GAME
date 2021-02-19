@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: CustomizedApp.h
-// 機能: ゲームの拡張要素に関しての補完
+// 僼傽僀儖柤: CustomizedApp.h
+// 婡擻: 僎乕儉偺奼挘梫慺偵娭偟偰偺曗姰
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,33 +8,33 @@
 #include "Structs.h"
 
 /// <summary>
-/// 拡張要素を初期化する
+/// 奼挘梫慺傪弶婜壔偡傞
 /// </summary>
 void AppInit();
 
 /// <summary>
-/// 拡張要素を更新する
+/// 奼挘梫慺傪峏怴偡傞
 /// </summary>
 void AppUpdate();
 
 /// <summary>
-/// 拡張要素を閉じる
+/// 奼挘梫慺傪暵偠傞
 /// </summary>
 void AppTurnOff();
 
 /// <summary>
-/// 拡張要素のキーボードイベントを行う
+/// 奼挘梫慺偺僉乕儃乕僪僀儀儞僩傪峴偆
 /// </summary>
-/// <param name="keyCode">キー番号</param>
+/// <param name="keyCode">僉乕斣崋</param>
 void AppKeyboardEvent(int keyCode);
 
 /// <summary>
-/// 拡張要素のボタンイベントを行う
+/// 奼挘梫慺偺儃僞儞僀儀儞僩傪峴偆
 /// </summary>
-/// <param name="value">ボタン番号</param>
+/// <param name="value">儃僞儞斣崋</param>
 void AppButtonEvent(int value);
 
 /// <summary>
-/// 拡張要素を他のエフェクトで出力する
+/// 奼挘梫慺傪懠偺僄僼僃僋僩偱弌椡偡傞
 /// </summary>
 void AppPostPrint();

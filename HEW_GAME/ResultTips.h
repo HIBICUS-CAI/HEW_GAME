@@ -1,44 +1,44 @@
 //------------------------------------------------------------------------
-// ファイル名: ResultTips.h
-// 機能: よりいいになるため意見の表示
+// 僼傽僀儖柤: ResultTips.h
+// 婡擻: 傛傝偄偄偵側傞偨傔堄尒偺昞帵
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 意見の表示に関しての処理を初期化する
+/// 堄尒偺昞帵偵娭偟偰偺張棟傪弶婜壔偡傞
 /// </summary>
 void InitResultTips();
 
 /// <summary>
-/// 意見をとある文字配列に設定する
+/// 堄尒傪偲偁傞暥帤攝楍偵愝掕偡傞
 /// </summary>
-/// <param name="string">上書きしたい文字配列</param>
+/// <param name="string">忋彂偒偟偨偄暥帤攝楍</param>
 void SetResultTipsTo(const char* string);
 
 /// <summary>
-/// ティップスが表現できるかどうかを設定
+/// 僥傿僢僾僗偑昞尰偱偒傞偐偳偆偐傪愝掕
 /// </summary>
-/// <param name="value">設定させたい値</param>
+/// <param name="value">愝掕偝偣偨偄抣</param>
 void SetCanShowTipsFlg(int value);
 
 /// <summary>
-/// ティップスが表現できるかどうかを取得
+/// 僥傿僢僾僗偑昞尰偱偒傞偐偳偆偐傪庢摼
 /// </summary>
-/// <returns>ティップスが表現のフラグ</returns>
+/// <returns>僥傿僢僾僗偑昞尰偺僼儔僌</returns>
 int GetCanShowTipsFlg();
 
 /// <summary>
-/// 意見の表示に関しての処理を実行する
+/// 堄尒偺昞帵偵娭偟偰偺張棟傪幚峴偡傞
 /// </summary>
 void UpdateResultTips();
 
 /// <summary>
-/// 意見の表示に関しての処理をリセットする
+/// 堄尒偺昞帵偵娭偟偰偺張棟傪儕僙僢僩偡傞
 /// </summary>
 void ResetResultTips();
 
 /// <summary>
-/// 意見の表示に関しての処理を閉じる
+/// 堄尒偺昞帵偵娭偟偰偺張棟傪暵偠傞
 /// </summary>
 void TurnOffResulttips();

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: GameAppStructs.h
-// 機能: ミドルウェアみたいな構造体
+// 僼傽僀儖柤: GameAppStructs.h
+// 婡擻: 儈僪儖僂僃傾傒偨偄側峔憿懱
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,7 +8,7 @@
 #include "Structs.h"
 
 /// <summary>
-/// シーンのカメラ構造体
+/// 僔乕儞偺僇儊儔峔憿懱
 /// </summary>
 struct SCENECAMERA
 {
@@ -34,7 +34,7 @@ struct SCENECAMERA
 };
 
 /// <summary>
-/// シーン構造体
+/// 僔乕儞峔憿懱
 /// </summary>
 struct SCENENODE
 {
@@ -96,7 +96,7 @@ struct SCENENODE
 };
 
 /// <summary>
-/// 基本な対象者構造体
+/// 婎杮側懳徾幰峔憿懱
 /// </summary>
 struct OBJECT
 {
@@ -134,7 +134,7 @@ struct OBJECT
 
 #define MAXSIZE_PER_SPRITE_FRAME 60
 /// <summary>
-/// 複数ありスプライトの集合体
+/// 暋悢偁傝僗僾儔僀僩偺廤崌懱
 /// </summary>
 struct SPRITE_ANIME
 {
@@ -162,7 +162,7 @@ struct SPRITE_ANIME
 #define SINGLE_SENTENCE_LEN 128
 #define SINGLE_TURN_COUNT 5
 /// <summary>
-/// 一回の対話内容
+/// 堦夞偺懳榖撪梕
 /// </summary>
 struct SINGLE_DIALOG
 {
@@ -196,7 +196,7 @@ struct SINGLE_DIALOG
 
 #define DIALOG_SIZE 64
 /// <summary>
-/// 一回の対話内容を全部保存する構造体
+/// 堦夞偺懳榖撪梕傪慡晹曐懚偡傞峔憿懱
 /// </summary>
 struct DIALOG_EVENT
 {
@@ -238,7 +238,7 @@ enum class VISITOR_TYPE
 };
 
 /// <summary>
-/// 観光客情報構造体
+/// 娤岝媞忣曬峔憿懱
 /// </summary>
 struct VISITOR_NODE
 {
@@ -276,7 +276,7 @@ struct VISITOR_NODE
 #define NEARBACK_SA_HEIGHT 40
 
 /// <summary>
-/// 背景のスプライトアニメタル構造体
+/// 攚宨偺僗僾儔僀僩傾僯儊僞儖峔憿懱
 /// </summary>
 struct STAGE_BACKGROUND_SA
 {

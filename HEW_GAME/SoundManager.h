@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: SoundManager.h
-// 機能: 音声に関しての機能を提供する
+// 僼傽僀儖柤: SoundManager.h
+// 婡擻: 壒惡偵娭偟偰偺婡擻傪採嫙偡傞
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,124 +8,124 @@
 #include "Structs.h"
 
 /// <summary>
-/// 音声システムを初期化する
+/// 壒惡僔僗僥儉傪弶婜壔偡傞
 /// </summary>
 void InitSoundSys();
 
 /// <summary>
-/// ファイルを音声配列に書き込む
+/// 僼傽僀儖傪壒惡攝楍偵彂偒崬傓
 /// </summary>
-/// <param name="fileName">ファイル名</param>
-/// <param name="soundName">音声に付けたい名前</param>
-/// <param name="isAlwaysNeed">常に使用されるかどうか</param>
+/// <param name="fileName">僼傽僀儖柤</param>
+/// <param name="soundName">壒惡偵晅偗偨偄柤慜</param>
+/// <param name="isAlwaysNeed">忢偵巊梡偝傟傞偐偳偆偐</param>
 void LoadSound(const char* fileName, const char* soundName,
     int isAlwaysNeed = 0);
 
 #ifdef SOUNDBYHAL
 /// <summary>
-/// 名前で音声を取得
+/// 柤慜偱壒惡傪庢摼
 /// </summary>
-/// <param name="soundName">音声に付けた名前</param>
-/// <returns>音声指向のポインタ</returns>
+/// <param name="soundName">壒惡偵晅偗偨柤慜</param>
+/// <returns>壒惡巜岦偺億僀儞僞</returns>
 SOUNDFILE_LOADED* GetSoundFile(const char* soundName);
 #else
 /// <summary>
-/// 名前で音声を取得
+/// 柤慜偱壒惡傪庢摼
 /// </summary>
-/// <param name="soundName">音声に付けた名前</param>
-/// <returns>音声指向のポインタ</returns>
+/// <param name="soundName">壒惡偵晅偗偨柤慜</param>
+/// <returns>壒惡巜岦偺億僀儞僞</returns>
 SOUNDFILE_IN_MEMBITE* GetSoundFile(const char* soundName);
 #endif // SOUNDBYHAL
 
 #ifdef SOUNDBYHAL
 /// <summary>
-/// 音声の音量変更
+/// 壒惡偺壒検曄峏
 /// </summary>
-/// <param name="soundName">音声に付けた名前</param>
-/// <param name="vol">設置させたい音量</param>
+/// <param name="soundName">壒惡偵晅偗偨柤慜</param>
+/// <param name="vol">愝抲偝偣偨偄壒検</param>
 void ChangeSoundFileVolume(const char* soundName, int vol);
 #else
 /// <summary>
-/// 音声の音量変更
+/// 壒惡偺壒検曄峏
 /// </summary>
-/// <param name="soundName">音声に付けた名前</param>
-/// <param name="vol">設置させたい音量</param>
+/// <param name="soundName">壒惡偵晅偗偨柤慜</param>
+/// <param name="vol">愝抲偝偣偨偄壒検</param>
 void ChangeSoundFileVolume(const char* soundName, float vol);
 #endif // SOUNDBYHAL
 
 #ifdef SOUNDBYHAL
 /// <summary>
-/// 音声の音量変更
+/// 壒惡偺壒検曄峏
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
-/// <param name="vol">設置させたい音量</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
+/// <param name="vol">愝抲偝偣偨偄壒検</param>
 void ChangeSoundFileVolume(SOUNDFILE_LOADED* sound, int vol);
 #else
 /// <summary>
-/// 音声の音量変更
+/// 壒惡偺壒検曄峏
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
-/// <param name="vol">設置させたい音量</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
+/// <param name="vol">愝抲偝偣偨偄壒検</param>
 void ChangeSoundFileVolume(SOUNDFILE_IN_MEMBITE* sound, float vol);
 #endif // SOUNDBYHAL
 
 #ifdef SOUNDBYHAL
 /// <summary>
-/// 背景音楽を再生する
+/// 攚宨壒妝傪嵞惗偡傞
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
 void PlayBackgroundMusic(SOUNDFILE_LOADED* sound);
 #else
 /// <summary>
-/// 背景音楽を再生する
+/// 攚宨壒妝傪嵞惗偡傞
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
 void PlayBackgroundMusic(SOUNDFILE_IN_MEMBITE* sound);
 #endif // SOUNDBYHAL
 
 #ifdef SOUNDBYHAL
 /// <summary>
-/// 効果音を再生する
+/// 岠壥壒傪嵞惗偡傞
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
 void PlayEffectSound(SOUNDFILE_LOADED* sound);
 #else
 /// <summary>
-/// 効果音を再生する
+/// 岠壥壒傪嵞惗偡傞
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
 void PlayEffectSound(SOUNDFILE_IN_MEMBITE* sound);
 #endif // SOUNDBYHAL
 
 
 #ifndef SOUNDBYHAL
 /// <summary>
-/// ある音声を一度だけ再生する
+/// 偁傞壒惡傪堦搙偩偗嵞惗偡傞
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
 void PlaySingleSoundOnce(SOUNDFILE_IN_MEMBITE* sound);
 #endif // !SOUNDBYHAL
 
 #ifdef SOUNDBYHAL
 /// <summary>
-/// 音声をアンインストールする
+/// 壒惡傪傾儞僀儞僗僩乕儖偡傞
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
 void UninstallSound(SOUNDFILE_LOADED* sound);
 #else
 /// <summary>
-/// 音声をアンインストールする
+/// 壒惡傪傾儞僀儞僗僩乕儖偡傞
 /// </summary>
-/// <param name="sound">音声に指向のポインタ</param>
+/// <param name="sound">壒惡偵巜岦偺億僀儞僞</param>
 void UninstallSound(SOUNDFILE_IN_MEMBITE* sound);
 #endif // SOUNDBYHAL
 
 /// <summary>
-/// ロードされた音声の再生状況確定
+/// 儘乕僪偝傟偨壒惡偺嵞惗忬嫷妋掕
 /// </summary>
 void CheckAllSoundHasEnded();
 
 /// <summary>
-/// 音声システムを閉じる
+/// 壒惡僔僗僥儉傪暵偠傞
 /// </summary>
 void TurnOffSoundSys();

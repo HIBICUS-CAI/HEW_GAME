@@ -1,38 +1,38 @@
 //------------------------------------------------------------------------
-// ファイル名: TitleBuilderShower.h
-// 機能: タイトルシーンに左右移動のビルダーを表示する
+// 僼傽僀儖柤: TitleBuilderShower.h
+// 婡擻: 僞僀僩儖僔乕儞偵嵍塃堏摦偺價儖僟乕傪昞帵偡傞
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 左右移動のビルダー表示に関しての機能を初期化する
+/// 嵍塃堏摦偺價儖僟乕昞帵偵娭偟偰偺婡擻傪弶婜壔偡傞
 /// </summary>
 void InitTitleBuilderShower();
 
 /// <summary>
-/// 左右移動のビルダー表示に関しての機能を実行する
+/// 嵍塃堏摦偺價儖僟乕昞帵偵娭偟偰偺婡擻傪幚峴偡傞
 /// </summary>
 void UpdateTitleBuilderShower();
 
 /// <summary>
-/// 左右移動のビルダー表示に関しての機能を閉じる
+/// 嵍塃堏摦偺價儖僟乕昞帵偵娭偟偰偺婡擻傪暵偠傞
 /// </summary>
 void TurnOffTitleBuilderShower();
 
 /// <summary>
-/// 左右移動のビルダー表示に関しての機能をリセットする
+/// 嵍塃堏摦偺價儖僟乕昞帵偵娭偟偰偺婡擻傪儕僙僢僩偡傞
 /// </summary>
 void ResetTitleBuilderShower();
 
 /// <summary>
-/// 立っているビルダーが表現できるかどうかを取得
+/// 棫偭偰偄傞價儖僟乕偑昞尰偱偒傞偐偳偆偐傪庢摼
 /// </summary>
-/// <returns>ビルダー表現のフラグ</returns>
+/// <returns>價儖僟乕昞尰偺僼儔僌</returns>
 int GetCanShowStandBuilderFlg();
 
 /// <summary>
-/// 立っているビルダーが表現できるかどうかをを設定
+/// 棫偭偰偄傞價儖僟乕偑昞尰偱偒傞偐偳偆偐傪傪愝掕
 /// </summary>
-/// <param name="value">設定させたい値</param>
+/// <param name="value">愝掕偝偣偨偄抣</param>
 void SetCanShowStandBuilderFlg(int value);

@@ -84,7 +84,7 @@ void InitAndLoadDialogEvents()
     }
     delete temp;
 
-    // §≥§≥§«•’•°•§•Î•Ì©`•…§Ú––§¶
+    // Ç±Ç±Ç≈ÉtÉ@ÉC????ÉhÇçsÇ§
     LoadSingleDialogEvnetFromID(DIALOG_NEW_GAME, "Assets\\DialogTexts\\new_game.txt");
     LoadSingleDialogEvnetFromID(DIALOG_TIPS_STUDENT, "Assets\\DialogTexts\\visitor_tips_student.txt");
     LoadSingleDialogEvnetFromID(DIALOG_TIPS_COUPLE, "Assets\\DialogTexts\\visitor_tips_couple.txt");
@@ -219,7 +219,7 @@ VISITOR_NODE* GetVisitorArray()
 
 char g_SubName1[15][17];
 char g_SubName2[15][17];
-char g_Nothing[17] = "£ÿ£ÿ£ÿ£ÿ£ÿ£ÿ";
+char g_Nothing[17] = "ÇwÇwÇwÇwÇwÇw";
 
 char* GetSubName1ArrayByOffset(int offset)
 {

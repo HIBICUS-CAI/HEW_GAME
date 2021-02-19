@@ -1,58 +1,58 @@
 //------------------------------------------------------------------------
-// ファイル名: SpriteAnimator.h
-// 機能: スプライトをまとめての管理と再現
+// 僼傽僀儖柤: SpriteAnimator.h
+// 婡擻: 僗僾儔僀僩傪傑偲傔偰偺娗棟偲嵞尰
 //------------------------------------------------------------------------
 #pragma once
 
 #include "GameAppStructs.h"
 
 /// <summary>
-/// 一個のスプライトを作成
+/// 堦屄偺僗僾儔僀僩傪嶌惉
 /// </summary>
-/// <param name="fileName">スプライト記録しているファイルの名</param>
-/// <param name="position">スプライト位置の座標</param>
-/// <param name="width">スプライトの長さ</param>
-/// <param name="height">スプライトの高さ</param>
-/// <returns>作られたのスプライト</returns>
+/// <param name="fileName">僗僾儔僀僩婰榐偟偰偄傞僼傽僀儖偺柤</param>
+/// <param name="position">僗僾儔僀僩埵抲偺嵗昗</param>
+/// <param name="width">僗僾儔僀僩偺挿偝</param>
+/// <param name="height">僗僾儔僀僩偺崅偝</param>
+/// <returns>嶌傜傟偨偺僗僾儔僀僩</returns>
 SPRITE CreateSingleSprite(const char* fileName, POSITION_2D position, int width, int height);
 
 /// <summary>
-/// 一個のスプライトを更新用バッファに書き込む
+/// 堦屄偺僗僾儔僀僩傪峏怴梡僶僢僼傽偵彂偒崬傓
 /// </summary>
-/// <param name="sprite">書き込みたいスプライトに指向のポインタ</param>
+/// <param name="sprite">彂偒崬傒偨偄僗僾儔僀僩偵巜岦偺億僀儞僞</param>
 void DrawSingleSpriteToUpdateBuffer(SPRITE* sprite);
 
 /// <summary>
-/// 一個のスプライトをカメラバッファに書き込む
+/// 堦屄偺僗僾儔僀僩傪僇儊儔僶僢僼傽偵彂偒崬傓
 /// </summary>
-/// <param name="camBuffer">カメラバッファに指向のポインタ</param>
-/// <param name="sprite">書き込みたいスプライトに指向のポインタ</param>
-/// <param name="posInCam">書き込みたい座標</param>
+/// <param name="camBuffer">僇儊儔僶僢僼傽偵巜岦偺億僀儞僞</param>
+/// <param name="sprite">彂偒崬傒偨偄僗僾儔僀僩偵巜岦偺億僀儞僞</param>
+/// <param name="posInCam">彂偒崬傒偨偄嵗昗</param>
 void DrawSingleSpriteToCamBuffer(SCENECAMERA* camBuffer, SPRITE* sprite, POSITION_2D posInCam, int showSpace = 0);
 
 /// <summary>
-/// スプライトアニメタルを作成
+/// 僗僾儔僀僩傾僯儊僞儖傪嶌惉
 /// </summary>
-/// <param name="frameCount">キーフレームの数</param>
-/// <param name="fileName">スプライト記録しているファイルの名(番号と拡張子抜き)</param>
-/// <param name="position">スプライト位置の座標</param>
-/// <param name="width">スプライトの長さ</param>
-/// <param name="height">スプライトの高さ</param>
-/// <returns>作られたのスプライトアニメタル</returns>
+/// <param name="frameCount">僉乕僼儗乕儉偺悢</param>
+/// <param name="fileName">僗僾儔僀僩婰榐偟偰偄傞僼傽僀儖偺柤(斣崋偲奼挘巕敳偒)</param>
+/// <param name="position">僗僾儔僀僩埵抲偺嵗昗</param>
+/// <param name="width">僗僾儔僀僩偺挿偝</param>
+/// <param name="height">僗僾儔僀僩偺崅偝</param>
+/// <returns>嶌傜傟偨偺僗僾儔僀僩傾僯儊僞儖</returns>
 SPRITE_ANIME CreateSpriteAnimator(int frameCount, const char* fileName, POSITION_2D position, int width, int height);
 
 /// <summary>
-/// スプライトアニメタルを更新用バッファに書き込む
+/// 僗僾儔僀僩傾僯儊僞儖傪峏怴梡僶僢僼傽偵彂偒崬傓
 /// </summary>
-/// <param name="spriteAnimator">書き込みたいスプライトアニメタルに指向のポインタ</param>
-/// <param name="offset">偏移量</param>
+/// <param name="spriteAnimator">彂偒崬傒偨偄僗僾儔僀僩傾僯儊僞儖偵巜岦偺億僀儞僞</param>
+/// <param name="offset">曃堏検</param>
 void DrawSpriteAnimatorToUpdateBuffer(SPRITE_ANIME* spriteAnimator, int offset);
 
 /// <summary>
-/// スプライトアニメタルをカメラバッファに書き込む
+/// 僗僾儔僀僩傾僯儊僞儖傪僇儊儔僶僢僼傽偵彂偒崬傓
 /// </summary>
-/// <param name="camBuffer">カメラバッファに指向のポインタ</param>
-/// <param name="spriteAnimator">書き込みたいスプライトアニメタルに指向のポインタ</param>
-/// <param name="offset">偏移量</param>
-/// <param name="posInCam">書き込みたい座標</param>
+/// <param name="camBuffer">僇儊儔僶僢僼傽偵巜岦偺億僀儞僞</param>
+/// <param name="spriteAnimator">彂偒崬傒偨偄僗僾儔僀僩傾僯儊僞儖偵巜岦偺億僀儞僞</param>
+/// <param name="offset">曃堏検</param>
+/// <param name="posInCam">彂偒崬傒偨偄嵗昗</param>
 void DrawSpriteAnimatorToCamBuffer(SCENECAMERA* camBuffer, SPRITE_ANIME* spriteAnimator, int offset, POSITION_2D posInCam, int showSpace = 0);

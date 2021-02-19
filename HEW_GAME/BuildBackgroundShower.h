@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: BuildBackgroundShower.h
-// 機能: 各ステージの背景演出に関しての処理
+// 僼傽僀儖柤: BuildBackgroundShower.h
+// 婡擻: 奺僗僥乕僕偺攚宨墘弌偵娭偟偰偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
@@ -8,39 +8,39 @@
 #include "GameAppStructs.h"
 
 /// <summary>
-/// ステージの背景処理に初期化を行う
+/// 僗僥乕僕偺攚宨張棟偵弶婜壔傪峴偆
 /// </summary>
 void InitBuildBackground();
 
 /// <summary>
-/// ステージの背景に関しての処理
+/// 僗僥乕僕偺攚宨偵娭偟偰偺張棟
 /// </summary>
 void UpdateBuildBackground();
 
 /// <summary>
-/// ステージの背景に関しての内容を閉じる
+/// 僗僥乕僕偺攚宨偵娭偟偰偺撪梕傪暵偠傞
 /// </summary>
 void TurnOffBuildBackground();
 
 /// <summary>
-/// やっているステージで背景のスプライトとアニメタルを再ロードする
+/// 傗偭偰偄傞僗僥乕僕偱攚宨偺僗僾儔僀僩偲傾僯儊僞儖傪嵞儘乕僪偡傞
 /// </summary>
 void ReloadBackgroundByPlayingStage();
 
 /// <summary>
-/// 遠いところのスプライト配列を取得
+/// 墦偄偲偙傠偺僗僾儔僀僩攝楍傪庢摼
 /// </summary>
-/// <returns>遠いところのスプライト配列に指向のポインタ</returns>
+/// <returns>墦偄偲偙傠偺僗僾儔僀僩攝楍偵巜岦偺億僀儞僞</returns>
 SPRITE* GetBuildFarSprites();
 
 /// <summary>
-/// 遠いところのスプライトアニメタル配列を取得
+/// 墦偄偲偙傠偺僗僾儔僀僩傾僯儊僞儖攝楍傪庢摼
 /// </summary>
-/// <returns>遠いところのスプライトアニメタル配列に指向のポインタ</returns>
+/// <returns>墦偄偲偙傠偺僗僾儔僀僩傾僯儊僞儖攝楍偵巜岦偺億僀儞僞</returns>
 SPRITE_ANIME* GetBuildFarSAs();
 
 /// <summary>
-/// 近いところのスプライトアニメタル配列を取得
+/// 嬤偄偲偙傠偺僗僾儔僀僩傾僯儊僞儖攝楍傪庢摼
 /// </summary>
-/// <returns>近いところのスプライトアニメタル配列に指向のポインタ</returns>
+/// <returns>嬤偄偲偙傠偺僗僾儔僀僩傾僯儊僞儖攝楍偵巜岦偺億僀儞僞</returns>
 SPRITE_ANIME* GetBuildNearSAs();

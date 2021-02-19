@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: UIObject.h
-// 機能: ＵＩアイテムに関しての処理
+// 僼傽僀儖柤: UIObject.h
+// 婡擻: 倀俬傾僀僥儉偵娭偟偰偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
@@ -10,49 +10,49 @@
 #include "Structs.h"
 
 /// <summary>
-/// 入力システムを初期化する
+/// 擖椡僔僗僥儉傪弶婜壔偡傞
 /// </summary>
 void InitInputQueue();
 
 /// <summary>
-/// 入力リストを作成
+/// 擖椡儕僗僩傪嶌惉
 /// </summary>
-/// <returns>ＩＮＴ型リストの構造体ポインタ</returns>
+/// <returns>俬俶俿宆儕僗僩偺峔憿懱億僀儞僞</returns>
 QUEUE_INT* CreateInputQueue();
 
 /// <summary>
-/// 入力システム実行
+/// 擖椡僔僗僥儉幚峴
 /// </summary>
 void Input();
 
 /// <summary>
-/// 押されたキーボードのボタンを取る
+/// 墴偝傟偨僉乕儃乕僪偺儃僞儞傪庢傞
 /// </summary>
 void InsertInput();
 
 /// <summary>
-/// マルチスレッドで押されたキーボードのボタンを取る
+/// 儅儖僠僗儗僢僪偱墴偝傟偨僉乕儃乕僪偺儃僞儞傪庢傞
 /// </summary>
 void InsertInputMT();
 
 /// <summary>
-/// 入力システムが使っているスレッドを閉じる
+/// 擖椡僔僗僥儉偑巊偭偰偄傞僗儗僢僪傪暵偠傞
 /// </summary>
 void TurnOffMTInput();
 
 /// <summary>
-/// 取られたボタンを処理する
+/// 庢傜傟偨儃僞儞傪張棟偡傞
 /// </summary>
 void DisposeInput();
 
 /// <summary>
-/// ボタンの値によって機能を実行
+/// 儃僞儞偺抣偵傛偭偰婡擻傪幚峴
 /// </summary>
-/// <param name="keyCode">入力リストから取り出した値</param>
+/// <param name="keyCode">擖椡儕僗僩偐傜庢傝弌偟偨抣</param>
 void DispatchInput(int keyCode);
 
 /// <summary>
-/// 入力リストを取得
+/// 擖椡儕僗僩傪庢摼
 /// </summary>
-/// <returns>入力リスト指向のポインタ</returns>
+/// <returns>擖椡儕僗僩巜岦偺億僀儞僞</returns>
 QUEUE_INT* GetInputQueue();

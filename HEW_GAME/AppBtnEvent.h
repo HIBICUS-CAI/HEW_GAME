@@ -1,42 +1,42 @@
 //------------------------------------------------------------------------
-// ファイル名: AppBtnEvemt.h
-// 機能: ゲームボタン処理
+// 僼傽僀儖柤: AppBtnEvemt.h
+// 婡擻: 僎乕儉儃僞儞張棟
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// タイトル画面に対してのボタン処理
+/// 僞僀僩儖夋柺偵懳偟偰偺儃僞儞張棟
 /// </summary>
 /// <param name="value"></param>
 void TitleSceneBtnEvent(int value);
 
 /// <summary>
-/// 話し合い画面に対してのボタン処理
+/// 榖偟崌偄夋柺偵懳偟偰偺儃僞儞張棟
 /// </summary>
 /// <param name="value"></param>
 void DialogSceneBtnEvent(int value);
 
 /// <summary>
-/// ステージ選択画面に対してのボタン処理
+/// 僗僥乕僕慖戰夋柺偵懳偟偰偺儃僞儞張棟
 /// </summary>
 /// <param name="value"></param>
 void StageSelectSceneBtnEvent(int value);
 
 /// <summary>
-/// 名前付き画面に対してのボタン処理
+/// 柤慜晅偒夋柺偵懳偟偰偺儃僞儞張棟
 /// </summary>
 /// <param name="value"></param>
 void NamingSceneBtnEvent(int value);
 
 /// <summary>
-/// 施設作成画面に対してのボタン処理
+/// 巤愝嶌惉夋柺偵懳偟偰偺儃僞儞張棟
 /// </summary>
 /// <param name="value"></param>
 void BuildingSceneBtnEvent(int value);
 
 /// <summary>
-/// 最終結果画面に対してのボタン処理
+/// 嵟廔寢壥夋柺偵懳偟偰偺儃僞儞張棟
 /// </summary>
 /// <param name="value"></param>
 void FinalResultSceneBtnEvent(int value);

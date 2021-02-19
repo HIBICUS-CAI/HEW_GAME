@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------
-// ファイル名: Tools.h
-// 機能: 雑な機能を提供する
+// 僼傽僀儖柤: Tools.h
+// 婡擻: 嶨側婡擻傪採嫙偡傞
 //------------------------------------------------------------------------
 
 #pragma once
@@ -11,112 +11,112 @@
 #include "DeclaredValues.h"
 
 /// <summary>
-/// 入出力を除いての処理一回循環させてかかったの時間を設定
+/// 擖弌椡傪彍偄偰偺張棟堦夞弞娐偝偣偰偐偐偭偨偺帪娫傪愝掕
 /// </summary>
-/// <param name="time">一回の循環がかかった時間</param>
+/// <param name="time">堦夞偺弞娐偑偐偐偭偨帪娫</param>
 void SetDeltaTime(int time);
 
 /// <summary>
-/// 前回の循環かかったの時間を取得
+/// 慜夞偺弞娐偐偐偭偨偺帪娫傪庢摼
 /// </summary>
-/// <returns>前回の循環かかったの時間</returns>
+/// <returns>慜夞偺弞娐偐偐偭偨偺帪娫</returns>
 int GetDeltaTime();
 
 /// <summary>
-/// 現実に前回の循環かかったの時間を取得
+/// 尰幚偵慜夞偺弞娐偐偐偭偨偺帪娫傪庢摼
 /// </summary>
-/// <returns>現実に前回の循環かかったの時間</returns>
+/// <returns>尰幚偵慜夞偺弞娐偐偐偭偨偺帪娫</returns>
 int GetRealDeltaTime();
 
 /// <summary>
-/// 前回の循環時間によってＦＰＳを計算、出力する
+/// 慜夞偺弞娐帪娫偵傛偭偰俥俹俽傪寁嶼丄弌椡偡傞
 /// </summary>
 void ShowFPSMT();
 
 /// <summary>
-/// 実行可能プログラムのタイトルを設定
+/// 幚峴壜擻僾儘僌儔儉偺僞僀僩儖傪愝掕
 /// </summary>
 void InitTitle();
 
 /// <summary>
-/// タイトルを閉じる
+/// 僞僀僩儖傪暵偠傞
 /// </summary>
 void CloseTitle();
 
 /// <summary>
-/// あるＩＮＴ型数値の桁数を計算する
+/// 偁傞俬俶俿宆悢抣偺寘悢傪寁嶼偡傞
 /// </summary>
-/// <param name="value">計算させたい数値</param>
-/// <returns>数値の桁数</returns>
+/// <param name="value">寁嶼偝偣偨偄悢抣</param>
+/// <returns>悢抣偺寘悢</returns>
 int GetIntValueBit(int value);
 
 /// <summary>
-/// ＩＮＴ型のリストを作り出す
+/// 俬俶俿宆偺儕僗僩傪嶌傝弌偡
 /// </summary>
-/// <returns>このリストのヘッドポインタ</returns>
+/// <returns>偙偺儕僗僩偺僿僢僪億僀儞僞</returns>
 QSINGLENODE* CreateQueue();
 
 /// <summary>
-/// あるリストに数値を入れる
+/// 偁傞儕僗僩偵悢抣傪擖傟傞
 /// </summary>
-/// <param name="end">リストのエンドポインタ</param>
-/// <param name="data">入れたい数値</param>
-/// <returns>新しいエンドポインタ</returns>
+/// <param name="end">儕僗僩偺僄儞僪億僀儞僞</param>
+/// <param name="data">擖傟偨偄悢抣</param>
+/// <returns>怴偟偄僄儞僪億僀儞僞</returns>
 QSINGLENODE* EnQueue(QSINGLENODE* end, int data);
 
 /// <summary>
-/// あるリストから数値を取り出す
+/// 偁傞儕僗僩偐傜悢抣傪庢傝弌偡
 /// </summary>
-/// <param name="top">リストのヘッドポインタ</param>
-/// <param name="end">リストのエンドポインタ</param>
-/// <returns>取り出された数値</returns>
+/// <param name="top">儕僗僩偺僿僢僪億僀儞僞</param>
+/// <param name="end">儕僗僩偺僄儞僪億僀儞僞</param>
+/// <returns>庢傝弌偝傟偨悢抣</returns>
 int DeQueue(QSINGLENODE* top, QSINGLENODE* end);
 
 /// <summary>
-/// 特定な種で乱数種を設定
+/// 摿掕側庬偱棎悢庬傪愝掕
 /// </summary>
-/// <param name="seedNum">種の内容</param>
+/// <param name="seedNum">庬偺撪梕</param>
 void SetRandomBySeed(int seedNum);
 
 /// <summary>
-/// 時間で乱数種を設定
+/// 帪娫偱棎悢庬傪愝掕
 /// </summary>
 void SetRandom();
 
 /// <summary>
-/// ある範囲の中に整数型の乱数を生成する
+/// 偁傞斖埻偺拞偵惍悢宆偺棎悢傪惗惉偡傞
 /// </summary>
-/// <param name="minNum">範囲の中に一番小さい値</param>
-/// <param name="maxNum">範囲の中に一番大きい値</param>
-/// <returns>生成された乱数</returns>
+/// <param name="minNum">斖埻偺拞偵堦斣彫偝偄抣</param>
+/// <param name="maxNum">斖埻偺拞偵堦斣戝偒偄抣</param>
+/// <returns>惗惉偝傟偨棎悢</returns>
 int CreateRandomNumIn(int minNum, int maxNum);
 
 /// <summary>
-/// コンソールの色を変化させる
+/// 僐儞僜乕儖偺怓傪曄壔偝偣傞
 /// </summary>
-/// <param name="color">声明された色の値の一つ</param>
+/// <param name="color">惡柧偝傟偨怓偺抣偺堦偮</param>
 void ChangeColorInConsole(int color);
 
 /// <summary>
-/// コンソールの色をリセット
+/// 僐儞僜乕儖偺怓傪儕僙僢僩
 /// </summary>
 void ResetColorInConsole();
 
 /// <summary>
-/// フロート型の値を大きさによってイント型に変更する
+/// 僼儘乕僩宆偺抣傪戝偒偝偵傛偭偰僀儞僩宆偵曄峏偡傞
 /// </summary>
-/// <param name="value">変更させたい値</param>
-/// <returns>変更されたの値</returns>
+/// <param name="value">曄峏偝偣偨偄抣</param>
+/// <returns>曄峏偝傟偨偺抣</returns>
 int RoundFloatToInt(float value);
 
 #ifndef SOUNDBYHAL
 /// <summary>
-/// ＷＡＶファイルをメモリの中に書き込む
+/// 倂俙倁僼傽僀儖傪儊儌儕偺拞偵彂偒崬傓
 /// </summary>
-/// <param name="fname">音声ファイル名</param>
-/// <param name="pMemBites">書き込められたメモリ指向のポインタ</param>
-/// <param name="pMemBitesWithVol">音量付き書き込められたメモリ指向のポインタ</param>
-/// <param name="fileSize">音声ファイルのサイズ</param>
+/// <param name="fname">壒惡僼傽僀儖柤</param>
+/// <param name="pMemBites">彂偒崬傔傜傟偨儊儌儕巜岦偺億僀儞僞</param>
+/// <param name="pMemBitesWithVol">壒検晅偒彂偒崬傔傜傟偨儊儌儕巜岦偺億僀儞僞</param>
+/// <param name="fileSize">壒惡僼傽僀儖偺僒僀僘</param>
 void ReadWavFileIntoMemory(const char* fname, BYTE** pMemBites,
     BYTE** pMemBitesWithVol, DWORD* fileSize);
 #endif // SOUNDBYHAL

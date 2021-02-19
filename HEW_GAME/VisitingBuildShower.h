@@ -1,26 +1,26 @@
 //------------------------------------------------------------------------
-// ファイル名: VisitingBuildShower.h
-// 機能: リゾートシーンに施設を表示するに関しての処理
+// 僼傽僀儖柤: VisitingBuildShower.h
+// 婡擻: 儕僝乕僩僔乕儞偵巤愝傪昞帵偡傞偵娭偟偰偺張棟
 //------------------------------------------------------------------------
 
 #pragma once
 
 /// <summary>
-/// 施設を表示するに関しての初期化
+/// 巤愝傪昞帵偡傞偵娭偟偰偺弶婜壔
 /// </summary>
 void InitVisitingBuildShower();
 
 /// <summary>
-/// 施設を表示するに関しての時間をリセットする
+/// 巤愝傪昞帵偡傞偵娭偟偰偺帪娫傪儕僙僢僩偡傞
 /// </summary>
 void ResetVisitingBuildShowerTimer();
 
 /// <summary>
-/// 施設を表示するに関しての処理を実行する
+/// 巤愝傪昞帵偡傞偵娭偟偰偺張棟傪幚峴偡傞
 /// </summary>
 void UpdateVisitingBuildShower();
 
 /// <summary>
-/// 施設を表示するに関しての処理を閉じる
+/// 巤愝傪昞帵偡傞偵娭偟偰偺張棟傪暵偠傞
 /// </summary>
 void TurnOffVisitingBuildShower();
