@@ -7,6 +7,8 @@
 
 #include "Structs.h"
 
+//#define NOTSOUND
+
 /// <summary>
 /// ‰¹ºƒVƒXƒeƒ€‚ğ‰Šú‰»‚·‚é
 /// </summary>

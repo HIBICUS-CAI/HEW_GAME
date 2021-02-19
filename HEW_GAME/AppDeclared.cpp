@@ -1,6 +1,5 @@
 #include "AppDeclared.h"
 #include "SpriteAnimator.h"
-#include "SoundManager.h"
 
 SCENENODE g_SceneNodes[SCENENODESIZE];
 

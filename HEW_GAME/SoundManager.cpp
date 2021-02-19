@@ -8,8 +8,6 @@
 #pragma comment(lib, "Winmm.lib")
 #endif // SOUNDBYHAL
 
-//#define NOTSOUND
-
 void InitSoundSys()
 {
 #ifdef SOUNDBYHAL

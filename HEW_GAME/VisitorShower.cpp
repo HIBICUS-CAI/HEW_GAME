@@ -126,7 +126,7 @@ void UpdateVisitorShower()
                 g_VisitorSprites + g_SpriteOffset,
                 POSITION_2D(g_PosX, g_PosY)
             );
-            g_PosX += 2;
+            g_PosX += 1;
         }
         else
         {

@@ -5,8 +5,11 @@
 
 #pragma once
 #include "GameAppStructs.h"
+#include "SoundManager.h"
 
+#ifndef NOTSOUND
 #define SPEED_ZOOM 0.6923f
+#endif // !NOTSOUND
 
 #define SCENENODESIZE 20
 
