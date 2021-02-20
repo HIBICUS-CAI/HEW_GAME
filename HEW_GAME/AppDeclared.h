@@ -9,6 +9,8 @@
 
 #ifndef NOTSOUND
 #define SPEED_ZOOM 0.6923f
+#else
+#define SPEED_ZOOM 1.f
 #endif // !NOTSOUND
 
 #define SCENENODESIZE 20

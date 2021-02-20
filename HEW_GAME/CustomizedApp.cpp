@@ -28,6 +28,7 @@
 #include "TitleBuilderShower.h"
 #include "TitleKanaShower.h"
 #include "StageSelectBackShower.h"
+#include "DataSyncer.h"
 
 void AppInit()
 {
@@ -38,6 +39,7 @@ void AppInit()
     SetSwitchEffectFlag(0);
     SetRandom();
     SetSwitchEffectStyle(CreateRandomNumIn(1, 4));
+    TestHewDatabaseConnect();
 
     InitAndLoadBGSprite();
     InitDialogShower();
