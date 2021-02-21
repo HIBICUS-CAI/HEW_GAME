@@ -415,7 +415,17 @@ void CreateFinalResultUIObjs()
 
     CreateUIO("save-data", POSITION_2D(60, 35), 60, 20,
         UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
-    GetUIObjByName("save-data")->
+    GetUIObjByName("save-data")->AddText(UI_TEXT(POSITION_2D(5, 3),
+        (char*)"当ステージＳランク　"));
+    GetUIObjByName("save-data")->AddText(UI_TEXT(POSITION_2D(5, 5),
+        (char*)"当ステージＡランク　"));
+    GetUIObjByName("save-data")->AddText(UI_TEXT(POSITION_2D(5, 7),
+        (char*)"当ステージＢランク　"));
+    GetUIObjByName("save-data")->AddText(UI_TEXT(POSITION_2D(5, 9),
+        (char*)"当ステージＣランク　"));
+    GetUIObjByName("save-data")->AddText(UI_TEXT(POSITION_2D(5, 11),
+        (char*)"最も使われた施設"));
+    /*GetUIObjByName("save-data")->
         AddBtn(UI_BUTTON(SAVE_AT_1, POSITION_2D(22, 3),
             (char*)"データ１にセーブ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("save-data")->
@@ -423,7 +433,7 @@ void CreateFinalResultUIObjs()
             (char*)"データ２にセーブ", BTN_DESIGN::STRAIGHT));
     GetUIObjByName("save-data")->
         AddBtn(UI_BUTTON(SAVE_AT_3, POSITION_2D(22, 11),
-            (char*)"データ３にセーブ", BTN_DESIGN::STRAIGHT));
+            (char*)"データ３にセーブ", BTN_DESIGN::STRAIGHT));*/
     GetUIObjByName("save-data")->
         AddBtn(UI_BUTTON(BACK_TO_RESULT, POSITION_2D(27, 15),
             (char*)"閉じる", BTN_DESIGN::LINE));

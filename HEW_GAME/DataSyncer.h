@@ -162,3 +162,15 @@ DATA_UPDATE_BUILD* GetUpdateBuildAddr();
 /// </summary>
 /// <returns>使用フラグ</returns>
 int CanUseDataBase();
+
+/// <summary>
+/// データベースから貰ったランクを取得
+/// </summary>
+/// <returns>ランク配列</returns>
+int* GetDBRankArray();
+
+/// <summary>
+/// データベースから貰った施設を取得
+/// </summary>
+/// <returns>施設配列</returns>
+int* GetDBBuildArray();

@@ -286,3 +286,13 @@ int CanUseDataBase()
 {
     return g_CanUseDatabase;
 }
+
+int* GetDBRankArray()
+{
+    return g_StageRankNum;
+}
+
+int* GetDBBuildArray()
+{
+    return g_MostUsedBuildsID;
+}
