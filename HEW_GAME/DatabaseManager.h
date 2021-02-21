@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include <mysql.h>
+#include "Assets/Libs/MariaDB Connector C/include/mysql.h"
 
 /// <summary>
 /// 必要なデータベースハンドルを初期化する

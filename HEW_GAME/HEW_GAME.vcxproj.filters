@@ -22,6 +22,9 @@
     <Filter Include="GameObjects">
       <UniqueIdentifier>{599fa5f2-0f01-4c76-b1c3-5b22ad21c564}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{eca31532-4ad3-4f3e-945e-525d40b442c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -317,6 +320,9 @@
     <ClInclude Include="DataSyncer.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Assets\Libs\MariaDB Connector C\include\mysql.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="HEW_GAME.rc">
@@ -327,5 +333,10 @@
     <Image Include="Assets\Image\fantasy_builder_icon.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Assets\Libs\MariaDB Connector C\lib\libmariadb.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
 </Project>
