@@ -597,6 +597,8 @@
 ### 第五段階
 - 余裕があれば、ネット機能を追加する
 - マルチスレッドでデータベース接続機能を実行予定
+    stage_result (key)STAGE_RANK_ID (int)COUNT
+    stage_build (key)STAGE_BUILDTYPE (int)COUNT
     +DataBaseManager データベースに接続、読出し、アップロード、接続終了に関して一括の機能
     +DataSyncer マルチスレッドで各種類のSQL文を実行し、その結果を保存する
 【0220】基本のAPI整合完了
