@@ -100,20 +100,20 @@ void InitDataSyncerCountArray();
 /// <summary>
 /// 結果テーブルを更新する
 /// </summary>
-/// <param name="data">今度の結果</param>
-void UpdateStageRankMT(DATA_UPDATE_RANK data);
+/// <param name="data">今度の結果指向のポインタ</param>
+void UpdateStageRankMT(DATA_UPDATE_RANK* data);
 
 /// <summary>
 /// 施設テーブルを更新する
 /// </summary>
-/// <param name="data">今度の施設情報</param>
-void UpdateStageBuildTypeMT(DATA_UPDATE_BUILD data);
+/// <param name="data">今度の施設情報指向のポインタ</param>
+void UpdateStageBuildTypeMT(DATA_UPDATE_BUILD* data);
 
 /// <summary>
 /// 結果と施設テーブルから必要な情報を保存する
 /// </summary>
-/// <param name="stageID">今のステージ番号</param>
-void GetStageRankAndBuildCount(int stageID);
+/// <param name="stageID">今のステージ番号指向のポインタ</param>
+void GetStageRankAndBuildCount(int* stageID);
 
 /// <summary>
 /// 結果テーブルを更新用のスレッドを作成する
@@ -128,4 +128,31 @@ void CreateUpdateStageBuildThread();
 /// <summary>
 /// 結果と施設テーブルから必要な情報を保存用のスレッドを作成する
 /// </summary>
-void CreateGetStageRankAndBuildThread();
+void CreateGetStageRankAndBuildThread(int stageID);
+
+/// <summary>
+/// 結果テーブルを更新用のスレッドを閉じる
+/// </summary>
+void CloseUpdateStageRankThread();
+
+/// <summary>
+/// 施設テーブルを更新用のスレッドを閉じる
+/// </summary>
+void CloseUpdateStageBuildThread();
+
+/// <summary>
+/// 結果と施設テーブルから必要な情報を保存用のスレッドを閉じる
+/// </summary>
+void CloseGetStageRankAndBuildThread();
+
+/// <summary>
+/// ランクデータ指向のポインタを取得
+/// </summary>
+/// <returns>ランクデータ指向のポインタ</returns>
+DATA_UPDATE_RANK* GetUpdateRankAddr();
+
+/// <summary>
+/// 施設データ指向のポインタを取得
+/// </summary>
+/// <returns>施設データ指向のポインタ</returns>
+DATA_UPDATE_BUILD* GetUpdateBuildAddr();

@@ -12,6 +12,8 @@ static HANDLE g_HandleUpdateBuild = NULL;
 static HANDLE g_HandleGetRankAndBuild = NULL;
 int g_StageRankNum[5] = { 0,0,0,0,0 };
 int g_MostUsedBuildsID[3] = { 0,0,0 };
+DATA_UPDATE_RANK g_UpdateRankArgument;
+DATA_UPDATE_BUILD g_UpdateBuildArgument;
 
 void ConnectToHewDatabase()
 {
@@ -58,10 +60,10 @@ void InitDataSyncerCountArray()
     }
 }
 
-void UpdateStageRankMT(DATA_UPDATE_RANK data)
+void UpdateStageRankMT(DATA_UPDATE_RANK* data)
 {
     int stage_rank_id = 0;
-    stage_rank_id = data.StageID * 10 + data.Rank;
+    stage_rank_id = data->StageID * 10 + data->Rank;
 
     ConnectToHewDatabase();
     char updateRank[100];
@@ -76,19 +78,19 @@ void UpdateStageRankMT(DATA_UPDATE_RANK data)
     CloseConnectToHewDatabase();
 }
 
-void UpdateStageBuildTypeMT(DATA_UPDATE_BUILD data)
+void UpdateStageBuildTypeMT(DATA_UPDATE_BUILD* data)
 {
     int stage_buildtype_id = 0;
     char updateRank[100];
     ConnectToHewDatabase();
     for (int i = 0; i < 8; i++)
     {
-        stage_buildtype_id = data.StageID * 10 + i + 1;
-        if (data.BuildTypeCount[i])
+        stage_buildtype_id = data->StageID * 10 + i + 1;
+        if (data->BuildTypeCount[i])
         {
             sprintf_s(updateRank, sizeof(updateRank),
                 "update hew_game.stage_build set COUNT=COUNT+%d where STAGE_BUILDTYPE_ID=%d",
-                data.BuildTypeCount[i],
+                data->BuildTypeCount[i],
                 stage_buildtype_id);
             int status = RunQueryRequest(&g_DatabaseHandle, updateRank);
             if (status)
@@ -100,7 +102,7 @@ void UpdateStageBuildTypeMT(DATA_UPDATE_BUILD data)
     CloseConnectToHewDatabase();
 }
 
-void GetStageRankAndBuildCount(int stageID)
+void GetStageRankAndBuildCount(int* stageID)
 {
     InitDataSyncerCountArray();
     ConnectToHewDatabase();
@@ -111,7 +113,7 @@ void GetStageRankAndBuildCount(int stageID)
 
     while ((row = mysql_fetch_row(gp_SqlResult)) != NULL)
     {
-        if (row[0][0] == (stageID + 48))
+        if (row[0][0] == (*stageID + 48))
         {
             int len = strlen(row[1]);
             int value = 0;
@@ -136,7 +138,7 @@ void GetStageRankAndBuildCount(int stageID)
     int buildCount[8] = { 0,0,0,0,0,0,0,0 };
     while ((row = mysql_fetch_row(gp_SqlResult)) != NULL)
     {
-        if (row[0][0] == (stageID + 48))
+        if (row[0][0] == (*stageID + 48))
         {
             int len = strlen(row[1]);
             int value = 0;
@@ -168,15 +170,73 @@ void GetStageRankAndBuildCount(int stageID)
 
 void CreateUpdateStageRankThread()
 {
-
+    DWORD dw;
+    g_HandleUpdateRank = CreateThread(
+        NULL, 0,
+        (LPTHREAD_START_ROUTINE)UpdateStageRankMT,
+        &g_UpdateRankArgument,
+        0, &dw
+    );
 }
 
 void CreateUpdateStageBuildThread()
 {
-
+    DWORD dw;
+    g_HandleUpdateRank = CreateThread(
+        NULL, 0,
+        (LPTHREAD_START_ROUTINE)UpdateStageBuildTypeMT,
+        &g_UpdateBuildArgument,
+        0, &dw
+    );
 }
 
-void CreateGetStageRankAndBuildThread()
+void CreateGetStageRankAndBuildThread(int stageID)
 {
+    DWORD dw;
+    g_HandleUpdateRank = CreateThread(
+        NULL, 0,
+        (LPTHREAD_START_ROUTINE)GetStageRankAndBuildCount,
+        &stageID,
+        0, &dw
+    );
+}
 
+void CloseUpdateStageRankThread()
+{
+    if (gp_ConnectHandle != NULL)
+    {
+        CloseConnectHandle(gp_ConnectHandle);
+    }
+
+    CloseHandle(g_HandleUpdateRank);
+}
+
+void CloseUpdateStageBuildThread()
+{
+    if (gp_ConnectHandle != NULL)
+    {
+        CloseConnectHandle(gp_ConnectHandle);
+    }
+
+    CloseHandle(g_HandleUpdateBuild);
+}
+
+void CloseGetStageRankAndBuildThread()
+{
+    if (gp_ConnectHandle != NULL)
+    {
+        CloseConnectHandle(gp_ConnectHandle);
+    }
+
+    CloseHandle(g_HandleGetRankAndBuild);
+}
+
+DATA_UPDATE_RANK* GetUpdateRankAddr()
+{
+    return &g_UpdateRankArgument;
+}
+
+DATA_UPDATE_BUILD* GetUpdateBuildAddr()
+{
+    return &g_UpdateBuildArgument;
 }
