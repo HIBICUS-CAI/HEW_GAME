@@ -3,6 +3,7 @@
 #include "UIObject.h"
 #include "SceneManager.h"
 #include "VisitingBackgroundShower.h"
+#include "DataSyncer.h"
 
 float g_TimeCountBUILDM = 0.f;
 
@@ -44,6 +45,27 @@ void UpdateBuildingManager()
         GetUIObjByName("build")->ChildUIO = NULL;
         GetUIObjByName("build-type")->TurnOff();
         GetUIObjByName("build-event")->TurnOff();
+
+        if (CanUseDataBase())
+        {
+            int buildTypeCount[8] = { 0,0,0,0,0,0,0,0 };
+            for (int i = 0; i < BUILDINGS_SIZE; i++)
+            {
+                if ((GetEditBuildingsArray() + i)->Status ==
+                    BUILDING_STATUS::CONFIRMED)
+                {
+                    ++buildTypeCount
+                        [(GetEditBuildingsArray() + i)->Type - 1];
+                }
+            }
+            GetUpdateBuildAddr()->StageID = GetPlayingStage();
+            for (int i = 0; i < 8; i++)
+            {
+                GetUpdateBuildAddr()->BuildTypeCount[i] =
+                    buildTypeCount[i];
+            }
+            CreateUpdateStageBuildThread();
+        }
     }
 
     ResetAllEventBtn();

@@ -14,6 +14,7 @@ int g_StageRankNum[5] = { 0,0,0,0,0 };
 int g_MostUsedBuildsID[3] = { 0,0,0 };
 DATA_UPDATE_RANK g_UpdateRankArgument;
 DATA_UPDATE_BUILD g_UpdateBuildArgument;
+int g_CanUseDatabase = 0;
 
 void ConnectToHewDatabase()
 {
@@ -40,12 +41,23 @@ void CloseConnectToHewDatabase()
 void TestHewDatabaseConnect()
 {
     ConnectToHewDatabase();
-    FreeResultPointer(gp_SqlResult);
-    gp_SqlResult = RunQueryAndGetResult(&g_DatabaseHandle,
-        "select * from stage_rank");
-    DebugLogI1("row's count : ", GetResultRowCount(gp_SqlResult));
-    FreeResultPointer(gp_SqlResult);
-    CloseConnectToHewDatabase();
+    if (gp_ConnectHandle!=NULL)
+    {
+        FreeResultPointer(gp_SqlResult);
+        gp_SqlResult = RunQueryAndGetResult(&g_DatabaseHandle,
+            "select * from stage_rank");
+        DebugLogI1("row's count : ", GetResultRowCount(gp_SqlResult));
+        FreeResultPointer(gp_SqlResult);
+        CloseConnectToHewDatabase();
+        g_CanUseDatabase = 1;
+
+        int a = 3;
+        GetStageRankAndBuildCount(&a);
+    }
+    else
+    {
+        g_CanUseDatabase = 0;
+    }
 }
 
 void InitDataSyncerCountArray()
@@ -160,8 +172,37 @@ void GetStageRankAndBuildCount(int* stageID)
     std::sort(buildCountV.begin(), buildCountV.end());
     for (int i = 0; i < 3; i++)
     {
-        g_MostUsedBuildsID[i] = buildCountV.back();
+        int value = buildCountV.back();
         buildCountV.pop_back();
+        for (int j = 0; j < 8; j++)
+        {
+            if (buildCount[j] == value)
+            {
+                if (i == 0)
+                {
+                    g_MostUsedBuildsID[i] = j;
+                    break;
+                }
+                else if (i == 1)
+                {
+                    if (j != g_MostUsedBuildsID[0])
+                    {
+                        g_MostUsedBuildsID[i] = j;
+                        break;
+                    }
+                }
+                else
+                {
+                    if (j != g_MostUsedBuildsID[0] &&
+                        j != g_MostUsedBuildsID[1])
+                    {
+                        g_MostUsedBuildsID[i] = j;
+                        break;
+                    }
+                }
+
+            }
+        }
     }
     FreeResultPointer(gp_SqlResult);
 
@@ -239,4 +280,9 @@ DATA_UPDATE_RANK* GetUpdateRankAddr()
 DATA_UPDATE_BUILD* GetUpdateBuildAddr()
 {
     return &g_UpdateBuildArgument;
+}
+
+int CanUseDataBase()
+{
+    return g_CanUseDatabase;
 }

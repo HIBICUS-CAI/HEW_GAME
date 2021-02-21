@@ -6,6 +6,7 @@
 #include "DeclaredValues.h"
 #include "SceneManager.h"
 #include "SoundManager.h"
+#include "DataSyncer.h"
 #include "DialogShower.h"
 #include "PlayingStageManager.h"
 #include "VisitorManager.h"
@@ -527,6 +528,27 @@ void BuildingSceneBtnEvent(int value)
         ReloadVisitingBackground();
         ResetResortBGTimerAndOffset();
         SwitchSceneToName("resort");
+
+        if (CanUseDataBase())
+        {
+            int buildTypeCount[8] = { 0,0,0,0,0,0,0,0 };
+            for (int i = 0; i < BUILDINGS_SIZE; i++)
+            {
+                if ((GetEditBuildingsArray() + i)->Status ==
+                    BUILDING_STATUS::CONFIRMED)
+                {
+                    ++buildTypeCount
+                        [(GetEditBuildingsArray() + i)->Type - 1];
+                }
+            }
+            GetUpdateBuildAddr()->StageID = GetPlayingStage();
+            for (int i = 0; i < 8; i++)
+            {
+                GetUpdateBuildAddr()->BuildTypeCount[i] =
+                    buildTypeCount[i];
+            }
+            CreateUpdateStageBuildThread();
+        }
     }
     else if (value == BACK_TO_BUILD_TYPE)
     {

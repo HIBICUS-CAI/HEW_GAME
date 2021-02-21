@@ -156,3 +156,9 @@ DATA_UPDATE_RANK* GetUpdateRankAddr();
 /// </summary>
 /// <returns>施設データ指向のポインタ</returns>
 DATA_UPDATE_BUILD* GetUpdateBuildAddr();
+
+/// <summary>
+/// データベース使用できるか否かを取得
+/// </summary>
+/// <returns>使用フラグ</returns>
+int CanUseDataBase();

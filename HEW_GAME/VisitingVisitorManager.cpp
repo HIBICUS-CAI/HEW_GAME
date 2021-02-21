@@ -4,6 +4,7 @@
 #include "SoundManager.h"
 #include "ThoughtListManager.h"
 #include "ResultFinalThought.h"
+#include "DataSyncer.h"
 
 int g_VisitingMovFlg = 0;
 int g_VVMTimeCount = 0;
@@ -123,6 +124,10 @@ void UpdateVisitingVisitorManager()
             g_VisitingMovFlg = 0;
             if (!(--g_FinalTime))
             {
+                if (CanUseDataBase())
+                {
+                    CloseUpdateStageBuildThread();
+                }
                 SwitchSceneToName("result");
                 CreateResultFinalThought();
                 LoadSound(

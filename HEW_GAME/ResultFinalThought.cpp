@@ -3,6 +3,7 @@
 #include "SceneNode.h"
 #include "ResultTips.h"
 #include "FinalResult.h"
+#include "DataSyncer.h"
 
 #define FINAL_THOUGHTS_SIZE 7
 char g_FinalThought[FINAL_THOUGHTS_SIZE][128] = { "","","","","","","" };
@@ -354,6 +355,12 @@ void UpdateResultFinalThought()
                 if (!GetShowRankFlg())
                 {
                     SetShowRankFlg(1);
+                    if (CanUseDataBase())
+                    {
+                        CloseUpdateStageRankThread();
+                        int stage = GetPlayingStage();
+                        GetStageRankAndBuildCount(&stage);
+                    }
                 }
                 if (GetSceneNodeByName("result")->GetBaseUIOAddr() ==
                     GetUIObjByName("empty"))
