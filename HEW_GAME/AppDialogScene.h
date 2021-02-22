@@ -19,11 +19,6 @@ void InitDialogScene()
         GetUIObjByName("dialog"));
     ClearSceneCamBuffer(GetSceneNodeByName("dialog"));
 
-    //-----------------------------------------
-    GetUIObjByName("dialog")->
-        AddBtn(UI_BUTTON(TEMP_BTN_DIALOG_1, POSITION_2D(60, 17),
-            (char*)"TEST", BTN_DESIGN::LINE));
-
     g_NextBtnSpriteAnimator = CreateSpriteAnimator(8,
         "Assets\\SpriteAnimators\\next-arrow\\arrow",
         POSITION_2D(156, 50), 16, 8);

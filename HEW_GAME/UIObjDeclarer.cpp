@@ -83,6 +83,9 @@ void CreateDialogUIObjs()
     GetUIObjByName("dialog")->
         AddBtn(UI_BUTTON(DIALOG_NEXT, POSITION_2D(50, 17),
             (char*)"", BTN_DESIGN::NONE));
+    GetUIObjByName("dialog")->
+        AddBtn(UI_BUTTON(TEMP_BTN_DIALOG_1, POSITION_2D(60, 17),
+            (char*)"SKIP", BTN_DESIGN::LINE));
 }
 
 void CreateStageSelectUIObjs()
