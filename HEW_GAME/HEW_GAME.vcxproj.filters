@@ -150,6 +150,9 @@
     <ClCompile Include="DataSyncer.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="StatisticShower.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonEvents.h">
@@ -322,6 +325,9 @@
     </ClInclude>
     <ClInclude Include="Assets\Libs\MariaDB Connector C\include\mysql.h">
       <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticShower.h">
+      <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1430,6 +1430,8 @@ void FinalResultSceneBtnEvent(int value)
         ResetPlayingStageByManager();
         ResetTitleBuilderShower();
         ResetTitleKanaShower();
+        CloseUpdateStageRankThread();
+        CloseGetStageRankAndBuildThread();
 
         int score = GetFinalScore();
         int dialogEvent = 0;

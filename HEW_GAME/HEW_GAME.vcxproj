@@ -178,6 +178,7 @@
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SpriteAnimator.cpp" />
     <ClCompile Include="StageSelectBackShower.cpp" />
+    <ClCompile Include="StatisticShower.cpp" />
     <ClCompile Include="ThoughtListManager.cpp" />
     <ClCompile Include="ThoughtListShower.cpp" />
     <ClCompile Include="TitleBuilderShower.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SpriteAnimator.h" />
     <ClInclude Include="StageSelectBackShower.h" />
+    <ClInclude Include="StatisticShower.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="ThoughtListManager.h" />
     <ClInclude Include="ThoughtListShower.h" />

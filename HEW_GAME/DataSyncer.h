@@ -128,7 +128,7 @@ void CreateUpdateStageBuildThread();
 /// <summary>
 /// 結果と施設テーブルから必要な情報を保存用のスレッドを作成する
 /// </summary>
-void CreateGetStageRankAndBuildThread(int stageID);
+void CreateGetStageRankAndBuildThread();
 
 /// <summary>
 /// 結果テーブルを更新用のスレッドを閉じる
@@ -174,3 +174,15 @@ int* GetDBRankArray();
 /// </summary>
 /// <returns>施設配列</returns>
 int* GetDBBuildArray();
+
+/// <summary>
+/// データベースに接続する用のステージ番号を設定
+/// </summary>
+/// <param name="value">ステージ番号</param>
+void SetDBStageArgument(int value);
+
+/// <summary>
+/// 今の結果は最新か否か
+/// </summary>
+/// <returns>最新結果フラグ</returns>
+int IsDBResultNewest();

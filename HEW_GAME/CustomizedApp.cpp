@@ -29,6 +29,7 @@
 #include "TitleKanaShower.h"
 #include "StageSelectBackShower.h"
 #include "DataSyncer.h"
+#include "StatisticShower.h"
 
 void AppInit()
 {
@@ -63,6 +64,7 @@ void AppInit()
     InitTitleBuilderShower();
     InitTitleKanaShower();
     InitStageSelectBackGShower();
+    InitStatisticShower();
 
 
     SetDialogEvent(DIALOG_NEW_GAME);
@@ -119,6 +121,7 @@ void AppUpdate()
         UpdateResultFinalThought();
         UpdateResultTips();
         UpdateFinalResult();
+        UpdateStatisticShower();
         break;
 
     default:

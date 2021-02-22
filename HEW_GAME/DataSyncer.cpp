@@ -3,6 +3,7 @@
 #include "LogsOutput.h"
 #include <vector>
 #include <algorithm>
+#include <stdio.h>
 
 MYSQL g_DatabaseHandle;
 MYSQL* gp_ConnectHandle = NULL;
@@ -14,7 +15,9 @@ int g_StageRankNum[5] = { 0,0,0,0,0 };
 int g_MostUsedBuildsID[3] = { 0,0,0 };
 DATA_UPDATE_RANK g_UpdateRankArgument;
 DATA_UPDATE_BUILD g_UpdateBuildArgument;
+int g_GetRankBuildArgument = 0;
 int g_CanUseDatabase = 0;
+int g_ResultGetFromDBIsNewest = 0;
 
 void ConnectToHewDatabase()
 {
@@ -40,8 +43,19 @@ void CloseConnectToHewDatabase()
 
 void TestHewDatabaseConnect()
 {
+    COORD ppp;
+    ppp.X = 65;
+    ppp.Y = 5;
+    SetConsoleCursorPosition(
+        GetStdHandle(STD_OUTPUT_HANDLE), ppp);
+    printf("Testing the connection with database, please wait");
+    ppp.X = 65;
+    ppp.Y = 6;
+    SetConsoleCursorPosition(
+        GetStdHandle(STD_OUTPUT_HANDLE), ppp);
+    printf("_________________________________________________");
     ConnectToHewDatabase();
-    if (gp_ConnectHandle!=NULL)
+    if (gp_ConnectHandle != NULL)
     {
         FreeResultPointer(gp_SqlResult);
         gp_SqlResult = RunQueryAndGetResult(&g_DatabaseHandle,
@@ -50,13 +64,21 @@ void TestHewDatabaseConnect()
         FreeResultPointer(gp_SqlResult);
         CloseConnectToHewDatabase();
         g_CanUseDatabase = 1;
-
-        int a = 3;
-        GetStageRankAndBuildCount(&a);
     }
     else
     {
         g_CanUseDatabase = 0;
+        ppp.X = 65;
+        ppp.Y = 8;
+        SetConsoleCursorPosition(
+            GetStdHandle(STD_OUTPUT_HANDLE), ppp);
+        printf("Connection failed with reason:");
+        ppp.X = 65;
+        ppp.Y = 9;
+        SetConsoleCursorPosition(
+            GetStdHandle(STD_OUTPUT_HANDLE), ppp);
+        printf("%s", mysql_error(&g_DatabaseHandle));
+        Sleep(3000);
     }
 }
 
@@ -207,6 +229,8 @@ void GetStageRankAndBuildCount(int* stageID)
     FreeResultPointer(gp_SqlResult);
 
     CloseConnectToHewDatabase();
+
+    g_ResultGetFromDBIsNewest = 1;
 }
 
 void CreateUpdateStageRankThread()
@@ -231,13 +255,14 @@ void CreateUpdateStageBuildThread()
     );
 }
 
-void CreateGetStageRankAndBuildThread(int stageID)
+void CreateGetStageRankAndBuildThread()
 {
     DWORD dw;
+    g_ResultGetFromDBIsNewest = 0;
     g_HandleUpdateRank = CreateThread(
         NULL, 0,
         (LPTHREAD_START_ROUTINE)GetStageRankAndBuildCount,
-        &stageID,
+        &g_GetRankBuildArgument,
         0, &dw
     );
 }
@@ -270,6 +295,8 @@ void CloseGetStageRankAndBuildThread()
     }
 
     CloseHandle(g_HandleGetRankAndBuild);
+
+    g_ResultGetFromDBIsNewest = 0;
 }
 
 DATA_UPDATE_RANK* GetUpdateRankAddr()
@@ -295,4 +322,14 @@ int* GetDBRankArray()
 int* GetDBBuildArray()
 {
     return g_MostUsedBuildsID;
+}
+
+void SetDBStageArgument(int value)
+{
+    g_GetRankBuildArgument = value;
+}
+
+int IsDBResultNewest()
+{
+    return g_ResultGetFromDBIsNewest;
 }
