@@ -166,11 +166,11 @@ void UpdateStatisticShower()
         (GetUIObjByName("save-data")->Texts + 1)->
             ChangeTextTo("もしこの機能使えたい場合には");
         (GetUIObjByName("save-data")->Texts + 2)->
-            ChangeTextTo("回線を確認の上で");
+            ChangeTextTo("Assets\\Configs\\database_config.txtの内容と");
         (GetUIObjByName("save-data")->Texts + 3)->
-            ChangeTextTo("ゲームをもう一度実行してください");
+            ChangeTextTo("回線を確認の上で");
         (GetUIObjByName("save-data")->Texts + 4)->
-            ChangeTextTo("");
+            ChangeTextTo("ゲームをもう一度実行してください");
     }
 }
 

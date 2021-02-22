@@ -43,42 +43,72 @@ void CloseConnectToHewDatabase()
 
 void TestHewDatabaseConnect()
 {
-    COORD ppp;
-    ppp.X = 65;
-    ppp.Y = 5;
-    SetConsoleCursorPosition(
-        GetStdHandle(STD_OUTPUT_HANDLE), ppp);
-    printf("Testing the connection with database, please wait");
-    ppp.X = 65;
-    ppp.Y = 6;
-    SetConsoleCursorPosition(
-        GetStdHandle(STD_OUTPUT_HANDLE), ppp);
-    printf("_________________________________________________");
-    ConnectToHewDatabase();
-    if (gp_ConnectHandle != NULL)
+    FILE* pDatabaseCfg = NULL;
+    fopen_s(&pDatabaseCfg,
+        "Assets\\Configs\\database_config.txt",
+        "r");
+    char databaseFlgName[128] = "";
+    int databaseFlg = 1;
+    if (pDatabaseCfg != NULL)
     {
-        FreeResultPointer(gp_SqlResult);
-        gp_SqlResult = RunQueryAndGetResult(&g_DatabaseHandle,
-            "select * from stage_rank");
-        DebugLogI1("row's count : ", GetResultRowCount(gp_SqlResult));
-        FreeResultPointer(gp_SqlResult);
-        CloseConnectToHewDatabase();
-        g_CanUseDatabase = 1;
+        fscanf_s(pDatabaseCfg, "%s",
+            databaseFlgName, sizeof(databaseFlgName));
+        fscanf_s(pDatabaseCfg, "%d", &databaseFlg);
+        fclose(pDatabaseCfg);
+
+        if (!strcmp(databaseFlgName, 
+            "the_flag_of_database_function"))
+        {
+            if (databaseFlg)
+            {
+                g_CanUseDatabase = 1;
+            }
+            else
+            {
+                g_CanUseDatabase = 0;
+            }
+        }
     }
-    else
+
+    if (g_CanUseDatabase)
     {
-        g_CanUseDatabase = 0;
+        COORD ppp;
         ppp.X = 65;
-        ppp.Y = 8;
+        ppp.Y = 5;
         SetConsoleCursorPosition(
             GetStdHandle(STD_OUTPUT_HANDLE), ppp);
-        printf("Connection failed with reason:");
+        printf("Testing the connection with database, please wait");
         ppp.X = 65;
-        ppp.Y = 9;
+        ppp.Y = 6;
         SetConsoleCursorPosition(
             GetStdHandle(STD_OUTPUT_HANDLE), ppp);
-        printf("%s", mysql_error(&g_DatabaseHandle));
-        Sleep(3000);
+        printf("_________________________________________________");
+        ConnectToHewDatabase();
+        if (gp_ConnectHandle != NULL)
+        {
+            FreeResultPointer(gp_SqlResult);
+            gp_SqlResult = RunQueryAndGetResult(&g_DatabaseHandle,
+                "select * from stage_rank");
+            DebugLogI1("row's count : ", GetResultRowCount(gp_SqlResult));
+            FreeResultPointer(gp_SqlResult);
+            CloseConnectToHewDatabase();
+            g_CanUseDatabase = 1;
+        }
+        else
+        {
+            g_CanUseDatabase = 0;
+            ppp.X = 65;
+            ppp.Y = 8;
+            SetConsoleCursorPosition(
+                GetStdHandle(STD_OUTPUT_HANDLE), ppp);
+            printf("Connection failed with reason:");
+            ppp.X = 65;
+            ppp.Y = 9;
+            SetConsoleCursorPosition(
+                GetStdHandle(STD_OUTPUT_HANDLE), ppp);
+            printf("%s", mysql_error(&g_DatabaseHandle));
+            Sleep(3000);
+        }
     }
 }
 
