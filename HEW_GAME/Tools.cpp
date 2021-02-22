@@ -43,7 +43,7 @@ void ShowFPSMT()
 
 void InitTitle()
 {
-    system("title とあるゲーム");
+    system("title 幻想リゾーター");
 
     /*DWORD dw;
     g_HandleTitle = CreateThread(NULL, 0,
