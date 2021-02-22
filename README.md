@@ -23,8 +23,8 @@
     Assets\\Configs\\database_config.txtにフラグを半角０に変更してください。  
   
   
-- プロジェクトを再ビルド
-    https://github.com/HIBICUSbaka/HEW_GAME からソースコードをダウンロード出来ます　　
+- プロジェクトを再ビルド  
+    https://github.com/HIBICUSbaka/HEW_GAME からソースコードをダウンロード出来ます  
     ビルドする時、x86(Win32)に選択してください  
     ビルド完成でしたら、各ソースコードと同じフォルダ中のAssets\\Libs\\MariaDB Connector C\\lib\\libmariadb.dll  
     とAssetsフォルダ全体(Libs抜きでも大丈夫)を実行ファイル所在のフォルダにコピーしてください  
