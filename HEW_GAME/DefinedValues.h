@@ -32,7 +32,7 @@
 #define TEST_OPENSUB 0x0001
 #define TEST_CLOSETHIS 0x0002
 
-#define MY_DEBUG_INFO
+//#define MY_DEBUG_INFO
 
 #define RUNCONTINUOUS
 
