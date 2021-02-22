@@ -41,6 +41,24 @@ void CreateTitleUIObjs()
         UIO_DESIGN::STRAIGHT, NULL, NULL);
     GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(36, 1),
         (char*)"注意事項"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 5),
+        (char*)"このゲームがデータベースと接続する機能が持っています"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 7),
+        (char*)"通信に使われているデータはゲーム内の各統計のみ"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 9),
+        (char*)"他の内容は一切読み込み、保存、アップロードしません"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 11),
+        (char*)"もし何か疑問がある場合"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 13),
+        (char*)"リンクに記載されたソースコードの方にご確認お願いします"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 17),
+        (char*)"通信機能をうまく動作させるため各プレーヤーに"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 19),
+        (char*)"特定のデータベースを編集する権限を差し上げました"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 21),
+        (char*)"他のプレーヤーに迷惑を掛けないようにしてお願いします"));
+    GetUIObjByName("load-data")->AddText(UI_TEXT(POSITION_2D(6, 25),
+        (char*)"必ず以上の内容をご確認の上でゲームを実行してください"));
     GetUIObjByName("load-data")->
         AddBtn(UI_BUTTON(CLOSE_SAVE_DATA, POSITION_2D(37, 48),
             (char*)"閉じる", BTN_DESIGN::LINE));
@@ -49,6 +67,26 @@ void CreateTitleUIObjs()
         UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
     GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(36, 1),
         (char*)"操作方法"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 5),
+        (char*)"今選択されたボタンはいつも白いマークあるいは【】に括るの形で表示しています"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 7),
+        (char*)"ＩＪＫＬキーで今選択されたボタンの上、左、下、右のボタンを選択できます"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 9),
+        (char*)"ＳＰＡＣＥキーを押すと今選択されているボタンを実行するという意味です"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 11),
+        (char*)"もしゲームを閉じたいなら、いつでもＥＳＣキーでできます"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 15),
+        (char*)"バーチャルリゾートシーンに十個の土台があります"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 17),
+        (char*)"ＡＤキーで左右の土台に移動できます"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 19),
+        (char*)"制限時間は一分間、その内適切な位置に適切の施設を作成し"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 21),
+        (char*)"その中身の内容も決定したら、確定ボタンを押してください"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 23),
+        (char*)"施設種類->施設内容->確認するという流れで進まないといけません"));
+    GetUIObjByName("manual")->AddText(UI_TEXT(POSITION_2D(2, 25),
+        (char*)"確認された施設を再編集することもできます"));
     GetUIObjByName("manual")->
         AddBtn(UI_BUTTON(CLOSE_MANUAL, POSITION_2D(37, 48),
             (char*)"閉じる", BTN_DESIGN::LINE));
@@ -57,6 +95,14 @@ void CreateTitleUIObjs()
         UIO_DESIGN::STRAIGHT, NULL, NULL, 0);
     GetUIObjByName("link")->AddText(UI_TEXT(POSITION_2D(35, 1),
         (char*)"関連リンク"));
+    GetUIObjByName("link")->AddText(UI_TEXT(POSITION_2D(2, 5),
+        (char*)"ASCII風ファイル作成　https://cloudapps.herokuapp.com/imagetoascii/"));
+    GetUIObjByName("link")->AddText(UI_TEXT(POSITION_2D(2, 8),
+        (char*)"データベース　https://mariadb.com/"));
+    GetUIObjByName("link")->AddText(UI_TEXT(POSITION_2D(2, 11),
+        (char*)"ソースコード　https://github.com/HIBICUSbaka/HEW_GAME"));
+    GetUIObjByName("link")->AddText(UI_TEXT(POSITION_2D(2, 14),
+        (char*)"超簡単なコンソールエンジン　https://github.com/HIBICUSbaka/CLIG"));
     GetUIObjByName("link")->
         AddBtn(UI_BUTTON(CLOSE_LINK, POSITION_2D(37, 18),
             (char*)"閉じる", BTN_DESIGN::LINE));

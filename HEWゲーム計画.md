@@ -628,3 +628,4 @@
         データベース　https://mariadb.com/
         ソースコード　https://github.com/HIBICUSbaka/HEW_GAME
         超簡単なコンソールエンジン　https://github.com/HIBICUSbaka/CLIG
+    【0222】各説明添付完了
