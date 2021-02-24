@@ -78,17 +78,14 @@ void CountFinalRank()
     DebugLogI1("ÅI“_”:", g_Score);
 
     g_RankOffset = 0;
-    GetUpdateRankAddr()->StageID = GetPlayingStage();
 
     if (g_Score <= 80)
     {
         g_RankOffset = C_RANK_OFFSET;
-        GetUpdateRankAddr()->Rank = 4;
     }
     else if (g_Score <= 99)
     {
         g_RankOffset = B_RANK_OFFSET;
-        GetUpdateRankAddr()->Rank = 3;
     }
     else
     {
@@ -110,12 +107,10 @@ void CountFinalRank()
         if (canBeS)
         {
             g_RankOffset = S_RANK_OFFSET;
-            GetUpdateRankAddr()->Rank = 1;
         }
         else
         {
             g_RankOffset = A_RANK_OFFSET;
-            GetUpdateRankAddr()->Rank = 2;
         }
     }
 
