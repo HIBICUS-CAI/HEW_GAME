@@ -31,6 +31,6 @@
     ビルド完成でしたら、各ソースコードと同じフォルダ中のAssets\\Libs\\MariaDB Connector C\\lib\\libmariadb.dll  
     とAssetsフォルダ全体(Libs抜きでも大丈夫)を実行ファイル所在のフォルダにコピーしてください  
     もし再ビルドの時データベース機能を完全閉じたい場合には、  
-    https://github.com/HIBICUSbaka/HEW_GAME/tree/no-database　からソースコードをダウンロードしてください  
+    https://github.com/HIBICUSbaka/HEW_GAME/tree/no-database からソースコードをダウンロードしてください  
     ビルド完成でしたら同じくAssetsフォルダを実行ファイル所在のフォルダにコピーしなさい、dllファイルはコピーしなくても問題ないです  
     でもこの場合データベースコンフィグフラグを変更してもこの機能は行いません、どうかご注意ください  
