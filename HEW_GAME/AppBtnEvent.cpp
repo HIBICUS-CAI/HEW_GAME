@@ -1471,6 +1471,8 @@ void FinalResultSceneBtnEvent(int value)
         }
         SetDialogEvent(dialogEvent);
         SwitchSceneToName("dialog");
+
+        ResetVisitorManager();
     }
     else if (value == SAVE_AT_1)
     {
@@ -1498,6 +1500,4 @@ void FinalResultSceneBtnEvent(int value)
             ErrorLog("cannot find this UI object");
         }
     }
-
-    ResetVisitorManager();
 }
