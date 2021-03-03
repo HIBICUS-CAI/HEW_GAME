@@ -34,3 +34,7 @@
     https://github.com/HIBICUSbaka/HEW_GAME/tree/no-database からソースコードをダウンロードしてください  
     ビルド完成でしたら同じくAssetsフォルダを実行ファイル所在のフォルダにコピーしなさい、dllファイルはコピーしなくても問題ないです  
     でもこの場合データベースコンフィグフラグを変更してもこの機能は行いません、どうかご注意ください  
+  
+  
+- リンク
+    This game is developed in CLIG frame: https://github.com/HIBICUSbaka/CLIG  
